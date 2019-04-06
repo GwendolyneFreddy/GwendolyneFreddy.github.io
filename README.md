@@ -4,6 +4,8 @@
 <hr>
 
 
+All are WIP.
+
 ## Spellhold Studios
 
 ><span style="margin-left: 50px;"><a href="https://gwendolynefreddy.github.io/docs/spellholdstudios/readme-infinityanimations.html">Infinity Animations</a></span></br>
