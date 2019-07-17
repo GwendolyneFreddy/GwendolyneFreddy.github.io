@@ -22,16 +22,18 @@ All are WIP.
 <hr>
 
 
-## Menace sur le Royaume de Diamant Eternel
+## Menace sur le Royaume de Diamant Éternel (WIP)
 
-><span style="margin-left: 50px;">Readme (WIP)</span></br>
+><span style="margin-left: 50px;"><a href="https://gwendolynefreddy.github.io/docs/diamant_eternel/menace-readme-french.html">Readme (English)</a></span></br>
 ><span style="margin-left: 50px;"><a href="https://gwendolynefreddy.github.io/docs/diamant_eternel/menace-readme-french.html">Readme (French)</a></span></br>
-><span style="margin-left: 50px;">Diamond Knight kit (WIP)</span></br>
-><span style="margin-left: 50px;"><a href="https://gwendolynefreddy.github.io/docs/diamant_eternel/menace-kit1-readme-french.html">Profil de Chevalier de Diamant</a></span></br>
-><span style="margin-left: 50px;">Unicorn Rider kit (WIP)</span></br>
-><span style="margin-left: 50px;"><a href="https://gwendolynefreddy.github.io/docs/diamant_eternel/menace-kit2-readme-french.html">Profil de Chevaucheuse de licorne</a></span></br>
-><span style="margin-left: 50px;"><a href="https://gwendolynefreddy.github.io/docs/diamant_eternel/menace-animations-readme-french.html">Tableau des nouvelles animations de créatures</a></span></br>
-><span style="margin-left: 50px;">New creatures animations chart (WIP)</span>
+><span style="margin-left: 50px;"><a href="https://gwendolynefreddy.github.io/docs/diamant_eternel/menace-kit1-readme-english.html">Diamond Knight kit (WIP)</a></span></br>
+><span style="margin-left: 50px;"><a href="https://gwendolynefreddy.github.io/docs/diamant_eternel/menace-kit1-readme-french.html">Profil de Chevalier de Diamant (WIP)</a></span></br>
+><span style="margin-left: 50px;"><a href="https://gwendolynefreddy.github.io/docs/diamant_eternel/menace-kit2-readme-english.html">Unicorn Rider kit (WIP)</a></span></br>
+><span style="margin-left: 50px;"><a href="https://gwendolynefreddy.github.io/docs/diamant_eternel/menace-kit2-readme-french.html">Profil de Chevaucheuse de licorne (WIP)</a></span></br>
+><span style="margin-left: 50px;"><a href="https://gwendolynefreddy.github.io/docs/diamant_eternel/menace-animations-readme-english.html">New creature animations (WIP)</span>
+><span style="margin-left: 50px;"><a href="https://gwendolynefreddy.github.io/docs/diamant_eternel/menace-animations-readme-french.html">Nouvelles animations de créatures (WIP)</a></span></br>
+><span style="margin-left: 50px;"><a href="https://gwendolynefreddy.github.io/docs/diamant_eternel/menace-spells-readme-english.htlm">New spells (WIP)</span>
+><span style="margin-left: 50px;"><a href="https://gwendolynefreddy.github.io/docs/diamant_eternel/menace-spells-readme-french.html">Nouveaux sorts (WIP)</a></span></br>
 
 
 
