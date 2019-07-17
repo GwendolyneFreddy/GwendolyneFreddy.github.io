@@ -32,7 +32,7 @@ All are WIP.
 ><span style="margin-left: 50px;"><a href="https://gwendolynefreddy.github.io/docs/diamant_eternel/menace-kit2-readme-french.html">Profil de Chevaucheuse de licorne (WIP)</a></span></br>
 ><span style="margin-left: 50px;"><a href="https://gwendolynefreddy.github.io/docs/diamant_eternel/menace-animations-readme-english.html">New creature animations (WIP)</span>
 ><span style="margin-left: 50px;"><a href="https://gwendolynefreddy.github.io/docs/diamant_eternel/menace-animations-readme-french.html">Nouvelles animations de créatures (WIP)</a></span></br>
-><span style="margin-left: 50px;"><a href="https://gwendolynefreddy.github.io/docs/diamant_eternel/menace-spells-readme-english.htlm">New spells (WIP)</span>
+><span style="margin-left: 50px;"><a href="https://gwendolynefreddy.github.io/docs/diamant_eternel/menace-spells-readme-english.htlm">New spells (WIP)</span></br>
 ><span style="margin-left: 50px;"><a href="https://gwendolynefreddy.github.io/docs/diamant_eternel/menace-spells-readme-french.html">Nouveaux sorts (WIP)</a></span></br>
 
 
