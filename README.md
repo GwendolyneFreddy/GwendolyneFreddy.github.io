@@ -24,7 +24,7 @@ All are WIP.
 
 ## Menace sur le Royaume de Diamant Éternel (WIP)
 
-><span style="margin-left: 50px;"><a href="https://gwendolynefreddy.github.io/docs/diamant_eternel/menace-readme-french.html">Readme (English)</a></span></br>
+><span style="margin-left: 50px;"><a href="https://gwendolynefreddy.github.io/docs/diamant_eternel/menace-readme-english.html">Readme (English)</a></span></br>
 ><span style="margin-left: 50px;"><a href="https://gwendolynefreddy.github.io/docs/diamant_eternel/menace-readme-french.html">Readme (French)</a></span></br>
 ><span style="margin-left: 50px;"><a href="https://gwendolynefreddy.github.io/docs/diamant_eternel/menace-kit1-readme-english.html">Diamond Knight kit (WIP)</a></span></br>
 ><span style="margin-left: 50px;"><a href="https://gwendolynefreddy.github.io/docs/diamant_eternel/menace-kit1-readme-french.html">Profil de Chevalier de Diamant (WIP)</a></span></br>
