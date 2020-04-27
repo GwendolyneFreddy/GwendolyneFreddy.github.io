@@ -4,7 +4,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="styles/style_lcc.css" type="text/css">
+	<link rel="stylesheet" href="styles/style_lcc_bg2.css" type="text/css">
 
 	<title>
 		MYMOD - La Couronne de Cuivre
@@ -56,7 +56,7 @@
 <!-- ================== I n t r o d u c t i o n ================== -->
 	  <a name="intro" id="intro"></a>
 		<div class="content">
-		<h2>
+		<h2 class = "background">
 			Présentation
 		</h2><br>
 
@@ -97,7 +97,7 @@
 		</h3>
 
 		<p id="hintbox" class="boxed" style="display: none">
-			<strong>En savoir un peu plus&#160;&#160;</strong><input type="submit" value="C'est tout ?" onclick="showNextHint('fr', 'hint')" style="background:#FFBF00;margin-left: 10px"></input>
+			<strong>En savoir un peu plus&#160;&#160;</strong><input type="submit" value="C'est tout ?" onclick="showNextHint('fr', 'hint')" style="background:Goldenrod;margin-left: 10px"></input>
 			<br /><br><span style="margin-left: 15px">&#x25BA; 
 			<span id="hint">...</span></span><br><br>
 		</p><br><br>
@@ -106,17 +106,17 @@
 			Codes pour afficher un bouton spoiler (h4)
 		</h4>
 
-		<div class="spoiler" style="margin: 10px auto;width: 90%; border-style: solid; border-width: 1px; border-color: #FFCC33; margin-top: 32px; padding: 6px;"><br>
-		<input onclick="showSpoiler(this);" value="Afficher / Cacher" type="button" style="background:#FFBF00;margin-left: 10px">
+		<div class="spoiler" style="margin: 10px auto;width: 90%; border-style: solid; border-width: 1px; border-color: Goldenrod; margin-top: 32px; padding: 6px;"><br>
+		<input onclick="showSpoiler(this);" value="Afficher / Cacher" type="button" style="background:Goldenrod;margin-left: 10px">
 			<div class="inner" style="display: none;margin-left: 15px"><br>TEXTE À AFFICHER SPOILER 1 !
 			</div>
 			<br><br>
 		</div>
 
-		<div style="margin: 10px auto;width: 90%; border-style: solid; border-width: 1px; border-color: #FFCC33; margin-top: 32px; padding: 6px;">
+		<div style="margin: 10px auto;width: 90%; border-style: solid; border-width: 1px; border-color: Goldenrod; margin-top: 32px; padding: 6px;">
 			<div class="quotetitle">
 				<b>Spoiler 2 avec bouton d'affichage :&#160;&#160;</b>
-				<input value="Afficher" style="margin: 0px; padding: 0px; width: 50px; background:#FFBF00;"
+				<input value="Afficher" style="margin: 0px; padding: 0px; width: 50px; background:Goldenrod;"
 				onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Cacher'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Afficher'; }" type="button" >
 			</div>
 			<div class="quotecontent">
@@ -126,7 +126,7 @@
 			</div>
 		</div> 
 
-		<div style="margin: 10px auto;width: 90%; border-style: solid; border-width: 1px; border-color: #FFCC33; margin-top: 32px; padding: 6px;">
+		<div style="margin: 10px auto;width: 90%; border-style: solid; border-width: 1px; border-color: Goldenrod; margin-top: 32px; padding: 6px;">
 			<div class="c1" onclick="javascript:montrer_spoiler('spoiler3')">
 				<strong>Spoiler 3 sans bouton d'affichage : cliquer sur le titre</strong>
 				<script type="text/javascript"> function montrer_spoiler(value){var actual=document.getElementById(value).style.visibility;if (actual=='visible'){document.getElementById(value).style.visibility='hidden';}else{document.getElementById(value).style.visibility='visible';}} </script>
@@ -136,7 +136,7 @@
 			</div>
 		</div>
 
-		<div style="margin: 10px auto;width: 90%; border-style: solid; border-width: 1px; border-color: #FFCC33; margin-top: 32px; padding: 6px;">
+		<div style="margin: 10px auto;width: 90%; border-style: solid; border-width: 1px; border-color: Goldenrod; margin-top: 32px; padding: 6px;">
 			<div class="c1" onclick="pchild=this.getElementsByTagName('p'); if(pchild[0].style.visibility!='hidden'){pchild[0].style.visibility='hidden'; pchild[0].style.height='0';}else{pchild[0].style.visibility=''; pchild[0].style.height=''}">
 				<strong>Spoiler 4 : texte à cacher (cliquer sur le texte)</strong>
 				<p>
@@ -161,7 +161,7 @@
 <!-- ================= C o m p a t i b i l i t y ================= -->
 	  <a name="compat" id="compat"></a>
 		<div class="content">
-		<h2>
+		<h2 class = "background">
 			Compatibilité
 		</h2><br>
 
@@ -180,12 +180,14 @@
 
 <hr><br>
 		<p>
-			MYMOD est un mod <acronym title="Weimer Dialogue Utility">WeiDU</acronym> et devrait par conséquent être compatible avec n'importe quel mod WeiDU. [facultatif : Il a été testé sur plusieurs installations et a fonctionné parfaitement jusqu'à présent.] Je ne peux cependant pas tous les tester. [Choisir une formule parmi les suivantes :] Si vous rencontrez des bugs, veuillez contactez <a href="https://www.baldursgateworld.fr/lacouronne/Auteur.html">AUTEUR</a> ou bien poster dans les forums. Si vous rencontrez des bugs, veuillez les signaler dans le forum, s'il vous plaît.
+			MYMOD est un mod <a href="#" class="infobulle" aria-label="Weimer Dialogue Utility">WeiDU</a> et devrait par conséquent être compatible avec n'importe quel mod WeiDU. [facultatif : Il a été testé sur plusieurs installations et a fonctionné parfaitement jusqu'à présent.] Je ne peux cependant pas tous les tester. [Choisir une formule parmi les suivantes :] Si vous rencontrez des bugs, veuillez contactez <a href="https://www.baldursgateworld.fr/lacouronne/Auteur.html">AUTEUR</a> ou bien poster dans les forums. Si vous rencontrez des bugs, veuillez les signaler dans le forum, s'il vous plaît.
 		</p>
 		<p>
 			Bien que je m'efforce de rendre MYMOD compatible avec le plus grand nombre possible de mods, des incompatibilités risquent toujours de se produire. Voici la liste de celles recensées jusqu'à présent :
 		</p>
 		<ul>
+			<li>
+			</li>
 			<li>
 			</li>
 			<li>
@@ -206,7 +208,7 @@
 <!-- ================== I n s t a l l a t i o n ================== -->
 	  <a name="installation" id="installation"></a>
 		<div class="content">
-		<h2>
+		<h2 class = "background">
 			Installation
 		</h2><br>
 
@@ -214,10 +216,10 @@
 			Mise en garde
 		</h3>
 		<p style="margin-top:1%;"><em>
-			Si une ancienne version de ce mod est déjà installée, il est nécessaire de la désinstaller d'abord. Pour cela, lancez <strong><span style="font-family: Courier New;font-size: 100%;border: 1px solid black;background-color: black;color: #deded9;">&nbsp;setup-mymod.exe&nbsp;</span></strong> (ou .command si vous êtes sous OS X) et désinstallez tous les composants précédemment installés. Une fois la désinstallation achevée, supprimez le répertoire <strong>mymod</strong> et le fichier <strong>setup-mymod.exe</strong> (version Windows) avant d'extraire la nouvelle version du mod.</em>
+			Si une ancienne version de ce mod est déjà installée, il est nécessaire de la désinstaller d'abord. Pour cela, lancez <strong><span class="weidu">&nbsp;setup-mymod.exe&nbsp;</span></strong> (ou .command si vous êtes sous OS X) et désinstallez tous les composants précédemment installés. Une fois la désinstallation achevée, supprimez le répertoire <strong>mymod</strong> et le fichier <strong>setup-mymod.exe</strong> (version Windows) avant d'extraire la nouvelle version du mod.</em>
 		</p>
 		<p><em>
-			Lorsque vous installez ou désinstallez, <strong>ne fermez pas la fenêtre <acronym title="Disk Operating System">DOS</acronym></strong> en cliquant sur le bouton <strong>X</strong> ! Au lieu de cela, appuyez sur la touche <strong>Entrée</strong> lorsque l'invite de commandes vous le demande.</em>
+			Lorsque vous installez ou désinstallez, <strong>ne fermez pas la fenêtre <a href="#" class="infobulle" aria-label="Disk Operating System">DOS</a></strong> en cliquant sur le bouton <strong>X</strong> ! Au lieu de cela, appuyez sur la touche <strong>Entrée</strong> lorsque l'invite de commandes vous le demande.</em>
 		</p>
 		<p><em>
 			Par précaution, <strong>désactivez les antivirus</strong> ou tout logiciel résidant en mémoire avant d'installer ce mod, ou tout autre mod. Certains (en particulier avast et Norton !) ont une fâcheuse tendance à déclarer les exécutables des mods comme des faux positifs, provoquant ainsi l'échec de la procédure d'installation.</em>
@@ -228,7 +230,7 @@
 			Note spéciale pour Siege of Dragonspear fourni par Steam/GOG
 		</h3>
 		<p style="margin-top:1%;">
-			Good Old Games (GOG) et Steam fournissent le contenu de Siege of Dragonspear dans un format que <acronym title="Weimer Dialogue Utility">WeiDU</acronym>, l'outil utilisé pour installer ce mod, ne peut pas reconnaitre. Vous devez donc lancer le programme <a href="https://github.com/Argent77/A7-DlcMerger/releases/latest">DLC Merger</a> dans votre répertoire de SoD avant d'installer ce mod, ou tout autre mod utilisant <acronym title="Weimer Dialogue Utility">WeiDU</acronym>.
+			Good Old Games (GOG) et Steam fournissent le contenu de Siege of Dragonspear dans un format que <<a href="#" class="infobulle" aria-label="Weimer Dialogue Utility">WeiDU</a>, l'outil utilisé pour installer ce mod, ne peut pas reconnaitre. Vous devez donc lancer le programme <a href="https://github.com/Argent77/A7-DlcMerger/releases/latest">DLC Merger</a> dans votre répertoire de SoD avant d'installer ce mod, ou tout autre mod utilisant <<a href="#" class="infobulle" aria-label="Weimer Dialogue Utility">WeiDU</a>.
 		</p><br>
 
 <hr><br>
@@ -259,7 +261,7 @@
 			Chaque ligne de ce fichier comprend une option de configuration, suivie de « = », puis d'un chiffre ou d'une chaîne de caractères. Tout ce que vous avez à faire, c'est modifier la valeur du chiffre ou de la chaîne.
 		</p>
 		<p>
-			Le programme d'installation lira les valeurs des variables dans les deux fichiers ini et donnera la priorité aux vôtres. Si le fichier mymod_user.ini contient une variable non conforme, ou si une variable est manquante, il la remplacera par sa valeur par défaut (celle correspondant à l'installation « <em>standard</em> »).
+			Le programme d'installation lira les valeurs des variables dans les deux fichiers .ini et donnera la priorité aux vôtres. Si le fichier mymod_user.ini contient une variable non conforme, ou si une variable est manquante, il la remplacera par sa valeur par défaut (celle correspondant à l'installation « <em>standard</em> »).
 		</p>
 		<p>
 			Voici le tableau des options concernées (ne modifiez pas les variables non listées ; elle font partie de l'architecture de debugging et de test) :
@@ -272,35 +274,35 @@
 				<th>Type</th>
 			</tr>
 			<tr>
-				<td style="padding-top:20px; padding-bottom:20px; "><strong><span style="color: #FFCC33;">mymod_variable1</span></strong></td>
+				<td style="padding-top:20px; padding-bottom:20px; "><strong><span style="color: Goldenrod;">mymod_variable1</span></strong></td>
 				<td style="text-align: left; padding-left:5px; padding-right:5px">blabla<br><br>
-				- <span style="color: #FFCC33">1 = premier choix (recommandé).</span><br>
+				- <span style="color: Goldenrod">1 = premier choix (recommandé).</span><br>
 				- 2 = second choix.<br><br></td>
 				<td>numérique</td>
 			</tr>
 			<tr>
-				<td style="padding-top:20px; padding-bottom:20px; "><strong><span style="color: #FFCC33;">mymod_variable2</span></strong><br><br>
+				<td style="padding-top:20px; padding-bottom:20px; "><strong><span style="color: Goldenrod;">mymod_variable2</span></strong><br><br>
 				(supports: only EE)</td>
 				<td style="text-align: left; padding-left:5px; padding-right:5px">blabla<br><br>
 				- 1 = premier choix.<br>
-				- <span style="color: #FFCC33">2 = second choix (recommandé).</span><br>
+				- <span style="color: Goldenrod">2 = second choix (recommandé).</span><br>
 				- 3 = troisième choix.<br>
 				- 4 = quatrième choix.</td>
 				<td>numérique</td>
 			</tr>
 			<tr>
-				<td style="padding-top:20px; padding-bottom:20px; "><strong><span style="color: #FFCC33;">mymod_variable3</span></strong></td>
+				<td style="padding-top:20px; padding-bottom:20px; "><strong><span style="color: Goldenrod;">mymod_variable3</span></strong></td>
 				<td style="text-align: left; padding-left:5px; padding-right:5px">blabla<br><br>
-				- <span style="color: #FFCC33">A [par défaut].</span><br>
+				- <span style="color: Goldenrod">A [par défaut].</span><br>
 				- B.<br>
 				- C.<br>
 				<td>alphanumérique (une lettre)</td>
 			</tr>
 			<tr>
-				<td style="padding-top:20px; padding-bottom:20px; "><strong><span style="color: #FFCC33;">mymod_variable4</span></strong></td>
+				<td style="padding-top:20px; padding-bottom:20px; "><strong><span style="color: Goldenrod;">mymod_variable4</span></strong></td>
 				<td style="text-align: left; padding-left:5px; padding-right:5px">Le nom que vous souhaitez donner à votre monture.<br><br>
 				- un nom !<br><br>
-				<span style="color: #FFCC33; padding-left:20px;">Flèche d'argent [par défaut]</span></td>
+				<span style="color: Goldenrod; padding-left:20px;">Flèche d'argent [par défaut]</span></td>
 				<td>alphanumérique</td>
 			</tr>
 		</table><br>
@@ -310,20 +312,20 @@
 			Windows
 		</h3>
 		<p style="margin-top:1%;">
-			MYMOD pour Windows est livré et installé avec <acronym title="Weimer Dialogue Utility">WeiDU</acronym>, et est diffusé sous forme d'archive.
+			MYMOD pour Windows est livré et installé avec <a href="#" class="infobulle" aria-label="Weimer Dialogue Utility">WeiDU</a>, et est diffusé sous forme d'archive.
 		</p>
 		<p>
-			Vous devez extraire les fichiers de l'archive dans votre répertoire de jeu (<em>le dossier qui contient le fichier CHITIN.KEY</em>) à l'aide de <a href="http://www.7-zip.org/download.html">7zip</a> ou de <a href="http://www.rarlab.com/download.htm">WinRAR</a>. Une fois l'archive extraite correctement, vous devriez trouver le répertoire <strong>mymod</strong> et le fichier <em><strong>setup-mymod.exe</strong></em> dans votre répertoire de jeu. Pour installer le mod, il suffit de double-cliquer sur <strong><span style="font-family: Courier New;font-size: 100%;border: 1px solid black;background-color: black;color: #deded9;">&nbsp;setup-mymod.exe&nbsp;</span></strong> et de suivre les instructions affichées à l'écran.
+			Vous devez extraire les fichiers de l'archive dans votre répertoire de jeu (<em>le dossier qui contient le fichier CHITIN.KEY</em>) à l'aide de <a href="http://www.7-zip.org/download.html">7zip</a> ou de <a href="http://www.rarlab.com/download.htm">WinRAR</a>. Une fois l'archive extraite correctement, vous devriez trouver le répertoire <strong>mymod</strong> et le fichier <em><strong>setup-mymod.exe</strong></em> dans votre répertoire de jeu. Pour installer le mod, il suffit de double-cliquer sur <strong><span class="weidu">&nbsp;setup-mymod.exe&nbsp;</span></strong> et de suivre les instructions affichées à l'écran.
 		</p>
 		<p>
-			Vous pouvez lancer <strong><span style="font-family: Courier New;font-size: 100%;border: 1px solid black;background-color: black;color: #deded9;">&nbsp;setup-mymod.exe&nbsp;</span></strong> dans votre répertoire de jeu pour réinstaller, désinstaller, ou encore changer des composants.
+			Vous pouvez lancer <strong><span class="weidu">&nbsp;setup-mymod.exe&nbsp;</span></strong> dans votre répertoire de jeu pour réinstaller, désinstaller, ou encore changer des composants.
 		</p>
  
 		<p>
-			[<strong>(Pour une version exe, remplacez les 2 deux premières lignes par les suivantes)</strong> MYMOD pour Windows est livré et installé avec <acronym title="Weimer Dialogue Utility">WeiDU</acronym>, et est diffusé sous forme d'archive auto-extractible. Pour l'installer, il suffit de double-cliquer sur l'archive et de suivre les instructions affichées à l'écran.
+			[<strong>(Pour une version exe, remplacez les 2 deux premières lignes par les suivantes)</strong> MYMOD pour Windows est livré et installé avec <a href="#" class="infobulle" aria-label="Weimer Dialogue Utility">WeiDU</a>, et est diffusé sous forme d'archive auto-extractible. Pour l'installer, il suffit de double-cliquer sur l'archive et de suivre les instructions affichées à l'écran.
 		</p>
 		<p>
-			Autrement, vous pouvez extraire les fichiers de l'archive dans votre répertoire de jeu (<em>le dossier qui contient le fichier CHITIN.KEY</em>) à l'aide de <a href="http://www.7-zip.org/download.html">7zip</a> ou de <a href="http://www.rarlab.com/download.htm">WinRAR</a>. Une fois l'archive extraite correctement, vous devriez trouver le répertoire <strong>mymod</strong> et le fichier <strong>setup-mymod.exe</strong> dans votre répertoire de jeu. Pour installer le mod, il suffit de double-cliquer sur <strong><span style="font-family: Courier New;font-size: 100%;border: 1px solid black;background-color: black;color: #deded9;">&nbsp;setup-mymod.exe&nbsp;</span></strong> et de suivre les instructions affichées à l'écran.]
+			Autrement, vous pouvez extraire les fichiers de l'archive dans votre répertoire de jeu (<em>le dossier qui contient le fichier CHITIN.KEY</em>) à l'aide de <a href="http://www.7-zip.org/download.html">7zip</a> ou de <a href="http://www.rarlab.com/download.htm">WinRAR</a>. Une fois l'archive extraite correctement, vous devriez trouver le répertoire <strong>mymod</strong> et le fichier <strong>setup-mymod.exe</strong> dans votre répertoire de jeu. Pour installer le mod, il suffit de double-cliquer sur <strong><span class="weidu">&nbsp;setup-mymod.exe&nbsp;</span></strong> et de suivre les instructions affichées à l'écran.]
 		</p><br>
 
 <hr><br>
@@ -331,12 +333,12 @@
 			Mac OS X
 		</h3>
 		<p style="margin-top:1%;">
-			MYMOD pour Mac OS X est livré et installé avec <acronym title="Weimer Dialogue Utility">WeiDU</acronym>, et est diffusé sous forme d'archive compressée (tarball).</p>
+			MYMOD pour Mac OS X est livré et installé avec <a href="#" class="infobulle" aria-label="Weimer Dialogue Utility">WeiDU</a>, et est diffusé sous forme d'archive compressée (tarball).</p>
 		<p>
-			Extrayez le contenu du tarball dans votre répertoire de jeu. Après une extraction réussie, ce dernier contiendra les fichiers <em><strong>setup-mymod</strong></em>, <em><strong>setup-mymod.command</strong></em>, et le répertoire <strong>mymod</strong>. Pour installer, il suffit de double-cliquer sur <strong><span style="font-family: Courier New;font-size: 100%;border: 1px solid black;background-color: black;color: #deded9;">&nbsp;setup-mymod.command&nbsp;</span></strong> et de suivre les instructions affichées à l'écran.
+			Extrayez le contenu du tarball dans votre répertoire de jeu. Après une extraction réussie, ce dernier contiendra les fichiers <em><strong>setup-mymod</strong></em>, <em><strong>setup-mymod.command</strong></em>, et le répertoire <strong>mymod</strong>. Pour installer, il suffit de double-cliquer sur <strong><span class="weidu">&nbsp;setup-mymod.command&nbsp;</span></strong> et de suivre les instructions affichées à l'écran.
 		</p>
 		<p>
-			Vous pouvez lancer <strong><span style="font-family: Courier New;font-size: 100%;border: 1px solid black;background-color: black;color: #deded9;">&nbsp;setup-mymod.command&nbsp;</span></strong> dans votre répertoire de jeu pour réinstaller, désinstaller ou changer des composants.
+			Vous pouvez lancer <strong><span class="weidu">&nbsp;setup-mymod.command&nbsp;</span></strong> dans votre répertoire de jeu pour réinstaller, désinstaller ou changer des composants.
 		</p><br>
 
 <hr><br>
@@ -344,16 +346,16 @@
 			Linux
 		</h3>
 		<p style="margin-top:1%;">
-			MYMOD pour Linux est diffusé sous forme d'archive compressée (tarball) sans l'installateur <acronym title="Weimer Dialogue Utility">WeiDU</acronym>.
+			MYMOD pour Linux est diffusé sous forme d'archive compressée (tarball) sans l'installateur <a href="#" class="infobulle" aria-label="Weimer Dialogue Utility">WeiDU</a>.
 		</p>
 		<p>
 			Extrayez le contenu du mod dans le répertoire du jeu que vous voulez moder.
 		</p>
 		<p>
-			Téléchargez la version la plus récente de WeiDU pour Linux sur <a href="https://github.com/WeiDUorg/weidu/releases">WeiDU.org</a> et copiez weidu, weinstall et tolower dans <span style="font-family: Courier New;font-size: 100%;border: 1px solid black;background-color: black;color: #deded9;">/usr/local/bin</span> (créez-le s'il n'existe pas). Ouvrez ensuite un terminal et allez (<strong><span style="font-family: Courier New;font-size: 100%;border: 1px solid black;background-color: black;color: #deded9;">cd</span></strong>) dans le répertoire d'installation de votre jeu, lancez « tolower » et répondez « Y » aux deux questions. Vous pouvez éviter d'exécuter la seconde option (Linux.ini) si vous l'avez déjà lancée une fois dans le même dossier. Pour gagner du temps, l'archive est déjà passée en minuscules, aussi il n'est pas non plus nécessaire d'exécuter la première option (passer les noms de fichiers en minuscules) si vous n'avez extrait que ce mod depuis la dernière fois que vous avez passé les noms de fichiers en minuscules. Si vous avez un doute, il vaut mieux exécuter tolower et accepter les deux options.
+			Téléchargez la version la plus récente de WeiDU pour Linux sur <a href="https://github.com/WeiDUorg/weidu/releases">WeiDU.org</a> et copiez weidu, weinstall et tolower dans <span class="weidu">/usr/local/bin</span> (créez-le s'il n'existe pas). Ouvrez ensuite un terminal et allez (<strong><span class="weidu">cd</span></strong>) dans le répertoire d'installation de votre jeu, lancez « tolower » et répondez « Y » aux deux questions. Vous pouvez éviter d'exécuter la seconde option (Linux.ini) si vous l'avez déjà lancée une fois dans le même dossier. Pour gagner du temps, l'archive est déjà passée en minuscules, aussi il n'est pas non plus nécessaire d'exécuter la première option (passer les noms de fichiers en minuscules) si vous n'avez extrait que ce mod depuis la dernière fois que vous avez passé les noms de fichiers en minuscules. Si vous avez un doute, il vaut mieux exécuter tolower et accepter les deux options.
 		</p>
 		<p>
-			Lancez <strong><span style="font-family: Courier New;font-size: 100%;border: 1px solid black;background-color: black;color: #deded9;">&nbsp;weinstall setup-mymod&nbsp;</span></strong> depuis le dossier de votre jeu pour installer le mod. Puis, lancez <strong><span style="font-family: Courier New;font-size: 100%;border: 1px solid black;background-color: black;color: #deded9;">&nbsp;wine bgmain.exe&nbsp;</span></strong> et commencez à jouer.
+			Lancez <strong><span class="weidu">&nbsp;weinstall setup-mymod&nbsp;</span></strong> depuis le dossier de votre jeu pour installer le mod. Puis, lancez <strong><span style="font-family: Courier New;font-size: 100%;border: 1px solid black;background-color: black;color: #deded9;">&nbsp;wine bgmain.exe&nbsp;</span></strong> et commencez à jouer.
 		</p><br>
 
 <hr><br>
@@ -361,7 +363,7 @@
 			Note pour effectuer une désinstallation complète
 		</h3>
 		<p style="margin-top:1%;">
-			En plus des méthodes détaillées plus haut pour supprimer des composants, il est possible de désinstaller complètement le mod en tapant <strong><span style="font-family: Courier New;font-size: 100%;border: 1px solid black;background-color: black;color: #deded9;">&nbsp;setup-mymod --uninstall&nbsp;</span></strong> dans une ligne de commandes, ce qui supprimera tous les composants sans devoir ingurgiter tous les messages.
+			En plus des méthodes détaillées plus haut pour supprimer des composants, il est possible de désinstaller complètement le mod en tapant <strong><span class="weidu">&nbsp;setup-mymod --uninstall&nbsp;</span></strong> dans une ligne de commandes, ce qui supprimera tous les composants sans devoir ingurgiter tous les messages.
 		</p><br>
 
 
@@ -373,12 +375,12 @@
 <!-- =================== C o m p o n e n t s ==================== -->
 	  <a name="compon" id="compon"></a>
 		<div class="content">
-		<h2>
+		<h2 class = "background">
 			Composants
 		</h2><br>
 
 		<p>
-			Le programme d'installation comprend les composants suivants. Chacun possède un numéro distinct et pré-défini qui lui attribue une position déterminée (mot-clé <em>DESIGNATED</em> en langage <acronym title="Weimer Dialogue Utility">WeiDU</acronym>) ; ce qui permet aux autres composants et aux autres mods de le détecter et aux utilitaires d'installation automatiques de préciser quels composants installer.
+			Le programme d'installation comprend les composants suivants. Chacun possède un numéro distinct et pré-défini qui lui attribue une position déterminée (mot-clé <em>DESIGNATED</em> en langage <a href="#" class="infobulle" aria-label="Weimer Dialogue Utility">WeiDU</a>) ; ce qui permet aux autres composants et aux autres mods de le détecter et aux utilitaires d'installation automatiques de préciser quels composants installer.
 		</p><br />
 
 <hr>
@@ -447,12 +449,12 @@
 <!-- =================== C o m p o n e n t s ==================== -->
 	  <a name="componlist" id="componlist"></a>
 		<div class="content">
-		<h2>
+		<h2 class = "background">
 			Composants
 		</h2><br>
 
 		<p>
-			Le programme d'installation comprend les composants suivants. Chacun possède un numéro distinct et pré-défini qui lui attribue une position déterminée (mot-clé <em>DESIGNATED</em> en langage <acronym title="Weimer Dialogue Utility">WeiDU</acronym>) ; ce qui permet aux autres composants et aux autres mods de le détecter et aux utilitaires d'installation automatiques de préciser quels composants installer.
+			Le programme d'installation comprend les composants suivants. Chacun possède un numéro distinct et pré-défini qui lui attribue une position déterminée (mot-clé <em>DESIGNATED</em> en langage <a href="#" class="infobulle" aria-label="Weimer Dialogue Utility">WeiDU</a>) ; ce qui permet aux autres composants et aux autres mods de le détecter et aux utilitaires d'installation automatiques de préciser quels composants installer.
 		</p><br />
 
 		<p>
@@ -465,7 +467,7 @@
 <hr>
 		<p><a name="10" id="10"></a>
 			<strong>10. Composant 10 (composant principal)</strong><br />
-			<em><span style="margin-left: 15px;">Nécessite le patch <acronym title="Throne of Bhaal">ToB</acronym> v26498</span></em>
+			<em><span style="margin-left: 15px;">Nécessite le patch <a href="#" class="infobulle" aria-label="Throne of Bhaal">ToB</a> v26498</span></em>
 		</p>
 		<ul style="margin-left: 4%;">
 			<li>Vérifie la présence des fichiers nécessaires.</li>
@@ -502,10 +504,10 @@
 		<p><a name="30" id="30"></a>
 			<strong>30. Composant 3 : blabbla</strong><br />
 		</p>
-		<div style="margin: 0px auto;width: 85%; border-style: solid; border-width: 1px; border-color: #FFCC33; margin-top: 2px; margin-bottom: 2px; padding: 2px;">
+		<div style="margin: 0px auto;width: 85%; border-style: solid; border-width: 1px; border-color: Goldenrod; margin-top: 2px; margin-bottom: 2px; padding: 2px;">
 			<div class="quotetitle">
 				<em>&nbsp;&nbsp;&#x25BA; Obsolète depuis la version 6.0.0:</em>
-				<input value="Afficher" style="margin: 0px; padding: 0px; width: 60px; background:#FFCC33;"
+				<input value="Afficher" style="margin: 0px; padding: 0px; width: 60px; background:Goldenrod;"
 				onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Hide'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Show'; }" type="button" >
 			</div>
 			<div class="quotecontent">
@@ -525,10 +527,10 @@
 		<p><a name="40" id="40"></a>
 			<strong>40. ...</strong><br />
 		</p>
-		<div style="margin: 0px auto;width: 85%; border-style: solid; border-width: 1px; border-color: #FFCC33; margin-top: 2px; margin-bottom: 2px; padding: 2px;">
+		<div style="margin: 0px auto;width: 85%; border-style: solid; border-width: 1px; border-color: Goldenrod; margin-top: 2px; margin-bottom: 2px; padding: 2px;">
 			<div class="quotetitle">
 				<em>&nbsp;&nbsp;&#x25BA; Obsolète depuis la version 6.0.0:</em>
-				<input value="Afficher" style="margin: 0px; padding: 0px; width: 60px; background:#FFCC33;"
+				<input value="Afficher" style="margin: 0px; padding: 0px; width: 60px; background:Goldenrod;"
 				onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Hide'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Show'; }" type="button" >
 			</div>
 			<div class="quotecontent">
@@ -566,7 +568,7 @@
 <!-- =================== I m a g e s ==================== -->
 	  <a name="images" id="images"></a>
 		<div class="content">
-		<h2>
+		<h2 class = "background">
 			Captures d'écran
 		</h2><br>
 
@@ -601,7 +603,7 @@
 <!-- ============== T r o u b l e s h o o t i n g =============== -->
 	  <a name="trouble" id="trouble"></a>
 		<div class="content">
-		<h2>
+		<h2 class = "background">
 			Dépannage
 		</h2><br>
 
@@ -648,7 +650,7 @@
 
 <hr>
  		<p>
-			Si rien de tout ceci ne résout votre problème, ou si votre problème est lié à un mod spécifique, merci de le signalez dans le <a href="https://www.baldursgateworld.fr/lacouronne/mymod.php">forum du mod</a>. Incluez dans votre message le contenu du fichier <acronym title="Weimer Dialogue Utility">WeiDU</acronym>.log (mis entre les balises <strong>[spoiler][/spoiler]</strong> s'il vous plaît !), ou attachez-le en pièce jointe au message s'il est trop volumineux.
+			Si rien de tout ceci ne résout votre problème, ou si votre problème est lié à un mod spécifique, merci de le signalez dans le <a href="https://www.baldursgateworld.fr/lacouronne/mymod.php">forum du mod</a>. Incluez dans votre message le contenu du fichier <a href="#" class="infobulle" aria-label="Weimer Dialogue Utility">WeiDU</a>.log (mis entre les balises <strong>[spoiler][/spoiler]</strong> s'il vous plaît !), ou attachez-le en pièce jointe au message s'il est trop volumineux.
 		</p><br>
 
 
@@ -660,7 +662,7 @@
 <!-- ======================= C r e d i t s ====================== -->
 	  <a name="credits" id="credits"></a>
 		<div class="content">
-		<h2>
+		<h2 class = "background">
 			Crédits et remerciements
 		</h2><br>
 
@@ -838,7 +840,7 @@
 	<!-- ======================= V e r s i o n s ====================== -->
 	  <a name="versions" id="versions"></a>
 		<div class="content">
-		<h2>
+		<h2 class = "background">
 			Historique des versions
 		</h2><br>
 

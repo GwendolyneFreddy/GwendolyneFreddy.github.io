@@ -47,5 +47,9 @@ All are WIP.
 ><span style="margin-left: 50px;"><a href="https://gwendolynefreddy.github.io/docs/diamant_eternel/readme-lcc-fr.html">Readme (Français)</a></span></br>
 ><span style="margin-left: 50px;"><a href="https://gwendolynefreddy.github.io/docs/diamant_eternel/readme-lcc-frbg2.html">Readme (Français)</a></span></br>
 
+Versions en cours de modification :
+
 ><span style="margin-left: 50px;"><a href="https://gwendolynefreddy.github.io/docs/lcc/readme-lcc-en.html">Readme (English)</a></span></br>
 ><span style="margin-left: 50px;"><a href="https://gwendolynefreddy.github.io/docs/lcc/readme-lcc-fr.html">Readme (Français)</a></span></br>
+><span style="margin-left: 50px;"><a href="https://gwendolynefreddy.github.io/docs/lcc/readme-lcc-enbg2.html">Readme skin bg2 (English)</a></span></br>
+><span style="margin-left: 50px;"><a href="https://gwendolynefreddy.github.io/docs/lcc/readme-lcc-frbg2.html">Readme skin bg2 (Français)</a></span></br>

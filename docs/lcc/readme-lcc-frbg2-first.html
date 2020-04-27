@@ -4,13 +4,430 @@
 
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="styles/style_lcc.css" type="text/css">
+	<style type="text/css">
+/*<![CDATA[*/
+<!-- 
+	body {
+		margin: 0;
+		padding: 0;
+		cursor: default;
+		text-align: center;
+		color: #D1D1D1;
+		background: #000 url('images/bg_lcc2.png');
+	}
 
+/*	En-tête  */
+	#cartouche {
+		text-align: left;
+		margin: 0 auto;
+		margin-top: 20px;
+		width: 88%;
+		font-family: Verdana, Tahoma, Arial, sans-serif;
+		font-size: 12px;
+		color: #D1D1D1;
+/*		background-repeat: repeat-x;
+		background: url("images/degrade_titre.png");*/
+	}
+
+	#header {
+		text-align: center;
+*		background: #303030;
+		background-image: linear-gradient(#666666, #040404);
+		border: 1px solid Goldenrod;
+		border-top: 5px solid Goldenrod;
+		border-bottom: 5px solid Goldenrod;
+		padding: 5px 0 13px 0;
+		height: 310px;
+		border-radius: 3px 4px 3px 3px;
+		box-shadow: 8px 8px 15px black;
+	}
+/*	le décalage horizontal de l'ombre ;
+	le décalage vertical de l'ombre ;
+	l'adoucissement du dégradé ;
+	la couleur de l'ombre.	*/
+
+	#header .about {
+		margin: 7px 0 0 0;
+		padding: 0;
+/*		font-style: italic;
+		color: #555;
+*/		text-decoration: none;
+	}
+	#header .about a:link,
+	#header .about a:visited {
+	}
+	#header .about a:focus,
+	#header .about a:hover {
+		text-decoration: none;
+		color: #deded9;
+		border: 0;
+	}
+
+/*	Menu  */
+	#menu {
+		font-weight: bold;
+		margin: 0;
+		margin-top: 20px;
+		text-align: center;
+		color: Goldenrod;
+		background-repeat: repeat-x;
+		background: url("images/degrade_titre.png");
+		border-radius: 3px 4px 3px 3px;
+*		heigth: 50px;
+		line-height: 400%;
+*		vertical-align:middle;
+	}
+	#menu a:link,
+	#menu a:visited {
+	}
+	#menu a:focus,
+	#menu a:hover {
+		text-decoration: none;
+		color: #deded9;
+		border: 0;
+	}
+
+/*	Sections  */
+	#maindiv {
+		margin: 0 auto;
+		margin-top: -20px;
+		width: 100%;
+	}
+
+	#maindiv .content {
+		color: #deded9;
+		background-color: #5F5F5F;
+		background: url("images/fond_descr_forum.jpg");
+		padding: 0 0 25px 0;
+		margin: 50px auto;
+		border-width: 1px 1px 4px 10px;
+		border-style: solid;
+		border-color: #655949; *#FFBF00;
+/*ou		border: 1px solid #FFCC33;
+		border-left: 10px solid #FFCC33;
+		border-bottom: 4px solid #FFCC33;
+*/		position: relative;
+		border-radius: 4px 4px 4px 5px;
+		box-shadow: 8px 8px 15px black;
+		display: block;
+	}
+
+	#maindiv .important {
+		font-size: 95%;
+		font-family: Verdana;
+		text-align: left;
+*		background-color: #F1F1F1;
+		border-width: 1px 4px 1px 4px;
+		border-style: solid;
+		border-color: Goldenrod;
+/*		border-top: solid 1px #FFBF00;
+		border-bottom: solid 1px #FFBF00;
+		border-left: solid 6px #FFBF00;
+		border-right: solid 6px #FFBF00;
+*/		padding: 10px;
+		margin: 10px auto;
+		width: 80%;
+		line-height: 160%;
+	}
+	#maindiv .important::before {
+		display: none;
+	}
+	#maindiv .important p {
+		width: 100%;
+		font-size: 100%;
+		text-indent: 0px;
+		margin: 5px 0 5px 0;
+		line-height: 180%;
+	}
+	#maindiv .important ol {
+		margin: -10px 0 0 20px;
+	}
+	#maindiv .important ul {
+		margin: -10px 0 0 15px;
+	}
+
+	#maindiv address {
+		font-size: 95%;
+		font-style: normal;
+		font-weight: bold;
+		text-decoration: none;
+		color: #303030;
+		background-color: #655949; /*#FFBF00;*/
+		padding: 3px 0px 0px;
+		margin: 0px;
+		width: 100%;
+		position: absolute;
+		bottom: -1px;
+		left: 0px;
+		display: block;
+		text-align: right;
+	}
+	#maindiv address a:link,
+	#maindiv address a:visited {
+		font-weight: bold;
+		text-decoration: underline;
+		background-color: transparent;
+		color: #000 !important;
+		padding-right: 5px;
+		padding-left: 6px;
+	}
+	#maindiv address a:focus,
+	#maindiv address a:hover {
+		text-decoration: none;
+		color: #000;
+	}
+
+	/*	Corps de texte  */
+	#maindiv p {
+		text-align: justify;
+		font-size: 110%;
+		font-style: normal;
+		text-decoration: none;
+		line-height: 150%;
+		padding: 0px;
+		margin: 10px auto;
+		width: 90%;
+		display: block;
+	}
+
+	#maindiv p.boxed {
+		border-style: solid;
+		border-width: 1px;
+		border-color: Goldenrod;
+		margin-top: 32px;
+		padding: 6px;
+	}
+
+	/*	Listes  */
+	#maindiv ul {
+		line-height: 170%;
+		margin-left: 4%;
+		width: 87%;
+	}
+	#maindiv ul li {
+		/*margin-right: 0px;*/
+	}
+	#maindiv ul li ul {
+		margin: 0px;
+		width: 96%;
+	}
+	#maindiv ul li ul li {
+	}
+	#maindiv ul li ul li ul {
+		margin-left: -1%;
+		width: 98%;
+	}
+	#maindiv ul li ul li ul li {
+	}
+
+/* INUTILISE = liste numérique
+	#maindiv ol {
+		margin: 0px 0 0 35px;
+		*margin-left: 70px;
+	}
+	#maindiv ol li {
+		line-height: 170%;
+	}
+*/
+
+	/*	Titre des versions  */
+	#maindiv .version {
+		display: block;
+		width: 90%;
+		background-color: transparent;
+		text-align: left;
+/*		text-indent: 30px; */
+		font-weight: bold;
+		padding-top: 3px;
+		padding-bottom: 3px;
+		border-bottom: solid 1px Goldenrod;
+		border-top: solid 1px Goldenrod;
+	}
+
+	/*	Liens internet  */
+	a:link,
+	a:visited {
+		color: Goldenrod;
+		/*font-weight: bold; */
+		text-decoration: none;
+	}
+	a:focus,
+	a:hover {
+		text-decoration: underline;
+		*color: #deded9;
+	}
+
+	h1 {
+		line-height: 170%;
+		font-size: 225%;
+		color: Goldenrod;*#FFCC33; 5F5F5F
+		padding: 5px 0 5px 0;
+		margin: 0;
+		width: 100%;
+	}
+	/*	Titres de section (160 %)  */
+	h2 {
+		line-height: 170%;
+		display: block;
+		font-family: Verdana, Trebuchet MS, Arial, serif;
+		text-align: left;
+		text-indent: 30px;
+		padding: 0px;
+		margin: 20px 0 0 0;
+		border-top: dotted 2px #655949; *#d0d0d0;
+		border-bottom: dotted 2px #655949; *#d0d0d0;
+/*		background: #303030; */
+		font-size: 160%;
+	}
+	h2.background {
+		background-repeat: repeat-x;
+		background: url("images/fond_entete_forum.jpg");
+	}
+	h2::first-letter {
+		color: Goldenrod;
+		background-color: transparent;
+	}
+
+	/*	Titres  */
+	h3, h4, h5, h6 {
+		line-height: 170%;
+		margin: 10px auto;
+		width: 90%;
+		padding: 0;
+	}
+	h3 {
+		font-size: 140%;
+	}
+	h4 {
+		font-size: 125%;
+		/*font-style: italic;*/
+	}
+
+	h5 {
+		/*margin: 10px auto;*/
+		font-size: 110%;
+	}
+/*	h5 {
+		font-size: 100%;
+	}*/
+	h6 {
+		font-size: 125%;
+		font-style: italic;
+	}
+
+	.screen {background-size:contain;background-repeat:no-repeat}
+	.screen img{max-width:100%; opacity:1;transition: opacity 1.25s ease-in-out;
+		-moz-transition: opacity 1.25s ease-in-out;
+		-webkit-transition: opacity 1.25s ease-in-out;
+	}
+	.screen img:hover{max-width:100%; opacity:0}
+
+	/*	Ligne dorée  */
+	hr {
+		/*margin: 10px 10 10px 10;*/
+		margin-top: 20px;
+		margin-bottom: 20px;
+		width: 90%;
+		/*padding: 0; */
+		height: 1px;
+		border: 0;
+		color: Goldenrod;
+		background-color: Goldenrod;
+	}
+
+	/*	Image d'en-tête */
+	img.image_left {
+		float: left;
+		padding:0px 5px 0px 70px;
+		overflow: auto;
+	}
+
+
+	/*	Tableaux */
+	table {
+		/*text-align: center;*/
+		width: 90%;
+		padding: 10px;
+		border-collapse: collapse;
+		/*margin-left: 70px;*/
+		/*padding: 20px 25px;*/
+		/*position: relative;*/
+	}
+	td, th {
+		font-size: 12px;
+		text-align: center;
+		*vertical-align: baseline;
+		padding-top: 4px;
+		padding-bottom: 4px;
+*		border: 1px outset #eee;
+		border: 1px solid #aaa;
+	}
+	th {
+		background-color: #303030; *#000099;
+		*color: #fff;
+		font-weight: bold;
+*		border:none;
+	}
+*	tr {)
+
+	.leftalign, table.leftalign tr th, table.leftalign tr td (
+		text-align: left;
+	}
+
+-->
+/*]]>*/
+
+  </style>
 	<title>
 		MYMOD - La Couronne de Cuivre
 	</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<script src="scripts/script_astuce.js">
+	<script>
+		var LANG_FR = "fr";
+
+		var hintTable = [];
+		hintTable[LANG_FR] = 
+		[
+		"Une douzaine de quêtes secondaires à jouer.",
+		"Un bestiaire inspiré des éditions papier et proposant de nouvelles créatures dans l'univers de BG2.",
+		"Plus d'une centaine de cartes, dont des nouvelles.",
+		"De nouvelles animations de créatures : licornes, chevaux, démons, gargouilles...",
+		"De nouveaux sortilèges divins et profanes.",
+		"Des dragons métalliques, cristallins, planaires...",
+		"Des démons et des diables qui profitent du chaos semé dans le Royaume de Diamant Éternel pour y exporter leur Guerre Sanglante.",
+		"Une horde de vampires qui feraient passer Bodhi pour une fillette capricieuse.",
+		"Des chevaliers morts-vivants au comportement toujours aussi rigide dans l'Au-delà."
+		];
+
+		var hintIdx = 0;
+
+		function showNextHint(lang, textId) {
+			var hints = hintTable[lang];
+			if (hints.length > 0) {
+			var elem = document.getElementById(textId);
+			if ('textContent' in elem) {
+				elem.textContent = hints[hintIdx];
+			} else {
+				elem.innerText = hints[hintIdx];
+			}
+			hintIdx = (hintIdx + 1) % hints.length;
+			}
+		}
+
+		function showHints(boxId, lang, textId) {
+			document.getElementById(boxId).style.display = "block";
+			showNextHint(lang, textId);
+		}
+
+		function showSpoiler(obj)
+		{
+		var inner = obj.parentNode.getElementsByTagName("div")[0];
+		if (inner.style.display == "none")
+		inner.style.display = "";
+		else
+		inner.style.display = "none";
+		}
+
 	</script>
 </head>
 
@@ -56,7 +473,7 @@
 <!-- ================== I n t r o d u c t i o n ================== -->
 	  <a name="intro" id="intro"></a>
 		<div class="content">
-		<h2>
+		<h2 class = "background">
 			Présentation
 		</h2><br>
 
@@ -97,7 +514,7 @@
 		</h3>
 
 		<p id="hintbox" class="boxed" style="display: none">
-			<strong>En savoir un peu plus&#160;&#160;</strong><input type="submit" value="C'est tout ?" onclick="showNextHint('fr', 'hint')" style="background:#FFBF00;margin-left: 10px"></input>
+			<strong>En savoir un peu plus&#160;&#160;</strong><input type="submit" value="C'est tout ?" onclick="showNextHint('fr', 'hint')" style="background:Goldenrod;margin-left: 10px"></input>
 			<br /><br><span style="margin-left: 15px">&#x25BA; 
 			<span id="hint">...</span></span><br><br>
 		</p><br><br>
@@ -106,17 +523,17 @@
 			Codes pour afficher un bouton spoiler (h4)
 		</h4>
 
-		<div class="spoiler" style="margin: 10px auto;width: 90%; border-style: solid; border-width: 1px; border-color: #FFCC33; margin-top: 32px; padding: 6px;"><br>
-		<input onclick="showSpoiler(this);" value="Afficher / Cacher" type="button" style="background:#FFBF00;margin-left: 10px">
+		<div class="spoiler" style="margin: 10px auto;width: 90%; border-style: solid; border-width: 1px; border-color: Goldenrod; margin-top: 32px; padding: 6px;"><br>
+		<input onclick="showSpoiler(this);" value="Afficher / Cacher" type="button" style="background:Goldenrod;margin-left: 10px">
 			<div class="inner" style="display: none;margin-left: 15px"><br>TEXTE À AFFICHER SPOILER 1 !
 			</div>
 			<br><br>
 		</div>
 
-		<div style="margin: 10px auto;width: 90%; border-style: solid; border-width: 1px; border-color: #FFCC33; margin-top: 32px; padding: 6px;">
+		<div style="margin: 10px auto;width: 90%; border-style: solid; border-width: 1px; border-color: Goldenrod; margin-top: 32px; padding: 6px;">
 			<div class="quotetitle">
 				<b>Spoiler 2 avec bouton d'affichage :&#160;&#160;</b>
-				<input value="Afficher" style="margin: 0px; padding: 0px; width: 50px; background:#FFBF00;"
+				<input value="Afficher" style="margin: 0px; padding: 0px; width: 50px; background:Goldenrod;"
 				onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Cacher'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Afficher'; }" type="button" >
 			</div>
 			<div class="quotecontent">
@@ -126,7 +543,7 @@
 			</div>
 		</div> 
 
-		<div style="margin: 10px auto;width: 90%; border-style: solid; border-width: 1px; border-color: #FFCC33; margin-top: 32px; padding: 6px;">
+		<div style="margin: 10px auto;width: 90%; border-style: solid; border-width: 1px; border-color: Goldenrod; margin-top: 32px; padding: 6px;">
 			<div class="c1" onclick="javascript:montrer_spoiler('spoiler3')">
 				<strong>Spoiler 3 sans bouton d'affichage : cliquer sur le titre</strong>
 				<script type="text/javascript"> function montrer_spoiler(value){var actual=document.getElementById(value).style.visibility;if (actual=='visible'){document.getElementById(value).style.visibility='hidden';}else{document.getElementById(value).style.visibility='visible';}} </script>
@@ -136,7 +553,7 @@
 			</div>
 		</div>
 
-		<div style="margin: 10px auto;width: 90%; border-style: solid; border-width: 1px; border-color: #FFCC33; margin-top: 32px; padding: 6px;">
+		<div style="margin: 10px auto;width: 90%; border-style: solid; border-width: 1px; border-color: Goldenrod; margin-top: 32px; padding: 6px;">
 			<div class="c1" onclick="pchild=this.getElementsByTagName('p'); if(pchild[0].style.visibility!='hidden'){pchild[0].style.visibility='hidden'; pchild[0].style.height='0';}else{pchild[0].style.visibility=''; pchild[0].style.height=''}">
 				<strong>Spoiler 4 : texte à cacher (cliquer sur le texte)</strong>
 				<p>
@@ -161,7 +578,7 @@
 <!-- ================= C o m p a t i b i l i t y ================= -->
 	  <a name="compat" id="compat"></a>
 		<div class="content">
-		<h2>
+		<h2 class = "background">
 			Compatibilité
 		</h2><br>
 
@@ -206,7 +623,7 @@
 <!-- ================== I n s t a l l a t i o n ================== -->
 	  <a name="installation" id="installation"></a>
 		<div class="content">
-		<h2>
+		<h2 class = "background">
 			Installation
 		</h2><br>
 
@@ -272,35 +689,35 @@
 				<th>Type</th>
 			</tr>
 			<tr>
-				<td style="padding-top:20px; padding-bottom:20px; "><strong><span style="color: #FFCC33;">mymod_variable1</span></strong></td>
+				<td style="padding-top:20px; padding-bottom:20px; "><strong><span style="color: Goldenrod;">mymod_variable1</span></strong></td>
 				<td style="text-align: left; padding-left:5px; padding-right:5px">blabla<br><br>
-				- <span style="color: #FFCC33">1 = premier choix (recommandé).</span><br>
+				- <span style="color: Goldenrod">1 = premier choix (recommandé).</span><br>
 				- 2 = second choix.<br><br></td>
 				<td>numérique</td>
 			</tr>
 			<tr>
-				<td style="padding-top:20px; padding-bottom:20px; "><strong><span style="color: #FFCC33;">mymod_variable2</span></strong><br><br>
+				<td style="padding-top:20px; padding-bottom:20px; "><strong><span style="color: Goldenrod;">mymod_variable2</span></strong><br><br>
 				(supports: only EE)</td>
 				<td style="text-align: left; padding-left:5px; padding-right:5px">blabla<br><br>
 				- 1 = premier choix.<br>
-				- <span style="color: #FFCC33">2 = second choix (recommandé).</span><br>
+				- <span style="color: Goldenrod">2 = second choix (recommandé).</span><br>
 				- 3 = troisième choix.<br>
 				- 4 = quatrième choix.</td>
 				<td>numérique</td>
 			</tr>
 			<tr>
-				<td style="padding-top:20px; padding-bottom:20px; "><strong><span style="color: #FFCC33;">mymod_variable3</span></strong></td>
+				<td style="padding-top:20px; padding-bottom:20px; "><strong><span style="color: Goldenrod;">mymod_variable3</span></strong></td>
 				<td style="text-align: left; padding-left:5px; padding-right:5px">blabla<br><br>
-				- <span style="color: #FFCC33">A [par défaut].</span><br>
+				- <span style="color: Goldenrod">A [par défaut].</span><br>
 				- B.<br>
 				- C.<br>
 				<td>alphanumérique (une lettre)</td>
 			</tr>
 			<tr>
-				<td style="padding-top:20px; padding-bottom:20px; "><strong><span style="color: #FFCC33;">mymod_variable4</span></strong></td>
+				<td style="padding-top:20px; padding-bottom:20px; "><strong><span style="color: Goldenrod;">mymod_variable4</span></strong></td>
 				<td style="text-align: left; padding-left:5px; padding-right:5px">Le nom que vous souhaitez donner à votre monture.<br><br>
 				- un nom !<br><br>
-				<span style="color: #FFCC33; padding-left:20px;">Flèche d'argent [par défaut]</span></td>
+				<span style="color: Goldenrod; padding-left:20px;">Flèche d'argent [par défaut]</span></td>
 				<td>alphanumérique</td>
 			</tr>
 		</table><br>
@@ -373,7 +790,7 @@
 <!-- =================== C o m p o n e n t s ==================== -->
 	  <a name="compon" id="compon"></a>
 		<div class="content">
-		<h2>
+		<h2 class = "background">
 			Composants
 		</h2><br>
 
@@ -447,7 +864,7 @@
 <!-- =================== C o m p o n e n t s ==================== -->
 	  <a name="componlist" id="componlist"></a>
 		<div class="content">
-		<h2>
+		<h2 class = "background">
 			Composants
 		</h2><br>
 
@@ -502,10 +919,10 @@
 		<p><a name="30" id="30"></a>
 			<strong>30. Composant 3 : blabbla</strong><br />
 		</p>
-		<div style="margin: 0px auto;width: 85%; border-style: solid; border-width: 1px; border-color: #FFCC33; margin-top: 2px; margin-bottom: 2px; padding: 2px;">
+		<div style="margin: 0px auto;width: 85%; border-style: solid; border-width: 1px; border-color: Goldenrod; margin-top: 2px; margin-bottom: 2px; padding: 2px;">
 			<div class="quotetitle">
 				<em>&nbsp;&nbsp;&#x25BA; Obsolète depuis la version 6.0.0:</em>
-				<input value="Afficher" style="margin: 0px; padding: 0px; width: 60px; background:#FFCC33;"
+				<input value="Afficher" style="margin: 0px; padding: 0px; width: 60px; background:Goldenrod;"
 				onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Hide'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Show'; }" type="button" >
 			</div>
 			<div class="quotecontent">
@@ -525,10 +942,10 @@
 		<p><a name="40" id="40"></a>
 			<strong>40. ...</strong><br />
 		</p>
-		<div style="margin: 0px auto;width: 85%; border-style: solid; border-width: 1px; border-color: #FFCC33; margin-top: 2px; margin-bottom: 2px; padding: 2px;">
+		<div style="margin: 0px auto;width: 85%; border-style: solid; border-width: 1px; border-color: Goldenrod; margin-top: 2px; margin-bottom: 2px; padding: 2px;">
 			<div class="quotetitle">
 				<em>&nbsp;&nbsp;&#x25BA; Obsolète depuis la version 6.0.0:</em>
-				<input value="Afficher" style="margin: 0px; padding: 0px; width: 60px; background:#FFCC33;"
+				<input value="Afficher" style="margin: 0px; padding: 0px; width: 60px; background:Goldenrod;"
 				onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Hide'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Show'; }" type="button" >
 			</div>
 			<div class="quotecontent">
@@ -566,7 +983,7 @@
 <!-- =================== I m a g e s ==================== -->
 	  <a name="images" id="images"></a>
 		<div class="content">
-		<h2>
+		<h2 class = "background">
 			Captures d'écran
 		</h2><br>
 
@@ -601,7 +1018,7 @@
 <!-- ============== T r o u b l e s h o o t i n g =============== -->
 	  <a name="trouble" id="trouble"></a>
 		<div class="content">
-		<h2>
+		<h2 class = "background">
 			Dépannage
 		</h2><br>
 
@@ -660,7 +1077,7 @@
 <!-- ======================= C r e d i t s ====================== -->
 	  <a name="credits" id="credits"></a>
 		<div class="content">
-		<h2>
+		<h2 class = "background">
 			Crédits et remerciements
 		</h2><br>
 
@@ -838,7 +1255,7 @@
 	<!-- ======================= V e r s i o n s ====================== -->
 	  <a name="versions" id="versions"></a>
 		<div class="content">
-		<h2>
+		<h2 class = "background">
 			Historique des versions
 		</h2><br>
 

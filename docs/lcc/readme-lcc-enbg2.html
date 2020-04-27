@@ -4,7 +4,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="styles/style_lcc.css" type="text/css">
+	<link rel="stylesheet" href="styles/style_lcc_bg2.css" type="text/css">
 
 	<title>
 		MYMOD - La Couronne de Cuivre
@@ -40,7 +40,7 @@
 			<strong>Languages:</strong> French, English
 		</p>
 		<p class="about" style="text-align: left;margin-left: 70%">
-			<strong>Platforms:</strong> Windows, Mac <acronym title="Operating System 10">OS X</acronym> and Linux
+			<strong>Platforms:</strong> Windows, Mac <acronym title=="Operating System 10">OS X</acronym> and Linux
 		</p>
 		<p class="about" style="text-align: left;margin-left: 70%">
 			<a href="https://www.baldursgateworld.fr/lacouronne/mymod/">Mod Website</a> &#8226; <a href="https://www.baldursgateworld.fr/lacouronne/mymod/">Mod Forum</a> &#8226; <a href="https://www.baldursgateworld.fr/lacouronne/mymod.php">Download</a> &#8226; <a href="https://github.com/Auteur/Mymod">GitHub</a>
@@ -56,7 +56,7 @@
 <!-- ================== I n t r o d u c t i o n ================== -->
 	  <a name="intro" id="intro"></a>
 		<div class="content">
-		<h2>
+		<h2 class = "background">
 			Overview
 		</h2><br>
 
@@ -97,7 +97,7 @@
 		</h3>
 
 		<p id="hintbox" class="boxed" style="display: none">
-			<strong>En savoir un peu plus&#160;&#160;</strong><input type="submit" value="C'est tout ?" onclick="showNextHint('fr', 'hint')" style="background:#FFBF00;margin-left: 10px"></input>
+			<strong>En savoir un peu plus&#160;&#160;</strong><input type="submit" value="C'est tout ?" onclick="showNextHint('fr', 'hint')" style="background:Goldenrod;margin-left: 10px"></input>
 			<br /><br><span style="margin-left: 15px">&#x25BA; 
 			<span id="hint">...</span></span><br><br>
 		</p><br><br>
@@ -106,17 +106,17 @@
 			Codes pour afficher un bouton spoiler (h4)
 		</h4>
 
-		<div class="spoiler" style="margin: 10px auto;width: 90%; border-style: solid; border-width: 1px; border-color: #FFCC33; margin-top: 32px; padding: 6px;"><br>
-		<input onclick="showSpoiler(this);" value="Afficher / Cacher" type="button" style="background:#FFBF00;margin-left: 10px">
+		<div class="spoiler" style="margin: 10px auto;width: 90%; border-style: solid; border-width: 1px; border-color: Goldenrod; margin-top: 32px; padding: 6px;"><br>
+		<input onclick="showSpoiler(this);" value="Afficher / Cacher" type="button" style="background:Goldenrod;margin-left: 10px">
 			<div class="inner" style="display: none;margin-left: 15px"><br>TEXTE À AFFICHER SPOILER 1 !
 			</div>
 			<br><br>
 		</div>
 
-		<div style="margin: 10px auto;width: 90%; border-style: solid; border-width: 1px; border-color: #FFCC33; margin-top: 32px; padding: 6px;">
+		<div style="margin: 10px auto;width: 90%; border-style: solid; border-width: 1px; border-color: Goldenrod; margin-top: 32px; padding: 6px;">
 			<div class="quotetitle">
 				<b>Spoiler 2 avec bouton d'affichage :&#160;&#160;</b>
-				<input value="Afficher" style="margin: 0px; padding: 0px; width: 50px; background:#FFBF00;"
+				<input value="Afficher" style="margin: 0px; padding: 0px; width: 50px; background:Goldenrod;"
 				onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Cacher'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Afficher'; }" type="button" >
 			</div>
 			<div class="quotecontent">
@@ -126,7 +126,7 @@
 			</div>
 		</div> 
 
-		<div style="margin: 10px auto;width: 90%; border-style: solid; border-width: 1px; border-color: #FFCC33; margin-top: 32px; padding: 6px;">
+		<div style="margin: 10px auto;width: 90%; border-style: solid; border-width: 1px; border-color: Goldenrod; margin-top: 32px; padding: 6px;">
 			<div class="c1" onclick="javascript:montrer_spoiler('spoiler3')">
 				<strong>Spoiler 3 sans bouton d'affichage : cliquer sur le titre</strong>
 				<script type="text/javascript"> function montrer_spoiler(value){var actual=document.getElementById(value).style.visibility;if (actual=='visible'){document.getElementById(value).style.visibility='hidden';}else{document.getElementById(value).style.visibility='visible';}} </script>
@@ -136,7 +136,7 @@
 			</div>
 		</div>
 
-		<div style="margin: 10px auto;width: 90%; border-style: solid; border-width: 1px; border-color: #FFCC33; margin-top: 32px; padding: 6px;">
+		<div style="margin: 10px auto;width: 90%; border-style: solid; border-width: 1px; border-color: Goldenrod; margin-top: 32px; padding: 6px;">
 			<div class="c1" onclick="pchild=this.getElementsByTagName('p'); if(pchild[0].style.visibility!='hidden'){pchild[0].style.visibility='hidden'; pchild[0].style.height='0';}else{pchild[0].style.visibility=''; pchild[0].style.height=''}">
 				<strong>Spoiler 4 : texte à cacher (cliquer sur le texte)</strong>
 				<p>
@@ -161,7 +161,7 @@
 <!-- ================= C o m p a t i b i l i t y ================= -->
 	  <a name="compat" id="compat"></a>
 		<div class="content">
-		<h2>
+		<h2 class = "background">
 			Compatibility
 		</h2><br>
 
@@ -172,7 +172,7 @@
 			<li>The series of Enhanced Editions published by Beamdog, which at present includes Baldur's Gate: Enhanced Edition (BGEE), Baldur's Gate II: Enhanced Edition (BG2EE), Icewind Dale: Enhanced Edition (IWDEE), and Planescape: Torment: Enhanced Edition (PsTEE). The BGEE Siege of Dragonspear expansion (SoD) is supported as well. All of the Enhanced Edition games include the original expansion packs, e.g. IWDEE includes Heart of Winter and Trials of the Luremaster.</li>
 			<li>The original Baldur's Gate (BG), with or without the Tales of the Sword Coast (TotSC) expansion.</li>
 			<li>The original Baldur's Gate II (BG2, or just SoA), with or without the Throne of Bhaal (ToB) expansion. <strong>Make sure you have Throne of Bhaal patched to version 26498.</strong> Check the ReadMe files related to your patch in your game folder and the <a href="http://www.bioware.com/games/throne_bhaal/support/patches/">BioWare</a> website if necessary.</li>
-			<li>The conversion projects based on <acronym title="Throne of Bhaal">ToB</acronym>, <a href="http://www.shsforums.net/index.php?showforum=261"><strong>Baldur's Gate Trilogy (BGT)</strong></a>, <a href="http://www.pocketplane.net/tutu/"><strong>Baldur's Gate Tutu</strong></a>, Icewind Dale-in-Baldur's Gate II (IWD-in-BG2) and <a href="https://github.com/K4thos/EET/releases"><strong>Enhanced Edition Trilogy (EET)</strong></a>.</li>
+			<li>The conversion projects based on <a href="#" class="infobulle" aria-label="Throne of Bhaal">ToB</a>, <a href="http://www.shsforums.net/index.php?showforum=261"><strong>Baldur's Gate Trilogy (BGT)</strong></a>, <a href="http://www.pocketplane.net/tutu/"><strong>Baldur's Gate Tutu</strong></a>, Icewind Dale-in-Baldur's Gate II (IWD-in-BG2) and <a href="https://github.com/K4thos/EET/releases"><strong>Enhanced Edition Trilogy (EET)</strong></a>.</li>
 			<li>The original Icewind Dale (IWD) with or without either of its expansions, Heart of Winter (HoW) and Trials of the Luremaster (TotLM).</li>
 			<li>Icewind Dale II (IWD2).</li>
 			<li>Planescape: Torment (PsT).</li>
@@ -180,7 +180,7 @@
 
 <hr><br>
 		<p>
-			MYMOD is a <acronym title="Weimer Dialogue Utility">WeiDU</acronym> mod, and therefore should be compatible with all WeiDU mods. [facultatif : It has been tested on several different installations, and has so far worked perfectly.] However, we cannot test every single one. [Choisir une formule parmi les suivantes :] If you do encounter any bugs, please contact <a href="https://www.baldursgateworld.fr/lacouronne/Auteur.html">AUTHOR</a> or alternatively post on the forums. If you encounter any bugs, please report them on the forum!
+			MYMOD is a <a href="#" class="infobulle" aria-label="Weimer Dialogue Utility">WeiDU</a> mod, and therefore should be compatible with all WeiDU mods. [facultatif : It has been tested on several different installations, and has so far worked perfectly.] However, we cannot test every single one. [Choisir une formule parmi les suivantes :] If you do encounter any bugs, please contact <a href="https://www.baldursgateworld.fr/lacouronne/Auteur.html">AUTHOR</a> or alternatively post on the forums. If you encounter any bugs, please report them on the forum!
 		</p>
 		<p>
 			Though I am striving to make MYMOD compatible with as many other mods as possible, there is always a chance that incompatibilities will arise. Below are the ones discovered thus far:
@@ -206,7 +206,7 @@
 <!-- ================== I n s t a l l a t i o n ================== -->
 	  <a name="installation" id="installation"></a>
 		<div class="content">
-		<h2>
+		<h2 class = "background">
 			Installation
 		</h2><br>
 
@@ -217,7 +217,7 @@
 			If you've previously installed the mod, remove it before extracting the new version. To do this, run <strong><span style="font-family: Courier New;font-size: 100%;border: 1px solid black;background-color: black;color: #deded9;">&nbsp;setup-mymod.exe&nbsp;</span></strong> (or .command with OS X), un-install all previously installed components and delete the <strong>mymod</strong> folder.</em>
 		</p>
 		<p><em>
-			When installing or un-installing, <strong>do not close the <acronym title="Disk Operating System">DOS</acronym> window</strong> by clicking on the <strong>X</strong> button! Instead, press the <strong>Enter</strong> key whenever instructed to do so.</em>
+			When installing or un-installing, <strong>do not close the <a href="#" class="infobulle" aria-label="Disk Operating System">DOS</a> window</strong> by clicking on the <strong>X</strong> button! Instead, press the <strong>Enter</strong> key whenever instructed to do so.</em>
 		</p>
 		<p><em>
 			<strong>Disable any antivirus</strong> or other memory-resident software before installing this or any other mod. Some (particularly avast and Norton!) have a tendency to report false positives with mod activity, resulting in failed installs.</em>
@@ -228,7 +228,7 @@
 			Special Note for Siege of Dragonspear from Steam/GOG
 		</h3>
 		<p style="margin-top:1%;">
-			Good Old Games (GOG) and Steam both package the additional content for Siege of Dragonspear in a method that <acronym title="Weimer Dialogue Utility">WeiDU</acronym>, the tool used to install this mod, cannot access. You must run a program called <a href="https://github.com/Argent77/A7-DlcMerger/releases/latest">DLC Merger</a> on your SoD installation before you can install this or any other <acronym title="Weimer Dialogue Utility">WeiDU</acronym>-based mod.
+			Good Old Games (GOG) and Steam both package the additional content for Siege of Dragonspear in a method that <a href="#" class="infobulle" aria-label="Weimer Dialogue Utility">WeiDU</a>, the tool used to install this mod, cannot access. You must run a program called <a href="https://github.com/Argent77/A7-DlcMerger/releases/latest">DLC Merger</a> on your SoD installation before you can install this or any other <a href="#" class="infobulle" aria-label="Weimer Dialogue Utility">WeiDU</a>-based mod.
 		</p><br>
 
 <hr><br>
@@ -269,35 +269,35 @@
 				<th>Type</th>
 			</tr>
 			<tr>
-				<td style="padding-top:20px; padding-bottom:20px; "><strong><span style="color: #FFCC33;">mymod_variable1</span></strong></td>
+				<td style="padding-top:20px; padding-bottom:20px; "><strong><span style="color: Goldenrod;">mymod_variable1</span></strong></td>
 				<td style="text-align: left; padding-left:5px; padding-right:5px">blabla<br><br>
-				- <span style="color: #FFCC33">1 = first option (recommended).</span><br>
+				- <span style="color: Goldenrod">1 = first option (recommended).</span><br>
 				- 2 = second option.<br><br></td>
 				<td>integer</td>
 			</tr>
 			<tr>
-				<td style="padding-top:20px; padding-bottom:20px; "><strong><span style="color: #FFCC33;">mymod_variable2</span></strong><br><br>
+				<td style="padding-top:20px; padding-bottom:20px; "><strong><span style="color: Goldenrod;">mymod_variable2</span></strong><br><br>
 				(supports: only EE)</td>
 				<td style="text-align: left; padding-left:5px; padding-right:5px">blabla<br><br>
 				- 1 = first option.<br>
-				- <span style="color: #FFCC33">2 = second option (recommended).</span><br>
+				- <span style="color: Goldenrod">2 = second option (recommended).</span><br>
 				- 3 = third option.<br>
 				- 4 = fourth option.</td>
 				<td>integer</td>
 			</tr>
 			<tr>
-				<td style="padding-top:20px; padding-bottom:20px; "><strong><span style="color: #FFCC33;">mymod_variable3</span></strong></td>
+				<td style="padding-top:20px; padding-bottom:20px; "><strong><span style="color: Goldenrod;">mymod_variable3</span></strong></td>
 				<td style="text-align: left; padding-left:5px; padding-right:5px">blabla<br><br>
-				- <span style="color: #FFCC33">A [Default].</span><br>
+				- <span style="color: Goldenrod">A [Default].</span><br>
 				- B.<br>
 				- C.<br>
 				<td>string (one character)</td>
 			</tr>
 			<tr>
-				<td style="padding-top:20px; padding-bottom:20px; "><strong><span style="color: #FFCC33;">mymod_variable4</span></strong></td>
+				<td style="padding-top:20px; padding-bottom:20px; "><strong><span style="color: Goldenrod;">mymod_variable4</span></strong></td>
 				<td style="text-align: left; padding-left:5px; padding-right:5px">The name of your mount<br><br>
 				- a name!<br><br>
-				<span style="color: #FFCC33; padding-left:20px;">Silver Star [default]</span></td>
+				<span style="color: Goldenrod; padding-left:20px;">Silver Star [default]</span></td>
 				<td>string</td>
 			</tr>
 		</table><br>
@@ -307,7 +307,7 @@
 			Windows
 		</h3>
 		<p style="margin-top:1%;">
-			MYMOD for Windows is distributed as an extractable compressed archive and includes a <acronym title="Weimer Dialogue Utility">WeiDU</acronym> installer.
+			MYMOD for Windows is distributed as an extractable compressed archive and includes a <a href="#" class="infobulle" aria-label="Weimer Dialogue Utility">WeiDU</a> installer.
 		</p>
 		<p>
 			Extract the contents of the mod archive into the folder of the game you wish to modify (<em>the folder which contains the "CHITIN.KEY" file</em>), using <a href="http://www.7-zip.org/download.html">7zip</a>, <a href="http://www.rarlab.com/download.htm">WinRAR</a>, or another file compression utility that handles .zip files. On successful extraction, there should be a <strong>mymod</strong> folder and a <em><strong>setup-mymod.exe</strong></em> file in your game folder. To install, double-click <strong><span style="font-family: Courier New;font-size: 100%;border: 1px solid black;background-color: black;color: #deded9;">&nbsp;setup-mymod.exe&nbsp;</span></strong> and follow the instructions on screen.
@@ -317,7 +317,7 @@
 		</p>
 
 		<p>
-			[<strong>(Pour une version exe, remplacez les 2 deux premières lignes par les suivantes :)</strong>MYMOD for Windows is distributed as a self-extracting archive and includes a <acronym title="Weimer Dialogue Utility">WeiDU</acronym> installer. To install, simply double-click the archive and follow the instructions on screen.
+			[<strong>(Pour une version exe, remplacez les 2 deux premières lignes par les suivantes :)</strong>MYMOD for Windows is distributed as a self-extracting archive and includes a <a href="#" class="infobulle" aria-label="Weimer Dialogue Utility">WeiDU</a> installer. To install, simply double-click the archive and follow the instructions on screen.
 		</p>
 		<p>
 			Alternatively, the files can be extracted into your game directory using <a href="http://www.7-zip.org/download.html">7zip</a> or <a href="http://www.rarlab.com/download.htm">WinRAR</a>. When properly extracted, your game directory will contain <strong>setup-mymod.exe</strong> and the folder <strong>mymod</strong>. To install, double-click <strong><span style="font-family: Courier New;font-size: 100%;border: 1px solid black;background-color: black;color: #deded9;">&nbsp;setup-mymod.exe&nbsp;</span></strong> and follow the instructions on screen.]
@@ -328,7 +328,7 @@
 			Mac OS X
 		</h3>
 		<p style="margin-top:1%;">
-			MYMOD for Mac OS X is distributed as a compressed tarball and includes a <acronym title="Weimer Dialogue Utility">WeiDU</acronym> installer.
+			MYMOD for Mac OS X is distributed as a compressed tarball and includes a <a href="#" class="infobulle" aria-label="Weimer Dialogue Utility">WeiDU</a> installer.
 		</p>
 		<p>
 			First, extract the files from the tarball into your game directory. On successful extraction, there should be a <strong>mymod</strong> folder, <em><strong>setup-mymod</strong></em> and <em><strong>setup-mymod.command</strong></em> files in your game folder. To install, double-click <strong><span style="font-family: Courier New;font-size: 100%;border: 1px solid black;background-color: black;color: #deded9;">&nbsp;setup-mymod.command&nbsp;</span></strong> and follow the instructions on screen.
@@ -342,7 +342,7 @@
 			Linux
 		</h3>
 		<p style="margin-top:1%;">
-			MYMOD for Linux is distributed as a compressed tarball and does not include a <acronym title="Weimer Dialogue Utility">WeiDU</acronym> installer.
+			MYMOD for Linux is distributed as a compressed tarball and does not include a <a href="#" class="infobulle" aria-label="Weimer Dialogue Utility">WeiDU</a> installer.
 		</p>
 		<p>
 			Extract the contents of the mod to the folder of the game you wish to modify.
@@ -371,7 +371,7 @@
 <!-- =================== C o m p o n e n t s ==================== -->
 	  <a name="compon" id="compon"></a>
 		<div class="content">
-		<h2>
+		<h2 class = "background">
 			Components
 		</h2><br>
 
@@ -445,7 +445,7 @@
 <!-- =================== C o m p o n e n t s ==================== -->
 	  <a name="componlist" id="componlist"></a>
 		<div class="content">
-		<h2>
+		<h2 class = "background">
 			Components
 		</h2><br>
 
@@ -463,7 +463,7 @@
 <hr>
 		<p><a name="10" id="10"></a>
 			<strong>10. Component 10 (main component)</strong><br />
-			<em><span style="margin-left: 15px;">Requires <acronym title="Throne of Bhaal">ToB</acronym> v26498</span></em>
+			<em><span style="margin-left: 15px;">Requires <a href="#" class="infobulle" aria-label="Throne of Bhaal">ToB</a> v26498</span></em>
 		</p>
 		<ul style="margin-left: 4%;">
 			<li>Checks mod files</li>
@@ -500,10 +500,10 @@
 		<p><a name="30" id="30"></a>
 			<strong>30. Component 3 : blabbla</strong><br />
 		</p>
-		<div style="margin: 0px auto;width: 85%; border-style: solid; border-width: 1px; border-color: #FFCC33; margin-top: 2px; margin-bottom: 2px; padding: 2px;">
+		<div style="margin: 0px auto;width: 85%; border-style: solid; border-width: 1px; border-color: Goldenrod; margin-top: 2px; margin-bottom: 2px; padding: 2px;">
 			<div class="quotetitle">
 				<em>&nbsp;&nbsp;&#x25BA; Deprecated as of v 6.0.0:</em>
-				<input value="Show" style="margin: 0px; padding: 0px; width: 60px; background:#FFBF00;"
+				<input value="Show" style="margin: 0px; padding: 0px; width: 60px; background:Goldenrod;"
 				onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Hide'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Show'; }" type="button" >
 			</div>
 			<div class="quotecontent">
@@ -523,10 +523,10 @@
 		<p><a name="40" id="40"></a>
 			<strong>40. ...</strong><br />
 		</p>
-		<div style="margin: 0px auto;width: 85%; border-style: solid; border-width: 1px; border-color: #FFCC33; margin-top: 2px; margin-bottom: 2px; padding: 2px;">
+		<div style="margin: 0px auto;width: 85%; border-style: solid; border-width: 1px; border-color: Goldenrod; margin-top: 2px; margin-bottom: 2px; padding: 2px;">
 			<div class="quotetitle">
 				<em>&nbsp;&nbsp;&#x25BA; Deprecated as of v 6.0.0:</em>
-				<input value="Show" style="margin: 0px; padding: 0px; width: 60px; background:#FFCC33;"
+				<input value="Show" style="margin: 0px; padding: 0px; width: 60px; background:Goldenrod;"
 				onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Hide'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Show'; }" type="button" >
 			</div>
 			<div class="quotecontent">
@@ -564,7 +564,7 @@
 <!-- =================== I m a g e s ==================== -->
 	  <a name="images" id="images"></a>
 		<div class="content">
-		<h2>
+		<h2 class = "background">
 			Screenshots
 		</h2><br>
 
@@ -599,7 +599,7 @@
 <!-- ============== T r o u b l e s h o o t i n g =============== -->
 	  <a name="trouble" id="trouble"></a>
 		<div class="content">
-		<h2>
+		<h2 class = "background">
 			Troubleshooting and Bug Reporting
 		</h2><br>
 
@@ -646,7 +646,7 @@
 
 <hr>
  		<p>
-			If none of this resolves your issue, or you have mod-specific issues, please report the problem in the mod's <a href="https://www.baldursgateworld.fr/lacouronne/mymod.php">forum</a>. Include the contents of your <acronym title="Weimer Dialogue Utility">WeiDU</acronym>.log file in the post, or attach it if it's large.
+			If none of this resolves your issue, or you have mod-specific issues, please report the problem in the mod's <a href="https://www.baldursgateworld.fr/lacouronne/mymod.php">forum</a>. Include the contents of your <a href="#" class="infobulle" aria-label="Weimer Dialogue Utility">WeiDU</a>.log file in the post, or attach it if it's large.
 		</p><br>
 
 
@@ -658,7 +658,7 @@
 <!-- ======================= C r e d i t s ====================== -->
 	  <a name="credits" id="credits"></a>
 		<div class="content">
-		<h2>
+		<h2 class = "background">
 			Credits and Acknowledgements
 		</h2><br>
 
@@ -836,7 +836,7 @@
 <!-- ======================= V e r s i o n s ====================== -->
 	  <a name="versions" id="versions"></a>
 		<div class="content">
-		<h2>
+		<h2 class = "background">
 			Version History
 		</h2><br>
 
