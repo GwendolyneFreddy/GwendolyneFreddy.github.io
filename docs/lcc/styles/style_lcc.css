@@ -96,10 +96,7 @@ body {
 	border-width: 1px 1px 4px 10px;
 	border-style: solid;
 	border-color: #FFBF00;
-/*ou	border: 1px solid #FFCC33;
-	border-left: 10px solid #FFCC33;
-	border-bottom: 4px solid #FFCC33;
-*/	position: relative;
+	position: relative;
 	border-radius: 4px 4px 4px 5px;
 	box-shadow: 8px 8px 15px black;
 	display: block;
@@ -254,14 +251,14 @@ a:hover {
 	*color: #deded9;
 }
 
-/* ------------------- *
- *  Titres de section  *
- * ------------------- */
+/* --------------------- *
+ *  Titres des sections  *
+ * --------------------- */
 h1 {
 	line-height: 170%;
 	font-size: 225%;
-	color: #FFCC33; *5F5F5F
-	padding: 5px 0 5px 0;
+	color: #FFCC33; /*5F5F5F
+	padding: 5px 0 5px 0;*/
 	margin: 0;
 	width: 100%;
 }
@@ -379,7 +376,7 @@ td, th {
 }
 th {
 	background-color: #303030;/*#000099;*/
-	*color: #fff;
+	/*color: #fff;*/
 	font-weight: bold;
 /*	border:none;*/
 }
