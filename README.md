@@ -38,3 +38,5 @@
 
 ><span style="margin-left: 50px;">Readme de mod : <a href="https://gwendolynefreddy.github.io/docs/lcc/readme-lcc-en.html">English</a> | <a href="https://gwendolynefreddy.github.io/docs/lcc/readme-lcc-fr.html">Français</a></span></br>
 ><span style="margin-left: 50px;">id. avec skin BG2 : <a href="https://gwendolynefreddy.github.io/docs/lcc/readme-lcc-enbg2.html">English</a> | <a href="https://gwendolynefreddy.github.io/docs/lcc/readme-lcc-frbg2.html">Français</a></span></br>
+
+><span style="margin-left: 50px;">Le Rôdeur de l'ombre : <a href="https://gwendolynefreddy.github.io/docs/lcc/rodeur_ombre-readme-english.html">English</a> | <a href="https://gwendolynefreddy.github.io/docs/lcc/rodeur_ombre-readme-french.html">Français</a></span></br>
