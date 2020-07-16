@@ -13,8 +13,9 @@
 ><span style="margin-left: 50px;">Infinity Animations Reference Picker : <a href="https://gwendolynefreddy.github.io/docs/spellholdstudios/ia_reference_picker_readme.html">English</a> | <a href="https://gwendolynefreddy.github.io/docs/spellholdstudios/ia_reference_picker_readme-french.html">Français</a></span></br>
 ><span style="margin-left: 50px;"><a href="https://gwendolynefreddy.github.io/docs/spellholdstudios/ia_animations_ref_chart.html">Infinity Animations slots reference chart</a></span>
 
+><span style="margin-left: 50px;">new 1PP : <a href="https://gwendolynefreddy.github.io/docs/spellholdstudios/1pp/documentation/1pp-readme-english.html">English</span> | <a href="https://gwendolynefreddy.github.io/docs/spellholdstudios/1pp/documentation/1pp-readme-french.html">Français</a></span>
 
-><span style="margin-left: 50px;">1PP : <a href="https://gwendolynefreddy.github.io/docs/spellholdstudios/1pp-readme.html">English</span> | <a href="https://gwendolynefreddy.github.io/docs/spellholdstudios/1pp-readme-french.html">Français</a></span>
+><span style="margin-left: 50px;">old 1PP : <a href="https://gwendolynefreddy.github.io/docs/spellholdstudios/1pp-readme.html">English</span> | <a href="https://gwendolynefreddy.github.io/docs/spellholdstudios/1pp-readme-french.html">Français</a></span>
 
 
 <hr>
@@ -40,3 +41,5 @@
 ><span style="margin-left: 50px;">id. avec skin BG2 : <a href="https://gwendolynefreddy.github.io/docs/lcc/readme-lcc-enbg2.html">English</a> | <a href="https://gwendolynefreddy.github.io/docs/lcc/readme-lcc-frbg2.html">Français</a></span></br>
 
 ><span style="margin-left: 50px;">Le Rôdeur de l'ombre : <a href="https://gwendolynefreddy.github.io/docs/lcc/rodeur_ombre-readme-english.html">English</a> | <a href="https://gwendolynefreddy.github.io/docs/lcc/rodeur_ombre-readme-french.html">Français</a></span></br>
+
+><span style="margin-left: 50px;">Le Champion de Bhaal : <a href="https://gwendolynefreddy.github.io/docs/cdb/cdb-readme-french">Français</a></span></br>

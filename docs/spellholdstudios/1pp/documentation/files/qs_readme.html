@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="styles/style_1pp.css" type="text/css">
+
+	<title>
+		Spellhold Studios - 1ppv4 [Colourable quarterstaves development reference]
+	</title>
+	<link href="images/shsweb.ico" rel="icon" type="bmp" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+
+<body>
+  <div id="wrap">
+	<a name="top" id="top"></a>
+
+	<div id="headerdiv-top" style="padding-bottom:1em">
+		<span class="one" style="font-size:400%;font-family:palatino;line-height:100%;color: #781808">1</span><span class="pp" style="font-size:200%;font-family:palatino;line-height:100%;vertical-align:0.3em;margin-left:-.25em"> pp</span><span class="v4" style="font-size:52%;font-family:helvetica neue, helvetica;line-height:100%;vertical-align:3.3em;margin-left:-.25em; color: #686868">VERSION 4</span><br />
+		<span id="headerdiv-top-fw" style="position:relative"><p>A Spellhold Studios mod for Infinity Engine games</p></span>
+	</div>
+
+	<div id="headerdiv-bottom">
+		<p class="about">
+			Author: Erephine
+		</p>
+		<p class="about" style="padding: 2px 0px 4px 0px">
+			<a href="http://www.spellholdstudios.net/ie/1pp">Mod Website</a> &#8226; <a href="http://www.shsforums.net/forum/159-1pp/">Mod Forum</a> &#8226; <a href="http://www.shsforums.net/files/file/1006-1ppv410/">Download</a> &#8226; <a href="https://github.com/SpellholdStudios/1pp">GitHub</a> &#8226; Version: 4.2.0
+		</p>
+		<hr>
+		<p class="menu">
+			<a href="#intro">How To</a>
+		</p>
+	</div>
+
+	<div id="maindiv">
+<!-- ================== I n t r o d u c t i o n ================== -->
+	  <a name="intro" id="intro"></a>
+	  <div class="content">
+
+		<h2>How To</h2><br>
+
+		<p class="screen" style="background-image:url(images/qs_m_reference_chart.png)"><img src="images/qs_m_reference_chart.png"></p></br>
+
+		<h3>How to use coloured quaterstaves</h3></br>
+
+		<p>
+			Modding with colourable quarterstaves is incredibly easy.</br>
+		</p>
+		<p>
+			If you'd like to make use of them in your mod, you should find the included reference chart helpful. Editing with NI, you'll have to keep in mind it doesn't know most 'locations', or rather, doesn't understand the concept of how they're used.</br>
+		</p>
+		<p>
+			In Near Infinity, open your item and switch to the Edit tab. At the bottom you should see the effects of your item. There already should be a few Set Item Colour entries there.</br>
+		</p>
+		<p>
+			Set Item Colour sets a colour for a 'Location' (bit of a misleading term). These locations represent the different *colours* you can see on the reference chart. Red would be location 20, yellow location 19, etc.</br>
+		</p>
+		<p>
+			So if you wanted to set the colour for the blue part of the quarterstaff (as seen on the reference chart) you'd use a Set Item Colour effect pointing at location 21.</br>
+		</p>
+		<p>
+			It is usually best to edit the location field in decimal mode (right-click, edit as decimal) and adjust the number manually, because most locations are 'unknown' to NI, and those that aren't, are labelled... let's just say not in the most understandable way.</br>
+		</p>
+		<p>
+			Probably, your files will not have enough Set Item Colour effects (as the original quarterstaff had but two colours to set....). They are very easy to add, however. Right-click an existing one, select copy, and then paste.</br>
+		</p>
+		<p>
+			Edit the location and and colour of your cloned entry to your liking and you're set.</br>
+		</p><br>
+
+
+		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+
+
+		<h3>The compatibility layer</h3></br>
+
+		<p>
+			You'll notice the coloured quarterstaves use four 'locations' you can set:
+			<ul>
+				<li>Grey (= 16)</li>
+				<li>Teal (= 17)</li>
+				<li>Pink (= 18)</li>
+				<li>and Blue (=21)</li>
+			</ul>
+		</p>
+		<p>
+			The original quarterstaff uses Red (= 20) for its entire body.</br>
+			As the coloured version does not use Red in any form, and the original doesn't use the colours the colourable one does, they pretty much don't clash.</br></br>
+
+			This means you can set up the extra colours on your quarterstaves AND retain a uniform colour for people who don't have colourable quarterstaves installed.</br></br>
+
+			Happiness ensues.
+		</p></br>
+
+		<address>
+			<span class="footer">1ppv4 Colourable quarterstaves &gt; Screenshots</span> &#8226;<a href="#top">BACK TO TOP</a>
+		</address>
+	  </div>
+
+	</div>
+
+  </div>
+</body>
+</html>
