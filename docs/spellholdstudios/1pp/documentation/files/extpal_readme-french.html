@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="styles/style_1pp.css" type="text/css">
+
+	<title>
+		Spellhold Studios - 1ppv4 [1pp Couleurs de palette étendues]
+	</title>
+	<link href="images/shsweb.ico" rel="icon" type="bmp" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+
+<body>
+  <div id="wrap">
+	<a name="top" id="top"></a>
+
+	<div id="headerdiv-top" style="padding-bottom:1em">
+		<span class="one" style="font-size:400%;font-family:palatino;line-height:100%;color: #781808">1</span><span class="pp" style="font-size:200%;font-family:palatino;line-height:100%;vertical-align:0.3em;margin-left:-.25em"> pp</span><span class="v4" style="font-size:52%;font-family:helvetica neue, helvetica;line-height:100%;vertical-align:3.3em;margin-left:-.25em; color: #686868">VERSION 4</span><br />
+		<span id="headerdiv-top-fw" style="position:relative"><p>Un mod de Spellhold Studios pour les jeux Infinity Engine</p></span>
+	</div>
+
+	<div id="headerdiv-bottom">
+		<p class="about">
+			Auteure : Erephine
+		</p>
+		<p class="about" style="padding: 2px 0px 4px 0px">
+			<a href="http://www.spellholdstudios.net/ie/1pp">Site internet du mod</a> &#8226; <a href="http://www.shsforums.net/forum/159-1pp/">Forum du mod</a> &#8226; <a href="http://www.shsforums.net/files/file/1006-1ppv410/">Téléchargement</a> &#8226; <a href="https://github.com/SpellholdStudios/1pp">GitHub</a> &#8226; Version: 4.2.0
+		</p>
+		<hr>
+		<p class="menu">
+			<a href="#intro">Présentation</a> &#x2B25; <a href="#information">Informations supplémentaires</a> &#x2B25; <a href="#modding">Personnalisation & Modding</a>
+		</p>
+	</div>
+
+	<div id="maindiv">
+<!-- ================== I n t r o d u c t i o n ================== -->
+	  <a name="intro" id="intro"></a>
+	  <div class="content">
+
+		<h2>Présentation</h2><br>
+
+		<p>
+			<strong><span style="font-variant:small-caps">Disponible pour :&nbsp;&nbsp;&nbsp;</span> <span style="color:#060">BGII SoA</span>, <span style="color:#700">BGII ToB</span>, <span style="color:#080">Tutu</span>, <span style="color:#088">IWD HoW</span>, <span style="color:#088">IWD TotL</span>, <span style="color:#666">IWDII</span></strong></br></br>
+		</p>
+
+		<p>
+			Ce composant ajoute de nouvelles nuances de couleurs [<em>NdT : dégradés</em>] aux jeux Infinity Engine, en faisant passer le nombre de couleurs disponibles de 116 à <a href="images/256.jpg">256</a>. Il implante aussi une nouvelle table de couleurs aléatoires utilisables par Baldur's Gate II et de nouveaux fichiers de jeux de couleurs pour Icewind Dale II, offrant un choix plus important de couleurs pour définir la peau et les cheveux des différentes races.<br><br>
+			Il corrige aussi quelques problèmes mineurs liés aux nuances standard.<br><br>
+			<img src="images/tothefloor.jpg"><br><br>
+		</p>
+		<p>
+			Consultez le <a href="http://www.spellholdstudios.net/ie/1pp">site du mod</a> ou son <a href="http://www.shsforums.net/forum/159-1pp/">forum</a> pour obtenir les dernières mises à jour.
+		</p><br>
+
+		<address>
+			<span class="footer">1ppv4 Couleurs de palette étendues &gt; Présentation</span> &#8226;<a href="#top">HAUT DE PAGE</a>
+		</address>
+	  </div>
+
+<!-- ================== I n f o r m a t i o n ================== -->
+	  <a name="information" id="information"></a>
+	  <div class="content">
+
+		<h2>Informations supplémentaires</h2><br>
+
+ 		<p>
+			<strong><em>Comment ça marche ?</em></strong><br><br>
+			L'installation peut se décomposer en deux parties :<br><br>
+
+			<strong>1.</strong> Les jeux Infinity Engine vous permettent de définir individuellement la couleur des parties de certaines animations à l'aide de palettes - par exemple les cheveux, la peau ou la couleur des vêtements de vos personnages.<br><br>
+			Ces couleurs proviennent d'une image BMP, dessinée ligne par ligne, où chaque ligne représente un dégradé de couleur. Ce fichier BMP s'appelle <em>MPALETTE</em> pour les images des fichiers BAM composés de 12 nuances, et <em>MPAL256</em> pour les images PLT. Les fichiers de la palette d'origine comportent 120 lignes, les quatre dernières étant d'un gris uniforme (non défini). Si le jeu doit utiliser une ligne qui n'existe pas, il crashe. Ce n’est pas une situation purement hypothétique, car, par expérience, j’ai vu de nombreux mods planter le jeu parce que certains de leurs fichiers utilisaient des références de couleurs non valides.<br><br>
+			Les nuances de couleurs sont enregistrées dans les fichiers de personnages et d’objets sur un seul octet, ce qui autorise l'utilisation de 256 valeurs distinctes. Si l'on augmente le nombre de lignes des fichiers BMP standard pour correspondre à ce nombre, il sera impossible de planter le jeu en utilisant n'importe quelle valeur de couleur possible [<em>NdT : de 0 à 255</em>]. Et si cela ne suffisait pas, les entrées supplémentaires sont effectivement importées et affichées correctement par le jeu.<br><br>
+			La première partie de l'installation consiste donc à ajouter des fichiers de palette qui utilisent tous 256 valeurs, ce qui permet d'attribuer une plus grande variété de couleurs aux objets et aux personnages, tout en empêchant les références non valides de planter le jeu.<br><br><br>
+
+			<strong>2.</strong> L'ajout de nouvelles couleurs au-delà des valeurs standard pose cependant un problème, qu'il n'est pas facile de constater de visu. En l'occurrence, le moteur Infinity Engine affiche les couleurs en utilisant deux sources : Chaque image affichée utilise des couleurs provenant des fichiers BMP correspondant à sa palettes, alors que - pour une raison quelconque - l'affichage des polices de caractères colorées (dans la boîte de dialogue) est codé en dur dans l'exécutable.<br><br>
+			Les valeurs des couleurs de l'exécutable sont lues à des adresses fixes [<em>NdT : offset</em>], de sorte que les entrées non valides ne provoqueront pas le crash du jeu, mais afficheront des couleurs de police imprévisibles (beaucoup apparaissant en noir, rendant la lecture impossible). Il existe quelques entrées supplémentaires après les 116 premières, mais leur nombre est bien inférieur à 256.<br><br>
+			La deuxième partie de l'installation résout ce problème en modifiant le fichier exécutable pour disposer de couleurs de police appropriées pour les 256 entrées. Elle ne sert à rien d'autre qu'à cela.<br><br><br>
+		</p>
+
+		<p>
+			<strong><em>Mais... attendez, le jeu ne dispose-t-il pas de valeurs de couleurs aléatoires commençant à #200 ?</em></strong><br><br>
+
+			Oui, c'est exact. Dans Baldur's Gate II (et uniquement dans Baldur's Gate II), le fichier <em>RANDCOLR.2da</em> vous permet de définir des « valeurs de couleurs aléatoires ». Il s'agit essentiellement d'un tableau permettant de définir différents jeux de couleurs, composés de valeurs de couleurs existantes, qui sont ensuite sélectionnés de manière aléatoire. Par défaut, le jeu utilise les couleurs 200 et suivantes (qui ne contiennent aucune information sur leur dégradé de couleur).<br><br>
+			Les couleurs aléatoires sont utilisées uniquement pour paramétrer les couleurs des personnages (définis par les fichiers CRE ou CHR) et n'entrent pas en conflit avec les nouvelles valeurs de couleurs des palettes. Cela signifie que sur un personnage, la couleur #200 continuera d'utiliser la valeur de couleur aléatoire #200, tandis que sur un objet, la couleur #200 utilisera le nouveau dégradé de couleur introduit par 1pp.<br><br>
+			Détail intéressant : si une couleur disposant d'une entrée dans <em>RANDCOLR.2da</em> est définie elle-même comme entrée d'une couleur aléatoire, elle apparaîtra comme la valeur de couleur souhaitée.<br><br><br>
+			Veuillez m'excuser si tout cela vous paraît un peu confus, je ne le sais que trop bien. J'espère que l’outil de création de palette de 1pp contribuera à atténuer cette confusion, car il vous alertera sur ces problèmes, si nécessaire.<br><br>
+		</p>
+
+		<address>
+			<span class="footer">1ppv4 Couleurs de palette étendues &gt; Informations supplémentaires</span> &#8226;<a href="#top">BACK TO TOP</a>
+		</address>
+	  </div>
+
+<!-- ================== M o d d i n g ================== -->
+	  <a name="modding" id="modding"></a>
+	  <div class="content">
+
+		<h2>Personnalisation & Modding</h2><br>
+
+		<p>
+			<strong>Personnaliser la palette.</strong></br></br>
+			Ce programme d'installation vous permet de personnaliser ou de modifier facilement la palette installée.<br><br>
+			Vous pouvez modifier les nuances de couleurs dans les fichiers <em>MPAL256</em> et <em>MPALETTE</em> avec n'importe quel logiciel de retouche d'image.<br>
+			Il vous suffit de les remplacer dans le sous-répertoire <em>/files</em> du répertoire d'installation [<em>NdT : 1pp\core\1pp_ext_pal\files</em>].<br><br>
+			Le fichier <em>RANGES12</em> n'est en fait * absolument pas * utilisé par le jeu, mais comme NearInfinity l'utilise, il est préférable de le remplacer également pour que NI puisse correctement lire et modifier les fichiers d'objets et de créatures.<br><br>
+			Enfin et surtout, le fichier <em>__setting.bmp</em> contient les informations sur les couleurs qui seront transférées dans l'exécutable (pour les couleurs de police). Veuillez noter que, contrairement aux fichiers mpalette, l'image réelle n'a aucun intérêt. La table des couleurs du fichier BMP contient les informations qui sont lues et transférées dans l'exécutable. Notez également qu'il n'est en aucune manière utilisé par le jeu, il est simplement lu et utilisé par le programme d'installation.<br><br>
+		</p>
+		<hr style="width: 90%;"/><br>
+		<p>
+			<strong>Modder avec la palette étendue.</strong></br></br>
+			Gardez à l'esprit que si vous utilisez une nouvelle valeur de couleur dans un mod (à partir du numéro 120), cela * plantera * les jeux qui ne disposent pas des fichiers MPALETTE et MPAL256 étendus (l'outil de palette 1pp vous avertira également si vous définissez de nouvelles nuances).<br><br>
+			Étant donné que le contenu de ces fichiers n’est pas affecté par d’autres mods (à ma connaissance) et que leur remplacement est aussi peu intrusif que possible, le moyen le plus simple d’éviter cela est de les inclure dans votre mod et de les installer.<br><br>
+			Pour éviter d'écraser inutilement ces fichiers, il est préférable d'ajouter une simple vérification de la taille du fichier à votre procédure d'installation : Si la taille des fichiers existants est de 9 272 octets (MPALETTE) et de 196 664 octets (MPAL256), ils contiennent déjà un jeu complet de 256 couleurs.<br><br>
+			Bien entendu, si vous les utilisez pour définir la couleur principale d'un personnage (et c'est la seule situation où cela pourrait être perceptible), cela ne corrigera pas la couleur de la police de dialogue.<br><br>
+		</p>
+
+		<address>
+			<span class="footer">1ppv4 Couleurs de palette étendues &gt; Personnalisation & Modding</span> &#8226;<a href="#top">BACK TO TOP</a>
+		</address>
+	  </div>
+
+	</div>
+  </div>
+ </body>
+</html>

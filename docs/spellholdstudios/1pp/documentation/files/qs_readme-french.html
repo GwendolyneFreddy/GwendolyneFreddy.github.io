@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="styles/style_1pp.css" type="text/css">
+
+	<title>
+		Spellhold Studios - 1ppv4 [Colourable quarterstaves development reference]
+	</title>
+	<link href="images/shsweb.ico" rel="icon" type="bmp" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+
+<body>
+  <div id="wrap">
+	<a name="top" id="top"></a>
+
+	<div id="headerdiv-top" style="padding-bottom:1em">
+		<span class="one" style="font-size:400%;font-family:palatino;line-height:100%;color: #781808">1</span><span class="pp" style="font-size:200%;font-family:palatino;line-height:100%;vertical-align:0.3em;margin-left:-.25em"> pp</span><span class="v4" style="font-size:52%;font-family:helvetica neue, helvetica;line-height:100%;vertical-align:3.3em;margin-left:-.25em; color: #686868">VERSION 4</span><br />
+		<span id="headerdiv-top-fw" style="position:relative"><p>Un mod de Spellhold Studios pour les jeux Infinity Engine</p></span>
+	</div>
+
+	<div id="headerdiv-bottom">
+		<p class="about">
+			Auteure : Erephine
+		</p>
+		<p class="about" style="padding: 2px 0px 4px 0px">
+			<a href="http://www.spellholdstudios.net/ie/1pp">Site internet du mod</a> &#8226; <a href="http://www.shsforums.net/forum/159-1pp/">Forum du mod</a> &#8226; <a href="http://www.shsforums.net/files/file/1006-1ppv410/">Téléchargement</a> &#8226; <a href="https://github.com/SpellholdStudios/1pp">GitHub</a> &#8226; Version: 4.2.0
+		</p>
+		<hr>
+		<p class="menu">
+			<a href="#intro">Comment ça marche ?</a>
+		</p>
+	</div>
+
+	<div id="maindiv">
+<!-- ================== I n t r o d u c t i o n ================== -->
+	  <a name="intro" id="intro"></a>
+	  <div class="content">
+
+		<h2>Comment ça marche ?</h2><br>
+
+		<p class="screen" style="background-image:url(images/qs_m_reference_chart.png)"><img src="images/qs_m_reference_chart.png"></p></br>
+
+		<h3>Comment colorer des bâtons</h3></br>
+
+		<p>
+			Modder avec ce composant est incroyablement facile.</br>
+		</p>
+		<p>
+			Si vous souhaitez utiliser ce composant dans votre mod, vous devriez trouver utile le tableau de références affiché plus haut. Si vous utilisez NI pour modifier un objet, n'oubliez-pas que cet utilitaire ne connait pas la valeur de la plupart des « locations », ou plutôt, ne comprend pas la manière dont elles sont utilisées.</br>
+		</p>
+		<p>
+			Dans NearInfinity, chargez votre bâton et ouvrez l'onglet « Edit ». Tout en bas, sont listés ses effets globaux. Vous devriez y trouver quelques effets « Set Item Colour ».</br>
+		</p>
+		<p>
+			Cet opcode attribue une couleur à un « <acronym title="NdT : location, en anglais">emplacement</acronym> » (terme quelque peu trompeur, en anglais). Ces emplacements représentent les différentes « couleurs » que vous pouvez voir sur le tableau de références. Rouge correspond à l'emplacement 20, jaune à l'emplacement 19, etc.</br>
+		</p>
+		<p>
+			Donc, si vous souhaitez définir la couleur de la partie bleue du bâton (comme indiqué sur le tableau de références), vous utiliserez un effet « Set Item Colour » pour l'emplacement 21.</br>
+		</p>
+		<p>
+			Il est généralement préférable de modifier le champ emplacement en mode décimal (clique droit, éditer en décimal) et de saisir le numéro, puisque la plupart des emplacements sont inconnus de NI, et ceux qui ne le sont pas sont étiquetés... disons simplement pas de la façon la plus compréhensible. [<em>NdT : ce n'est plus valable depuis la parution des dernière versions de NI. Dorénavant, NearInfinity intègre toutes les valeurs de « location ».</em>]</br>
+		</p>
+		<p>
+			Vos fichiers ne disposeront sans doute pas d'un nombre suffisant d'effets Set Item Colour (le bâton d'origine n’avait que deux couleurs à définir..). Il est cependant très facile d'en ajouter de nouveaux. Effectuez un clique-droit sur l'un des effets existants, copiez-le et collez-le.</br>
+		</p>
+		<p>
+			Modifiez les valeurs des champs emplacement et couleur de l'effet cloné, et voilà, vous avez paramétré la couleur de votre choix.</br>
+		</p><br>
+
+
+		<hr style="width: 90%;"><br>
+
+
+		<h3>La couche de compatibilité</h3></br>
+
+		<p>
+			Vous aurez remarqué que les bâtons colorés utilisent quatre « emplacements » que vous pouvez paramétrer :
+			<ul>
+				<li><acronym title="NdT : Gris">Grey</acronym> (= 16)</li>
+				<li><acronym title="NdT : Bleu canard, ou turquoise">Teal</acronym> (= 17)</li>
+				<li><acronym title="NdT : Rose">Pink</acronym> (= 18)</li>
+				<li>et <acronym title="NdT : Bleu">Blue</acronym> (=21)</li>
+			</ul>
+		</p>
+		<p>
+			Les bâtons originaux utilisent le Rouge (= 20) sur toute leur longueur.</br>
+			Comme les bâtons colorés n'utilisent pas le Rouge sous quelque forme que ce soit, et que les bâtons du jeu n'utilisent pas les emplacements des bâtons colorés, il n'y a aucun risque de superposition et de conflit de couleurs.</br></br>
+
+			Cela signifie que vous pouvez attribuer des couleurs supplémentaires à vos bâtons ET conserver une couleur uniforme pour les personnes n'ayant pas installé le module Coloration des bâtons.</br></br>
+
+			Le reste n'est que du bonheur.
+		</p></br>
+
+		<address>
+			<span class="footer">1ppv4 Coloration des bâtons &gt; Captures d'écran</span> &#8226;<a href="#top">HAUT DE PAGE</a>
+		</address>
+	  </div>
+
+	</div>
+
+  </div>
+</body>
+</html>

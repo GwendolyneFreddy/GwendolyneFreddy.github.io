@@ -138,7 +138,7 @@
 		<h3>Mac OS X</h3>
 
 		<p>
-			TODO
+			Unfortunately, this mod is not currently fully compatible with OS X because a few components patching exe file do not support OS X. If you wish to make it so, please post your interest in the <a href="http://www.shsforums.net/forum/159-1pp/">forum</a>. (It may help to examine your game launcher and the contents of the existing patch in an editor if you have any technical expertise.)
 		</p></br>
 
 
@@ -1034,10 +1034,16 @@
 
  		  <ul class="version-list c1">
 			<li><a href="http://www.spellholdstudios.net/">Spellhold Studios</a> team for hosting the mod (<a href="http://www.shsforums.net">Forums</a>).</li>
-			<li>French translation: Gwendolyne.</li>
+			<li>French translation: Gwendolyne (Luren for proofreading).</li>
 			<li>...</li>
+			<li>Flaming sword component: Thanks in advance especially to Nythrun for letting us use her code! We hope!</li>
+			<li>First installer: CamDawg.</li>
 			<li>Everyone else from the <a href="https://www.baldursgateworld.fr">La Couronne de Cuivre</a>, <a href="https://www.gibberlings3.net/forums/">The Gibberlings Three</a>, <a href="http://www.shsforums.net/">Spellhold Studios</a> forums, and the other Infinity Engine gaming and modding communities who offered their help and support.</li>
 		  </ul><br>
+
+		<p style="clear: both; padding-top: 10px;">
+			For support or questions, please visit the <a href="http://www.shsforums.net/forum/159-1pp/">mod forum</a>.
+		</p></br>
 
 		<hr style="width: 90%;"/><br>
 
@@ -1045,23 +1051,31 @@
 
 		<ul class="c1">
 			<li><a href="https://github.com/WeiDUorg/weidu/releases"><acronym title="Weimer Dialogue Utility">WeiDU</acronym></a>, by Wes Weimer, the bigg and Wisp.</li>
-			<li><a href="https://www.adobe.com/products/photoshop.html">Adobe Photoshop</a></li>
+			<li><a href="https://github.com/Argent77/NearInfinity/releases">Near Infinity</a>, by Jon Olav Hauglid, FredSRichardson, and Argent77.</li>
+			<li><a href="https://gibberlings3.github.io/iesdp/"><acronym title="Infinity Engine Structures Description Project">IESDP</acronym></a>, maintained by igi and lynx.</li>
+			<li><a href="https://www.gibberlings3.net/mods/tools/dltcep/"><acronym title="Dragonlance Total Conversion Editor Pro">DLTCEP</acronym></a>, by Avenger.</li>
+			<li><a href="https://www.adobe.com/products/photoshop.html">Adobe Photoshop</a>.</li>
 			<li><a href="http://www.gimp.org/"><acronym title="GNU Image Manipulation Program">GIMP</acronym></a>, by the GIMP team.</li>
-			<li><a href="http://www.gamani.com/">GIF Movie Gear</a></li>
-			<li><a href="https://www.autodesk.com/products/3ds-max/overview">3ds Max</a></li>
+			<li><a href="http://www.gamani.com/">GIF Movie Gear</a>.</li>
+			<li><a href="https://www.autodesk.com/products/3ds-max/overview">3ds Max</a>.</li>
 			<li><a href="http://www.teambg.eu/?page=tools&amp;cat=32">BAM Workshop</a>, by Glenn Flansburg.</li>
 			<li><a href="http://www.shsforums.net/topic/57564-bamworkshop/">BAMWorkshop 2</a>, by Andrew Bridges.</li>
 			<li><a href="http://www.shsforums.net/topic/37809-new-developer-resources/">1pp dev tools</a> by Erephine.</li>
 			<li><a href="http://notepad-plus-plus.org/">Notepad++</a>, by the Notepad++ team, Don Ho, and the spellcheck plug-in.</li>
 			<li><a href="http://www.shsforums.net/files/file/1048-weidu-highlighter-for-notepad/">WeiDU Notepad++ Highlighters </a>, by Argent77.</li>
-			<li><a href="http://www.new-hex-editor.com/">Hex Editor Neo</a></li>
-			<li><a href="https://www.acdsee.com/">ACDSee Pro</a></li>
+			<li><a href="http://www.context.cx/">ConTEXT Text Editor</a>, by Eden Kirin.</li>
+			<li><a href="http://www.new-hex-editor.com/">Hex Editor Neo.</a></li>
+			<li><a href="https://www.acdsee.com/">ACDSee Pro</a>.</li>
 			<li><a href="http://www.bulkrenameutility.co.uk/">Bulk Rename Utility</a>, by TGRMN Software.</li>
 		</ul><br>
 
-		<p style="clear: both; padding-top: 10px;">
-			For support or questions, please visit the <a href="http://www.shsforums.net/forum/159-1pp/">mod forum</a>.
-		</p></br>
+		<hr style="width: 90%;"/><br>
+
+		<h5>Copyrights Information</h5>
+
+		  <div class="important">
+			<p>This mod was created to be freely enjoyed by all Baldur's Gate 2 players. However, it should not be sold, published, compiled or redistributed in any form without the consent of Erephine. First WeiDU packaging was done by CamDawg. The original artwork and graphics are &copy;2004 Erephine.</p>
+		  </div><br>
 
 		<address>
 			<span class="footer">1ppv4 &gt; Credits and Acknowledgements</span> &#8226;<a href="#top">BACK TO TOP</a>
@@ -1080,6 +1094,7 @@
 		  <ul style="width: 92%">
 			<li>Added <em>1pp.ini</em> metadata file to support AL|EN's "Project Infinity".</li>
 			<li>Replaced <span class="tp2">AUTHOR</span> keyword with <span class="tp2">SUPPORT</span>.</li>
+			<li>Added components <span class="tp2">DESIGNATED</span> numbers and <span class="tp2">LABELS</span>.</li>
 			<li>Added "<em>always.tpa</em>" library.</li>
 
 			<li>Commented code as much as possible.</li>
@@ -1087,20 +1102,20 @@
 
 			<li>Installation options have been moved into <em>1pp-config-default.ini</em> file. If you want to modify them, please read this <a href="#config">chapter</a>.</li>
 			<li>Integrated all BWP Fixpack fixes (thanks Lollorian, The Imp and others!).</li>
-			<li>Split huge [400] Core updates and item patches component into smaller ones for more comfortable readability and maintenance (checking 2500 or 3000 lines is easier when you search a glitch or a bug in more than 16000 lines of code!).</li>
+			<li>Split huge [400] "<em>Core updates and item patches</em>" component into smaller ones for more comfortable readability and maintenance (checking 2500 or 3000 lines is easier when you search a glitch or a bug in more than 16000 lines of code!). &#128521;</li>
 			<li>Added BG2 Fixpack and ToBEx compatibility.</li>
-			<li>Added partial <a href="https://www.gibberlings3.net/files/file/969-item-revisions/">Item Revisions</a>, <a href="https://www.gibberlings3.net/files/file/970-spell-revisions/">Spell Revisions</a> and <a href="https://www.gibberlings3.net/files/file/948-iwdification/">IWDification</a> compatibility in a rather soft way: As SR, IR and IWDification are still beta versions, I gave up trying to write a plain compatibility with them. It would be certainly obsolete in a few months, therefore a waste of time. </li>
-			<li>Added 1PP crossmods compatibility (BG1 NPC Project, Bolsa, Improved HaerDalis Swords, Rolles, Ruad, Song and Silence, Stuff of the Magi, The Unusual Oddities Shop).</li>
+			<li>Added partial <a href="https://www.gibberlings3.net/files/file/969-item-revisions/">Item Revisions</a>, <a href="https://www.gibberlings3.net/files/file/970-spell-revisions/">Spell Revisions</a> and <a href="https://www.gibberlings3.net/files/file/948-iwdification/">IWDification</a> compatibility in a rather soft way: As SR, IR and IWDification are still beta versions, I gave up trying to write a plain compatibility with them. It would be certainly obsolete in a few months, therefore a waste of time. &#128521;</li>
+			<li>Added and/or improved 1PP crossmods compatibility (BG1 NPC Project, Bolsa, Improved HaerDalis Swords, Rolles, Ruad, Song and Silence, Stuff of the Magi, The Unusual Oddities Shop).</li>
 			<li>Fixed typos and misspellings preventing a few items to be patched (or patching wrong ones...).</li>
 			<li>Coding simplification:</li>
 			  <ul>
 				<li style="margin-left:-4%">Replaced macros with functions whenever possible.</li>
-				<li style="margin-left:-4%">Copied entire folders instead of infinite lines.</li>
+				<li style="margin-left:-4%">Copied entire folders instead of infinite lines of code.</li>
 				<li style="margin-left:-4%">Grouped actions or patches with <span class="tp2">ACTION_FOR_EACH</span> and <span class="tp2">PATCH_FOR_EACH</span> whenever possible.</li>
 				<li style="margin-left:-4%; margin-right:-1%;">Used new and more efficient <acronym title="Weimer Dialogue Utility">WeiDU</acronym> functions (not released when Erephine wrote this mod) and Gwendolyne's patch functions to optimize the coding (e.g. <span class="tp2">ADD_ITEM_EQEFFECT</span>, <span class="tp2">ALTER_EFFECT</span> and <span class="tp2">ALTER_ITEM_HEADER</span> replace so many lines of codes!).</li>
 				<li style="margin-left:-4%">Avoided copying and overwriting the same files again and again...</li>
 			  </ul>
-			<li>Updated all readme files (1pp now supports translated readmes).</li>
+			<li>Re-formated and updated all readme files (1pp now supports translated readmes).</li>
 			<li>Added French translation (Gwendolyne).</li>
 			<li>Traification. Feel free to provide me with translations. I will include them as soon as possible.</li>
 			<li>Removed unused files.</li>
@@ -1113,21 +1128,21 @@
 
 		<h5>Components specific changes and fixes:</h5>
 		  <ul style="width: 92%">
-			<li><span style="color: #781808;">[101] 1ppv4: Core paperdolls - main component</span> (101_base.tph, 101_ia.tph, 101_iwd.tph, 101_obj.tph)</li>
+			<li><span style="color: #781808;">[101] 1ppv4: Core paperdolls (composant principal)</span> (101_base.tph, 101_ia.tph, 101_iwd.tph, 101_obj.tph)</li>
 			  <ul style="padding-top: 4px">
 				<li style="margin-left:-4%; margin-right:-1%;">Copied entire folders instead of infinite lines of code.</li>
 				<li style="margin-left:-4%; margin-right:-1%;">Infinity Animations paperdolls for Legacy animations: replaced <span class="tp2">READLN</span> action "<em>Use 1pp or IWD style female dwarf paperdolls?</em>" with reading new setting (1pp_fdwarf) from <em>1pp-config-default.ini</em> or <em>1pp-config-user.ini</em> [default value = 2 (1pp style)].</li>
 			  </ul><br>
 
-			<li><span style="color: #781808;">[102-103] 1ppv4: Extended palette entries</span> (102_compat.tph, 103_extpal.tph)</li>
-			  <ul>
+			<li><span style="color: #781808;">[102-103] 1ppv4: Extended palette entries</span> (102_compat.tph and 103_extpal.tph)</li>
+			  <ul style="padding-top: 4px">
 				<li style="margin-left:-4%; margin-right:-1%;">Copied entire folders instead of infinite lines of code.</li>
 			  </ul><br>
 
 			<li><span style="color: #781808;">[104] 1ppv4: GUI additions for BGII</span> (104_core.tph)</li>
 			  <ul style="padding-top: 4px">
 				<li style="margin-left:-4%; margin-right:-1%;">Copied entire folders instead of infinite lines of code.</li>
-				<li style="margin-left:-4%; margin-right:-1%;">Replaced <span class="tp2">READLN</span> actions "<em>Do you want to include SoA style loading screens for ToB?</em>", "<em>Install updated fonts? (may cause issues with languages using different font .BAMs)</em>" and "<em>Use mixed case labels?</em>" with reading new settings (1pp_gui_soa, 1pp_updated_fonts and 1pp_mixed_labels) from <em>1pp-config-default.ini</em> or <em>1pp-config-user.ini</em>.</li>
+				<li style="margin-left:-4%; margin-right:-1%;">Replaced <span class="tp2">READLN</span> actions "<em>Do you want to include SoA style loading screens for ToB?</em>", "<em>Install updated fonts? (may cause issues with languages using different font .BAMs)</em>" and "<em>Use mixed case labels?</em>" with reading new settings (1pp_gui_soa, 1pp_updated_fonts and 1pp_mixed_labels) from <em>1pp-config-default.ini</em> or <em>1pp-config-user.ini</em> [default values are defined in this <a href="#config">chapter</a>].</li>
 			  </ul><br>
 
 			<li><span style="color: #781808;">[105] 1ppv4: Avatar fixes</span> (105_avatars.tph)</li>
@@ -1140,7 +1155,7 @@
 				<li style="margin-left:-4%; margin-right:-1%;">Copied entire folders instead of infinite lines of code.</li>
 			  </ul><br>
 
-			<li><span style="color: #781808;">[110-111-112] 1ppv4: Female Dwarves</span> (110_thieves_iwd.tph, 111_thieves_bg2.tph and 112_thieves_iwd2.tph)</li>
+			<li><span style="color: #781808;">[110-111-112] 1ppv4: Thieves Galore</span> (110_thieves_iwd.tph, 111_thieves_bg2.tph and 112_thieves_iwd2.tph)</li>
 			  <ul style="padding-top: 4px">
 				<li style="margin-left:-4%; margin-right:-1%;">Copied entire folders instead of infinite lines of code.</li>
 			  </ul><br>
@@ -1153,8 +1168,8 @@
 
 			<li><span style="color: #781808;">[114] 1ppv4: Softer Spell Effects</span> (114_effects.tph)</li>
 			  <ul style="padding-top: 4px">
-				<li style="margin-left:-4%; margin-right:-1%;">Replaced <span class="tp2">READLN</span> action "<em>WARNING: This component will only work properly with 3D support enabled (alpha blending). Installing this component on BG2 in software rendering mode IS NOT A GOOD IDEA.</em>" with reading '3D Acceleration=1' in baldur.ini, icewind.ini or icewind2.ini before running the component.</li>
-				<li style="margin-left:-4%; margin-right:-1%;">Replaced <span class="tp2">READLN</span> actions "<em>Install IWD-style Agannazar's Scorcher or alternate style?</em>" and "<em>Install less obtrusive dispel magic effect?</em>" with reading new settings (1pp_agannazar_scorcher and 1pp_dispel_magic_effect) from <em>1pp-config-default.ini</em> or <em>1pp-config-user.ini</em>.</li>
+				<li style="margin-left:-4%; margin-right:-1%;">Replaced <span class="tp2">READLN</span> action "<em>WARNING: This component will only work properly with 3D support enabled (alpha blending). Installing this component on BG2 in software rendering mode IS NOT A GOOD IDEA.</em>" with reading '<span class="tp2">3D Acceleration=1</span>' in baldur.ini, icewind.ini or icewind2.ini before running the component.</li>
+				<li style="margin-left:-4%; margin-right:-1%;">Replaced <span class="tp2">READLN</span> actions "<em>Install IWD-style Agannazar's Scorcher or alternate style?</em>" and "<em>Install less obtrusive dispel magic effect?</em>" with reading new settings (1pp_agannazar_scorcher and 1pp_dispel_magic_effect) from <em>1pp-config-default.ini</em> or <em>1pp-config-user.ini</em> [default values are defined in this <a href="#config">chapter</a>].</li>
 				<li style="margin-left:-4%; margin-right:-1%;">Function <span class="tp2">GW_MODIFY_PROJ</span> replaces 
 				(<a href="https://github.com/BigWorldProject/Big-World-Fixpack/blob/16c96e60c38248266038639301b320af3b4318b7/Big%20World%20Fixpack/1pp/114_effects.tph.patch">Lollorian's BWP Fixpack misc patchified code changes</a>
 				(114_effects.tph.patch: modify new projectile values in ALL spell headers) which was inefficient and patched nothing. Moreover, it was using a wrong offset coding for ITM files. Source: <a href="https://github.com/BigWorldProject/Big-World-Fixpack/commit/1126bae51bf116fb82d8ad8d82882173cdb1a0d3">commit</a>.</li>
@@ -1205,7 +1220,7 @@
 				<li style="margin-left:-4%">Replaced <span class="tp2">READLN</span> action "<em>Do you want existing 'cause wound' spells to use IWD-style icons? (healing icon in red)</em>" with reading new setting (1pp_iwd_cause_wounds_icons) from <em>1pp-config-default.ini</em> or <em>1pp-config-user.ini</em> [default value = 1 (Yes)].</li>
 				<li style="margin-left:-4%">Replaced BWP Fixpack <a href="https://github.com/BigWorldProject/Big-World-Fixpack/blob/16c96e60c38248266038639301b320af3b4318b7/Big%20World%20Fixpack/1pp/202_spelltweaks.tph.patch">Lollorian's patchified Armor animation changes</a> (202_spelltweaks.tph.patch: modifies opcode #215 visual effect in ALL spell headers) with <acronym title="Weimer Dialogue Utility">WeiDU</acronym> innate <span class="tp2">ALTER_EFFECT</span> function. Source: <a href="https://github.com/BigWorldProject/Big-World-Fixpack/commit/57211cf3a29cfd8381b62b3df13d3d04ed9f5fb2">commit</a>.</li>
 				<li style="margin-left:-4%">Added SR compatibility for individualised armour effects. 1PP patches also op#215 with GARMORH resource (spwi317.spl: Ghost Armor).</li>
-				<li style="margin-left:-4%">Added IWDIfication and SR compatibility for Installing PnP/IWD-style 'cause wounds' spells in a rather softer way.</li>
+				<li style="margin-left:-4%">Added IWDIfication and SR compatibility for installing PnP/IWD-style 'cause wounds' spells in a rather softer way.</li>
 			  </ul><br>
 
 			<li><span style="color: #781808;">[203] 1ppv4: Restored flame sword animations</span> (203_fslong.tph)</li>
@@ -1227,7 +1242,7 @@
 
 			<li><span style="color: #781808;">[210] 1ppv4: Increased paperdoll object variety</span> (210_v4_ppd_variety.tph)</li>
 			  <ul style="padding-top: 4px">
-				<li style="margin-left:-4%">CRE files: used <span class="tp2">READ_LONG 0x28</span> instead of <span class="tp2">READ_SHORT 0x28</span> (dword).</li>
+				<li style="margin-left:-4%">CRE files: used <span class="tp2">READ_LONG 0x28</span> instead of <span class="tp2">READ_SHORT 0x28</span> (dword!).</li>
 				<li style="margin-left:-4%">ITM files: used <span class="tp2">WRITE_LONG 0x18 (THIS BAND BNOT BIT2)</span> to remove droppable flag instead of writing the offset new value.</li>
 				<li style="margin-left:-4%">Simplified codes creating undroppable clones of weapons (in particular with tutu_var) replacing primary weapon with undroppable clone and moving it to inventory.</li>
 			  </ul><br>
@@ -1240,10 +1255,11 @@
 				<li style="margin-left:-4%">Added a new setting (1pp_sleeper) allowing to make alternate the turning of The Sleeper into a flail. In any case, 1PP does not overwrites its original inventory bam with a new one, but installs a new icon (IBLUN16B) as an alternate, and saves the vanilla icon for compatibility with other mods purpose.</li>
 				<li style="margin-left:-4%">Replaced tooltip section with two new functions that 1) add a fourth column if needed, 2) automatically writes values in tooltip.2da from the tra file.</li>
 				<li style="margin-left:-4%">Integrated <a href="http://www.shsforums.net/topic/56643-1pp-circlets-and-bg2tweaks-issue/?p=561849">Lollorian's BWP Fixpack patch for Ashes of Embers compatibility</a> (400_1pp_update_bgii.tph.patch): renames 1PPv4 BAND0X.ITMs to XOBAND0X.ITMs, using Lollorian's prefix (according to BWL: XO, submitted by Chaplain, 11.03.2010, Prefix owner also known as Lollorian). <a href="https://github.com/BigWorldProject/Big-World-Fixpack/commit/1126bae51bf116fb82d8ad8d82882173cdb1a0d3">Source</a>.</li>
+				<li style="margin-left:-4%">Added ToBEx compatibility for circlets: item flag EE/Ex: Toggle critical hits flag (BIT25).</li>
 				<li style="margin-left:-4%">Gems sub-component: code simplified and re-written to avoid overwriting files when selecting option no lore needed for identification (1pp_gemlore = 2). Build an array to define new gems lore values to identify. Same tph used for IWD and BG2 games.</li>
 				<li style="margin-left:-4%">Code simplified or re-written with newer functions to provide automatic process:</li>
 				  <ul>
-					<li style="margin-left:-8%; margin-right:-8%;">Grouped actions or patches with ACTION_FOR_EACH and PATCH_FOR_EACH whenever possible.</li>
+					<li style="margin-left:-8%; margin-right:-8%;">Grouped actions or patches with <span class="tp2">ACTION_FOR_EACH</span> and <span class="tp2">PATCH_FOR_EACH</span> whenever possible.</li>
 					<li style="margin-left:-8%; margin-right:-8%;">Replaced macros with functions whenever possible.</li>
 					<li style="margin-left:-8%; margin-right:-8%;">Replaced <span class="tp2">WRITE_LONG 0x3E 0</span> and <span class="tp2">WRITE_ASCII 0x3A ~ISHLDS01~</span> with <span class="tp2">WRITE_ASCII 0x3A ~ISHLDS01~ #8</span>. Id. with offsets 0x48 0x44, and 0x5C 0x58.</li>
 					<li style="margin-left:-8%; margin-right:-8%;">Used new 1pp_compatibility.tph library to improve 1PP crossmods compatibility (BG1 NPC Project, Rolles, Ruad, Song and Silence, Stuff of the Magi, The Unusual Oddities Shop).</li>
@@ -1301,13 +1317,13 @@
 
 				<li style="margin-left:-4%">new staves specific fixes (400_update_bgii_staves2.tpa):</li>
 				  <ul>
-					<li style="margin-left:-8%; margin-right:-8%;">Avoids copying and overwriting the same files again and again...</li>
+					<li style="margin-left:-8%; margin-right:-8%;">Avoided copying and overwriting the same files again and again...</li>
 					<li style="margin-left:-8%; margin-right:-8%;">Rewrote tooltip.2da appending to make sure it contains at least four columns, so we can add all Narbucchad's Demise staves abilities. Macro <span class="tp2">GW_ADJUST_TOOLTIP</span> adds new columns in tooltip.2da. Function <span class="tp2">GW_ADD_ITEM_TOOLTIPS</span> adds new entries in tooltip.2da.</li>
 				  </ul>
 
 				<li style="margin-left:-4%">armors specific fixes (400_update_bgii_armors.tpa):</li>
 				  <ul>
-					<li style="margin-left:-8%; margin-right:-8%;">chan03B.itm (Werebane Mail +2): added missing identified name.</li>
+					<li style="margin-left:-8%; margin-right:-8%;">chan03b.itm (Werebane Mail +2): added missing identified name.</li>
 					<li style="margin-left:-8%; margin-right:-8%;">plat15.itm (Pride of the Legion +2): reverted its inventory and description icons (wrongly set to IPLAT23 and CPLAT05) as EE does not validate this change.</li>
 					<li style="margin-left:-8%; margin-right:-8%;">plat23.itm (Full Plate Mail +2): removed from the patches as EE does not validate them (this silver and golden full plate was turned into a black one!).</li>
 				  </ul>
@@ -1360,15 +1376,15 @@
 		<h6>Version 4.1.0 &nbsp;(November 12, 2012)</h6>
 
 		  <ul>
-			<li>Scale shields now have their own animations</li>
-			<li>IImproved carried/description images</li>
-			<li>Fixed low resolution GUI overlap</li>
+			<li>Scale shields now have their own animations.</li>
+			<li>IImproved carried/description images.</li>
+			<li>Fixed low resolution GUI overlap.</li>
 		  </ul><br>
 
 		<h6>Version 4.0.0 &nbsp;(August 6, 2012)</h6>
 
 		  <ul>
-			<li>Initial release</li>
+			<li>Initial release.</li>
 		  </ul><br><br>
 
 		<address>
