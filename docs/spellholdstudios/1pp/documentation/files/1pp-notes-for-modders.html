@@ -538,7 +538,7 @@
 		<a name="3" id="3"></a><p style="font-size: 130%;"><strong>3. Patch an item</strong></p>
 
 		<p style="margin-top:1%;">
-			Now cames the real part. If you want to create an item using 1pp features, let's stay a special Staff of the Magi, the process is fairly simple: First, create it as a "normal" Staff of the Magi, and install it with your tp2:
+			Now cames the real part. If you want to create an item using 1pp features, let's say a special Staff of the Magi, the process is fairly simple: First, create it as a "normal" Staff of the Magi, and install it with your tp2:
 		</p>
 
 		<div class="important" style="background-color: #F1F1F1;">
@@ -551,7 +551,7 @@
 			</p>
 		</div><br>
 
-		<p>Then you have three choices: modify its colors to fit your new icon or use the 1pp Staff od the Magi setting (using 1pp ISTAF11 icon).</p></br>
+		<p>Then you have three choices: modify its colors to fit your new icon or use the 1pp Staff of the Magi setting (using 1pp ISTAF11 icon).</p></br>
 
 		<hr style="width: 90%; height: 1px; border: 0; color: #781808; background-color: #781808;" /></br>
 
@@ -568,7 +568,7 @@
           SAY DESC @4
           PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
               PATCH_IF (is_1pp_staff0 OR is_1pp_staff) BEGIN
-                  LPM ~clear~           // EMOVES all existing items' coloration opcodes before setting new ones
+                  LPM ~clear~           // REMOVES all existing items' coloration opcodes before setting new ones
                   SET gradient = 112    // 112 SEA_FOAM
                   SET location = wgrey  // location (Head/Blade/Staff major)
                   LPM ~colour~          // ADDS a new item global effect (op#7: Set Character colours by Palette)
@@ -768,7 +768,7 @@ OUTER_SET is_ee = (GAME_IS ~bgee bg2ee eet~) ? 1 : 0 // EE game</pre>
 			As 1pp_compatibility library has been written to improve 1pp compatibility with a few mods installed before it (if ever!), it does not contain all patches and you may need to customize it to fit your needs.
 		</p>
 		<p>
-			Let's say you want to create an upgraded version or another version of Celestial Fury +3. All you have ro do is to check the code uses in 400_update_bgii_swords.tpa and copy-paste it in 1pp_compatibility.tph, like this:
+			Let's say you want to create an upgraded version or another version of Celestial Fury +3. All you have to do is to check the code used in 400_update_bgii_swords.tpa and copy-paste it in 1pp_compatibility.tph, like this:
 		</p>
 
 		<div class="important" style="background-color: #F1F1F1;">
