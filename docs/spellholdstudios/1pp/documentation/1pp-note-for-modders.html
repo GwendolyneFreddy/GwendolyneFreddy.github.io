@@ -357,7 +357,7 @@
 /*]]>*/
 	</style>
 	<title>
-		Spellhold Studios - One Pixel Productions: Notes for modders
+		Spellhold Studios - One Pixel Productions: Note for modders
 	</title>
 	<link href="images/shsweb.ico" rel="icon" type="bmp" />
   </head>
@@ -367,13 +367,13 @@
 	  <a name="top" id="top"></a>
 	  <div id="header">
 
-		<h1 style="color: #781808;text-shadow: 0.1rem 0.1rem 0.25rem #807559;">One Pixel Productions: Notes for modders</h1>
+		<h1 style="color: #781808;text-shadow: 0.1rem 0.1rem 0.25rem #807559;">One Pixel Productions - Note for modders</h1>
 
 		<span style="font-style: italic;"><strong>A Spellhold Studios mod for Infinity Engine games.</strong></span>
 		<hr style="margin: 10px 0 10px 0; padding: 0; height: 1px; border: 0; color: #aaa; background-color: #aaa;" />
 
 		<p class="about">
-			Author: Erephine
+			Author: Gwendolyne
 		</p>
 		<p class="about">
 			<a href="http://www.spellholdstudios.net/ie/1pp">Mod Website</a> &#8226; <a href="http://www.shsforums.net/forum/159-1pp/">Mod Forum</a> &#8226; <a href="http://www.shsforums.net/files/file/1006-1ppv410/">Download</a> &#8226; <a href="https://github.com/SpellholdStudios/1pp">GitHub</a> &#8226; Version: 4.2.0
@@ -393,11 +393,11 @@
 		<h2>Overview</h2><br>
 
 		<p>
-			1pp Notes for modders is intended for modders who wish to make their mods compatible with 1pp. The document is organized using a tutorial approach, in which you are guided through each step of accomplishing particular modding tasks without breaking compatibility.
+			1pp Note for modders is intended for modders who wish to make their mods compatible with 1pp. This document is organized using a tutorial approach, in which you are guided through each step of accomplishing particular modding tasks without breaking compatibility.
 		</p><br>
 
 		<address>
-			<span class="footer">1ppv4: Notes for modders &gt; Overview</span> &#8226;<a href="#top">BACK TO TOP</a>
+			<span class="footer">1ppv4: Note for modders &gt; Overview</span> &#8226;<a href="#top">BACK TO TOP</a>
 		</address>
 	  </div>
 
@@ -412,7 +412,7 @@
 			Keep in mind that if you include a new entry in a mod (120+) it *will* crash installs that do not have extended <em>MPALETTE</em> and <em>MPAL256</em> files (the 1pp palette tool will also warn you if you are setting new gradients).<br><br>
 			Since the content of these files is not touched by any other mods (that I am aware of) and replacing them is as non-intrusive as it gets the easiest way to avoid this is to include them with your mod and install them.<br><br>
 			To avoid unnecessary overwriting of the files it would be best to add a simple file size check. If the file sizes are 9,272 bytes (MPALETTE) and 196,664 bytes (MPAL256) they already contain a full 256 colour set and need no further patching:
-		</p><br>
+		</p>
 
 		<div class="important" style="background-color: #F1F1F1;">
 			<p><pre>
@@ -443,7 +443,7 @@
 		</p><br>
 
 		<address>
-			<span class="footer">1ppv4: Notes for modders &gt; Modding with the extended palette</span> &#8226;<a href="#top">BACK TO TOP</a>
+			<span class="footer">1ppv4: Note for modders &gt; Modding with the extended palette</span> &#8226;<a href="#top">BACK TO TOP</a>
 		</address>
 	  </div>
 
@@ -454,12 +454,12 @@
 		<h2>Patching Items and Spells</h2><br>
 
 		<p>
-			As of v4.2.0, the main 1pp update component [400] includes improved compatibility with third party mods. Modders strongly recommended to borrow this simple way of coding to provide compatibility with 1pp, as Bolsa, Improved HaerDalis Swords, Rolles, Ruad, Song and Silence, Stuff of the Magi and The Unusual Oddities Shop mods already do.<br>
+			As of v4.2.0, the main 1pp update component [400] includes improved compatibility with third party mods. Modders are strongly recommended to borrow this simple way of coding to provide compatibility with 1pp, as Bolsa, Improved HaerDalis Swords, Rolles, Ruad, Song and Silence, Stuff of the Magi and The Unusual Oddities Shop mods already do.<br>
 			Below is a brief step by step process to complete it.
 		</p><br>
 
 		<p>
-			&#9888;&#65039; Warning: It will only work fine if 1pp components needed by your mod are installed..
+			&#9888;&#65039; Warning: It will only work fine if 1pp components needed by your mod are installed.
 		</p><br>
 
 		<p>
@@ -470,7 +470,7 @@
 			<span style="margin-left: 7%;">b. Use 1pp Staff of the Magi settings.</span></br>
 			<span style="margin-left: 7%;">c. Use 1pp Glowing Staff of the Magi settings</span></br>
 		<span style="padding-left:50px">&#10173;&nbsp;&nbsp;&nbsp;<a href="#4">4. Customize 1pp_compatibility library</a></span></br>
-		<span style="padding-left:50px">&#10173;&nbsp;&nbsp;&nbsp;<a href="#5">5. Customize 1pp_compatibility library</a></span></br>
+		<span style="padding-left:50px">&#10173;&nbsp;&nbsp;&nbsp;<a href="#5">5. Use new 1pp projectiles</a></span></br>
 			<span style="margin-left: 7%;">a. Setting a new 1pp projectile to your itm or your spl if 1pp is installed</span></br>
 			<span style="margin-left: 7%;">b. Updating protection from projectiles with new 1pp projectiles</span>
 		</p><br>
@@ -481,7 +481,7 @@
 		<a name="1" id="1"></a><p style="font-size: 130%;"><strong>1. Detect 1pp</strong></p>
 
 		<p style="margin-top:1%;">
-			As 1pp update component patches items and provides additional content depending on which components are installed, detecting if 1pp is installed is not enough and you need to detect which components are installed to fine tune compatibility:
+			As 1pp update component patches items and provides additional content depending on which components are installed, detecting if 1pp is installed is not enough and you need to detect which components are installed to fine tune compatibility. Copy the following code in your <span class="tp2">ALWAYS</span> block:
 		</p>
 		<div class="important" style="background-color: #F1F1F1;">
 			<p><pre>
@@ -518,7 +518,7 @@
 			<p><pre>
       ACTION_IF (is_1pp_helmet OR is_1pp_shld OR is_1pp_staff OR is_1pp_staff0 OR is_1pp_fswords OR is_1pp_swblbw OR is_1pp_400 OR is_1pp_401) BEGIN
           INCLUDE ~%MOD_FOLDER%/lib/1pp_macros.tpa~
-          LAM ~Locations~
+          LAM ~Locations~                  // DEFINES location field values to alter items' colors <span style="font-size: 150%">&#10234;</span> MUST BE RUN ONLY ONCE
           INCLUDE ~%MOD_FOLDER%/lib/1pp_compatibility.tph~
           INCLUDE ~%MOD_FOLDER%/lib/1pp_functions.tpa~
       END</pre>
@@ -538,7 +538,7 @@
 		<a name="3" id="3"></a><p style="font-size: 130%;"><strong>3. Patch an item</strong></p>
 
 		<p style="margin-top:1%;">
-			Now cames the real part. If you want to create an item using 1pp features, let's say a special Staff of the Magi, the process is fairly simple: First, create it as a "normal" Staff of the Magi, and install it with your tp2:
+			Now comes the real part. If you want to create an item using 1pp features, let's say a special Staff of the Magi, the process is fairly simple: First, create it as a "normal" Staff of the Magi, and install it with your tp2:
 		</p>
 
 		<div class="important" style="background-color: #F1F1F1;">
@@ -740,7 +740,7 @@ END </pre>
 			</p>
 		</div>
 
-		<p>with is_ee defined like this:</p>
+		<p>with is_ee defined like this in your <span class="tp2">ALWAYS</span> block:</p>
 
 		<div style="margin: 10px auto;width: 90%; border-style: solid; border-width: 1px; border-color: #781808; margin-top: 20px; padding: 6px;">
 			<div class="quotetitle">
@@ -977,7 +977,7 @@ OUTER_SET is_ee = (GAME_IS ~bgee bg2ee eet~) ? 1 : 0 // EE game</pre>
 		<p>I guess now it's time to... Enjoy! &#128521;</p><br>
 
 		<address>
-			<span class="footer">1ppv4: Notes for modders &gt; Patching Items and Spells</span> &#8226;<a href="#top">BACK TO TOP</a>
+			<span class="footer">1ppv4: Note for modders &gt; Patching Items and Spells</span> &#8226;<a href="#top">BACK TO TOP</a>
 		</address>
 	  </div>
 
