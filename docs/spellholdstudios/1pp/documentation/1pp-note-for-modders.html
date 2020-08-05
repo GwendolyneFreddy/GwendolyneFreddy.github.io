@@ -359,7 +359,7 @@
 	<title>
 		Spellhold Studios - One Pixel Productions: Note for modders
 	</title>
-	<link href="images/shsweb.ico" rel="icon" type="bmp" />
+	<link href="files/images/shsweb.ico" rel="icon" type="bmp" />
   </head>
 
   <body>
@@ -472,7 +472,8 @@
 		<span style="padding-left:50px">&#10173;&nbsp;&nbsp;&nbsp;<a href="#4">4. Customize 1pp_compatibility library</a></span></br>
 		<span style="padding-left:50px">&#10173;&nbsp;&nbsp;&nbsp;<a href="#5">5. Use new 1pp projectiles</a></span></br>
 			<span style="margin-left: 7%;">a. Setting a new 1pp projectile to your itm or your spl if 1pp is installed</span></br>
-			<span style="margin-left: 7%;">b. Updating protection from projectiles with new 1pp projectiles</span>
+			<span style="margin-left: 7%;">b. Updating protection from projectiles with new 1pp projectiles</span></br>
+		<span style="padding-left:50px">&#10173;&nbsp;&nbsp;&nbsp;<a href="#6">6. Use Smart Avatar & Armour Switching component</a></span>
 		</p><br>
 
 
@@ -502,7 +503,9 @@
       // 1ppv4: Core updates and item patches
       OUTER_SET is_1pp_400     = (MOD_IS_INSTALLED ~1pp.tp2~ ~400~) ? 1 : 0                                           
       // 1ppv4: Improved projectile effects
-      OUTER_SET is_1pp_401     =  (MOD_IS_INSTALLED ~1pp.tp2~ ~401~) ? 1 : 0</pre>
+      OUTER_SET is_1pp_401     =  (MOD_IS_INSTALLED ~1pp.tp2~ ~401~) ? 1 : 0
+      // 1ppv4: Smart Avatar & Armour Switching
+      OUTER_SET is_1pp_switch  =  (MOD_IS_INSTALLED ~1pp.tp2~ ~113~) ? 1 : 0</pre>
 			</p>
 		</div><br>
 
@@ -973,6 +976,30 @@ OUTER_SET is_ee = (GAME_IS ~bgee bg2ee eet~) ? 1 : 0 // EE game</pre>
       BUT_ONLY</pre>
 			</p>
 		</div><br>
+
+		<hr style="width: 90%; color: #781808; background-color: #781808; "><br>
+
+		<a name="6" id="6"></a><p style="font-size: 130%;"><strong>6. Use Smart Avatar & Armour Switching component</strong></p>
+
+		<p style="margin-top:1%;">
+			If you want your robes and armors benefit from this component which allows armour and robes to properly show up for characters of any class when equipped, use the following code (from Darron mod):
+		</p>
+
+		<div class="important" style="background-color: #F1F1F1;">
+			<p><pre>
+      // Aurumvorax Armor +2
+      COPY ~darron/item/esliarm0.itm~ ~override~
+          SAY NAME12 @108
+          SAY DESC @110
+          PATCH_IF (is_1pp_switch) BEGIN
+              // armor spell effect
+              LPF ADD_ITEM_EQEFFECT INT_VAR insert_point = "-1" opcode = 146 target = 1 timing = 2 parameter1 = 1 parameter2 = 1 STR_VAR resource = lcarmor END
+          END
+      BUT_ONLY</pre>
+			</p>
+		</div><br>
+
+		<hr style="width: 90%; color: #781808; background-color: #781808; "><br>
 
 		<p>I guess now it's time to... Enjoy! &#128521;</p><br>
 
