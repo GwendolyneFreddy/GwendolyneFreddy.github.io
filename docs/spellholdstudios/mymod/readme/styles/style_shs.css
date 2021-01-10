@@ -212,6 +212,14 @@ border-radius: 4px 4px 4px 5px;
 	line-height: 150%;
 }
 
+#maindiv p.boxed {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #781808;
+	margin-top: 32px;
+	padding: 6px;
+}
+
 
 /* ---------------- *
  *  Listes - Lists  *
@@ -256,6 +264,15 @@ border-radius: 4px 4px 4px 5px;
 #maindiv ol li {
 	line-height: 150%;
 }
+
+	#maindiv ul li a:link,
+	#maindiv ul li a:visited,
+	#maindiv ul li ul li a:link,
+	#maindiv ul li ul li a:visited {
+		color: #781808;
+		text-decoration: none;
+		font-weight: normal;
+	}
 
 
 /* --------------------- *
