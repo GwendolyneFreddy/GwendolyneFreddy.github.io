@@ -17,6 +17,11 @@
   </head>
 
   <body onload="showHints('hintbox', 'en', 'hint')">
+
+	<script type="module">
+		document.getElementById("latestVersion").innerText = document.getElementById('versionHistory').getElementsByTagName("h6")[0].innerText
+	</script>
+
 	<div id="wrap">
 	<a name="top" id="top"></a>
 	 <div id="header">
@@ -30,7 +35,7 @@
 			Author: Author &#8226; <acronym title="Weimer Dialogue Utility">WeiDU</acronym> coding: who knows
 		</p>
 		<p class="about">
-			<a href="http://www.spellholdstudios.net/ie/">Mod Website</a> &#8226; <a href="http://www.shsforums.net/">Mod Forum</a> &#8226; <a href="http://www.shsforums.net/files/category/1-baldurs-gate-ii-mods/">Download</a> &#8226; <a href="https://github.com/MyAccount/MyRepo">GitHub</a> &#8226; Version 1.0.0
+			<a href="http://www.spellholdstudios.net/ie/">Mod Website</a> &#8226; <a href="http://www.shsforums.net/">Mod Forum</a> &#8226; <a href="http://www.shsforums.net/files/category/1-baldurs-gate-ii-mods/">Download</a> &#8226; <a href="https://github.com/MyAccount/MyRepo">GitHub</a> &#8226; <span id="latestVersion">
 		</p>
 		<hr style="margin: 10px 0 10px 0; padding: 0; height: 1px; border: 0; color: #aaa; background-color: #aaa;" />
 
@@ -47,18 +52,14 @@
 		<h2>Overview</h2><br>
 
 		<p>
-			This is a readme file template for mods developed and/or hosted at SHS. It is written in HTML language and has two versions:
+			This is a readme file template for mods developed and/or hosted at SHS and is written in HTML language.
  		</p>
-		  <ul style="margin-left: 4%;">
-			<li>mymod-readme-english.html: this version uses a background image file from &#x1F4C1; images folder. Therefore, it can be displayed properly either off-line or online with a <a href="https://spellholdstudios.github.io/readmes/mymod-readme-english.html">link</a> pointing to GitHub SpellholdStudios.github.io repository.</li>
-			<li>mymod-readme-english-online.html: this version uses a background image file from Spellhold Studios database and can be only displayed online.</li>
-		  </ul><br>
 
 		<p>
 			For each section, I took over, whenever possible, elements of readmes already published in order to maintain a semblance of consistency in the terms used. All you have to do is to keep the ones you need (list of compatible games, installation procedures according to the platform, list of tools used...) and, for the rest, replace "MYMOD" and "Author" by the name of the mod and its author, modify the links and fill in the appropriate texts. For some sections,I have been as exhaustive as possible: all you have to do is to choose the paragraphs that interest you and delete the others.
 		</p><br>
  		<p>
-			Short mod description.
+			Short mod description: obvious, isn't it? &#128521;
 		</p><br>
 
 		<p>
@@ -71,6 +72,10 @@
 			<li>Feature #4</li>
 			<li>... &#128578;</li>
 		  </ul><br>
+
+		<p>
+		<strong>Note:</strong> If you want to use more complex templates, please have a look <a href="https://gwendolynefreddy.github.io/docs/spellholdstudios/readme-infinityanimations.html">here</a> and <a href="https://spellholdstudios.github.io/readmes/1pp/documentation/1pp-readme-english.html">here</a>.
+		</p><br>
 
 
 		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
@@ -935,7 +940,7 @@ After = bg2fixpack, EET, divine_remix</pre>
 
 <!-- ============== V e r s i o n   H i s t o r y =============== -->
 	  <a name="version" id="version"></a>
-	  <div class="content">
+	  <div class="content" id="versionHistory">
 
 		<h2>Version History</h2><br>
 
@@ -943,7 +948,6 @@ After = bg2fixpack, EET, divine_remix</pre>
 			<p><span style="color: #781808;">&#9755;</span> If your mod is hosted at GitHub, you can save yourself trouble of creating mod packages manually by using this <a href="https://github.com/InfinityTools/InfinityAutoPackager">tool</a>. It produces zip and <a href="https://github.com/ALIENQuake/ProjectInfinity/wiki/Specification-of-the-IEMOD-file-format">IEMod</a> packages for you when you create mod release. It is very easy to use and most SHS mods are released with it. For further documentation, please read <a href="https://forums.beamdog.com/discussion/78364/infinity-auto-packager-automatically-generate-and-adds-mod-packages-to-release-when-you-publish-it">this</a>.</p>
 		  </div><br>
 			
-
 		<h6>Version 2.0.0 &nbsp;(Month day, year)</h6>
 
 		  <ul>

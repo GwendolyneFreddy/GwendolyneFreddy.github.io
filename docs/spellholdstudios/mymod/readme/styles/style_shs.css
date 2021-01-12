@@ -278,6 +278,17 @@ border-radius: 4px 4px 4px 5px;
 /* --------------------- *
  *  Titres des versions  *
  * --------------------- */
+#maindiv .version {
+	display: block;
+	width: 90%;
+	background-color: transparent;
+	text-align: left;
+	font-weight: bold;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	border-bottom: solid 1px #781808;
+	border-top: solid 1px #781808;
+}
 
 
 /* ------------------------ *
@@ -305,6 +316,7 @@ a:hover {
 	text-decoration: underline;
 	*color: #deded9;
 }*/
+
 
 #maindiv address a:active {
 	color: #fff;
@@ -531,3 +543,18 @@ hr {
 /* ------------------- *
  *  Tableaux - Tables  *
  * ------------------- */
+/*table {
+	width: 90%;
+	padding: 10px;*/
+/*	border-collapse: collapse;*/
+	/*margin-left: 70px;*/
+	/*padding: 20px 25px;*/
+	/*position: relative;*/
+/*}
+td, th {
+	font-size: 12px;
+	text-align: center;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	border: 1px solid #aaa;
+}*/
