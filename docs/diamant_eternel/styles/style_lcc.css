@@ -342,8 +342,13 @@ h6 {
 	color: #FFCC33;
 	background-color: transparent;
 	margin-right:30px;
-	}
+}
 
+/* utilisé dans les feuilleq menace-spells-readme-french.html */
+.composantes {
+	font-variant:small-caps;
+	font-size: 90%;
+}
 
 /* --------------- *
  *  Texte de code  *
