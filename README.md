@@ -44,3 +44,11 @@
 ><span style="margin-left: 50px;">Le Rôdeur de l'ombre : <a href="https://gwendolynefreddy.github.io/docs/lcc/rodeur_ombre-readme-english.html">English</a> | <a href="https://gwendolynefreddy.github.io/docs/lcc/rodeur_ombre-readme-french.html">Français</a></span></br>
 
 ><span style="margin-left: 50px;">Le Champion de Bhaal : <a href="https://gwendolynefreddy.github.io/docs/cdb/cdb-readme-french">Français</a></span></br>
+
+
+<hr>
+
+
+## Miscellaneous mods (WIP)
+
+><span style="margin-left: 50px;"><a href="https://gwendolynefreddy.github.io/docs/alora/alora-readme.html">Alora NPC for BGII (TeamBG)</a>
