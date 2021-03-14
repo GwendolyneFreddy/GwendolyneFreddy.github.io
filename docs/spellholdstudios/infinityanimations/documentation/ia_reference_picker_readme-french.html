@@ -1,23 +1,31 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
+
+  <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="styles/style_ia-rp.css" type="text/css">
 
 	<title>
 		Spellhold Studios - Infinity Animations
 	</title>
-	<link href="images/shsweb.ico" rel="icon" type="bmp" />
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-</head>
 
-<body>
-  <div id="wrap">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<link href="images/shsweb.ico" rel="icon" type="bmp" />
+  </head>
+
+  <body>
+
+	<script type="module">
+		document.getElementById("latestVersion").innerText = document.getElementById('versionHistory').getElementsByTagName("h6")[0].innerText
+	</script>
+
+	<div id="wrap">
 	<a name="top" id="top"></a>
 
-	<div id="header">
-		<h1 style="color: #781808;text-shadow: 0.1rem 0.1rem 0.25rem #807559;">Infinity Animations Reference Picker</h1><br />
+	  <div id="header">
+		<h1 style="color: #781808;text-shadow: 0.1rem 0.1rem 0.25rem #807559;">Infinity Animations Reference Picker</h1><br>
 
 		<span style="font-style: italic;"><strong>Un mod de Spellhold Studios pour Baldur's Gate II : <acronym title="Trône de Bhaal">ToB</acronym>, Baldur's Gate Trilogy, <acronym title="Baldur's Gate 'To Two'">Tutu</acronym>, Baldur's Gate: Enhanced Edition, Siege of Dragonspear, Baldur's Gate II: Enhanced Edition, Icewind Dale: Enhanced Edition et <acronym title="Enhanced Edition Trilogy">EET</acronym>.</strong></span>
 		<hr style="margin: 10px 0 10px 0; padding: 0; height: 1px; border: 0; color: #aaa; background-color: #aaa;" />
@@ -26,7 +34,7 @@
 			Auteure : Erephine &#8226; Code <acronym title="Weimer Dialogue Utility">WeiDU</acronym> : Miloch, Sam et Gwendolyne
 		</p>
 		<p class="about">
-			<a href="http://www.spellholdstudios.net/ie/infinityanimations">Site internet du mod</a> &#8226; <a href="http://www.shsforums.net/forum/594-infinity-animations/">Forum du mod</a> &#8226; <a href="http://www.shsforums.net/files/category/98-infinity-animations/">Téléchargement</a> &#8226; <a href="https://github.com/SpellholdStudios/Infinity-Animations">GitHub</a> &#8226; Version 6.0.0
+			<a href="http://www.spellholdstudios.net/ie/infinityanimations">Site internet du mod</a> &#8226; <a href="http://www.shsforums.net/forum/594-infinity-animations/">Forum du mod</a> &#8226; <a href="http://www.shsforums.net/files/category/98-infinity-animations/">Téléchargement</a> &#8226; <a href="https://github.com/SpellholdStudios/Infinity-Animations">GitHub</a> &#8226; <span id="latestVersion"></span>
 		</p>
 		<hr style="margin: 10px 0 10px 0; padding: 0; height: 1px; border: 0; color: #aaa; background-color: #aaa;" />
 
@@ -36,11 +44,11 @@
 		<p class="menu">
 			<a href="#browsing">Parcourir les identifiants existants</a> &#x2B25; <a href="#building">Construire les fichiers .IDS</a> &#x2B25; <a href="#ref">Définition des slots d'animation</a> &#x2B25;  <a href="#manual">Installation manuelle</a> &#x2B25; <a href="#version">Historique des versions</a>
 		</p>
-	</div>
+	  </div>
 
 
-<div id="maindiv">
-	<!-- ========================= A b o u t ========================= -->
+	<div id="maindiv">
+<!-- ========================= A b o u t ========================= -->
 	  <a name="about" id="about"></a>
 	  <div class="content">
 
@@ -51,7 +59,7 @@
 		</p><br>
 
 		<address>
-			<span class="footer">Infinity Animations Reference Picker &gt; De quoi s'agit-il ?</span> &#8226;<a href="#top">Haut de page</a>
+			<span class="footer">Infinity Animations Reference Picker &gt; De quoi s'agit-il ?</span> &#8226;<a href="#top">HAUT DE PAGE</a>
 		</address>
 	  </div>
 
@@ -105,7 +113,7 @@
 		</p><br>
 
 		<address>
-			<span class="footer">Infinity Animations Reference Picker &gt; Règles de déclaration et d'enregistrement</span> &#8226;<a href="#top">Haut de page</a>
+			<span class="footer">Infinity Animations Reference Picker &gt; Règles de déclaration et d'enregistrement</span> &#8226;<a href="#top">HAUT DE PAGE</a>
 		</address>
 	  </div>
 
@@ -127,7 +135,7 @@
 		</p><br>
 
 		<address>
-			<span class="footer">Infinity Animations Reference Picker &gt; Utilisation du Reference Picker</span> &#8226;<a href="#top">Haut de page</a>
+			<span class="footer">Infinity Animations Reference Picker &gt; Utilisation du Reference Picker</span> &#8226;<a href="#top">HAUT DE PAGE</a>
 		</address>
 	  </div>
 
@@ -148,7 +156,7 @@
 			Bien entendu, si votre mod s'inscrit dans le contexte d'une conversion totale, sans rapport avec le jeu d'origine ou d'autres mods, vous pouvez ignorer l'ensemble du processus ci-dessous et garder une trace de votre propre jeu de références. Dans ce cas, ces références ne doivent pas être publiées dans la liste des animations.
 		</p><br>
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%;" /><br>
 
 		<p>
 			<strong>1. Lancez l'utilitaire à partir du répertoire dans lequel vous l'avez installé (voir <a href="#manual">plus bas</a>).</strong>
@@ -166,7 +174,7 @@
 			<center><img src="images/rp51-fr.png" /></center>
 		</p><br>
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%;" /><br>
 
 		<p>
 			<strong>2. Cliquez sur l'onglet « Liste des identifiants IA ».</strong>
@@ -175,13 +183,13 @@
 			Une grande fenêtre vide s'ouvre, et il vous est demandé de charger la liste des animations à jour.
 		</p><br>
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%;" /><br>
 
 		<p>
 			<strong>3. Récupérer la liste à jour dans le forum.</strong>
 		</p>
 		<p>
-			Dans le forum Infinity Animations, ouvrez la discussion épinglée <em class="rule">Animation Listings</em>. <a href="http://www.shsforums.net/index.php?showtopic=43502">Ce lien vous y conduira directement</a>. Cherchez le dernier message qui devrait contenir la balise de code contenant la liste de slots d'animations à jour. Elle ressemble à ceci :<br>
+			Dans le forum Infinity Animations, ouvrez la discussion épinglée <em class="rule">Animation Listings</em>. <a href="http://www.shsforums.net/topic/43502-animation-listings/">Ce lien vous y conduira directement</a>. Cherchez le dernier message qui devrait contenir la balise de code contenant la liste de slots d'animations à jour. Elle ressemble à ceci :<br>
 		</p>
 		<div class="important_tuto">
 			<p>
@@ -195,13 +203,13 @@
 			</p>
 		</div>
 		<p>
-			Copiez la <strong>liste entière</strong> (c'est important), avec toutes les données EMPTY et -----, jusqu'au dernier caractère (c.à.d. assurez-vous que vous n'avez pas oublié le dernier « d » de unpaletted, ou tout autre dernier caractère, de la dernière ligne), et copiez-la en appuyant sur le bouton « Coller à partir du presse-papier ».
+			Copiez la <strong>liste entière</strong> (c'est important), avec toutes les données <span style="tp2">EMPTY</span> et <span style="tp2">-----</span>, jusqu'au dernier caractère (c.à.d. assurez-vous que vous n'avez pas oublié le dernier « d » de unpaletted, ou tout autre dernier caractère, de la dernière ligne), et copiez-la en appuyant sur le bouton « Coller à partir du presse-papier ».
 		</p>
 		<p>
 			<center><img src="images/rp05-fr.png" /></center>
 		</p><br>
 		<p>
-			<strong>Note : </strong>Voici un autre moyen - et sans doute beaucoup plus simple - de charger la liste de slots d'animations à jour. Comme cette dernière n'a cessé de grossir, et est devenue de plus en plus difficile à lire et à sélectionner dans la discussion, les derniers contributeurs l'ont publiée sous la forme d'un fichier .txt joint à la fin de leur message, comme <a href="http://www.shsforums.net/topic/43502-animation-listings/page-3#entry604014">ici</a>. Cherchez le dernier message contenant ce type de fichier, téléchargez-le, puis chargez-le à l'aide du bouton « Charger un fichier ». &#128521;
+			&#9888;&#65039; <strong><span style="color: #781808;">&#9755;</span> Note : </strong>Voici un autre moyen - et sans doute beaucoup plus simple - de charger la liste de slots d'animations à jour. Comme cette dernière n'a cessé de grossir, et est devenue de plus en plus difficile à lire et à sélectionner dans la discussion, les derniers contributeurs l'ont publiée sous la forme d'un fichier .txt joint à la fin de leur message, comme <a href="http://www.shsforums.net/topic/43502-animation-listings/page-3#entry604014">ici</a>. Cherchez le dernier message contenant ce type de fichier, téléchargez-le, puis chargez-le à l'aide du bouton « Charger un fichier ». &#128521;
 		</p>
 		<p>
 			<center><img src="images/rp02-fr.png" /></center>
@@ -228,7 +236,7 @@
 		</div> 
 		<br>
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%;" /><br>
 
 		<p>
 			<strong>4. Choisissez le type de slot d'animation que vous souhaitez déclarer.</strong>
@@ -338,7 +346,7 @@
 			</div>
 		</div><br>
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%;" /><br>
 
 		<p>
 			<strong>6. Confirmez.</strong>
@@ -353,7 +361,7 @@
 			Vérifiez que les valeurs du type, du sous-type, de la taille du cercle de sélection, de l'option de paperdoll et du jeu de sons de votre animation sont corrects. Si oui, continuez. Sinon, appuyez sur le bouton « Effacer les caractéristiques » et recommencez les étapes précédentes.
 		</p><br>
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%;" /><br>
 
 		<p>
 			<strong>7. Saisissez un nom.</strong>
@@ -371,7 +379,7 @@
 			<center><img src="images/rp23-fr.png" /></center>
 		</p><br>
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%;" /><br>
 
 		<p>
 			<strong>8. Installer votre slot dans le jeu.</strong>
@@ -380,7 +388,7 @@
 			Quand vous en aurez terminé, vous pourrez copier ou noter les codes <em class="rule">ANIMATE.IDS</em> et <em class="rule">ANISND.IDS</em> affichés dans la dernière fenêtre en bas (<em class="rule" style="color: #781808">Étape 4 : Installer votre slot dans le jeu</em>). Ce sont les entrées qu'il faut insérer dans les fichiers .ids pour que votre slot d'animation soit reconnu par NearInfinity et les autres outils de modding. Si vous écrivez un programme d'installation pour votre mod, vous estimerez probablement plus utile d'utiliser le code <acronym title="Weimer Dialogue Utility">WeiDU</acronym> pour ajouter vos slots aux fichiers .ids du jeu (cliquez alors sur le bouton « Copier dans le presse-papier »).
  		</p><br>
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%;" /><br>
 
 		<p>
 			<strong>9. Déclarer un autre slot.</strong>
@@ -389,7 +397,7 @@
 			Si vous souhaitez déclarer plusieurs slots à la suite, cliquez sur le bouton « Déclarer un autre slot » et recommencez les étapes précédentes.
  		</p><br>
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%;" /><br>
 
 		<p>
 			<strong>10. Pour conclure, l'étape la plus importante de toutes.</strong>
@@ -416,10 +424,10 @@
 			</p>
 		</div>
 		<p>
-			Vous devez copier et publier cette liste complète dans la discussion épinglée <em class="rule">Animation Listings</em> du forum Infinity Animations. <a href="http://www.shsforums.net/index.php?showtopic=43502">En voici de nouveau le lien, pour plus de commodité</a>. Sous la liste, le bouton « Copier dans le presse-papier » vous simplifiera la tâche. Le contenu de la liste est copié dans votre presse-papier (n'oubliez pas qu'il écrasera le contenu de ce dernier) et peut être collé dans la discussion.
+			Vous devez copier et publier cette liste complète dans la discussion épinglée <em class="rule">Animation Listings</em> du forum Infinity Animations. <a href="http://www.shsforums.net/topic/43502-animation-listings/">En voici de nouveau le lien, pour plus de commodité</a>. Sous la liste, le bouton « Copier dans le presse-papier » vous simplifiera la tâche. Le contenu de la liste est copié dans votre presse-papier (n'oubliez pas qu'il écrasera le contenu de ce dernier) et peut être collé dans la discussion.
 		</p>
 		<p>
-			Afin de conserver le formatage de la liste et d'éviter qu'elle ne ressemble à un pâté illisible, collez-la entre balises [codebox] [/codebox]. <strong>Pré-visualisez votre message.</strong> Si la liste affichée dans votre message correspond parfaitement à celle affichée dans la fenêtre <em class="rule">IA Reference List</em>, <strong>publiez-la</strong>. N'oubliez-pas de télé-verser les fichiers bam de votre animation dans la discussion <a href="http://www.shsforums.net/index.php?showtopic=43503">IA content thread</a>, s'ils ne sont pas encore disponibles.
+			Afin de conserver le formatage de la liste et d'éviter qu'elle ne ressemble à un pâté illisible, collez-la entre balises [codebox] [/codebox]. <strong>Pré-visualisez votre message.</strong> Si la liste affichée dans votre message correspond parfaitement à celle affichée dans la fenêtre <em class="rule">IA Reference List</em>, <strong>publiez-la</strong>. N'oubliez-pas de télé-verser les fichiers bam de votre animation dans la discussion <a href="http://www.shsforums.net/topic/43503-ia-content-thread/">IA content thread</a>, s'ils ne sont pas encore disponibles.
 		</p><br>
 		<p>
 			<strong>Notes :</strong>
@@ -437,7 +445,7 @@
 		</p><br>
 
  		<address>
-			<span class="footer">Infinity Animations Reference Picker &gt; Ajouter un slot d'animation</span> &#8226;<a href="#top">Haut de page</a>
+			<span class="footer">Infinity Animations Reference Picker &gt; Ajouter un slot d'animation</span> &#8226;<a href="#top">HAUT DE PAGE</a>
 		</address>
 	  </div>
 
@@ -452,7 +460,7 @@
 		</p><br>
 
 		<address>
-			<span class="footer">Infinity Animations Reference Picker &gt; Jeux de sons</span> &#8226;<a href="#top">Haut de page</a>
+			<span class="footer">Infinity Animations Reference Picker &gt; Jeux de sons</span> &#8226;<a href="#top">HAUT DE PAGE</a>
 		</address>
 	  </div>
 
@@ -491,7 +499,7 @@
 		</p><br>
 
 		<address>
-			<span class="footer">Infinity Animations Reference Picker &gt; Parcourir les identifiants existants</span> &#8226;<a href="#top">Haut de page</a>
+			<span class="footer">Infinity Animations Reference Picker &gt; Parcourir les identifiants existants</span> &#8226;<a href="#top">HAUT DE PAGE</a>
 		</address>
 	  </div>
 
@@ -538,7 +546,7 @@
 		</p><br>
 
 		<address>
-			<span class="footer">Infinity Animations Reference Picker &gt; Construire les fichiers .IDS</span> &#8226;<a href="#top">Haut de page</a>
+			<span class="footer">Infinity Animations Reference Picker &gt; Construire les fichiers .IDS</span> &#8226;<a href="#top">HAUT DE PAGE</a>
 		</address>
 	  </div>
 
@@ -589,7 +597,7 @@
 			Exemples : wiverne majeure (MWYV), tanar'ri de BGI (MTAN).
 		</p><br>
 
-		<hr style="width: 90%; height: 1px; border: 0; color: #781808; background-color: #781808;" /><br>
+		<hr style="width: 90%; height: 1px; border: 0;" /><br>
 
 		<p>
 			<strong>&#8258 BGI MONSTER LONG</strong>
@@ -603,7 +611,7 @@
 			Exemples : ver charognard (MCAR), wyverne (MWYV).
 		</p><br>
 
-		<hr style="width: 90%; height: 1px; border: 0; color: #781808; background-color: #781808;" /><br>
+		<hr style="width: 90%; height: 1px; border: 0;" /><br>
 
 		<p>
 			<strong>&#8258 BGI SIMPLE CASTER (BOW)</strong>
@@ -618,7 +626,7 @@
 			Exemple : sirène (MSIR).
 		</p><br>
 
-		<hr style="width: 90%; height: 1px; border: 0; color: #781808; background-color: #781808;" /><br>
+		<hr style="width: 90%; height: 1px; border: 0;" /><br>
 
 		<p>
 			<strong>&#8258 BGI SIMPLE CASTER (S1)</strong>
@@ -633,7 +641,7 @@
 			Exemple : ogre mage (MOGM).
 		</p><br>
 
-		<hr style="width: 90%; height: 1px; border: 0; color: #781808; background-color: #781808;" /><br>
+		<hr style="width: 90%; height: 1px; border: 0;" /><br>
 
 		<p>
 			<strong>&#8258 BGI ANKHEG (actuellement non fonctionnel).</strong>
@@ -650,7 +658,7 @@
 			Exemple : ankheg (MAKH).
 		</p><br>
 
-		<hr style="width: 90%; height: 1px; border: 0; color: #781808; background-color: #781808;" /><br>
+		<hr style="width: 90%; height: 1px; border: 0;" /><br>
 
 		<p>
 			<strong>&#8258 BGI SIMPLE MONSTER</strong>
@@ -668,7 +676,7 @@
 			Exemple : loup-garou (MWER).
 		</p><br>
 
-		<hr style="width: 90%; height: 1px; border: 0; color: #781808; background-color: #781808;" /><br>
+		<hr style="width: 90%; height: 1px; border: 0;" /><br>
 
 		<p>
 			<strong>&#8258 CHARACTER BGI</strong>
@@ -721,7 +729,7 @@
 			Les parties de l'image sont classées du coin supérieur gauche au coin inférieur droit.
 		</p><br>
 
-		<hr style="width: 90%; height: 1px; border: 0; color: #781808; background-color: #781808;" /><br>
+		<hr style="width: 90%; height: 1px; border: 0;" /><br>
 
 		<p>
 			<strong>&#8258 BGII <acronym title = "NdT : « découpées » - chaque action disponible est répartie dans un fichier BAM distinct">SPLIT</acronym></strong>
@@ -762,7 +770,7 @@
 			Exemple : Démogorgon (MDEM).
 		</p><br>
 
-		<hr style="width: 90%; height: 1px; border: 0; color: #781808; background-color: #781808;" /><br>
+		<hr style="width: 90%; height: 1px; border: 0;" /><br>
 
 		<p>
 			<strong>&#8258 BGII UNSPLIT EXT</strong>
@@ -777,7 +785,7 @@
 			Exemples : Mélissanne (MMEL), tyramort (MBEG).
 		</p><br>
 
-		<hr style="width: 90%; height: 1px; border: 0; color: #781808; background-color: #781808;" /><br>
+		<hr style="width: 90%; height: 1px; border: 0;" /><br>
 
 		<p>
 			<strong>&#8258 CHARACTER BGII</strong>
@@ -882,7 +890,7 @@
 		</p><br>
 
 		<address>
-			<span class="footer">Infinity Animations Reference Picker &gt; Définition des slots d'animation</span> &#8226;<a href="#top">Haut de page</a>
+			<span class="footer">Infinity Animations Reference Picker &gt; Définition des slots d'animation</span> &#8226;<a href="#top">HAUT DE PAGE</a>
 		</address>
 	  </div>
 
@@ -928,24 +936,24 @@
 		</p><br>
 
 		<address>
-			<span class="footer">Infinity Animations Reference Picker &gt; Installation manuelle</span> &#8226;<a href="#top">Haut de page</a>
+			<span class="footer">Infinity Animations Reference Picker &gt; Installation manuelle</span> &#8226;<a href="#top">HAUT DE PAGE</a>
 		</address>
 	  </div>
 
 <!-- ============== V e r s i o n   H i s t o r y =============== -->
 	  <a name="version" id="version"></a>
-	  <div class="content">
+	  <div class="content" id="versionHistory">
 
 		<h2>Historique des versions</h2><br>
 
-		<h6>Version 6 : jour mois 2019</h6>
+		<h6>Version 6.0.0 &nbsp;(nn mars 2021)</h6>
 
 		  <ul>
-			<li>Ajout de la traduction française.</li>
-			<li>Ajout de la compatibilité avec les jeux EE.</li>
-			<li>Modification du code des animations pour les rendre compatibles avec les code pages non occidentaux (suppression de la procédure automatique de changement de code page dans le patch de l'exécutable).</li>
-			<li>Mise à jour du Reference Picker.</li>
-			<li>Mise à jour de ce fichier.</li>
+			<li>Modification des noms de code des animations pour les rendre <strong>compatibles avec les code pages non occidentaux</strong> (suppression de la procédure automatique de changement de code page dans le patch de l'exécutable) et correction des doublons de slots d'animation de dragon (XDR3, XDR6). &#128521;</li>
+			<li>Ajout de la compatibilité avec les jeux EE: adaptation du code pour une meilleure compatibilité du mod, avec notamment l'harmonisation des noms des animations.</li>
+			<li>Réécriture de l'utilitaire IA Reference Picker (supporte désormais les traductions) et mise à jour de sa documentation.</li>
+			<li>Ajout de la traduction française (Gwendolyne).</li>
+			<li>Téléversement du mod dans le compte GitHub officiel de Spellhold Studios.</li>
 		  </ul><br><br>
 
 		<h6>Version Beta 5 &nbsp;(12 mai 2010)</h6>
@@ -979,7 +987,7 @@
 
 		  <ul>
 			<li>Ajout du composant « <em>Animations de personnages de <acronym title="Baldur's Gate">BG1</acronym> pour les <acronym title="Personnages Non Joueurs [NdT : traduction de NPC, ou Non-Player Characters]">PNJs</acronym></em> ».</li>
-			<li>Ajout du composant « <em>Animations de personnages de <acronym title="Baldur's Gate">BG1</acronym> pour les <acronym title="Personnages Joueurs [NdT : traduction de PC, ou Player Characters">PJs</acronym></em> ».</li>
+			<li>Ajout du composant « <em>Animations de personnages de <acronym title="Baldur's Gate">BG1</acronym> pour les <acronym title="Personnages Joueurs [NdT : traduction de PC, ou Player Characters">PJs</acronym> exportés</em> ».</li>
 			<li>Modification de la procédure de modification des démons.</li>
 		  </ul><br><br>
 
@@ -1030,7 +1038,7 @@
 		  </ul><br><br>
 
 		<address>
-			<span class="footer">Infinity Animations Reference Picker &gt; Historique des versions</span> &#8226;<a href="#top">Haut de page</a>
+			<span class="footer">Infinity Animations Reference Picker &gt; Historique des versions</span> &#8226;<a href="#top">HAUT DE PAGE</a>
 		</address>
 	  </div>
 

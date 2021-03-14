@@ -1,23 +1,31 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
+
+  <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="styles/style_ia-rp.css" type="text/css">
 
 	<title>
 		Spellhold Studios - Infinity Animations
 	</title>
-	<link href="images/shsweb.ico" rel="icon" type="bmp" />
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-</head>
 
-<body>
-  <div id="wrap">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<link href="images/shsweb.ico" rel="icon" type="bmp" />
+  </head>
+
+  <body>
+
+	<script type="module">
+		document.getElementById("latestVersion").innerText = document.getElementById('versionHistory').getElementsByTagName("h6")[0].innerText
+	</script>
+
+	<div id="wrap">
 	<a name="top" id="top"></a>
 
-	<div id="header">
-		<h1 style="color: #781808;text-shadow: 0.1rem 0.1rem 0.25rem #807559;">Infinity Animations Reference Picker</h1><br />
+	  <div id="header">
+		<h1 style="color: #781808;text-shadow: 0.1rem 0.1rem 0.25rem #807559;">Infinity Animations Reference Picker</h1><br>
 
 		<span style="font-style: italic;"><strong>A Spellhold Studios mod for Baldur's Gate II:<acronym title="Throne of Bhaal">ToB</acronym>, Baldur's Gate Trilogy, <acronym title="Baldur's Gate 'To Two'">Tutu</acronym>, Baldur's Gate: Enhanced Edition, Siege of Dragonspear, Baldur's Gate II: Enhanced Edition, Icewind Dale: Enhanced Edition and <acronym title="Enhanced Edition Trilogy">EET</acronym>.</strong></span>
 		<hr style="margin: 10px 0 10px 0; padding: 0; height: 1px; border: 0; color: #aaa; background-color: #aaa;" />
@@ -26,14 +34,14 @@
 			Author: Erephine &#8226; <acronym title="Weimer Dialogue Utility">WeiDU</acronym> coding: Miloch, Sam and Gwendolyne
 		</p>
 		<p class="about">
-			<a href="http://www.spellholdstudios.net/ie/infinityanimations">Mod Website</a> &#8226; <a href="http://www.shsforums.net/forum/594-infinity-animations/">Mod Forum</a> &#8226; <a href="http://www.shsforums.net/files/category/98-infinity-animations/">Download</a> &#8226; <a href="https://github.com/SpellholdStudios/Infinity-Animations">GitHub</a> &#8226; Version 6.0.0
+			<a href="http://www.spellholdstudios.net/ie/infinityanimations">Mod Website</a> &#8226; <a href="http://www.shsforums.net/forum/594-infinity-animations/">Mod Forum</a> &#8226; <a href="http://www.shsforums.net/files/category/98-infinity-animations/">Download</a> &#8226; <a href="https://github.com/SpellholdStudios/Infinity-Animations">GitHub</a> &#8226; <span id="latestVersion"></span>
 		</p>
 		<hr style="margin: 10px 0 10px 0; padding: 0; height: 1px; border: 0; color: #aaa; background-color: #aaa;" />
 
 		<p class="menu">
 			<a href="#about">About</a> &#x2B25; <a href="#rules">Rules On Claiming Animation slots</a> &#x2B25; <a href="#picker">Reference Picker</a> &#x2B25;<a href="#adding">Adding an Animation Entry</a> &#x2B25; <a href="#sound">Sound Information</a> &#x2B25; <a href="#browsing">Browsing Existing IDs</a> &#x2B25; <a href="#building">Building .IDS files</a> &#x2B25; <a href="#ref">Animation Slot Reference</a> &#x2B25;  <a href="#manual">Manual Install</a> &#x2B25; <a href="#version">Version History</a>
 		</p>
-	</div>
+	  </div>
 
 
 	<div id="maindiv">
@@ -48,7 +56,7 @@
 		</p><br>
 
 		<address>
-			<span class="footer">Infinity Animations Reference Picker &gt; About</span> &#8226;<a href="#top">Back to top</a>
+			<span class="footer">Infinity Animations Reference Picker &gt; About</span> &#8226;<a href="#top">BACK TO TOP</a>
 		</address>
 	  </div>
 
@@ -98,11 +106,11 @@
 			Animation descriptors should be in legible English, and accurately describe the animation where possible. "PINK BEHOLDER, SMALL" would be a good description, "OBSERVATEUR ROSE PETIT" or "BEH_MEGAMOD 112" (even worse) would not be desirable. Proper names such as "FALL FROM GRACE" are fine. Please note that the description name length is limited to 34 characters.
 		</p><br>
 		<p>
-			If you've read and understood these guidelines and feel your claim qualifies read on in the next section.
+			If you've read and understood these guidelines and feel your claim qualifies, read on in the next section.
 		</p><br>
 
 		<address>
-			<span class="footer">Infinity Animations Reference Picker &gt; Rules On Claiming Animation slots</span> &#8226;<a href="#top">Back to top</a>
+			<span class="footer">Infinity Animations Reference Picker &gt; Rules On Claiming Animation slots</span> &#8226;<a href="#top">BACK TO TOP</a>
 		</address>
 	  </div>
 
@@ -124,7 +132,7 @@
 		</p><br>
 
 		<address>
-			<span class="footer">Infinity Animations Reference Picker &gt; Using the Reference Picker</span>  &#8226;<a href="#top">Back to top</a>
+			<span class="footer">Infinity Animations Reference Picker &gt; Using the Reference Picker</span> &#8226;<a href="#top">BACK TO TOP</a>
  		</address>
 	  </div>
 
@@ -144,7 +152,8 @@
 		<p>
 			If you are modding in the context of a total conversion with no links to the original game/other mods, you may skip the entire process below and keep track of your own set of references of course. Such references should not be posted in the animation listing.
 		</p><br>
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+
+		<hr style="width: 90%" /><br>
 
 		<p>
 			<strong>1. Run the supplied tool from your install location of choice (<a href="#manual">see below</a>).</strong>
@@ -162,7 +171,7 @@
 			<center><img src="images/rp51.png" /></center>
 		</p><br>
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%" /><br>
 
 		<p>
 			<strong>2. Click on 'IA Reference List'.</strong>
@@ -171,13 +180,13 @@
 			You should now get a large-ish text field prompting you to get the current animation list. It would be a very good idea to in fact do so.
 		</p><br>
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%" /><br>
 
 		<p>
 			<strong>3. Get the current list from the forums.</strong>
 		</p>
 		<p>
-			Go to the Infinity Animations forum and open the pinned <em class="rule">Animation Listings</em>. <a href="http://www.shsforums.net/index.php?showtopic=43502">This hyperlink should take you to the thread directly</a>. Find the last post in the topic. It should contain a codebox listing animation slots, looking sort of like this:<br>
+			Go to the Infinity Animations forum and open the pinned <em class="rule">Animation Listings</em>. <a href="http://www.shsforums.net/topic/43502-animation-listings/">This hyperlink should take you to the thread directly</a>. Find the last post in the topic. It should contain a codebox listing animation slots, looking sort of like this:<br>
 		</p>
 		<div class="important_tuto">
 			<p>
@@ -191,13 +200,13 @@
 			</p>
 		</div>
 		<p>
-			Copy the <strong>entire list</strong> (this is important), including all EMPTY and ----- entries, up to the last symbol (i.e. make sure you didn't forget to select the last 'd' of unpaletted of the last entry or anything like that) and paste it into the text field by clicking on the 'Paste from Clipboard' button.
+			Copy the <strong>entire list</strong> (this is important), including all <span style="tp2">EMPTY</span> and <span style="tp2">-----</span> entries, up to the last symbol (i.e. make sure you didn't forget to select the last 'd' of unpaletted of the last entry or anything like that) and paste it into the text field by clicking on the 'Paste from Clipboard' button.
 		</p>
 		<p>
 			<center><img src="images/rp05.png" /></center>
 		</p><br>
 		<p>
-			<strong>Note : </strong>There is another (and maybe easier) way to get the current animations list. As the list grew to a huge extend and became very painful to read and to copy in the forum thread, the last contributors released it as a .txt file, attached at the bottom of theirs posts, like <a href="http://www.shsforums.net/topic/43502-animation-listings/page-3#entry604014">this one</a>. Find the last post, download the attached file, then load it into the text field by clicking on the 'Load from File' button. &#128521;
+			&#9888;&#65039; <strong><span style="color: #781808;">&#9755;</span> Note : </strong>There is another (and maybe easier) way to get the current animations list. As the list grew to a huge extend and became very painful to read and to copy in the forum thread, the last contributors released it as a .txt file, attached at the bottom of theirs posts, like <a href="http://www.shsforums.net/topic/43502-animation-listings/page-3#entry604014">this one</a>. Find the last post, download the attached file, then load it into the text field by clicking on the 'Load from File' button. &#128521;
 		</p>
 		<p>
 			<center><img src="images/rp02.png" /></center>
@@ -224,7 +233,7 @@
 		</div> 
 		<br>
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%" /><br>
 
 		<p>
 			<strong>4. Choose animation slot type.</strong>
@@ -334,7 +343,7 @@
 		</div> 
 		<br>
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%" /><br>
 
 		<p>
 			<strong>6. Confirm.</strong>
@@ -349,7 +358,7 @@
 			Verify that the given animation type, subtype, foot circle size, paperdoll and soundset options are correct. If they are, continue. If they are not, cancel (click 'Clear Selections') and repeat the above steps.
 		</p><br>
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%" /><br>
 
 		<p>
 			<strong>7. Enter a name.</strong>
@@ -367,7 +376,7 @@
 			<center><img src="images/rp23.png" /></center>
 		</p><br>
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%" /><br>
 
 		<p>
 			<strong>8. Implement your slot in the game.</strong>
@@ -376,7 +385,7 @@
 			When you're finished with everything else, you can copy or note down the <em class="rule">ANIMATE.IDS</em> and <em class="rule">ANISND.IDS</em> from the last window below (<em class="rule" style="color: #781808">Step 4:  Implement your new slot</em>). These are the entries you're going to want in your .ids files so your animation slots show up properly in NearInfinity and other tools. If you are building an installer for your mod, you might find the <acronym title="Weimer Dialogue Utility">WeiDU</acronym> output more useful (click the appropriate button 'Copy to Clipboard') to have them added to the game .ids files.
 		</p><br>
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%" /><br>
 
 		<p>
 			<strong>9. Claim another slot.</strong>
@@ -385,7 +394,7 @@
 			If vous wish to claim other slots on the run, click 'Claim Another' to proceed and repeat the above steps.
  		</p><br>
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%" /><br>
 
 		<p>
 			<strong>10. Last but not least, the most important step of them all.</strong>
@@ -412,10 +421,10 @@
 			</p>
 		</div>
 		<p>
-			You need to copy and post this complete list to the <em class="rule">Animation Listings</em> thread on the Infinity Animation forums. <a href="http://www.shsforums.net/index.php?showtopic=43502">Here is the hyperlink again, for your convenience</a>. To facilitate doing so, below the listing you will find a 'Copy to Clipboard' button. If you click it, the above list content should be ready to be pasted into the thread in your clipboard (note that this will erase your current clipboard).
+			You need to copy and post this complete list to the <em class="rule">Animation Listings</em> thread on the Infinity Animation forums. <a href="http://www.shsforums.net/topic/43502-animation-listings/">Here is the hyperlink again, for your convenience</a>. To facilitate doing so, below the listing you will find a 'Copy to Clipboard' button. If you click it, the above list content should be ready to be pasted into the thread in your clipboard (note that this will erase your current clipboard).
 		</p>
 		<p>
-			In order to preserve the formatting and keeping it from looking like a mess, paste the content into [codebox] [/codebox] tags. <strong>Preview your post</strong>. If your post accurately matches the list displayed in the <em class="rule">IA Reference List</em> window, <strong>submit it</strong>. Don't forget to upload your animation set and post it in the <a href="http://www.shsforums.net/index.php?showtopic=43503">content thread</a> if it isn't yet available.
+			In order to preserve the formatting and keeping it from looking like a mess, paste the content into [codebox] [/codebox] tags. <strong>Preview your post</strong>. If your post accurately matches the list displayed in the <em class="rule">IA Reference List</em> window, <strong>submit it</strong>. Don't forget to upload your animation set and post it in the <a href="http://www.shsforums.net/topic/43503-ia-content-thread/">content thread</a> if it isn't yet available.
 		</p><br>
 		<p>
 			<strong>Notes: </strong>
@@ -433,7 +442,7 @@
 		</p><br>
 
 		<address>
-			<span class="footer">Infinity Animations Reference Picker &gt; Adding an Animation Entry</span> &#8226;<a href="#top">Back to top</a>
+			<span class="footer">Infinity Animations Reference Picker &gt; Adding an Animation Entry</span> &#8226;<a href="#top">BACK TO TOP</a>
 		</address>
 	  </div>
 
@@ -448,7 +457,7 @@
 		</p><br>
 
 		<address>
-			<span class="footer">Infinity Animations Reference Picker &gt; Sound Information</span> &#8226;<a href="#top">Back to top</a>
+			<span class="footer">Infinity Animations Reference Picker &gt; Sound Information</span> &#8226;<a href="#top">BACK TO TOP</a>
 		</address>
 	  </div>
 
@@ -487,7 +496,7 @@
 		</p><br>
 
 		<address>
-			<span class="footer">Infinity Animations Reference Picker &gt; Browsing Existing IDs</span> &#8226;<a href="#top">Back to top</a>
+			<span class="footer">Infinity Animations Reference Picker &gt; Browsing Existing IDs</span> &#8226;<a href="#top">BACK TO TOP</a>
 		</address>
 	  </div>
 
@@ -534,7 +543,7 @@
 		</p><br>
 
 		<address>
-			<span class="footer">Infinity Animations Reference Picker &gt; Building .IDS files</span> &#8226;<a href="#top">Back to top</a>
+			<span class="footer">Infinity Animations Reference Picker &gt; Building .IDS files</span> &#8226;<a href="#top">BACK TO TOP</a>
 		</address>
 	  </div>
 
@@ -565,7 +574,7 @@
 			Examples : Large Wyvern (MWYV), BGI Tanar'ri (MTAN)
 		</p><br>
 
-		<hr style="width: 90%; height: 1px; border: 0; color: #781808; background-color: #781808;" /><br>
+		<hr style="width: 90%; height: 1px; border: 0;" /><br>
 
 		<p>
 			<strong>&#8258 BGI MONSTER LONG</strong>
@@ -579,7 +588,7 @@
 			Examples: Carrion Crawler (MCAR), Small Wyvern (MWYV)
 		</p><br>
 
-		<hr style="width: 90%; height: 1px; border: 0; color: #781808; background-color: #781808;" /><br>
+		<hr style="width: 90%; height: 1px; border: 0;" /><br>
 
 		<p>
 			<strong>&#8258 BGI SIMPLE CASTER (BOW)</strong>
@@ -594,7 +603,7 @@
 			Example: Sirine (MWYV)
 		  </p><br>
 
-		<hr style="width: 90%; height: 1px; border: 0; color: #781808; background-color: #781808;" /><br>
+		<hr style="width: 90%; height: 1px; border: 0;" /><br>
  
 		<p>
 			<strong>&#8258 BGI SIMPLE CASTER (S1)</strong>
@@ -609,7 +618,7 @@
 			Example: Ogre Mage (MOGM)
 		</p><br>
 
-		<hr style="width: 90%; height: 1px; border: 0; color: #781808; background-color: #781808;" /><br>
+		<hr style="width: 90%; height: 1px; border: 0;" /><br>
 
 		<p>
 			<strong>&#8258 BGI ANKHEG (currently broken)</strong>
@@ -626,7 +635,7 @@
 			Examples: Ankheg (MAKH)
 		</p><br>
 
-		<hr style="width: 90%; height: 1px; border: 0; color: #781808; background-color: #781808;" /><br>
+		<hr style="width: 90%; height: 1px; border: 0;" /><br>
 
 		<p>
 			<strong>&#8258 BGI SIMPLE MONSTER</strong>
@@ -644,7 +653,7 @@
 			Example: Werewolf (MWER)
 		</p><br>
 
-		<hr style="width: 90%; height: 1px; border: 0; color: #781808; background-color: #781808;" /><br>
+		<hr style="width: 90%; height: 1px; border: 0;" /><br>
 
 		<p>
 			<strong>&#8258 CHARACTER BGI</strong>
@@ -697,7 +706,7 @@
 			Parts are arranged top left to bottom right.
 		</p><br>
 
-		<hr style="width: 90%; height: 1px; border: 0; color: #781808; background-color: #781808;" /><br>
+		<hr style="width: 90%; height: 1px; border: 0;" /><br>
 
 		<p>
 			<strong>&#8258 BGII SPLIT</strong></p>
@@ -711,7 +720,7 @@
 			Examples: Solar (MSOL), Troll (MTRO)
 		</p><br>
 
-		<hr style="width: 90%; height: 1px; border: 0; color: #781808; background-color: #781808;" /><br>
+		<hr style="width: 90%; height: 1px; border: 0;" /><br>
 
 		<p>
 			<strong>&#8258 BGII SPLIT 4 PART</strong></p>
@@ -736,7 +745,7 @@
 			Example: Demogorgon (MDEM)
 		</p><br>
 
-		<hr style="width: 90%; height: 1px; border: 0; color: #781808; background-color: #781808;" /><br>
+		<hr style="width: 90%; height: 1px; border: 0;" /><br>
 
 		<p>
 			<strong>&#8258 BGII UNSPLIT EXT</strong>
@@ -751,7 +760,7 @@
 			Examples: Melissan (MMEL), Death Tyrant (MBEG)
 		</p><br>
 
-		<hr style="width: 90%; height: 1px; border: 0; color: #781808; background-color: #781808;" /><br>
+		<hr style="width: 90%; height: 1px; border: 0;" /><br>
 
 		<p>
 			<strong>&#8258 CHARACTER BGII</strong>
@@ -856,7 +865,7 @@
 		</p><br>
 
 		<address>
-			<span class="footer">Infinity Animations Reference Picker &gt; Animation Slot Reference</span> &#8226;<a href="#top">Back to top</a>
+			<span class="footer">Infinity Animations Reference Picker &gt; Animation Slot Reference</span> &#8226;<a href="#top">BACK TO TOP</a>
 		</address>
 	  </div>
 
@@ -901,23 +910,24 @@
 		</p><br>
 
 		<address>
-			<span class="footer">Infinity Animations Reference Picker &gt; Manual Install</span> &#8226;<a href="#top">Back to top</a>
+			<span class="footer">Infinity Animations Reference Picker &gt; Manual Install</span> &#8226;<a href="#top">BACK TO TOP</a>
 		</address>
 	  </div>
 
 <!-- ============== V e r s i o n   H i s t o r y =============== -->
 	  <a name="version" id="version"></a>
-	  <div class="content">
+	  <div class="content" id="versionHistory">
 
 		<h2>Version Changelog (core component only)</h2><br>
 
-		<h6>WeiDU Beta 6: day Month 2019</h6>
+		<h6>Version 6.0.0 &nbsp;(March, 2021)</h6>
 
 		  <ul>
-			<li>Added French translation</li>
-			<li>Ajout de la compatibilité avec les jeux EE.</li>
-			<li>Modification du code des animations pour les rendre compatibles avec les code pages non occidentaux (suppression de la procédure automatique de changement de code page dans le patch de l'exécutable).</li>
-			<li>Updated IA Reference Picker</li>
+			<li>Modified animations name-spaces, <strong>now compatible with non-Western code pages</strong> (got rid of the the .exe patch routine forcing a code page change and rebooting if a non-Western code page was detected), and fixed duplicate usage of dragon type slots (XDR3, XDR6). &#128521;</li>
+			<li>Added native EE compatibility: changed lines of code to provide EE compatibility whenever possible, in particular the animations names have been harmonized.</li>
+			<li>Updated IA Reference Picker tool (can now be translated) and updated its documentation.</li>
+			<li>Added French translation (Gwendolyne).</li>
+			<li>Uploaded mod to official Spellhold Studios GitHub mirror account.</li>
 		  </ul><br><br>
 
 		<h6>Version Beta 5 &nbsp;(May 12, 2010)</h6>
@@ -943,7 +953,7 @@
 			<li>Added "<em>Moinesse's Avatars for IA</em>" component.</li>
 			<li>Added "<em>More <acronym title="Planescape: Torment">PS:T</acronym> Animations</em>" component.</li>
 			<li>Added "<em><acronym title="Baldur's Gate">BG1</acronym> Character Animations for Saved Games</em>" component.</li>
-			<li>Added "<em>Saved Game Animation Fixer component</em>".</li>
+			<li>Added "<em>Saved Games Animations Fixer component</em>".</li>
 			<li>Traified the entire freaking mod by hand for translators (thanks for nothing, <acronym title="Weimer Dialogue Utility">WeiDU</acronym>! &#128541;)</li>
 		  </ul><br><br>
 
@@ -951,7 +961,7 @@
 
 		  <ul>
 			<li>Added "<em><acronym title="Baldur's Gate">BG1</acronym> Character Animations for <acronym title="Non-Player Characters">NPCs</acronym></em>" component.</li>
-			<li>Added "<em><acronym title="Baldur's Gate">BG1</acronym> Character Animations for <acronym title="Player Characters">PCs</acronym></em>" component.</li>
+			<li>Added "<em><acronym title="Baldur's Gate">BG1</acronym> Character Animations for exported <acronym title="Player Characters">PCs</acronym></em>" component.</li>
 			<li>Changed fiend patching to accommodate scripting.</li>
 		  </ul><br><br>
 
@@ -961,7 +971,7 @@
 			<li>Fixed _LOW animation corrections causing areas crashing on load.</li>
 			<li>Fixed scripts and dialogues that Polymorph to _LOW animations.</li>
 			<li>Fixed code glitch preventing installation of optional components.</li>
-			<li>Added option to install sounds in "<em>Svirfneblin Animations</em>" component.</li>
+			<li>Added option to install sounds in "<em>Svirfneblins Animations</em>" component.</li>
 			<li>Added "<em>Fix Area Creature References</em>".</li>
 			<li>Added revised salamander sound tables (MSAL and MSA2 slots).</li>
 			<li>Enhanced compatibility with <a href="http://www.shsforums.net/topic/38261-atweaks-v264-released/">aTweaks</a>.</li>
@@ -1002,7 +1012,7 @@
 		  </ul><br><br>
 
 		<address>
-			<span class="footer">Infinity Animations Reference Picker &gt; Version Changelog (core component only)</span> &#8226;<a href="#top">Back to top</a>
+			<span class="footer">Infinity Animations Reference Picker &gt; Version Changelog (core component only)</span> &#8226;<a href="#top">BACK TO TOP</a>
 		</address>
 	  </div>
 

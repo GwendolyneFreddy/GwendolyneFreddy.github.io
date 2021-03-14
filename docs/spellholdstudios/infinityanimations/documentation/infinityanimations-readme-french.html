@@ -2,25 +2,32 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
-<head>
+  <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="styles/style_ia.css" type="text/css">
 
 	<title>
 		Spellhold Studios - Infinity Animations
 	</title>
-	<link href="images/shsweb.ico" rel="icon" type="bmp" />
+
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-</head>
+
+	<link href="images/shsweb.ico" rel="icon" type="bmp" />
+  </head>
 
 
-<body>
-  <div id="wrap">
+  <body>
+
+	<script type="module">
+		document.getElementById("latestVersion").innerText = document.getElementById('versionHistory').getElementsByTagName("h6")[0].innerText
+	</script>
+
+	<div id="wrap">
 	<a name="top" id="top"></a>
 
-	<div id="header">
+	  <div id="header">
 		<h1 style="color: #781808;text-shadow: 0.1rem 0.1rem 0.25rem #807559;">Infinity Animations
-		<a href="infinityanimations-readme-english.html"><img src="images/uk-flag-32.png" alt="English version" title="English version" style="float:right;width:32px;height:16px;margin-right:20px;margin-top:15px;"></a></h1><br />
+		<a href="infinityanimations-readme-english.html"><img src="images/uk-flag-32.png" alt="English version" title="English version" style="float:right;width:32px;height:16px;margin-right:20px;margin-top:15px;"></a></h1><br>
 
 		<span style="font-style: italic;"><strong>Un mod de Spellhold Studios pour Baldur's Gate II : <acronym title="Trône de Bhaal">ToB</acronym>, Baldur's Gate Trilogy, <acronym title="Baldur's Gate 'To Two'">Tutu</acronym>, Baldur's Gate: Enhanced Edition, Siege of Dragonspear, Baldur's Gate II: Enhanced Edition, Icewind Dale: Enhanced Edition et <acronym title="Enhanced Edition Trilogy">EET</acronym>.</strong></span>
 		<hr style="margin: 10px 0 10px 0; padding: 0; height: 1px; border: 0; color: #aaa; background-color: #aaa;" />
@@ -29,17 +36,17 @@
 			Auteure : Erephine &#8226; Code <acronym title="Weimer Dialogue Utility">WeiDU</acronym> : Miloch, Sam et Gwendolyne
 		</p>
 		<p class="about">
-			<a href="http://www.spellholdstudios.net/ie/infinityanimations">Site internet du mod</a> &#8226; <a href="http://www.shsforums.net/forum/594-infinity-animations/">Forum du mod</a> &#8226; <a href="http://www.shsforums.net/files/category/98-infinity-animations/">Téléchargement</a> &#8226; <a href="https://github.com/SpellholdStudios/Infinity-Animations">GitHub</a> &#8226; Version 6.0.0
+			<a href="http://www.spellholdstudios.net/ie/infinityanimations">Site internet du mod</a> &#8226; <a href="http://www.shsforums.net/forum/594-infinity-animations/">Forum du mod</a> &#8226; <a href="http://www.shsforums.net/files/category/98-infinity-animations/">Téléchargement</a> &#8226; <a href="https://github.com/SpellholdStudios/Infinity-Animations">GitHub</a> &#8226; <span id="latestVersion"></span>
 		</p>
 		<hr style="margin: 10px 0 10px 0; padding: 0; height: 1px; border: 0; color: #aaa; background-color: #aaa;" />
 
 		<p class="menu">
 			<a href="#intro">Présentation</a> &#x2B25; <a href="#compat">Compatibilité</a> &#x2B25; <a href="#installation">Installation</a> &#x2B25; <a href="#compon">Composants</a> &#x2B25; <a href="#trouble">Dépannage</a> &#x2B25; <a href="#anims">Animations</a> &#x2B25; <a href="#credits">Remerciements</a> &#x2B25; <a href="#version">Historique des versions</a>
 		</p>
-	</div>
+	  </div>
 
 
-	<div id="maindiv">
+  	<div id="maindiv">
 <!-- ================== I n t r o d u c t i o n ================== -->
 	  <a name="intro" id="intro"></a>
 	  <div class="content">
@@ -47,33 +54,37 @@
 		<h2>Présentation</h2><br>
 
 		<p>
-			Ce mod modifie le jeu Baldur's Gate II : Trône de Bhaal de façon à ce qu'il dispose d'animations supplémentaires de créatures et de personnages (appelées « slots d'animation » dans ce document [<em>NdT : « emplacements » ou « index »</em>]). Il fournit aussi un utilitaire permettant de définir automatiquement de nouveaux slots d'animation afin de les enregistrer dans le forum d'Infinity Animations. Il fonctionne ainsi comme une base de données centralisée, utilisable par quiconque souhaite ajouter de nouvelles animations de créature dans le jeu sans être confronté à des problèmes de conflits et d'incompatibilité avec d'autres mods.
+			Ce mod modifie le jeu Baldur's Gate II : Trône de Bhaal de façon à ce qu'il dispose d'animations supplémentaires de créatures et de personnages (appelées « slots d'animation » dans ce document [<em>NdT : «&nbsp;emplacements » ou « index »</em>]). Il fournit aussi un utilitaire permettant de définir automatiquement de nouveaux slots d'animation afin de les enregistrer dans le forum d'Infinity Animations. Il fonctionne ainsi comme une base de données centralisée, utilisable par quiconque souhaite ajouter de nouvelles animations de créature dans le jeu sans être confronté à des problèmes de conflits et d'incompatibilité avec d'autres mods.
 		</p>
  		<p>
 			Infinity Animations prend en charge les types d'animation très divers des jeux Baldur's Gate I, Baldur's Gate II, Icewind Dale I, Icewind Dale II, Planescape: Torment et Neverwinter Nights. En bonus, le mod rétablit l'intégralité des animations de personnages de Baldur's Gate I, et permet à certaines animations qui n'en avaient pas jusqu'à présent de disposer dorénavant d'un paperdoll [<em>NdT : silhouette dans l'écran des personnages</em>].
 		</p>
  		<p>
-			Point important pour les joueurs installant plusieurs mods conséquents (appelés « megamods »), Infinity Animations résout les conflits de slots d'animation [<em>NdT : plusieurs mods utilisant les mêmes slots pour des animations différentes, le dernier installé écrase les modifications effectuées par les précédents</em>], et rétablit les animations de base que les megamods ont modifiées.
+			Point important pour les joueurs installant plusieurs mods conséquents (appelés « megamods »), Infinity Animations résout les conflits de slots d'animation [<em>NdT : plusieurs mods utilisant les mêmes slots pour des animations différentes, le dernier installé écrase les modifications effectuées par les précédents</em>] et rétablit les animations de base que les megamods ont modifiées.
  		</p>
 		<p>
 			Enfin, il comporte des composants optionnels qui introduisent de nombreuses nouvelles animations dans le jeu, ainsi que leurs jeux de sons associés (soundsets). Bien que le nombre d'animations supportées ne soit pas « infini », comme le nom du mod l'indique, il devrait toutefois être assez important pour répondre aux besoins actuels (et probablement futurs) de tout le monde.
 		</p><br>
 
+		<hr style="width: 90%; height: 1px; border: 0;"/><br>
+
 		<p>
 			<strong>Principales fonctions</strong>
  		</p>
-		  <ul style="margin-left: 4%;">
+		  <ul style="margin-left: 5%;">
 			<li>Rétablit les animations de personnages de Baldur's Gate I.</li>
 			<li>Améliore la prise en charge des paperdolls pour les animations existantes.</li>
 			<li>Ajoute des animations de jeu personnalisées pour les personnages et les créatures (dont les dragons).</li>
 			<li>Permet d'utiliser de nombreux <em>types</em> d'animation (dont certains n'ont jamais été vus dans les jeux).</li>
-			<li>Résout les problèmes d'empilement d'animations et les conflits de slots et de désignation des animations.</li>
-			<li>Harmonise les noms des animations dans tous les jeux.</li>
-
-
+			<li>Résout les problèmes d'empilement d'animations et les conflits de slots, de désignation et de jeux de sons des animations de créature.</li>
+			<li>Harmonise les noms des animations dans tous les jeux pour éviter les conflits avec les jeux EE. Pour plus de détails, veuillez consulter la <a href="ia_animations_ref_chart.html">table de références des animations</a>.</li>
+			<li>À partir de la version 6.0.0, installe automatiquement les fichiers son des créatures dans la langue du jeu.</li>
 			<li>Fournit un utilitaire <acronym title="Graphical User Interface">GUI</acronym> [<em>NdT : interface graphique</em>] pour vous aider à ajouter de nouvelles animations dans le jeu.</li>
 			<li>Vous permet de visualiser à quel point le pourcentage de slots d'animation disponibles refuse obstinément de diminuer. &#128578;</li>
           </ul><br>
+
+		<hr style="width: 90%; height: 1px; border: 0;"/><br>
+
 		<p>
 			Si vous souhaitez plus d'informations sur la manière d'ajouter de nouvelles animations, veuillez consulter le chapitre <a href="ia_reference_picker_readme-french.html#adding">Ajouter un slot d'animation</a> de la documentation de l'utilitaire IA Reference Picker.
 		</p><br>
@@ -89,40 +100,63 @@
 
 		<h2>Compatibilité</h2><br>
 
-		<p>
+		<h3>Jeux concernés</h3>
+
+		<p style="margin-top:2%;">
 			Infinity Animations est conçu pour fonctionner sur la plupart des jeux Infinity Engine, ce qui inclut :
 		</p>
-		<ul>
-			<li>La série des Éditions Améliorées (Enhanced Editions) publiées par Beamdog, Baldur's Gate: Enhanced Edition (BGEE), Baldur's Gate II: Enhanced Edition (BG2EE), Icewind Dale: Enhanced Edition (IWDEE), ainsi que l'extension de BGEE, Siege of Dragonspear (SoD). Toutes les Éditions Améliorées comprennent leurs extensions originales (ainsi, IWDEE comprend Heart of Winter et Trials - HoW - of the Luremaster - TotLM).</li>
+		<ul style="margin-left: 5%;">
+			<li>La série des Éditions Améliorées (Enhanced Editions) publiées par Beamdog, Baldur's Gate: Enhanced Edition (BGEE), Baldur's Gate II: Enhanced Edition (BG2EE), Icewind Dale: Enhanced Edition (IWDEE), ainsi que l'extension de BGEE, Siege of Dragonspear (SoD). Toutes les Éditions Améliorées comprennent leurs extensions originales (ainsi, IWDEE comprend Heart of Winter - HoW - et Trials of the Luremaster - TotLM).</li>
 			<li>Le jeu original Baldur's Gate II avec son extension Trône de Bhaal (Throne of Bhaal : ToB). <strong>Assurez-vous que vous avez bien installé le patch 26498 pour le Trône de Bhaal.</strong> Si nécessaire, vérifiez le fichier Readme relatif au patch dans votre répertoire de jeu et sur le site internet de <a href="http://www.bioware.com/games/throne_bhaal/support/patches/">BioWare</a>.</li>
-			<li>Les mods de conversion basés sur <acronym title="Throne of Bhaal">ToB</acronym> : <a href="http://www.shsforums.net/index.php?showforum=261"><strong>Baldur's Gate Trilogy (BGT)</strong></a>, <a href="https://www.pocketplane.net/bg1tutu/"><strong>Baldur's Gate <acronym title="Baldur's Gate 'To Two'">Tutu</acronym></strong></a> (et EasyTutu) et <a href="https://github.com/K4thos/EET/releases"><strong>Enhanced Edition Trilogy</strong></a> (EET).</li>
-		</ul></br>
+			<li>Les mods de conversion basés sur <acronym title="Throne of Bhaal">ToB</acronym> : <a href="http://www.shsforums.net/forum/261-bgt-weidu/"><strong>Baldur's Gate Trilogy (BGT)</strong></a>, <a href="https://www.pocketplane.net/bg1tutu/"><strong>Baldur's Gate <acronym title="Baldur's Gate 'To Two'">Tutu</acronym></strong></a> (et EasyTutu) et <a href="https://github.com/K4thos/EET/releases"><strong>Enhanced Edition Trilogy</strong></a> (EET).</li>
+		</ul><br>
 
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%;"/><br>
 
 
-		<p>
-			Ce mod est un mod <acronym title="Weimer Dialogue Utility">WeiDU</acronym> et devrait par conséquent être compatible avec n'importe quel mod WeiDU. Bien que nous nous efforcions de rendre Infinity Animations compatible avec le plus grand nombre possible de mods, des incompatibilités risquent toujours de se produire. Si vous rencontrez des bugs, veuillez les signaler dans le <a href="http://www.shsforums.net/forum/594-infinity-animations/">forum, s'il vous plaît.</a>
+		<h3>Compatibilité avec les autres mods</h3>
+
+		<p style="margin-top:2%;">
+			Ce mod est un mod <acronym title="Weimer Dialogue Utility">WeiDU</acronym> et devrait par conséquent être compatible avec n'importe quel mod WeiDU. Bien que nous nous efforcions de rendre Infinity Animations compatible avec le plus grand nombre possible de mods, des incompatibilités risquent toujours de se produire. Voici la liste de celles recensées jusqu'à présent :
 		</p>
-
+		<ul style="margin-left: 5%;">
+			<li><a href="https://forums.beamdog.com/discussion/19501/resource-pack-extended-animations/p1">Viader's Extended Animations</a></li>
+			<li>...</li>
+		</ul><br>
 		<p>
-			Installez-le après la plupart des autres mods, en particulier ceux qui ajoutent des créatures ou des animations, mais avant les procédures finales de « biffing ». [<em>NdT : archivage avec Generalized biffing</em>]
-		</p>
-
-		<p>
-			
-		</p>
-		<p>
-			Bien qu'il ne soit pas requis pour faire correctement tourner Infinity Animations, nous recommandons fortement aux joueurs de ToB original de télécharger et d'installer la dernière version du <a href="http://www.gibberlings3.net/bg2fixpack/">BG2 Fixpack</a> avant d'installer ce mod.
+			Si vous rencontrez des bugs, veuillez les signaler dans le <a href="http://www.shsforums.net/forum/594-infinity-animations/">forum</a>, s'il vous plaît.
 		</p><br>
 
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%;"/><br>
+
+		<h3>Ordre d'installation</h3>
+
+		<p style="margin-top:2%;">
+			&#10173; Bien qu'il ne soit pas requis pour faire correctement tourner Infinity Animations, nous recommandons fortement aux joueurs de ToB original de télécharger et d'installer la dernière version du <a href="https://www.gibberlings3.net/mods/fixes/bg2fixpack/">BG2 Fixpack</a> avant d'installer ce mod.
+		</p><br>
+		<p>
+			Dans un monde parfait, Infinity Animations devrait être installé comme un fixpack qui fonctionnerait comme une base de données centralisée, utilisable par quiconque souhaite ajouter de nouvelles animations de créature dans le jeu sans être confronté à des problèmes de conflits et d'incompatibilité avec d'autres mods. Malheureusement, comme il a été conçu après la première génération de megamods qui écrasaient les fichiers du jeu, notamment pour résoudre les conflits de slots d'animation et rétablir les animations de base que les megamods avaient modifiées, il doit être installé après ces megamods, au moins jusqu'à ce que leurs auteurs les mettent à jour pour tirer parti de toutes les possibilités offertes par Infinity Animations... &#128577;
+		</p>
+		<p>
+			En attendant ce jour merveilleux, voici l'ordre d'installation conseillé :
+		</p>
+		<ul style="margin-left: 5%;">
+			<li>Veuillez installer Infinity Animations après ToBEx, BG2 Fixpack, EET et la plupart des mods qui ajoutent des créatures ou des animations.</li>
+			<li>Veuillez installer Infinity Animations avant 1PP, EET_end et les procédures finales de « biffing » [<em>NdT : archivage avec Generalized biffing</em>].</li>
+		</ul><br>
+
+		<p>
+			<strong><span style="color: #781808;">&#9755;</span></strong> &#9888;&#65039; Les moddeurs souhaitant rendre leurs mods compatibles avec Infinity Animations sont fortement invités à lire le document <a href="ia-note-for-modders.html">IA Note for modders</a> qui les guidera à travers toutes les étapes nécessaires.
+		</p><br>
+
+
+		<hr style="width: 90%;"/><br>
 
 
 		<p>
-			<strong>Commencez une nouvelle partie</strong> après avoir installé ce mod, ou si vous êtes réticent(e), installez le composant « Correction des animations dans les parties sauvegardées ».
+			<strong>Commencez une nouvelle partie</strong> après avoir installé ce mod, ou si vous êtes réticent(e), installez le composant « <a href="#9900">Correction des animations dans les parties sauvegardées</a> ».
 		</p><br>
 
 		<address>
@@ -148,7 +182,7 @@
 			Par précaution, <strong>désactivez les antivirus</strong> ou tout logiciel résidant en mémoire avant d'installer ce mod, ou tout autre mod. Certains (en particulier avast et Norton !) ont une fâcheuse tendance à déclarer les exécutables des mods comme des faux positifs, provoquant ainsi l'échec de la procédure d'installation.
 		</p>
 		<p>
-			Vous pouvez extraire les fichiers de l'archive à l'aide de <a href="http://www.7-zip.org/download.html">7zip</a>, <a href="http://www.rarlab.com/download.htm">WinRAR</a>, <a href="http://www.zipgenius.it/ita/?page_id=12">ZipGenius</a>, ou de tout autre utilitaire de compression gérant les fichiers .zip.
+			Vous pouvez extraire les fichiers de l'archive à l'aide de <a href="https://www.7-zip.org/download.html">7zip</a>, <a href="https://www.rarlab.com/download.htm">WinRAR</a>, <a href="https://zipgenius.com/">ZipGenius</a>, ou de tout autre utilitaire de compression gérant les fichiers .zip.
 		</p>
 		<div style="margin: 10px auto;width: 90%; border-style: solid; border-width: 1px; border-color: #781808; margin-top: 32px; padding: 6px;">
 			<div class="quotetitle">
@@ -198,7 +232,7 @@
 		</p><br>
 
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%;"/><br>
 
 
 		<h3>Windows</h3>
@@ -211,20 +245,19 @@
 		</p>
 		<p>
 			Pour réinstaller, désinstaller, ou encore changer des composants, lancez <strong><span class="weidu">&nbsp;setup-infinityanimations.exe&nbsp;</span></strong> dans votre répertoire de jeu.
-		</p></br>
+		</p><br>
 
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%;"/><br>
 
 
 		<h3>Mac OS X</h3>
 
-		<p style="margin-top:2%;">
-			Malheureusement, ce mod n'est pour l'instant pas compatible avec le système d'exploitation OS X car certains de ses composants modifiant l'exécutable ne fonctionnent pas sur OS X. Si vous souhaitez vous en charger, veuillez manifester votre intérêt sur le <a href="http://www.shsforums.net/forum/594-infinity-animations/">forum</a>. (Si vous disposez de compétences techniques, étudier l'exécutable du jeu et de ce patch dans un éditeur pourrait vous être utile.)
-		</p>
-		<p>
-			Cependant, comme les jeux EE ne nécessitent pas un patch de leur exécutable pour bénéficier des composants de Infinity Animations, ce dernier peut y être installé sur un système d'exploitation Mac.
-		</p>
+		<div class="important" style="width: 85%; margin-top:2%;">
+			<p style ="width: 100%;">&#9888;&#65039; Malheureusement, <strong>ce mod n'est pour l'instant pas complètement compatible avec le système d'exploitation OS X</strong> car le composant principal modifiant l'exécutable ne fonctionne pas sur OS X. Si vous souhaitez vous en charger, veuillez manifester votre intérêt sur le <a href="http://www.shsforums.net/forum/594-infinity-animations/">forum</a>. (Si vous disposez de compétences techniques, étudier l'exécutable du jeu et de ce patch dans un éditeur pourrait vous être utile.)</p><br>
+			<p style ="width: 100%;">&#128541; <strong>Cependant,</strong> comme les jeux EE ne nécessitent pas un patch de leur exécutable pour bénéficier des composants de Infinity Animations, <strong>ce dernier peut y être installé sur un système d'exploitation Mac</strong>.</p>
+		</div>
+
 		<p>
 			Infinity Animations pour EE et Mac OS X est livré avec <acronym title="Weimer Dialogue Utility">WeiDU</acronym> et est diffusé dans la même archive compressée.
 		</p>
@@ -236,19 +269,19 @@
 		</p><br>
 
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%;"/><br>
 
 
 		<h3>Linux</h3>
 
 		<p style="margin-top:2%;">
-			Infinity Animations pour Linux est diffusé dans la même archive compressée sans l'installateur <acronym title="Weimer Dialogue Utility">WeiDU</acronym>.
+			Infinity Animations pour Linux est diffusé dans la même archive compressée, mais sans l'installateur <acronym title="Weimer Dialogue Utility">WeiDU</acronym>.
 		</p>
 		<p>
 			Extrayez le contenu du mod dans le répertoire du jeu que vous souhaitez modifier.
 		</p>
 		<p>
-			Téléchargez la version la plus récente de <acronym title="Weimer Dialogue Utility">WeiDU</acronym> pour Linux sur <a href="http://www.weidu.org/%7Ethebigg/">WeiDU.org</a>, puis copiez weidu et weinstall dans /usr/bin. Ouvrez ensuite un terminal et allez (<strong><span class="weidu">&nbsp;cd&nbsp;</span></strong>) dans le répertoire d'installation de votre jeu.
+			Téléchargez la version la plus récente de <acronym title="Weimer Dialogue Utility">WeiDU</acronym> pour Linux sur <a href="https://github.com/WeiDUorg/weidu/releases">WeiDU.org</a>, puis copiez weidu et weinstall dans <span class="weidu">/usr/bin</span>. Ouvrez ensuite un terminal et allez (<strong><span class="weidu">&nbsp;cd&nbsp;</span></strong>) dans le répertoire d'installation de votre jeu.
 		</p>
 		<p>
 			<em>Facultatif : lancez « tolower » et répondez oui (« Y ») aux deux requêtes. Il n'est pas nécessaire d'exécuter la deuxième option (linux.ini) si vous l'avez déjà exécutée une fois dans le même répertoire. Pour gagner du temps, l'archive est déjà « tolower-isée », il n'y a donc pas non plus besoin d'exécuter la première option (passage des noms de fichiers en minuscules), si vous n'avez extrait que ce mod depuis la dernière fois que vous avez passé des noms de fichiers en minuscules. Si vous avez un doute, il vaut mieux exécuter tolower et accepter les deux options.</em>
@@ -258,7 +291,7 @@
 		</p><br>
 
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%;"/><br>
 
 
 		<h3>Note pour effectuer une désinstallation complète</h3>
@@ -268,7 +301,7 @@
 		</p><br>
 
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%;"/><br>
 
 
 		<a name="config" id="config"></a>
@@ -284,7 +317,7 @@
 			Dorénavant, le contenu nécessaire à l'installation de Infinity Animations est inclus dans le répertoire &#x1F4C1; <strong>archives</strong> du mod et le composant principal le copie automatiquement dans le répertoire &#x1F4C1; <strong>override</strong> de votre jeu. Le mod n'utilisant plus les sous-répertoires &#x1F4C1; <em>content</em> et &#x1F4C1; <em>restore</em>, ces derniers ont été supprimés.
 		</p>
 		<p>
-			Par défaut, tout le contenu du répertoire archives est désormais installé. Si vous souhaitez limiter le contenu à installer, il vous suffit de modifier, avec Notepad ou un autre éditeur de texte, les options d'installation dans le fichier <strong><em><span style="font-variant:small-caps;font-size: 12px;">infinityanimations-config-default.ini</em></span></strong> (situé dans le répertoire &#x1F4C1; infinityanimations), puis de le sauvegarder sous le nom <strong><span style="font-variant:small-caps;font-size: 12px;"><em>infinityanimations-config-user.ini</em></span></strong>.
+			Désormais, tout le contenu du répertoire archives est installé par défaut. Si vous souhaitez limiter le contenu à installer, il vous suffit de modifier, avec Notepad ou un autre éditeur de texte, les options d'installation dans le fichier <strong><em><span style="font-variant:small-caps;font-size: 12px;">infinityanimations-config-default.ini</em></span></strong> (situé dans le répertoire &#x1F4C1; infinityanimations), puis de le sauvegarder sous le nom <strong><span style="font-variant:small-caps;font-size: 12px;"><em>infinityanimations-config-user.ini</em></span></strong>.
 		</p>
 		<p>
 			Chaque ligne de ce fichier comprend une option d'installation, suivie de « = », puis d'un chiffre. Tout ce que vous avez à faire, c'est modifier la valeur du chiffre. Par exemple, si vous ne souhaitez pas installer les animations de svirneblins, modifiez la valeur de la variable ia_iwd_svirfneblin en 0.
@@ -294,7 +327,7 @@
 		</p>
 		<p>
 			Si vous décidez d'installer un composant nécessitant des fichiers que vous avez choisi de ne pas installer, le programme d'installation les installera automatiquement s'ils sont présents dans le répertoire &#x1F4C1; archives. Sinon, il vous préviendra de leur absence. Vous pourrez alors quitter le programme, les extraire dans le répertoire du mod et relancer la procédure d'installation.<br>
-			Dans l'exemple précédent, si vous souhaitez finalement attribuer aux gnomes des profondeurs les animations de svirneblins alors que vous avez modifié la valeur de l'option ia_iwd_svirfneblin en 0, le programme d'installation forcera leur installation si elles sont présentes dans le répertoire &#x1F4C1; archives. Sinon, il vous préviendra de leur absence et vous demandera de les extraire avant d'installer le composant.
+			Dans l'exemple précédent, si vous souhaitez finalement attribuer aux gnomes des profondeurs les animations de svirneblins alors que vous avez modifié la valeur de l'option ia_iwd_svirfneblin en 0, le programme d'installation forcera leur installation si elles sont présentes dans le répertoire &#x1F4C1; archives. Sinon, il vous avertira de leur absence et vous demandera de les extraire avant d'installer le composant.
 		</p>
 
 		<p>
@@ -302,22 +335,22 @@
 		</p><br>
 
 
-		<table style="margin-left: 80px; width: 90%; padding: 10px;" summary="Liste des variables d'installation">
+		<table style="margin-left: 80px; width: 90%; padding: 10px;" summary="Liste des options d'installation">
 			<tr style="font-size: 125%; line-height: 300%;">
-				<th style="border: 1px solid #781808; text-align: center; background-color: #781808; color: #e5e5e5; ">Variable</th>
+				<th style="border: 1px solid #781808; text-align: center; background-color: #781808; color: #e5e5e5; ">Option</th>
 				<th style="border: 1px solid #781808; text-align: center; background-color: #781808; color: #e5e5e5; ">Description</th>
 			</tr>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px; "><strong><span style="color: #781808;">ia_force_soundset</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-top:20px; padding-bottom:20px; "><a name="forcelanguage" id="forcelanguage"></a>Tous les contenus disposant de fichiers sons : IA installe désormais automatiquement les fichiers sons du jeu dans la langue du jeu. Cependant, attribuer la valeur 1 à cette variable permet de forcer la langue par défaut de ces fichiers. Par exemple :
+				<td style="border: 1px solid #781808; padding-left:5px; padding-top:20px; padding-bottom:20px; "><a name="forcelanguage" id="forcelanguage"></a>Tous les contenus disposant de fichiers sons : Infinity Animations installe désormais automatiquement les fichiers son des créatures dans la langue du jeu. Cependant, attribuer la valeur 1 à cette option permet de forcer la langue par défaut de ces fichiers. Par exemple :
 				  <ul style="margin-left: -1%; margin-right: 40px">
-					<li style="margin-right: -10%">Vous jouez un jeu en français et avez installé IA en français ==> les fichiers sons français sont installés.</li>
-					<li style="margin-right: -10%">Vous jouez un jeu en français et avez installé IA en anglais ==> les fichiers sons français sont installés si ia_force_soundset est égale à 0.</li>
-					<li style="margin-right: -10%">Vous jouez un jeu en français et avez installé IA en anglais ==> les fichiers sons anglais sont installés si ia_force_soundset est égale à 1.</li>
+					<li style="margin-right: -10%">Vous jouez un jeu en français et avez installé Infinity Animations en français ==> les fichiers sons français sont installés.</li>
+					<li style="margin-right: -10%">Vous jouez un jeu en français et avez installé Infinity Animations en anglais ==> les fichiers sons français sont installés si l'option ia_force_soundset est égale à 0.</li>
+					<li style="margin-right: -10%">Vous jouez un jeu en français et avez installé Infinity Animations en anglais ==> les fichiers sons anglais sont installés si l'option ia_force_soundset est égale à 1.</li>
 				  </ul>
 				  <span style="color: #781808; padding-left:40px;">0 = Installer les fichiers sons dans la langue du jeu [par défaut]</span><br>
-				  <span style="padding-left:40px;">1 = Installer les fichiers sons dans la langue sélectionner pour installer le mod</span></td>
+				  <span style="padding-left:40px;">1 = Installer les fichiers sons dans la langue sélectionnée pour installer le mod</span></td>
 			</tr>
 
 			<tr>
@@ -331,11 +364,11 @@
 			</tr>
 
 			<tr>
-				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px; "><strong><span style="color: #781808;">ia_ee_restore</span></strong><br><br>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px; "><strong><span style="color: #781808;">ia_ee_missing</span></strong><br><br>
 				(uniquement pour les jeux EE)</td>
 				<td style="border: 1px solid #781808; padding-left:5px; padding-top:20px; padding-bottom:20px; ">IA Content - Base EE Content (nouveau)
 				  <ul style="margin-left: -1%; margin-right: 40px">
-					<li style="margin-right: -10%">Contenu : toutes les animations manquantes référencées dans les jeux Enhanced Editions, les animations de personnages de BG. Comprend tous les jeux de sons et les fichiers ini des créatures concernées.</li>
+					<li style="margin-right: -10%">Contenu : toutes les animations manquantes référencées dans les jeux Enhanced Editions. Comprend tous les jeux de sons et les fichiers ini des créatures concernées.</li>
 					<li style="margin-right: -10%">Nécessaire pour tous les jeux EE (BGEE, SoD, BG2EE, IWDEE, EET).</li>
 					<li style="margin-right: -10%">Nécessaire pour tous les composants.</li>
 				  </ul>
@@ -346,9 +379,22 @@
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px; "><strong><span style="color: #781808;">ia_base_anims</span></strong></td>
 				<td style="border: 1px solid #781808; padding-left:5px; padding-top:20px; padding-bottom:20px; ">IA Content 001 - Base Content
 				  <ul style="margin-left: -1%; margin-right: 40px">
-					<li style="margin-right: -10%">Contenu : animations de basilic et de tasloi, les animations manquantes de IWD référencées dans BGII (scarabée bombardier, scarabée de feu, scarabée scolyte, scarabée rhinocéros, cyclope, fantôme, blême majeur, goule majeure, histachii, homme lézard, homme lézard roi, liche blanche, nécrophage gris/vert/jaune, ombre petite/grande), ombre des roches ancienne, troll des glaces, troll des neiges, zombi bleu/jaune), les animations de personnages de BG. Comprend les tables et les jeux de sons des créatures concernées et les animations de cimeterre de BG1.</li>
-					<li style="margin-right: -10%">Nécessaire pour les composants Morts-vivants différenciés [400], Plus d'animations de base [500], Animations de personnages de BG1 pour les PNJs [8000-8010-8020-8030] et pour les PJ exportés [9500-9510-9520].</li>
+					<li style="margin-right: -10%">Contenu : animations de basilic et de tasloi, les animations manquantes de IWD référencées dans BGII (scarabée bombardier, scarabée de feu, scarabée scolyte, scarabée rhinocéros, cyclope, fantôme, blême majeur, goule majeure, histachii, homme lézard, homme lézard roi, liche blanche, nécrophage gris/vert/jaune, ombre petite/grande), ombre des roches ancienne, troll des glaces, troll des neiges, zombi bleu/jaune). Comprend les tables et les jeux de sons des créatures concernées.</li>
+					<li style="margin-right: -10%">(Nouveau) Animations manquantes de lancement de sort (fichiers bam ca et sp, avec les armes quand nécessaire) : scarabées (bombardier, scolyte, de feu, rhinocéros), cyclope, ettin, fantôme, blême majeur, goule majeure, gobelins (avec hache, avec arc, d'élite avec hache, d'élite avec arc), golem de glace, histachii, minotaure, momie, orque (mêlée, archer, d'élite, archer d'élite), orog, orog d'élite, chef orog, salamandre (du feu, du givre), ombre (petite, grande), squelette démon, combattant squelette, trolls (bleu, des glaces, des neiges), esprit des eaux, yuan-ti, yuan-ti d'élite, zombi (bleu, jaune).</li>
+					<li style="margin-right: -10%">(Nouveau) Correctifs graphiques des animations du BWP Fixpack (merci à leurs auteurs !) : <a href="http://www.shsforums.net/topic/47692-fixed-lizardman-shaman-bug/">Animations manquantes des hommes lézards (verts) quand ils lancent un sort avec des armes de Miloch</a>, <a href="http://www.shsforums.net/files/file/1052-ia-content-fixed-tanarri-and-wyvern/">animations de wiverne majeure et de tanar'ri de Miloch</a> et <a href="https://www.gibberlings3.net/forums/topic/23792-doppelganger-animations/">Meilleures animations d'attaque du Doppelganger de Polytope</a>.</li>
+					<li style="margin-right: -10%">Nécessaire pour les composants Morts-vivants différenciés [400] et Plus d'animations de base [500].</li>
 					<li style="margin-right: -10%">Nécessaire pour les mods BP, CtB, Drizzt Saga, NEJ, RoT, SOS, TDD, TS et RPG KitsPack.</li>
+				  </ul>
+				<span style="padding-left:40px;">0 = Ne pas l'installer</span><br>
+				<span style="color: #781808; padding-left:40px;">1 = L'installer [par défaut]</span></td>
+			</tr>
+
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px; "><strong><span style="color: #781808;">ia_bg1_character_animations</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-top:20px; padding-bottom:20px; ">IA Content - BG1 Character Animations (nouveau : extraites de IA Content 001 - Base Content)
+				  <ul style="margin-left: -1%; margin-right: 40px">
+					<li style="margin-right: -10%">Contenu : animations de personnages de BG1. Comprend les animations de cimeterre de BG1.</li>
+					<li style="margin-right: -10%">Nécessaire pour les composants Animations de personnages de BG1 pour les PNJs [8000-8010-8020-8030] et pour les PJ exportés [9500-9510-9520].</li>
 				  </ul>
 				<span style="padding-left:40px;">0 = Ne pas l'installer</span><br>
 				<span style="color: #781808; padding-left:40px;">1 = L'installer [par défaut]</span></td>
@@ -369,8 +415,8 @@
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px; "><strong><span style="color: #781808;">ia_bgii_iwdii</span></strong></td>
 				<td style="border: 1px solid #781808; padding-left:5px; padding-top:20px; padding-bottom:20px; ">IA Content 002 - IWDII and unused BGII Animations
 				  <ul style="margin-left: -1%; margin-right: 40px">
-					<li style="margin-right: -10%">Contenu : toutes les animations de IWD II que l'on ne trouve ni dans BGII (Ellesime avec des cheveux blancs, géant du feu alternatif, créature des lagons, tyramort), ni dans IWD (abishai blanc, blaireau-garou, chimère, crochorreur, demi-dragon noir/rouge, drider mâle/femelle, élémentaire de l'eau petit, freyeur normale/grande, géant Fomorian, gobelins de IWD II, gobelins chevaucheurs de worg, gobelours, capitaine gobelours, isair, kegs, lémure, madae, malarite, orog shaman, orques morts-vivants, rat-garou, tréant, sanglier arctique, shenrical, worg, yuan-ti demi-sang). Comprend les tables et les jeux de sons des créatures concernées.</li>
-					<li style="margin-right: -10%">Nécessaire pour les composants Animation d'Isair pour les cambions [210-230], Animation de Madae pour les alu-démons [260-280] et Plus d'animations d'Icewind Dale II [600].</li>
+					<li style="margin-right: -10%">Contenu : toutes les animations de IWD II que l'on ne trouve ni dans BGII (Ellesime avec des cheveux blancs, géant du feu alternatif, créature des lagons, tyramort), ni dans IWD (abishai blanc, blaireau-garou, chimère, crochorreur, demi-dragon noir/rouge, drider mâle/femelle, élémentaire de l'eau petit, freyeur normale/grande, géant Fomorian, gobelins de IWD II, gobelins chevaucheurs de worg, gobelours, capitaine gobelours, isair, kegs, lémure, madae, malarite, orog chaman, orques morts-vivants, rat-garou, tréant, sanglier arctique, shenrical, worg, yuan-ti demi-sang). Comprend les tables et les jeux de sons des créatures concernées.</li>
+					<li style="margin-right: -10%">Nécessaire pour les composants Démons différenciés [100], Animation d'Isair pour les cambions [210-230], Animation de Madae pour les alu-démons [260-280] et Plus d'animations d'Icewind Dale II [600].</li>
 					<li style="margin-right: -10%">Nécessaire pour les mods BP, CtB, NEJ, Planar Sphere, RoT et Sheena.</li>
 				  </ul>
 				<span style="padding-left:40px;">0 = Ne pas l'installer</span><br>
@@ -382,7 +428,7 @@
 				(uniquement pour ToB)</td>
 				<td style="border: 1px solid #781808; padding-left:5px; padding-top:20px; padding-bottom:20px; ">IA Content - EE games new Animations ported to ToB (nouveau)
 				  <ul style="margin-left: -1%; margin-right: 40px">
-					<li style="margin-right: -10%">Contenu: sanglier sauvage, gobelours chaman, soldat croisé, chien gris, dragon vert (IWD), dragons juvéniles (rouge, vert), dragons jeunes (vert, d'argent, blanc), mort noyé rouge, ettin fantôme, démon rouge, géant des collines, Gibberling Brood, gobelins Mkhiin (commun, avec arc, avec bâton, en armure et hache, en armure et arc), gobelins chevaucheurs de worg (d'élite, chaman), golem minuscule, demi-dragon vert, hephernaan, mégalo-mille-pattes, pouding noir, magicien rouge, marin (aux habits sombres, verts, rouges), serpent aquatique, araignée aquatique, trolls (d'eau douce, spectral), ver de tunnels, grande wiverne albinos, wiverne blanche. Comprend les tables et les jeux de sons des créatures concernées.</li>
+					<li style="margin-right: -10%">Contenu: sanglier sauvage, vargouille, gobelours chaman, poulet blanc, soldat croisé, chien gris, dragon vert (IWD), dragons juvéniles (rouge, vert), dragons jeunes (vert, d'argent, blanc), mort noyé rouge, efrit noble, ettin fantôme, démon rouge, géant des collines, gibberling brood, gobelins Mkhiin (commun, avec arc, avec bâton, en armure avec hache, en armure avec arc), gobelins chevaucheurs de worg (d'élite, chaman), golem minuscule, demi-dragon vert, hephernaan, mégalo-mille-pattes, pouding noir, magicien rouge, marin (aux habits sombres, verts, rouges), serpent aquatique, araignée aquatique, trolls (d'eau douce, spectral), ver de tunnels, grande wiverne albinos, wiverne blanche. Comprend les tables et les jeux de sons des créatures concernées.</li>
 				  </ul>
 				<span style="padding-left:40px;">0 = Ne pas l'installer</span><br>
 				<span style="color: #781808; padding-left:40px;">1 = L'installer [par défaut]</span></td>
@@ -392,8 +438,8 @@
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px; "><strong><span style="color: #781808;">ia_fiends_genies</span></strong></td>
 				<td style="border: 1px solid #781808; padding-left:5px; padding-top:20px; padding-bottom:20px; ">IA Content - Fiends and Genies
 				  <ul style="margin-left: -1%; margin-right: 40px">
-					<li style="margin-right: -10%">Contenu : démon bleu, démon vert (Nabassu), marilith sombre, maurezhi, myrlochar, dao, dao avec jambes, éfrit, éfrit avec jambes, jann, jann avec jambes, marid, marid avec jambes, yochlol, reine des goules, guenaudes (annis, nocturne, verte, des mers). Comprend aussi les fichiers de sons pour erinyes, gelugon et tieffelins.</li>
-					<li style="margin-right: -10%">Nécessaire pour les composants Genies différenciés [50] et Démons différenciés [100].</li>
+					<li style="margin-right: -10%">Contenu : démon bleu, démon vert (Nabassu), marilith sombre, maurezhi, myrlochar, dao, dao avec jambes, éfrit, éfrit avec jambes, jann, jann avec jambes, marid, marid avec jambes, yochlol, reine des goules, guenaudes (annis, nocturne, verte, des mers). Comprend aussi les fichiers de sons pour démon vert (Nabassu), erinyes, gelugon, guenaude nocturne et tieffelins.</li>
+					<li style="margin-right: -10%">Nécessaire pour les composants Genies différenciés [50], Démons différenciés [100] et Morts-vivants différenciés [400] .</li>
 				  </ul>
 				<span style="padding-left:40px;">0 = Ne pas l'installer</span><br>
 				<span style="color: #781808; padding-left:40px;">1 = L'installer [par défaut]</span></td>
@@ -512,14 +558,13 @@
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px; "><strong><span style="color: #781808;">ia_modders</span></strong></td>
 				<td style="border: 1px solid #781808; padding-left:5px; padding-top:20px; padding-bottom:20px; ">IA Content - Modders resources (nouveau)
 				  <ul style="margin-left: -1%; margin-right: 40px">
-					<li style="margin-right: -10%">Contenu : poule marron (Jarl), chien gris de jastey, mule (Kwiat_W); ours de Diablo II, ours garou de Diablo II, boucher de Heroes of the Storm, abeille géante, élémentaire de glace, Princesse élémentaire de terre Sunnis et Prince élémentaire de feu Zaaman Rul (Ulb); petit serpent, petit serpent vert et petit serpent rouge (Gwendolyne). Comprend les tables et les jeux de sons des créatures concernées.</li>
+					<li style="margin-right: -10%">Contenu : poule marron (Jarl), chien gris de jastey, mule (Kwiat_W) ; ours de Diablo II, ours garou de Diablo II, boucher de Heroes of the Storm, abeille géante, élémentaire de glace, Princesse élémentaire de terre Sunnis et Prince élémentaire de feu Zaaman Rul (Ulb) ; pygargue à tête blanche (et petit), leprechaun annah, easter egg morte, petit serpent, petit serpent vert et petit serpent rouge (Gwendolyne). Comprend les tables et les jeux de sons des créatures concernées.</li>
 					<li style="margin-right: -10%">Et bien plus encore à venir dans le futur.</li>
 				  </ul>
 				<span style="padding-left:40px;">0 = Ne pas l'installer</span><br>
 				<span style="color: #781808; padding-left:40px;">1 = L'installer [par défaut]</span></td>
 			</tr>
 			</table><br><br>
-
 
 		<address>
 			<span class="footer">Infinity Animations &gt; Installation</span> &#8226;<a href="#top">HAUT DE PAGE</a>
@@ -536,38 +581,40 @@
 			Le programme d'installation comprend les composants suivants. Chacun possède un numéro distinct et pré-défini qui lui attribue une position déterminée (<em>NdT : mot-clé <span class="tp2">DESIGNATED</span> en langage <acronym title="Weimer Dialogue Utility">WeiDU</acronym></em>] ; ce qui permet aux autres composants de le détecter et aux utilitaires d'installation automatiques de préciser quels composants installer.
 		</p><br>
 
-
 		<p>
-			<span style="margin-left: 50px;"><a href="#0">[0] Infinity Animations</a><em>&nbsp;&nbsp;&nbsp;[composant principal]</em></span></br>
-			<span style="margin-left: 50px;"><a href="#25">[25] Correction des animations des humanoïdes</a></span></br>
-			<span style="margin-left: 50px;"><a href="#50">[50] Génies différenciés</a></span></br>
-			<span style="margin-left: 50px;"><a href="#100">[100] Démons différenciés</a></span></br>
-			<span style="margin-left: 50px;"><a href="#150">[150-175] Diantrefosses</a></span></br>
-			<span style="margin-left: 50px;"><a href="#210">[210-230] Animation d'Isair pour les cambions</a></span></br>
-			<span style="margin-left: 50px;"><a href="#260">[260-280] Animation de Madae pour les alu-démons</a></span></br>
-			<span style="margin-left: 50px;"><a href="#400">[400] Morts-vivants différenciés</a></span></br>
-			<span style="margin-left: 50px;"><a href="#410">[410-415-420] Combattants squelettes</a></span></br>
-			<span style="margin-left: 50px;"><a href="#450">[450-455-460] Animation de <acronym title="NdT : seer en anglais">pauvre hère</acronym></a></span></br>
-			<span style="margin-left: 50px;"><a href="#480">[480-490] Animations de svirneblins</a></span></br>
-			<span style="margin-left: 50px;"><a href="#500">[500] Plus d'animations de base</a></span></br>
-			<span style="margin-left: 50px;"><a href="#550">[550] Plus d'animations d'Icewind Dale</a></span></br>
-			<span style="margin-left: 50px;"><a href="#600">[600] Plus d'animations d'Icewind Dale II</a></span></br>
-			<span style="margin-left: 50px;"><a href="#650">[650] Plus d'animations dee Neverwinter Nights</a></span></br>
-			<span style="margin-left: 50px;"><a href="#710">[710-720-730-740] Plus d'animations de Planescape: Torment</a></span></br>
-			<span style="margin-left: 50px;"><a href="#7000">[7000-7010-7020-7030] Avatars de Moinesse pour IA</a></span></br>
-			<span style="margin-left: 50px;"><a href="#8000">[8000-8010-8020-8030] Animations de personnages de BG1 pour les PNJs</a></span></br>
-			<span style="margin-left: 50px;"><a href="#9000">[9000] Correction des références des créatures dans les cartes</a></span></br>
-			<span style="margin-left: 50px;"><a href="#9500">[9500-9510-9520] Animations de personnages de BG1 pour les PJs</a></span></br>
-			<span style="margin-left: 50px;"><a href="#9600">[9600-9610-9620] Animations de personnages de BG1 dans les parties sauvegardées</a></span></br>
-			<span style="margin-left: 50px;"><a href="#9900">[9900-9910] Correction des animations dans les parties sauvegardées</a></span>
+			<span style="color: #781808;font-weight: bold;margin-left: 50px;">[0]</span> <span style="width: 82%;float: right;"><a href="#0">Infinity Animations</a><em>&nbsp;&nbsp;&nbsp;[composant principal]</em></span><br>
+			<span style="color: #781808;font-weight: bold;margin-left: 50px;">[25]</span> <span style="width: 82%;float: right;"><a href="#25">Correction des animations des humanoïdes</a></span><br>
+			<span style="color: #781808;font-weight: bold;margin-left: 50px;">[50]</span> <span style="width: 82%;float: right;"><a href="#50">Génies différenciés</a></span><br>
+			<span style="color: #781808;font-weight: bold;margin-left: 50px;">[100]</span> <span style="width: 82%;float: right;"><a href="#100">Démons différenciés</a></span><br>
+			<span style="color: #781808;font-weight: bold;margin-left: 50px;">[150-175]</span> <span style="width: 82%;float: right;"><a href="#150">Diantrefosses</a></span><br>
+			<span style="color: #781808;font-weight: bold;margin-left: 50px;">[210-230]</span> <span style="width: 82%;float: right;"><a href="#210">Animation d'Isair pour les cambions</a></span><br>
+			<span style="color: #781808;font-weight: bold;margin-left: 50px;">[260-280]</span> <span style="width: 82%;float: right;"><a href="#260">Animation de Madae pour les alu-démons</a></span><br>
+			<span style="color: #781808;font-weight: bold;margin-left: 50px;">[400]</span> <span style="width: 82%;float: right;"><a href="#400">Morts-vivants différenciés</a></span><br>
+			<span style="color: #781808;font-weight: bold;margin-left: 50px;">[410-415-420]</span> <span style="width: 82%;float: right;"><a href="#410">Combattants squelettes</a></span><br>
+			<span style="color: #781808;font-weight: bold;margin-left: 50px;">[450-455-460]</span> <span style="width: 82%;float: right;"><a href="#450">Animation de <acronym title="NdT : seer en anglais">pauvre hère</acronym></a></span><br>
+			<span style="color: #781808;font-weight: bold;margin-left: 50px;">[480-490]</span> <span style="width: 82%;float: right;"><a href="#480">Animations de svirneblins</a></span><br>
+			<span style="color: #781808;font-weight: bold;margin-left: 50px;">[500]</span> <span style="width: 82%;float: right;"><a href="#500">Plus d'animations de base</a></span><br>
+			<span style="color: #781808;font-weight: bold;margin-left: 50px;">[550]</span> <span style="width: 82%;float: right;"><a href="#550">Plus d'animations d'Icewind Dale</a></span><br>
+			<span style="color: #781808;font-weight: bold;margin-left: 50px;">[600]</span> <span style="width: 82%;float: right;"><a href="#600">Plus d'animations d'Icewind Dale II</a></span><br>
+			<span style="color: #781808;font-weight: bold;margin-left: 50px;">[650]</span> <span style="width: 82%;float: right;"><a href="#650">Plus d'animations de Neverwinter Nights</a></span><br>
+			<span style="color: #781808;font-weight: bold;margin-left: 50px;">[710-720-730-740]</span> <span style="width: 82%;float: right;"><a href="#710">Plus d'animations de Planescape: Torment</a></span><br>
+			<span style="color: #781808;font-weight: bold;margin-left: 50px;">[7000-7010-7020-7030]</span> <span style="width: 82%;float: right;"><a href="#7000">Avatars de Moinesse pour IA</a></span><br>
+			<span style="color: #781808;font-weight: bold;margin-left: 50px;">[8000-8010-8020-8030]</span> <span style="width: 82%;float: right;"><a href="#8000">Animations de personnages de BG1 pour les PNJs</a></span><br>
+			<span style="color: #781808;font-weight: bold;margin-left: 50px;">[9000]</span> <span style="width: 82%;float: right;"><a href="#9000">Correction des références des créatures dans les cartes</a></span><br>
+			<span style="color: #781808;font-weight: bold;margin-left: 50px;">[9500-9510-9520]</span> <span style="width: 82%;float: right;"><a href="#9500">Animations de personnages de BG1 pour les PJs</a></span><br>
+			<span style="color: #781808;font-weight: bold;margin-left: 50px;">[9600-9610-9620]</span> <span style="width: 82%;float: right;"><a href="#9600">Animations de personnages de BG1 dans les parties sauvegardées</a></span><br>
+			<span style="color: #781808;font-weight: bold;margin-left: 50px;">[9900-9910]</span> <span style="width: 82%;float: right;"><a href="#9900">Correction des animations dans les parties sauvegardées</a></span>
 		</p><br>
 
 		<p>
-			Tous les composants nécessitent le composant principal, car c'est lui qui installe le nouveau contenu. Tous les autres composants sont optionnels. Notez aussi qu'aucun composant n'affecte les <acronym title="Personnages Non Joueurs [NdT : traduction de NPC, ou Non-Player Characters]">PNJs</acronym> recrutables, un point qu'il est préférable de laisser à la discrétion de chaque moddeur. Par conséquent, si un composant prétend affecter toutes les femmes Tieffelin, en aucune façon il ne modifiera l'apparence des PNJs Amber et Fade.
+			<strong><span style="color: #781808;">&#9755;</span> Tous les composants nécessitent le composant principal</strong>, car c'est lui qui installe le nouveau contenu. Tous les autres composants sont optionnels.
+		</p>
+		<p>
+			<span style="padding-left: 1%;display: block">Notez aussi qu'aucun composant n'affecte les <acronym title="Personnages Non Joueurs [NdT : traduction de NPC, ou Non-Player Characters]">PNJs</acronym> recrutables, un point qu'il est préférable de laisser à la discrétion de chaque moddeur. Par conséquent, si un composant prétend affecter toutes les femmes Tieffelin, en aucune façon il ne modifiera l'apparence des PNJs Amber et Fade.
 		</p><br>
 
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%;"/><br>
 
 <!-- ================== C o m p o n e n t   0 ================== -->
 
@@ -582,17 +629,20 @@
 		</p>
 
 		  <ul style="margin-left: 6%;">
-			<li>Vérifie la présence des fichiers nécessaires.</li>
-			<li>Seulement pour ToB original : Vérifie la validité de l'exécutable, fait une copie de sauvegarde de l'exécutable et le modifie.</li>
+			<li>Vérifie la présence des fichiers nécessaires pour mettre à jour les megamods.</li>
+			<li>Seulement pour ToB original : Vérifie la validité de l'exécutable, en fait une copie de sauvegarde et le modifie.</li>
 			<li>Seulement pour ToB original : Remplace les animations _LOW de créatures.</li>
-			<li>Met à jour les fichiers .ids.</li>
-			<li>Rétablit toutes les animations écrasées par les mods.</li>
-			<li>Installe les nouvelles animations.</li>
+			<li>Seulement pour ToB original : Résout les conflits de jeux de sons des animations de créatures si TobEx est installé.</li>
+			<li>Met à jour les fichiers .ids, .2da et .ini.</li>
+			<li>Harmonise les noms des animations dans tous les jeux pour éviter les conflits avec les jeux EE.</li>
+			<li>Rétablit toutes les animations écrasées par les mods et résout les problèmes d'empilement d'animations et les conflits de slots, de désignation des animations de créature.</li>
+			<li>Installe les nouvelles animations (toutes celles extraites dans le répertoire &#x1F4C1; /archives).</li>
 			<li>Corrige toutes les créatures affectées.</li>
+			<li>Corrige les problèmes d'animation des armes portées par les créatures.</li>
 		  </ul><br>
 
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%;"/><br>
 
 <!-- ================== C o m p o n e n t   2 5 ================== -->
 
@@ -621,7 +671,7 @@
 		</p>
 
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%;"/><br>
 
 <!-- ================== C o m p o n e n t   5 0 ================== -->
 
@@ -654,7 +704,7 @@
 		</p>
 
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%;"/><br>
 
 <!-- ================== C o m p o n e n t   1 0 0 ================== -->
 
@@ -683,7 +733,7 @@
 
 		  <ul style="margin-left: 6%;">
 			<li>Attribue aux nabassus une animation de tanar'ri vert-gris.</li>
-			<li>Attribue au Démon chromatique une animation de base un peu plus colorée [<em>NdT : bleue</em>].</li>
+			<li>Attribue au Démon chromatique une animation de base un peu plus colorée [<em>NdT : demon bleu</em>].</li>
 			<li>Attribue aux bebiliths (seulement dans les mods Longer Road et Drizzt Saga) une animation provenant de <acronym title="Neverwinter Nights">NWN</acronym>.</li>
 			<li>Attribue à certaines mariliths une animation plus sombre.</li>
 			<li>Attribue aux <acronym title="Night hag">sorcières de la nuit</acronym> [<em>NdT : ou guenaudes noires selon les traductions</em>] l'animation de guenaude nocturne de <acronym title="Planescape: Torment">PS:T</acronym>.</li>
@@ -703,7 +753,7 @@
 		</p>
 
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%;"/><br>
 
 <!-- ================== C o m p o n e n t   1 5 0 ================== -->
 
@@ -743,7 +793,7 @@
 		</p>
 
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%;"/><br>
 
 <!-- ================== C o m p o n e n t   2 1 0 ================== -->
 
@@ -781,7 +831,7 @@
 		</p>
 
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%;"/><br>
 
 <!-- ================== C o m p o n e n t   2 6 0 ================== -->
 
@@ -819,7 +869,7 @@
 		</p>
 
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%;"/><br>
 
 <!-- ================== C o m p o n e n t   4 0 0 ================== -->
 
@@ -848,7 +898,7 @@
 		  <ul style="margin-left: 6%;">
 			<li>Attribue aux banshees l'animation de <acronym title="NdT : wailing virgin">vestale gémissante</acronym>.</li>
 			<li>Attribue aux crânes flottants l'animation de demi-liche.</li>
-			<li>Attribue aux blêmes majeurs l'animation de blême majeure d'<acronym title="Icewind Dale">IWD</acronym>.</li>
+			<li>Attribue aux blêmes majeurs l'animation de blême majeur d'<acronym title="Icewind Dale">IWD</acronym>.</li>
 			<li>Attribue aux fantômes classiques l'animation de fantôme d'<acronym title="Icewind Dale">IWD</acronym>.</li>
 			<li>Attribue aux goules majeures l'animation de goule majeure d'<acronym title="Icewind Dale">IWD</acronym>.</li>
 			<li>Attribue à certaines goules l'animation de reine des goules de <acronym title="Planescape: Torment">PS:T</acronym>.</li>
@@ -874,7 +924,7 @@
 		</p>
 
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%;"/><br>
 
 <!-- ================== C o m p o n e n t   4 1 0 ================== -->
 
@@ -910,7 +960,7 @@
 		</p>
 
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%;"/><br>
 
 <!-- ================== C o m p o n e n t   4 5 0 ================== -->
 
@@ -949,7 +999,7 @@
 		</p>
 
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%;"/><br>
 
 <!-- ================== C o m p o n e n t   4 8 0 ================== -->
 
@@ -985,7 +1035,7 @@
 		</p>
 
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%;"/><br>
 
 <!-- ================== C o m p o n e n t   5 0 0 ================== -->
 
@@ -1023,7 +1073,7 @@
 		</p>
 
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%;"/><br>
 
 <!-- ================== C o m p o n e n t   5 5 0 ================== -->
 
@@ -1052,7 +1102,7 @@
 		  <ul style="margin-left: 6%;">
 			<li>Attribue aux armures animées les animations de <acronym title="NdT : animated plate">petites armures animées</acronym> d'<acronym title="Icewind Dale">IWD</acronym>.</li>
 			<li>Attribue aux Archidruides l'animation d'Arundel d'<acronym title="Icewind Dale">IWD</acronym>.</li>
-			<li>Attribue aux barbares leur animation appropriée (marron, rouge, brun et chaman).</li>
+			<li>Attribue aux barbares leur animation appropriée d'<acronym title="Icewind Dale">IWD</acronym> (marron, rouge, brun et shaman).</li>
 			<li>Attribue aux élémentaires majeurs différentes animations de <acronym title="Baldur's Gate II">BG2</acronym>/<acronym title="Icewind Dale">IWD</acronym>.</li>
 			<li>Attribue à certains géants du feu l'animation de géant du feu d'<acronym title="Icewind Dale">IWD</acronym>.</li>
 			<li>Attribue aux golems de fer l'animation de golem de fer d'<acronym title="Icewind Dale">IWD</acronym>.</li>
@@ -1065,7 +1115,7 @@
 		</p>
 
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%;"/><br>
 
 <!-- ================== C o m p o n e n t   6 0 0 ================== -->
 
@@ -1107,7 +1157,7 @@
 		</p>
 
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%;"/><br>
 
 <!-- ================== C o m p o n e n t   6 5 0 ================== -->
 
@@ -1146,11 +1196,11 @@
 		</p>
 
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%;"/><br>
 
 <!-- ================== C o m p o n e n t   7 1 0 ================== -->
 
-		<p><a name="710" id="710"></a>
+		<a name="710" id="710"></a>
 		<h2><span class="com">[710-720-730-740]</span>Plus d'animations de Planescape: Torment</h2><br>
 
 		<p>
@@ -1208,7 +1258,7 @@
 		</p>
 
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%;"/><br>
 
 <!-- ================== C o m p o n e n t   7 0 0 0 ================== -->
 
@@ -1255,7 +1305,7 @@
 		</p>
 
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%;"/><br>
 
 <!-- ================== C o m p o n e n t   8 0 0 0 ================== -->
 
@@ -1290,15 +1340,15 @@
 
 		  <ul style="margin-left: 6%;">
 			<li>Utilise les animations de personnages originales de Baldur's Gate selon le choix spécifié.</li>
-			<li>La dernière option est intitulée « la plupart » plutôt que « toutes » car certaines créatures sont exclues des modifications.</li>
+			<li>La dernière option est intitulée « la plupart » plutôt que « toutes », car certaines créatures sont exclues des modifications.</li>
 			<li style="margin-right:4%;">Cela inclue les créatures utilisant des cimeterres, des katanas ou autre chose d'autre qu'un bouclier dans leur deuxième main (ou dotées de ces compétences), puisque <acronym title="Baldur's Gate">BG1</acronym> ne dispose pas de ces animations.</li>
-			<li style="margin-right:4%;">&#9888;&#65039; <strong>À utiliser avec précaution</strong> avec des <acronym title="Personnages Non Joueurs [NdT : traduction de NPC, ou Non-Player Characters]">PNJs</acronym> recrutables : si ce composant ne traitera pas les personnages compétents en style de combat a deux armes ou équipés d'une seconde arme, n'essayez en aucun cas d'équiper les PNJs d'une seconde arme.</li>
+			<li style="margin-right:4%;">&#9888;&#65039; <strong>À utiliser avec précaution</strong> avec des <acronym title="Personnages Non Joueurs [NdT : traduction de NPC, ou Non-Player Characters]">PNJs</acronym> recrutables : si ce composant ne traitera pas les personnages compétents en style de combat à deux armes ou équipés d'une seconde arme, n'essayez en aucun cas d'équiper les PNJs d'une seconde arme.</li>
 		  </ul>
 		<p style="font-size:90%;text-align: right;"><a href="#compon">RETOUR À LA LISTE DES COMPOSANTS</a>
 		</p>
 
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%;"/><br>
 
 <!-- ================== C o m p o n e n t   9 0 0 0 ================== -->
 
@@ -1317,12 +1367,12 @@
 		</p>
 
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%;"/><br>
 
 <!-- ================== C o m p o n e n t   9 5 0 0 ================== -->
 
 		<a name="9500" id="9500"></a>
-		<h2><span class="com">[9500-9510-9520]</span>Animations de personnages de <acronym title="Baldur's Gate">BG1</acronym> pour les <acronym title="Personnages Joueurs [NdT : traduction de PC, ou Player Characters">PJs</acronym></h2><br>
+		<h2><span class="com">[9500-9510-9520]</span>Animations de personnages de <acronym title="Baldur's Gate">BG1</acronym> pour les <acronym title="Personnages Joueurs [NdT : traduction de PC, ou Player Characters">PJs</acronym> exportés</h2><br>
 
 		<p>
 			<span class="com"><strong>[9500]</strong></span>Demander confirmation pour chaque <acronym title="Personnage Joueur [NdT : traduction de PC, ou Player Character">PJ</acronym> exporté.<br>
@@ -1345,7 +1395,8 @@
 			</div>
 		</div><br>
 
-		<p>&#10173; 
+		<p>
+			&#10173; Ce composant attribue à certains PJs exportés des animations de personnages de <acronym title="Baldur's Gate">BG1</acronym> :
 		</p>
 
 		  <ul style="margin-left: 6%;">
@@ -1358,7 +1409,7 @@
 		</p>
 
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%;"/><br>
 
 <!-- ================== C o m p o n e n t   9 6 0 0 ================== -->
 
@@ -1386,7 +1437,8 @@
 			</div>
 		</div><br>
 
-		<p>&#10173; 
+		<p>
+			&#10173; Ce composant attribue aux personnages des animations de personnages de BG1 dans les sauvegardes, si nécessaire :
 		</p>
 
 		  <ul style="margin-left: 6%;">
@@ -1398,7 +1450,7 @@
 		</p>
 
 
-		<hr style="width: 90%; color: #781808; background-color: #781808; " /><br>
+		<hr style="width: 90%;"/><br>
 
 <!-- ================== C o m p o n e n t   9 9 0 0 ================== -->
 
@@ -1406,11 +1458,11 @@
 		<h2><span class="com">[9900-9910]</span>Correction des animations dans les parties sauvegardées</h2><br>
 
 		<p>
-			<span class="com"><strong>[9900]</strong></span>Corriger uniquement les animations LOW.<br>
+			<span class="com"><strong>[9900]</strong></span>Corriger uniquement les animations _LOW.<br>
 			<span class="com"><strong>[9910]</strong></span>Corriger toutes les animations que <acronym title="Infinity Animations">IA</acronym> a modifiées.
 		</p><br>
 
-		<p>&#10173; 
+		<p>&#10173; Ce composant corrige dans les parties sauvegardées les animations de créatures que IA a modifiées, pour empêcher le jeu de crasher :
 		</p>
 
 		  <ul style="margin-left: 6%;">
@@ -1532,6 +1584,9 @@
 			<img width=132 height=155 src="images/0xe000.gif" title="cyclops" />
 			<img width=149 height=151 src="images/0xe230.gif" title="beetle_rhinoceros" />
 		</p><br><br>
+
+
+		<hr style="width: 90%;"/><br>
 
 		<p style="font-size: 120%;">
 			<strong>Pot pourri d'autres animations</strong>
@@ -1698,6 +1753,8 @@
 			<img width=258 height=382 src="images/0x1101.gif" title="dragon_white" />
 		</p><br><br>
 
+		<hr style="width: 90%;"/><br>
+
 		<p style="font-size: 120%;">
 			<strong>Animations des Éditions améliorées adaptées à ToB</strong>
 		</p>
@@ -1720,7 +1777,7 @@
 			<img width=43 height=60 src="images/0x534d.gif" title="hephernaan" />
 			<img width=35 height=65 src="images/0x5fd5.gif" title="sailor_green" />
 			<img width=35 height=65 src="images/0x5fd6.gif" title="sailor_red" />
-			<img width=35 height=65 src="images/0x5fd7.gif" title="sailor_sark" />
+			<img width=35 height=65 src="images/0x5fd7.gif" title="sailor_dark" />
 			<img width=41 height=71 src="images/0x5fd8.gif" title="crusader_soldier" />
 			<img width=43 height=87 src="images/0x5fd4.gif" title="red_wizard" />
 			<img width=39 height=66 src="images/0x5352.gif" title="boar_wild" />
@@ -1746,6 +1803,8 @@
 			<img width=249 height=315 src="images/0x1307.gif" title="dragon_green_juvenile" />
 			<img width=233 height=388 src="images/0x1103.gif" title="dragon_green_iwd" />
 		</p><br><br>
+
+		<hr style="width: 90%;"/><br>
 
 		<p style="font-size: 120%;">
 			<strong>Animations d'autres modeurs</strong>
@@ -1783,6 +1842,7 @@
 			<img width=72 height=47 src="images/0x52db.gif" title="gw_maggot_blue" />
 			<img width=44 height=53 src="images/0x5485.gif" title="gw_jellyfish_yellow" />
 			<img width=38 height=55 src="images/0x5b61.gif" title="gw_larval_worm_small_pst" />
+			<img width=32 height=64 src="images/0x5ba3.gif" title="easter_egg_morte_pst" />
 			<img width=58 height=50 src="images/0x52a1.gif" title="gw_pig" />
 			<img width=46 height=60 src="images/0x5338.gif" title="gw_hydra_fire" />
 			<img width=63 height=55 src="images/0x5309.gif" title="gw_imp_gremin_red" />
@@ -1791,6 +1851,8 @@
 			<img width=70 height=63 src="images/0x531a.gif" title="gw_wererat_ochre_pst" />
 			<img width=70 height=63 src="images/0x5318.gif" title="gw_wererat_blue_pst" />
 			<img width=70 height=63 src="images/0x5319.gif" title="gw_wererat_green_pst" />
+			<img width=46 height=63 src="images/0x5b7c.gif" title="gw_drone_light_pst" />
+			<img width=48 height=72 src="images/0x5ba1.gif" title="leprechaun_annah_pst" />
 
 			<img width=46 height=63 src="images/0x5b7c.gif" title="gw_drone_light_pst" />
 			<img width=52 height=80 src="images/0x54a0.gif" title="gw_amazone_novice" />
@@ -1884,20 +1946,23 @@
 			<img width=115 height=114 src="images/0x52e9.gif" title="gw_evard_fire_tentacles" />
 			<img width=72 height=127 src="images/0x530b.gif" title="gw_succubus_witch_diablo2" />
 			<img width=157 height=115 src="images/0x5297.gif" title="gw_halfragon_silver" />
+			<img width=290 height=120 src="images/0x511f.gif" title="gw_bald_eagle_giant" />
+			<img width=80 height=80 src="images/0x535d.gif" title="gw_bald_eagle" />
+			<img width=80 height=80 src="images/0x535e.gif" title="gw_bald_eagle_small" />
 			<img width=219 height=119 src="images/0x5298.gif" title="gw_octopus_tentacle" />
 			<img width=84 height=124 src="images/0x52e8.gif" title="gw_evard_tentacles" />
+
 			<img width=110 height=124 src="images/0x511e.gif" title="elemental_ice_wow" />
 			<img width=129 height=128 src="images/0x5339.gif" title="the_butcher_hots" />
 			<img width=67 height=134 src="images/0x52eb.gif" title="gw_putrid_defiler" />
-
 			<img width=130 height=134 src="images/0x5344.gif" title="gw_medusa_queen" />
 			<img width=75 height=157 src="images/0xa101.gif" title="gw_shark leopard" />
 			<img width=202 height=133 src="images/0x5313.gif" title="gw_mega_demon_flamberge" />
 			<img width=171 height=163 src="images/0x5584.gif" title="gw_siege_beast" />
 			<img width=211 height=163 src="images/0x5585.gif" title="gw_demon_duriel" />
+
 			<img width=136 height=171 src="images/0x5311.gif" title="gw_demon_mephisto" />
 			<img width=141 height=168 src="images/0x5493.gif" title="gw_vulture_demon" />
-
 			<img width=191 height=177 src="images/0x1004.gif" title="gw_shark sandbar" />
 			<img width=125 height=175 src="images/0x50d1.gif" title="gw_demon_andariel_diablo2" />
 			<img width=279 height=200 src="images/0x1102.gif" title="gw_catapult" />
@@ -1935,7 +2000,7 @@
 		</p><br>
 
 
-		<hr style="width: 90%; " /><br>
+		<hr style="width: 90%;" /><br>
 
 
 		<h5>Remerciements particuliers à :</h5>
@@ -1943,17 +2008,16 @@
  		  <ul class="version-list c1">
 			<li>L'équipe de <a href="http://www.spellholdstudios.net/">Spellhold Studios</a> pour l'hébergement de ce mod (<a href="http://www.shsforums.net">Forums</a>).</li>
 			<li>Assistance originale : <a href="http://www.shsforums.net/user/948-arkenor/">Arkenor</a> et <a href="http://www.shsforums.net/user/4994-sergis/">SergIS</a>.</li>
-			<li><a href="http://www.shsforums.net/user/10485-sam/">Sam</a> : ...</li>
+			<li><a href="http://www.shsforums.net/user/10485-sam/">Sam</a> : un énorme merci pour son inestimable contribution à cette mise à jour (librairie <span class="tp2">ps_recursive_copy.tpa</span>, meilleur taux de compression des fichiers bam, mise à jour du patch de l'exécutable...) et pour avoir réécrit complètement l'utilitaire IA Reference Picker.</li>
 			<li><a href="http://www.shsforums.net/user/14985-argent77/">Argent77</a> : pour m'avoir laissé utiliser et adapter sa fonction <acronym title="Weimer Dialogue Utility">WeiDU</acronym> <span class="tp2">FIND_FREE_ANIM_SLOT</span> (libraire <em>a7_functions.tpa</em>) pour installer automatiquement de nouveaux slots d'animation dans les jeux EE.</li>
 			<li><a href="http://www.shsforums.net/user/41045-skellytz/">skellytz</a> : merci pour avoir partagé le code de son projet de mod <em>Infinity Sounds</em> qui résout les conflits entre soundsets d'animations de créatures</li>
-
-			<li>Moddeurs : <a href="http://www.shsforums.net/user/776-kwiat-w/">Kwiat_W</a>, <a href="http://www.shsforums.net/user/22187-ulb/">Ulb</a> et <a href="http://www.shsforums.net/user/24495-gwendolyne/">Gwendolyne</a> pour nous avoir permis d'intégrer certaines de leurs animations de créatures dans le nouveau pack d'animations de créatures de moddeurs pour IA.</li>
+			<li>Moddeurs : <a href="http://www.shsforums.net/user/26975-jarl2/">Jarl</a>, <a href="http://www.shsforums.net/user/776-kwiat-w/">Kwiat_W</a>, <a href="http://www.shsforums.net/user/22187-ulb/">Ulb</a> et <a href="http://www.shsforums.net/user/24495-gwendolyne/">Gwendolyne</a> pour nous avoir permis d'intégrer certaines de leurs animations de créatures dans le nouveau pack d'animations de créatures de moddeurs pour IA.</li>
 			<li>Traduction française : <a href="http://www.shsforums.net/user/24495-gwendolyne/">Gwendolyne</a> (relecture par <a href="http://www.shsforums.net/user/16735-luren/">Luren</a>).</li>
 			<li>Spécial : <a href="http://www.shsforums.net/user/16735-luren/">Luren</a> pour la relecture de la documentation et sa contribution à la conversion des animations de EE pour ToB.</li>
 		  </ul><br>
 
 
-		<hr style="width: 90%; " /><br>
+		<hr style="width: 90%;" /><br>
 
 
 		<h5>Logiciels et outils utilisés pour la création de ce mod</h5>
@@ -1972,13 +2036,13 @@
 		  </ul><br>
 
 
-		<hr style="width: 90%; " /><br>
+		<hr style="width: 90%;" /><br>
 
 
 		<h5>Informations sur les droits d'auteur</h5>
 
 			<div class="important">
-				<p style ="width: 100%;"><img alt="Creative Commons License" style="border-width:0" src="images/cc-by-sa-3.0.png" title="Creative Commons License" /></img> Ce module (y compris l'intégralité du code et de la documentation) est déposé sous la licence <a href="http://creativecommons.org/licenses/by-nc/3.0/">Creative Commons Attribution-Noncommercial 3.0 Unported License</a>. Vous êtes libre de partager (copier, distribuer et transmettre) et de modifier (adapter) ce travail, sauf à des fins commerciales. Pour plus de détails, consultez la licence <a href="http://creativecommons.org/licenses/by-nc/3.0/legalcode">Creative Commons Public License</a>. Veuillez informer les auteurs de tout changement ou toute mise à jour du mod sur le <a href="http://www.shsforums.net/forum/594-infinity-animations/">forum</a> du mod.</p>
+				<p style ="width: 100%;"><img alt="Creative Commons License" style="border-width:0" src="images/cc-by-sa-3.0.png" title="Creative Commons License" /></img> Ce module (y compris l'intégralité du code et de la documentation) est déposé sous la licence <a href="https://creativecommons.org/licenses/by-nc/3.0/">Creative Commons Attribution-Noncommercial 3.0 Unported License</a>. Vous êtes libre de partager (copier, distribuer et transmettre) et de modifier (adapter) ce travail, sauf à des fins commerciales. Pour plus de détails, consultez la licence <a href="https://creativecommons.org/licenses/by-nc/3.0/legalcode">Creative Commons Public License</a>. Veuillez informer les auteurs de tout changement ou toute mise à jour du mod sur le <a href="http://www.shsforums.net/forum/594-infinity-animations/">forum</a> du mod.</p>
 				<p style ="width: 100%;">Tous les copyrights et marques déposées sont la propriété de leurs propriétaires respectifs.</p>
 			</div><br>
 
@@ -1989,27 +2053,29 @@
 
 <!-- ============== V e r s i o n   H i s t o r y =============== -->
 	  <a name="version" id="version"></a>
-	  <div class="content">
+	  <div class="content" id="versionHistory">
 
 		<h2>Historique des versions</h2><br>
 
-		<h6>Version 6.0.0 &nbsp;(nn septembre 2020)</h6>
+		<h6>Version 6.0.0 &nbsp;(nn mars 2021)</h6>
 
-		<h5>&#9755; Principales mises à jour :</h5>
+		<h5>&nbsp;<span style="color: #781808;">&#9755;</span>&nbsp;&nbsp; Principales mises à jour :</h5>
 
 		  <ul style="width: 90%">
-			<li>Modification des noms de code des animations pour les rendre <strong>compatibles</strong> avec les code pages non occidentaux (suppression de la procédure automatique de changement de code page dans le patch de l'exécutable). &#128521;</li>
+			<li>Modification des noms de code des animations pour les rendre <strong>compatibles avec les code pages non occidentaux</strong> (suppression de la procédure automatique de changement de code page dans le patch de l'exécutable) et correction des doublons de slots d'animation de dragon (XDR3, XDR6). &#128521;</li>
 			<li>Dorénavant, Infinity Animations est livré avec l'ensemble des animations de créatures disponibles. Il n'est donc plus nécessaire de télécharger tous leurs fichiers d'archives, mais vous pouvez toujours sélectionner celles que vous souhaitez installer. Pour de plus amples précisions sur la manière de personnaliser leur installation, veuillez consulter ce <a href="#config">chapitre</a>.</li>
-			<li>Résolution des conflits entre soundsets d'animations de créatures (cadeau de skellytz - tiré de son projet de mod <em>Infinity Sounds</em>) : les minotaures (MMin) utilisaient les sons des flagelleurs mentaux, les mariliths (MTan) celui des Tanar'ris (MTAN), la liche blanche d'IWD (MLic - restaurée par Infinity Animations) celui de la liche de BG2 (MLIC), et le troll bleu d'IWD (MTro) celui du troll de BG2 (MTRO).</li>
-			<li>Ajout d'une nouvelle catégorie de contenu (animations de EE pour ToB) : sanglier sauvage, gobelours chaman, soldat croisé, chien gris, dragon vert (IWD), dragon vert juvénile, dragon rouge juvénile, dragons jeunes (vert, d'argent, blanc), mort noyé rouge, ettin fantôme, démon rouge, géant des collines, gibberling brood, gobelins Mkhiin (commun, avec arc, avec bâton, en armure et hache, en armure et arc), gobelins chevaucheurs de worg (d'élite, chaman), golem minuscule, demi-dragon vert, hephernaan, mégalo-mille-pattes, pouding noir, magicien rouge, marin (aux habits sombres, verts, rouges), serpent aquatique, araignée aquatique, trolls (d'eau douce, spectral), ver de tunnels, grande wiverne albinos, wiverne blanche. Comprend les tables et les jeux de sons des créatures concernées.</li>
-			<li>Ajout du nouveau pack d'animations de créatures de moddeurs pour IA : Poulet marron (Jarl), Wolfhound de jastey, <a href="http://www.shsforums.net/files/file/908-ia-content-wow-pack-mule/">Packmule_wow content pack</a> (Kwiat_W), <a href="http://www.shsforums.net/files/file/956-ia-content-d2-bear-werebear/">D2 Bear & Werebear Animations</a>, <a href="http://www.shsforums.net/topic/59381-modresource-the-butcher-hots-animation-for-ees-classic/">Butcher animation from Heroes of the Storm</a>, <a href="https://github.com/thisisulb/ModResource_BeeAnimation">Giant Bee</a> (Ulb), <a href="https://github.com/thisisulb/UlbsAnimationPack">Ulb's animation Pack</a> (Elemental Ice, Sunnis Princess of Earth Elementals and Zaaman Rul Prince of Fire Elementals), petit serpent, petit serpent vert et petit serpent rouge (Gwendolyne).</li>
-<!-- corriger shaman ou chaman-->
-			<li>Compatibilité native avec les jeux Enhanced :</li>
+			<li>Résolution des conflits entre soundsets d'animations de créatures (cadeau de skellytz - tiré de son projet de mod <em>Infinity Sounds</em>) : les minotaures (MMin) utilisaient les sons des flagelleurs mentaux (MMIN), les mariliths (MTan) celui des Tanar'ris (MTAN), la liche blanche d'IWD (MLic - restaurée par Infinity Animations) celui de la liche de BG2 (MLIC), et le troll bleu d'IWD (MTro) celui du troll de BG2 (MTRO).</li>
+			<li>Réécriture de l'utilitaire IA Reference Picker (supporte désormais les traductions) et mise à jour de sa documentation.</li>
+			<li>...</li>
+			<li>Ajout du nouveau pack de contenu ee_tob (animations de EE pour ToB) : sanglier sauvage, vargouille, gobelours chaman, poulet blanc, soldat croisé, chien gris, dragon vert (IWD), dragons juvéniles (vert, rouge), dragons jeunes (vert, d'argent, blanc), mort noyé rouge, Efrit noble, ettin fantôme, démon rouge, géant des collines, gibberling brood, gobelins Mkhiin (commun, avec arc, avec bâton, en armure avec hache, en armure avec arc), gobelins chevaucheurs de worg (d'élite, chaman), golem minuscule, demi-dragon vert, hephernaan, mégalo-mille-pattes, pouding noir, magicien rouge, marin (aux habits sombres, verts, rouges), serpent aquatique, araignée aquatique, trolls (d'eau douce, spectral), ver de tunnels, grande wiverne albinos, wiverne blanche. Comprend les tables et les jeux de sons des créatures concernées.</li>
+			<li>Ajout du nouveau pack d'animations de créatures de moddeurs pour IA : Poulet marron (Jarl), chien gris de jastey, <a href="http://www.shsforums.net/files/file/908-ia-content-wow-pack-mule/">Packmule_wow content pack</a> (Kwiat_W), <a href="http://www.shsforums.net/files/file/956-ia-content-d2-bear-werebear/">D2 Bear & Werebear Animations</a>, <a href="http://www.shsforums.net/topic/59381-modresource-the-butcher-hots-animation-for-ees-classic/">Butcher animation from Heroes of the Storm</a>, <a href="https://github.com/thisisulb/ModResource_BeeAnimation">Giant Bee</a> (Ulb), <a href="https://github.com/thisisulb/UlbsAnimationPack">Ulb's animation Pack</a> (élémentaire de glace, Princesse élémentaire de terre Sunnis et Prince élémentaire de feu Zaaman Rul) ; pygargue à tête blanche (et petit), lechepraun annah, easter egg morte, petit serpent, petit serpent vert et petit serpent rouge (Gwendolyne).</li>
+
+			<li>Compatibilité native avec les jeux Enhanced Edition :</li>
 			  <ul>
-				<li style="margin-left:-4%; margin-right:-6%;">Restauration des fichiers bam d'animation manquants : abishais (blanc, noir, rouge, vert), armures animées (bronze/sombre/verte), Arundel, barbares shaman (avec marteau, bâton, gourdin), barbares guerriers (bleu, rouge, marron), barbare Icasaracht, scarabées (bombardier, scolyte, de feu, rhinocéros), belhifet, belhifet prêtre, sanglier arctique, vargouille, gobelours, capitaine gobelours, poule (blanche, marron), chimère, cornugon, fatalité rampante, cyclope, tréant, déva monadic déchue, dragons de BG2 (noir, rouge, d'argent), dragons juvéniles (rouge, vert), dragon blanc (IWD et jeune), driders (femelle, mâle), mort noyé, élémentaire (de terre, de feu, d'eau, d'eau petit), freyeur ( normale et grande), fantôme, blême majeur, goule majeure, géant du feu 2, géant du feu IWD, géant du givre, géant fomorian, géant des collines, géant verbeeg, glabrezu, gobelins (capitaine, shaman, chevaucheur de worg, capitaine chevaucheur de worg), gobelins Mkhiin (commun, avec arc, avec bâton, en armure et hache, en armure et arc), golem de glace, golem de fer de IWD, golem minuscule, guenaudes (annis, nocturne), demi-dragons (noire, rouge), harpie, hephernaan, histachii, crochorreur, Isair, kegs, kuo-toa (et grand), lémure, liche blanche, homme lézard (et d'élite, roi), madae, malarite, marilith, marilith (IWD), mégalo-mille-pattes, orque mort-vivant avec hache, orque mort-vivant chaman, orog chaman, planaire, planaire déchu, rémorhaz, sahuagin IWD (et grand), pauvre hère, ombre (petite, grande), shenrical, svirfneblins (pâle, foncé, avec et sans hache), trolls (d'eau douce, des glaces, des neiges), yeti, ver de tunnels, ombre des roches (ancienne, vodyanoi), vestale gémissante, esprit des eaux, blaireau-garou, rat-garou, nécrophages (gris, vert, jaune, des tertres), will o wisp (et petit), worg (IWD), yuan-ti demi-sang, zombi (bleu, jaune).</li>
+				<li style="margin-left:-4%; margin-right:-6%;">Restauration des fichiers bam d'animation manquants : abishais (blanc, noir, rouge, vert), armures animées (bronze/sombre/verte), Arundel, barbares shaman (avec marteau, bâton, gourdin), barbares guerriers (bleu, rouge, marron), barbare Icasaracht, scarabées (bombardier, scolyte, de feu, rhinocéros), belhifet, belhifet prêtre, sanglier arctique, vargouille, gobelours, capitaine gobelours, poule (blanche, marron), chimère, cornugon, fatalité rampante, cyclope, tréant, déva monadic déchue, dragons de BG2 (noir, rouge, d'argent), dragons juvéniles (rouge, vert), dragon blanc (IWD et jeune), driders (femelle, mâle), mort noyé, élémentaire (de terre, de feu, d'eau, d'eau petit), freyeur ( normale et grande), fantôme, blême majeur, goule majeure, géant du feu 2, géant du feu IWD, géant du givre, géant fomorian, géant des collines, géant verbeeg, glabrezu, gobelins (capitaine, chaman, chevaucheur de worg, capitaine chevaucheur de worg), gobelins Mkhiin (commun, avec arc, avec bâton, en armure et hache, en armure et arc), golem de glace, golem de fer de IWD, golem minuscule, guenaudes (annis, nocturne), demi-dragons (noire, rouge), harpie, hephernaan, histachii, crochorreur, Isair, kegs, kuo-toa (et grand), lémure, liche blanche, homme lézard (et d'élite, roi), madae, malarite, marilith, marilith (IWD), mégalo-mille-pattes, orque mort-vivant avec hache, orque mort-vivant chaman, orog chaman, planaire, planaire déchu, rémorhaz, sahuagin IWD (et grand), pauvre hère, ombre (petite, grande), shenrical, svirfneblins (pâle, foncé, avec et sans hache), trolls (d'eau douce, des glaces, des neiges), yeti, ver de tunnels, ombre des roches (ancienne, vodyanoi), vestale gémissante, esprit des eaux, blaireau-garou, rat-garou, nécrophages (gris, vert, jaune, des tertres), will o wisp (et petit), worg (IWD), yuan-ti demi-sang, zombi (bleu, jaune).</li>
 				<li style="margin-left:-4%; margin-right:-6%;">Restauration des fichiers de palettes manquants : abishai bleu, pouding noir, sanglier sauvage, gobelours chaman, soldat croisé, chien gris, dragons de BG2, dragon vert (IWD), dragon vert juvénile, dragons jeunes (vert, d'argent), mort noyé rouge, efrit noble, petit élémentaire de feu pourpre, ettin fantôme, démons (bleu, rouge, vert), Gibberling brood, gobelins chevaucheurs de worg (d'élite, chaman), guenaudes (verte, des mers), hakeashar, demi-dragon vert, hephernaan, maurezhi, myrlochar, nishruu, magicien rouge, marins (aux habits sombres, verts, rouges), serpent aquatique, araignée aquatique, troll spectral, grande wiverne albinos, wiverne blanche, wiverne majeure blanche, yochlol.</li>
 				<li style="margin-left:-4%; margin-right:-6%;">Restauration des fichiers wav manquants : abishai, barbares, scarabées (bombardier, scolyte, rhinocéros), belhifet, belhifet prêtre, sanglier arctique, vargouille, gobelours, capitaine gobelours, chimère, cornugon, fatalité rampante, cyclope, tréant, déva monadic déchue, dragon d'argent, dragon blanc (IWD et jeune), driders (femelle, mâle), mort noyé, élémentaire (de feu, d'eau), freyeur (normale et grande), blême majeur, fantôme, géant fomorian, géant du givre, géant verbeeg, glabrezu, gobelins, gobelins (capitaine, chaman, chevaucheur de worg, capitaine chevaucheur de worg), golem de glace, golem de fer de IWD, guenaude nocturne, harpie, demi-dragon noire, histachii, crochorreur, isair, kegs, kuo-toa, lémure, liche noire, homme lézard roi, madae, malarite, minotaure, momie, orque mort-vivant avec hache, planaire, rémorhaz, sahuagin IWD (et grand), pauvre hère, ombre (petite, grande), shenrical, criard, trolls (bleu, d'eau douce, des glaces, des neiges), yeti, ombre des roches (ancienne, vodyanoi), vestale gémissante, esprit des eaux, blaireau-garou, rat-garou, nécrophages (vert, jaune, des tertres), grande wiverne albinos, yochlol, yuan-tis (et demi-sang), zombi jaune.</li>
-				<li style="margin-left:-4%; margin-right:-6%;">Restauration des fichiers ini manquants : abishais (bleu, noir, rouge, vert), belhifet, belhifet prêtre, pouding noir, sanglier sauvage, vargouille, gobelours, capitaine gobelours, gobelours chaman, chimère, soldat croisé, chien gris, dragon vert (IWD), dragons juvéniles (rouge, vert), dragons jeunes (vert, d'argent), drider femelle, mort noyé rouge, petit élémentaire d'eau, ettin fantôme, freyeur grande, géant fomorian, géant des collines, Gibberling brood, gobelin chaman, gobelins chevaucheurs de worg (d'élite, chaman, capitaine), gobelins Mkhiin (commun, avec arc, avec bâton, en armure et hache, en armure et arc), guenaudes (annis, nocturne, verte, des mers), demi-dragons (noir, rouge, vert), hephernaan, crochorreur, Isair, kegs, madae, malarite, mégalo-mille-pattes, myrlochar, orque mort-vivant avec hache, (axe, shaman), orog chaman, marins (aux habits sombres, rouges), shenrical, serpent aquatique, araignée aquatique, troll spectral, ver de tunnels, blaireau-garou, rat-garou, will o wisp (et petit), worg, grande wiverne albinos, yuan-ti demi-sang.</li>
+				<li style="margin-left:-4%; margin-right:-6%;">Restauration des fichiers ini manquants : abishais (bleu, noir, rouge, vert), belhifet, belhifet prêtre, pouding noir, sanglier sauvage, vargouille, gobelours, capitaine gobelours, gobelours chaman, chimère, soldat croisé, chien gris, dragon vert (IWD), dragons juvéniles (rouge, vert), dragons jeunes (vert, d'argent), drider femelle, mort noyé rouge, petit élémentaire d'eau, ettin fantôme, freyeur grande, géant fomorian, géant des collines, Gibberling brood, gobelin chaman, gobelins chevaucheurs de worg (d'élite, chaman, capitaine), gobelins Mkhiin (commun, avec arc, avec bâton, en armure et hache, en armure et arc), guenaudes (annis, nocturne, verte, des mers), demi-dragons (noir, rouge, vert), hephernaan, crochorreur, Isair, kegs, madae, malarite, mégalo-mille-pattes, myrlochar, orque mort-vivant avec hache, (axe, chaman), orog chaman, marins (aux habits sombres, rouges), shenrical, serpent aquatique, araignée aquatique, troll spectral, ver de tunnels, blaireau-garou, rat-garou, will o wisp (et petit), worg, grande wiverne albinos, yuan-ti demi-sang.</li>
 				<li style="margin-left:-4%; margin-right:-6%;">Animation du géant des collines : correction des fichiers bam dont certains pixels manquaient (Gwendolyne).</li>
 				<li style="margin-left:-4%; margin-right:-6%;">... to be completed.</li>
 			  </ul>
@@ -2018,7 +2084,7 @@
 			  <ul>
 				<li style="margin-left:-4%; margin-right:-6%;">Composant principal : <a href="http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/page-12#entry562939">Correctif par Lollorian des goules transformées en golems</a> et <a href="http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/page-35#entry579291">patch de Lollorian pour les installations non-biffées</a>. Source : <a href="https://github.com/BigWorldProject/Big-World-Fixpack/commit/5ff3f32fda8f22711b55cf5065dca194d52cbffd">commit</a>.</li>
 				<li style="margin-left:-4%; margin-right:-6%;">Composant « Plus d'animations de More Planescape: Torment » [710-720-760-740] : <a href="http://www.shsforums.net/topic/45383-infinity-animations-from-pst/page-3#entry534274">Mise à jour par Miloch's du fichier t-pstanims.tpa</a>, améliorée par <a href="http://www.shsforums.net/topic/55059-error-installing-ia-read-out-of-bounds/?p=544741">Lollorian</a>.</li>
-				<li style="margin-left:-4%; margin-right:-6%;">Réparti dans plusieurs composants : <a href="http://www.shsforums.net/topic/43531-ia-comments/page-3#entry549298">patch de correction des typos dans les boucles par Lollorian</a>.</li>
+				<li style="margin-left:-4%; margin-right:-6%;">Réparti dans plusieurs composants : <a href="http://www.shsforums.net/topic/43531-ia-comments/page-3#entry549298">patch de correction des typos dans les boucles par Lollorian</a> et bien d'autres correctifs mineurs (détaillés dans les listes de modifications par composant.</li>
 			  </ul>
 
 			<li>Intégration des correctifs graphiques des animations du BWP Fixpack (merci à leurs auteurs !) :</li>
@@ -2041,39 +2107,42 @@
 				<li style="margin-left:-4%; margin-right:-6%;">Archive IA Shadows_Harpy_Frostgiant : ombres alternatives (« murky »), géant du givre.</li>
 			  </ul>
 
-			<li>IA installe désormais automatiquement les fichiers sons du jeu dans la langue du jeu. Une <a href="#forcelanguage">variable<a> définie dans le fichier <em>infinityanimations-config-default.ini</em> permet toutefois de forcer la langue par défaut de ces fichiers.</li>
+			<li>Infinity Animations installe désormais automatiquement les fichiers son des créatures dans la langue du jeu. Une <a href="#forcelanguage">variable</a> définie dans le fichier <em>infinityanimations-config-default.ini</em> permet toutefois de forcer la langue par défaut de ces fichiers.</li>
 		  </ul><br>
 
 
-		<h5>&#9755; Refonte générale :</h5>
+		<h5>&nbsp;<span style="color: #781808;">&#9755;</span>&nbsp;&nbsp; Refonte générale :</h5>
 
 		  <ul style="width: 90%">
 			<li>Ajout du fichier de meta-données <em>infinityanimations.ini</em> pour intégration dans le projet « Project Infinity » d'AL|EN.</li>
 			<li>Fichier <em>setup-infinityanimations.tp2</em> renommé <em>infinityanimations.tp2</em> pour une meilleure intégration dans le projet « Project Infinity » d'AL|EN.</li>
 			<li>Remplacement du mot-clé <span class="tp2">AUTHOR</span> par <span class="tp2">SUPPORT</span>.</li>
+			<li>Ajout des conditions <span class="tp2">REQUIRE_PREDICATE</span> manquantes pour éviter d'installer des composants sur des jeux inappropriés ou si des composants pré-requis ne le sont pas.</li>
 
 			<li>...</li>
-
-			<li>Attribution à chaque component d'un <span class="tp2">LABEL</span>.</li>
+			<li>Attribution d'un <span class="tp2">LABEL</span> à chaque component.</li>
 			<li>Ajout de la librairie "<em>always.tpa</em>".</li>
 			<li>Les options de configuration d'installation ont été externalisés dans le fichier <em>infinityanimations-config-default.ini</em>. Si vous souhaitez les modifier, veuillez consulter ce <a href="#config">chapitre</a>.</li>
+
 			<li>...</li>
+
 			<li>Découpage du code en composants distincts pour offrir une meilleure lecture et faciliter sa maintenance. &#128521;</li>
-			<li>Déplacement des fichiers tpa d'installation des composants dans le nouveau répertoire « <em>components</em> » et conservation des librairies de fonctions et de macros dans le répertoire « <em>lib</em> ».</li>
-			<li>...</li>
+			<li>Déplacement des fichiers tpa d'installation des composants dans le nouveau répertoire &#x1F4C1; « <em>components</em> » et conservation des librairies de fonctions et de macros dans le répertoire &#x1F4C1; « <em>lib</em> ».</li>
 			<li>Ajout de commentaires dans les fichiers de code chaque fois que possible.</li>
-			<li>Adaptation du code pour une future compatibilité du mod avec les versions EE, avec notamment l'harmonisation des noms des animations.</li>
+			<li>Adaptation du code pour une meilleure compatibilité du mod avec les versions EE, avec notamment l'harmonisation des noms des animations.</li>
+			<li>Re-formatage des données des fichiers .log pour les rendre enfin lisibles.</li>
 		
 			<li>...</li>
 
 			<li>Simplification du code :</li>
 			  <ul>
-				<li style="margin-left:-4%; margin-right:-8%;">Utilisation de nouvelles fonctions plus efficaces de <acronym title="Weimer Dialogue Utility">WeiDU</acronym> (qui n'existaient pas lorsque Erephine a écrit ce mod) et remplacement de fonctions obsolètes (comme <span class="tp2">DECOMPILE_BCS_TO_BAF</span> et <span class="tp2">DECOMPILE_DLG_TO_D</span> remplacées par <span class="tp2">DECOMPILE_AND_PATCH</span>).</li>
-				<li style="margin-left:-4%; margin-right:-8%;">Utilisation de <span class="tp2">ps_recursive_copy.tpa</span>, une nouvelle bibliothèque de fonctions <acronym title="Weimer Dialogue Utility">WeiDU</acronym> créée par <a href="http://www.shsforums.net/user/10485-sam/">Sam</a>, qui cherche de manière récursive des fichiers dans un répertoire parent, puis les copie dans un autre répertoire.</li>
-				<li style="margin-left:-4%">Remplacement des variables " <em>tsx%</em> " spécifiques à ia par les variables " <em>%tutu%_scriptx% </em>" plus utilisées et plus compatibles avec les autres mods.</li>
+				<li style="margin-left:-4%; margin-right:-8%;">Utilisation de nouvelles fonctions <acronym title="Weimer Dialogue Utility">WeiDU</acronym> plus efficaces (qui n'existaient pas lorsque Erephine a écrit ce mod) et remplacement de fonctions obsolètes (comme <span class="tp2">DECOMPILE_BCS_TO_BAF</span> et <span class="tp2">DECOMPILE_DLG_TO_D</span> remplacées par <span class="tp2">DECOMPILE_AND_PATCH</span>).</li>
+				<li style="margin-left:-4%; margin-right:-8%;">Utilisation de <span class="tp2">ps_recursive_copy.tpa</span>, une nouvelle bibliothèque de fonctions <acronym title="Weimer Dialogue Utility">WeiDU</acronym> créée par <a href="http://www.shsforums.net/user/10485-sam/">Sam</a>, qui cherche de manière récursive des fichiers dans un répertoire parent, puis les copie dans un autre répertoire; et les macros <span class="tp2">gw_install_archives</span> et <span class="tp2">gw_update_content</span> de Gwendolyne pour installer tous les fichiers nécessaires (animations et sons) des répertoires archives/subfolders dans le répertoire override.</li>
+				<li style="margin-left:-4%; margin-right:-8%;">Remplacement des variables " <em>%tsx%</em> " spécifiques à IA par les variables " <em>%tutu%_scriptx% </em>" plus utilisées et plus compatibles avec les autres mods : dorénavant, IA utilise les valeurs actualisées du système "<em>crossmod platform variables</em>".</li>
+				<li style="margin-left:-4%">Mise à jour des fonctions <span class="tp2">fj_cre_validity.tpp</span>, <span class="tp2">fj_cre_reindex.tpp</span> et <span class="tp2">fj_cre_eff_v2.tpp</span> aux standards des nouvelles versions de <acronym title="Weimer Dialogue Utility">WeiDU</acronym>.</li>
+				<li style="margin-left:-4%">Espérons que la fonction silencieuse <span class="tp2">gw_handle_audio</span>, adaptation par Gwendolyne de la fonction <acronym title="Weimer Dialogue Utility">WeiDU</acronym> <span class="tp2">HANDLE_AUDIO</span>, puisse rendre l'installation beaucoup plus reposante pour les yeux !</li>
 				<li style="margin-left:-4%">Externalisation des listes de fichiers de créatures à modifier dans des tables [<em>NdT : arrays</em>] pour faciliter leur mise à jour.</li>
 				<li style="margin-left:-4%">Corrections mineures...</li>
-				<li style="margin-left:-4%">...  et de Gwendolyne qui optimisent le patch des fichiers</li>
 			  </ul>
 
 			<li>...</li>
@@ -2082,43 +2151,51 @@
 			<li>Ajout de la traduction française (Gwendolyne).</li>
 			<li>Nouvelle traification du mod.</li>
 			<li>...</li>
+			<li>Réorganisation de l'arborescence des répertoires du mod : création de sous-répertoires pour classer les fichiers d'animation et de son par type de créature et/ou par langue.</li>
 			<li>Passage en minuscules des noms de fichiers.</li>
-			<li>Mise à jour de <acronym title="Weimer Dialogue Utility">WeiDU</acronym> (v246).</li>
+			<li>Ajout de l'utilitaire OggDec v1.9.7 et de sox v14.4.1 pour Mac.</li>
+			<li>Ajout de l'archive libiconv-1.9.2-1-src.7z avec la licence iconv.</li>
+			<li>Mise à jour de <acronym title="Weimer Dialogue Utility">WeiDU</acronym> (v247).</li>
 			<li>Téléversement du mod dans le compte GitHub officiel de Spellhold Studios.</li>
 		  </ul><br>
 
 
-		<h5>&#9755; Modifications relatives à chaque composant :</h5>
+		<h5>&nbsp;<span style="color: #781808;">&#9755;</span>&nbsp;&nbsp; Modifications relatives à chaque composant :</h5>
 
 		  <ul style="width: 90%">
-
-			<li><span style="color: #781808;">[0] Infinity Animations</span> (t-main.tpa, )</li>
+			<li><span style="color: #781808;">[0] Infinity Animations</span> (t-main.tpa, t-main_ee.tpa)</li>
 			  <ul style="padding-top: 4px">
-				<li style="margin-left:-4%; margin-right:-8%;">Découpage de cet énorme composant principal en plus petits pour assurer une meilleure lecture et facilité sa maintenance (ia_restore_bg2_animations.tpa, ia_update_cre_animation_offset.tpa, ia_correcting_creature animations.tpa).</li>
-
-				<li style="margin-left:-4%; margin-right:-8%;">Compatibilité avec ToBEx : .</li>
+				<li style="margin-left:-4%; margin-right:-8%;">Découpage de cet énorme composant principal en plus petits pour assurer une meilleure lecture et faciliter sa maintenance (<em>ia_mod_content_check.tpa</em>, <em>ia_restore_bg2_animations.tpa</em>, <em>ia_replacing_low_animations.tpa</em>, <em>ia_update_cre_animation_offset.tpa</em>, <em>ia_soundsets_conflicts.tpa</em>, <em>ia_correcting_creature animations.tpa</em>, <em>ia_correcting_weapon_animations.tpa</em>).</li>
+				<li style="margin-left:-4%; margin-right:-8%;">Ajout de la compatibilité avec ToBEx : patche le fichier externalisé de gestion des sons de déplacement (<em>t-aniwksnd.tpa</em>) et résout les conflits entre soundsets d'animations de créatures (<em>ia_soundsets_conflicts.tpa</em>).</li>
 				<li style="margin-left:-4%; margin-right:-8%;">Compatibilité avec NTotSC : suppression de la correction du dialogue ntkeelor.dlg (Keelor le nain) puisque les dernières version de NTotSC l'ont déjà fait.</li>
 				<li style="margin-left:-4%; margin-right:-8%;">Ne corrige plus les noms de créatures (suppression des espaces superflus et des retours à la ligne) si le mod est installé dans une langue différente de celle du jeu.</li>
-
+				<li style="margin-left:-4%; margin-right:-8%;">Ajout de la nouvelle option d'installation <em>ia_sort_ids</em> (1 par défaut) : trie automatiquement par ordre hexadécimal les fichiers animate.ids, anisnd.ids et aniwksnd.2da après leur modification (très utile pour les moddeurs...). Si vous souhaitez accélérer le temps d'installation du mod de 1 ou 2 secondes, attribuez-lui la valeur 0. &#128521;</li>
+				<li style="margin-left:-4%; margin-right:-6%;"><em>ia_replacing_low_animations.tpa</em> :</li>
+				  <ul>
+					<li style="margin-left:-8%; margin-right:-8%;">Re-formatage des données du fichier <em>t-low_fix.log</em> pour les rendre enfin lisibles.</li>
+					<li style="margin-left:-8%; margin-right:-8%;">Ne modifie le fichier <em>t-cre_fixer.log</em> qu'en cas de besoin.</li>
+				  </ul>
 				<li style="margin-left:-4%; margin-right:-6%;"><em>ia_restore_bg2_animations.tpa</em> :</li>
 				  <ul>
 					<li style="margin-left:-8%; margin-right:-8%;">Intégration du <a href="http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/page-12#entry562939">Correctif par Lollorian des goules transformées en golems</a>  et du <a href="http://www.shsforums.net/topic/47635-notes-oddities-and-possible-bugs-in-my-bwp-game-spoilers/page-35#entry579291">patch de Lollorian pour les installations non-biffées</a>. Source : <a href="https://github.com/BigWorldProject/Big-World-Fixpack/commit/5ff3f32fda8f22711b55cf5065dca194d52cbffd">commit</a>.</li>
 					<li style="margin-left:-8%; margin-right:-8%;">Correction des bugs des animations de <a href="http://www.shsforums.net/topic/48626-cyclops-bug/">cyclope</a> et de <a href="http://www.shsforums.net/topic/47995-zombie/">zombi jaune</a> qui n'étaient pas réinitialisées en cas de méga-installation.</li>
 				  </ul>
-				<li style="margin-left:-4%; margin-right:-6%;"><em>ia_correcting_creature animations.tpa</em> :</li></li>
+				<li style="margin-left:-4%; margin-right:-6%;"><em>ia_correcting_creature animations.tpa</em> :</li>
 				  <ul>
-					<li style="margin-left:-8%; margin-right:-8%;">Externalisation des listes de fichiers de créatures à modifier dans des tables (définies dans la librairie " <em>gw_ia_correct_arrays.tph<</em> ") pour faciliter leur mise à jour.</li>
-					<li style="margin-left:-8%; margin-right:-8%;">Integration du <a href="http://www.shsforums.net/topic/44716-error-installing/?p=483927">patch de correction des commandes READ_BYTE manquantes de Miloch</a>.</li>
-					<li style="margin-left:-8%; margin-right:-8%;">Integration du <a href="http://www.shsforums.net/topic/43531-ia-comments/page-3#entry549298">patch de correction des typos dans les boucles par Lollorian</a> (les abishais blanches n'étaient pas patchées).</li>
+					<li style="margin-left:-8%; margin-right:-8%;">Externalisation des listes de fichiers de créatures à modifier dans des tables (définies dans la librairie " <em>gw_ia_correct_arrays.tph</em> ") pour faciliter leur mise à jour.</li>
+					<li style="margin-left:-8%; margin-right:-8%;">Intégration du <a href="http://www.shsforums.net/topic/44716-error-installing/?p=483927">patch de correction des commandes <span class="tp2">READ_BYTE</span> manquantes de Miloch</a>.</li>
+					<li style="margin-left:-8%; margin-right:-8%;">Intégration du <a href="http://www.shsforums.net/topic/43531-ia-comments/page-3#entry549298">patch de correction des typos dans les boucles par Lollorian</a> (les abishais blanches n'étaient pas patchées).</li>
 					<li style="margin-left:-8%; margin-right:-8%;">Intégration du correctif <a href="http://www.shsforums.net/topic/45925-pst-animations-and-circus-orcs/">Suppression par Miloch de la classe d'innocent des orques et ogres du cirque de la Promenade de Waukyne</a>.</li>
+					<li style="margin-left:-8%; margin-right:-8%;">Dorénavant, ne corrige les jeux de son des créatures que si la résolution des conflits entre soundsets d'animations de créatures a échoué.</li>
 				  </ul>
+				<li style="margin-left:-4%; margin-right:-6%;"><em>ia_correcting_weapon_animations.tpa</em> : ajout d'une nouvelle routine qui corrige les problèmes d'animation des armes portées par les créatures (elle équippe les fichiers .cre de nouvelles armes clonées compatibles avec leur animation).</li>
 			  </ul><br>
 
 			<li><span style="color: #781808;">[25] Correction des animations des humanoïdes</span> (t-humanoid_fixes.tpa)</li>
 			  <ul style="padding-top: 4px">
 				<li style="margin-left:-4%; margin-right:-6%;">Externalisation des listes de fichiers de créatures à modifier dans des tables (définies dans la librairie " <em>gw_ia_humanoid_fixes_arrays.tph</em> ") pour faciliter leur mise à jour.</li>
 				<li style="margin-left:-4%; margin-right:-6%;">Variables tutu : ajout des variables manquantes pour les fichiers kent and sailned de BG (array " <em>GW_male_human_fighters</em> ").</li>
-				<li style="margin-left:-4%; margin-right:-6%;">Integration du <a href="http://www.shsforums.net/topic/43531-ia-comments/page-3#entry549298">patch de correction des typos dans les boucles par Lollorian</a> (les elfes magiciens n'étaient pas patchés).</li>
+				<li style="margin-left:-4%; margin-right:-6%;">Intégration du <a href="http://www.shsforums.net/topic/43531-ia-comments/page-3#entry549298">patch de correction des typos dans les boucles par Lollorian</a> (les elfes magiciens n'étaient pas patchés).</li>
 			  </ul><br>
 
 			<li><span style="color: #781808;">[50] Génies différenciés</span> (t-genie.tpa)</li>
@@ -2130,7 +2207,8 @@
 			  <ul style="padding-top: 4px">
 				<li style="margin-left:-4%; margin-right:-6%;">Externalisation des listes de fichiers de créatures à modifier dans des tables (définies dans la librairie " <em>gw_ia_fiends_arrays.tph</em> ") pour faciliter leur mise à jour.</li>
 				<li style="margin-left:-4%; margin-right:-8%;">Suppression d'un code de compatibilité avec stratagems intégré par SCSII depuis la version 13 (février 2010 : «&nbsp;<em>Avoided a possible clash with other mods by replacing the Abishai in Diathya's group in a more compatibility-friendly way</em> »).</li>
-				<li style="margin-left:-4%; margin-right:-6%;">Integration du <a href="http://www.shsforums.net/topic/43531-ia-comments/page-3#entry549298">patch de correction des typos dans les boucles par Lollorian</a> (un maurezhi n'était pas patché).</li>
+				<li style="margin-left:-4%; margin-right:-6%;">Intégration du <a href="http://www.shsforums.net/topic/43531-ia-comments/page-3#entry549298">patch de correction des typos dans les boucles par Lollorian</a> (un maurezhi n'était pas patché).</li>
+				<li style="margin-left:-4%; margin-right:-6%;">Ne modifie le fichier <em>t-cre_fixer.log</em> qu'en cas de besoin.</li>
 			  </ul><br>
 
 			<li><span style="color: #781808;">[150] Diantrefosses</span> (t-pit_fiend.tpa)</li>
@@ -2153,29 +2231,30 @@
 			<li><span style="color: #781808;">[400] Morts-vivants différenciés</span></li>
 			  <ul style="padding-top: 4px">
 				<li style="margin-left:-4%; margin-right:-6%;">Externalisation des listes de fichiers de créatures à modifier dans des tables (définies dans la librairie " <em>gw_ia_undead_arrays.tph</em> ") pour faciliter leur mise à jour.</li>
-				<li style="margin-left:-4%; margin-right:-6%;">Variables tutu : remplacement de la variable "<em>%tsz%</em> qui n'existait pas par la variable "<em>%tutu_scriptz%</em>" (array <em>GW_zombies</em>).</li>
-				<li style="margin-left:-4%; margin-right:-6%;">Intégration du <a href="http://www.shsforums.net/topic/45497-glowing-undead/page-2#entry496098">glowcheck.tpp patch</a>.</li>
-				<li style="margin-left:-4%; margin-right:-6%;">Array <em>GW_ghasts</em> : integration du correctif <a href="http://www.shsforums.net/topic/54249-colors-problem-solved/?p=535498">Turambar's glowcheck patch</a> qui empêche les squelettes ayant des animations modifiées de briller en rouge (Attribuer aux blêmes l'animation ghast : suppression du fichier ghastsu qui est un squelette, et non une blême).</li>
+				<li style="margin-left:-4%; margin-right:-6%;">Variables tutu : remplacement de la variable "<em>%tsz%</em>, qui n'existait pas, par la variable "<em>%tutu_scriptz%</em>" (array <em>GW_zombies</em>).</li>
+				<li style="margin-left:-4%; margin-right:-6%;">Intégration du <a href="http://www.shsforums.net/topic/45497-glowing-undead/page-2#entry496098">Turambar's glowcheck.tpp patch</a> qui empêche les squelettes ayant des animations modifiées de briller en rouge.</li>
+				<li style="margin-left:-4%; margin-right:-6%;">Attribuer aux blêmes l'animation ghast : intégration du correctif <a href="http://www.shsforums.net/topic/54249-colors-problem-solved/?p=535498">Ghasts glowcheck patch</a> qui supprime la créature ghastsu qui est un squelette, et non une blême, de l'array <em>GW_ghasts</em>.</li>
 				<li style="margin-left:-4%; margin-right:-6%;">Attribuer aux zombis majeurs l'animation de zombi jaune d'IWD : suppression de la correction des noms du fichier gzombie.cre (<em>Zombi majeur</em>) déjà corrigée par le mod TS à partir de la version 6.</li>
 			  </ul><br>
 
 			<li><span style="color: #781808;">[410-415-420] Combattants squelettes</span> (t-skelwa.tpa)</li>
 			  <ul style="padding-top: 4px">
 				<li style="margin-left:-4%; margin-right:-6%;">Externalisation des listes de fichiers de créatures à modifier dans des tables (définies dans la librairie " <em>gw_ia_skelwa_arrays.tph</em> ") pour faciliter leur mise à jour.</li>
-				<li style="margin-left:-4%; margin-right:-1%;">Intégration du <a href="http://www.shsforums.net/topic/45497-glowing-undead/page-2#entry496098">glowcheck.tpp patch</a> qui empêche les squelettes ayant des animations modifiées de briller en rouge.</li>
+				<li style="margin-left:-4%; margin-right:-1%;">Intégration du <a href="http://www.shsforums.net/topic/45497-glowing-undead/page-2#entry496098">Turambar's glowcheck.tpp patch</a> qui empêche les squelettes ayant des animations modifiées de briller en rouge.</li>
 			  </ul><br>
 
 			<li><span style="color: #781808;">[450-455] Animation de pauvre hère</span> (t-seer.tpa)</li>
 			  <ul style="padding-top: 4px">
 				<li style="margin-left:-4%; margin-right:-6%;">Externalisation des listes de fichiers de créatures à modifier dans des tables (définies dans la librairie " <em>gw_ia_seers_arrays.tph</em> ") pour faciliter leur mise à jour.</li>
-				<li style="margin-left:-4%; margin-right:-1%;">Quelques créatures ont été déplacées de la liste mendiants à la liste esclaves (slslav01, udilsla1, udilsla1, udilsla3, udslv02, udvicti2, udvicti3, udvicti4, udvictim).</li>
+				<li style="margin-left:-4%; margin-right:-1%;">Quelques créatures ont été déplacées de la liste mendiants à la liste esclaves (slslav01, udilsla1, udilsla3, udslv02, udvicti2, udvicti3, udvicti4, udvictim).</li>
 				<li style="margin-left:-4%; margin-right:-6%;">Correction : les listes de créatures à modifier des sous-composants « <em>Pour certains mendiants et esclaves</em>) » et « <em>Pour certains mendiants</em> » étaient interverties. &#128541;</li>
+				<li style="margin-left:-4%; margin-right:-6%;">Variable tutu : ajout de la variable manquante " <em>%tutu_var%</em> " pour le fichier andars (BG1).</li>
 			  </ul><br>
 
 			<li><span style="color: #781808;">[480-490] Animations de svirneblins</span> (t-svirfneblin.tpa)</li>
 			  <ul style="padding-top: 4px">
 				<li style="margin-left:-4%; margin-right:-6%;">Utilisation d'une nouvelle variable "<em>%t-svi%</em>" dans une routine unique pour les deux sous-composants.</li>
-				<li style="margin-left:-4%; margin-right:-6%;">Correction de noms de fichiers sons mal orthographiés ("<em>t_sva</em>" et "<em>t_svn</em>" replacés par "<em>t-sva</em>" et "<em>t-svn</em>").</li>
+				<li style="margin-left:-4%; margin-right:-6%;">Correction de noms de fichiers son mal orthographiés ("<em>t_sva</em>" et "<em>t_svn</em>" replacés par "<em>t-sva</em>" et "<em>t-svn</em>").</li>
 			  </ul><br>
 
 			<li><span style="color: #781808;">[500] Plus d'animations de base</span> (t-baseanims.tpa)</li>
@@ -2192,6 +2271,7 @@
 			<li><span style="color: #781808;">[600] Plus d'animations d'Icewind Dale II</span> (t-iwd2anims.tpa)</li>
 			  <ul style="padding-top: 4px">
 				<li style="margin-left:-4%; margin-right:-6%;">Externalisation des listes de fichiers de créatures à modifier dans des tables (définies dans la librairie " <em>gw_ia_more_iwd2_anim_arrays.tph</em> ") pour faciliter leur mise à jour.</li>
+				<li style="margin-left:-4%; margin-right:-6%;">Ne modifie le fichier <em>t-cre_fixer.log</em> qu'en cas de besoin.</li>
 			  </ul><br>
 
 			<li><span style="color: #781808;">[650] Plus d'animations de Neverwinter Nights</span> (t-nwnanims.tpa)</li>
@@ -2205,7 +2285,7 @@
 				<li style="margin-left:-4%; margin-right:-6%;">Variables tutu : ajout des variables manquantes pour BG1 UB (bart8, bart9, edie, ennahe, erlinh, feldan, galkin, hersch, memnis, mercha, mtob4, mtob5, read4, serwen, travel, volose, wilton) et BG:EE/Tutu (gretek). Ajout de nouvelles variables pour éviter d'écraser des fichiers de BG et de BG2 ayant le même nom.</li>
 				<li style="margin-left:-4%; margin-right:-6%;">Intégration du correctif <a href="http://www.shsforums.net/topic/45383-infinity-animations-from-pst/page-3#entry534274">Mise à jour par Miloch's du fichier t-pstanims.tpa</a>, amélioré par <a href="http://www.shsforums.net/topic/55059-error-installing-ia-read-out-of-bounds/?p=544741">Lollorian</a>.</li>
 				<li style="margin-left:-4%; margin-right:-6%;">Intégration du correctif <a href="http://www.shsforums.net/topic/54249-colors-problem-solved/?p=535498">Turambar's glowcheck patch</a> qui empêche les squelettes de briller en rouge.</li>
-				<li style="margin-left:-4%; margin-right:-6%;">Externalisation de la procédure de modification aléatoire des créatures dans la librairie " <em>gw_random.tpp</em> ".</li>
+				<li style="margin-left:-4%; margin-right:-6%;">Externalisation de la procédure de modification aléatoire des créatures, désormais appelée automatiquement par la fonction <span class="tp2">gw_set_random_value</span> (librairie " <em>gw_random.tpp</em> ").</li>
 			  </ul><br>
 
 			<li><span style="color: #781808;">[7000-7010-7020-7030] Avatars de Moinesse pour IA</span> (t-moines.tpa)</li>
@@ -2214,30 +2294,45 @@
 				<li style="margin-left:-4%; margin-right:-6%;">Variables tutu : ajout de nouvelles variables pour éviter d'écraser des fichiers de BG et de BG2 ayant le même nom.</li>
 				<li style="margin-left:-4%; margin-right:-6%;">Compatibilité avec les jeux EE : utilisation des nouvelles variables " <em>%ia_townie_curst_female_pst%</em> " et " <em>%ia_townie_curst_male_pst%</em> " pour patcher les fichiers selon le jeu.</li>
 				<li style="margin-left:-4%; margin-right:-6%;">Intégration du <a href="http://www.shsforums.net/files/file/967-ia-patch-b5-moinesse-ninja-fix/">correctif de Miloch pour les ninja de Moinesse</a>, nécessaire si Infinity Animations et le mod Angelo sont installés ensemble.</li>
-				<li style="margin-left:-4%; margin-right:-6%;">Externalisation de la procédure de modification aléatoire des créatures dans la librairie " <em>gw_random.tpp</em> ".</li>
+				<li style="margin-left:-4%; margin-right:-6%;">Externalisation de la procédure de modification aléatoire des créatures, désormais appelée automatiquement par la fonction <span class="tp2">gw_set_random_value</span> (librairie " <em>gw_random.tpp</em> ").</li>
 			  </ul><br>
 
 			<li><span style="color: #781808;">[8000-8010-8020-8030] Animations de personnages de BG1 pour les PNJs</span> (t-bg1anims.tpa)</li>
 			  <ul style="padding-top: 4px">
 				<li style="margin-left:-4%; margin-right:-6%;">Correction d'un bug plantant le jeu à cause des ailes de 1pp ne fonctionnant pas avec les animations de personnages de BG1.</li>
-				<li style="margin-left:-4%; margin-right:-6%;">Compatibilité avec les jeux EE : utilisation des nouvelles variables " <em>%ia-new_aniamationtype_bg1%</em> pour patcher les fichiers selon le jeu.</li>
-				<li style="margin-left:-4%; margin-right:-6%;">Externalisation de la procédure de modification aléatoire des créatures dans la librairie " <em>gw_random.tpp</em> ".</li>
+				<li style="margin-left:-4%; margin-right:-6%;">Compatibilité avec les jeux EE : utilisation des nouvelles variables " <em>%ia-animationtype_bg1%</em> pour patcher les fichiers selon le jeu.</li>
+				<li style="margin-left:-4%; margin-right:-6%;">Externalisation de la procédure de modification aléatoire des créatures, désormais appelée automatiquement par la fonction <span class="tp2">gw_set_random_value</span> (librairie " <em>gw_random.tpp</em> ").</li>
+				<li style="margin-left:-4%; margin-right:-6%;">Re-formatage des données du fichier <em>t-bg1anims.txt</em> pour les rendre enfin lisibles.</li>
 			  </ul><br>
 
 			<li><span style="color: #781808;">[9000] Correction des références des créatures dans les cartes</span> (t-arecre.tpa)</li>
 			  <ul style="padding-top: 4px">
-				<li style="margin-left:-4%; margin-right:-6%;">Dans certaines zones, le patch précédent empêchait certaines cinématiques de se déclencher à cause d'une mauvaise attribution de noms à certaines créatures. Source : <a href="http://www.shsforums.net/topic/50797-fix-area-creature-references-causing-script-problems/">Broken creature references</a>.</li>
+				<li style="margin-left:-4%; margin-right:-6%;">Correction des références des créatures dans les cartes qi provoquait des problèmes d'exécution de scripts : dans certaines zones, le patch précédant empêchait certaines cinématiques de se déclencher à cause d'une mauvaise attribution de noms à certaines créatures. Source : <a href="http://www.shsforums.net/topic/50797-fix-area-creature-references-causing-script-problems/">Broken creature references</a>.</li>
+				<li style="margin-left:-4%; margin-right:-6%;">Utilisation des nouvelles variables " <em>%low_0xnnnn%</em> pour définir les noms des anciennes animations _LOW supprimées par Infinity Animations.</li>
+				<li style="margin-left:-4%; margin-right:-6%;">Re-formatage des données du fichieru <em>t-arecre.log</em> pour les rendre enfin lisibles.</li>
 			  </ul><br>
 
-			<li><span style="color: #781808;">[9900-9910] Correction des animations dans les parties sauvegardées</span> et <span style="color: #781808;">[9600-9610-9620] Animations de personnages de BG1 dans les parties sauvegardées</span> ()</li>
+			<li><span style="color: #781808;">[9500-9510-9520] Animations de personnages de BG1 pour les PJs exportés</span> (t-bg1chars.tpa)</li>
 			  <ul style="padding-top: 4px">
-				<li style="margin-left:-4%; margin-right:-6%;">Ces deux composants ne devraient plus planter l'installation si les répertoires &#x1F4C1; \save ou &#x1F4C1; \mpsave n'existent pas (Merci à Sam pour ce correctif !).</li>
+				<li style="margin-left:-4%; margin-right:-6%;">Compatibilité avec les jeux EE : utilisation des nouvelles variables " <em>%ia-animationtype_bg1%</em> pour patcher les fichiers selon le jeu.</li>
+				<li style="margin-left:-4%; margin-right:-6%;">Re-formatage des données du fichier <em>t-bg1chars.txt</em> pour les rendre enfin lisibles.</li>
 			  </ul><br>
 
-		  </ul><br>
+			<li><span style="color: #781808;">[9600-9610-9620] Animations de personnages de BG1 dans les parties sauvegardées</span> (t-bg1sav.tpa)</li>
+			  <ul style="padding-top: 4px">
+				<li style="margin-left:-4%; margin-right:-6%;">Ce composant ne devrait plus planter l'installation si les répertoires &#x1F4C1; \save ou &#x1F4C1; \mpsave n'existent pas (Merci à Sam pour ce correctif !).</li>
+				<li style="margin-left:-4%; margin-right:-6%;">Compatibilité avec les jeux EE : utilisation des nouvelles variables " <em>%ia-animationtype_bg1%</em> pour patcher les fichiers selon le jeu.</li>
+				<li style="margin-left:-4%; margin-right:-6%;">Utilisation des nouvelles variables " <em>%low_0xnnnn%</em> pour définir les noms des anciennes animations _LOW supprimées par Infinity Animations.</li>
+				<li style="margin-left:-4%; margin-right:-6%;">Re-formatage des données des fichiers <em>t-gamlog.txt</em> et <em>t-savlog.txt</em> pour les rendre enfin lisibles.</li>
+			  </ul><br>
 
-			  <ul>
-		<li>Réécriture de l'utilitaire IA Reference Picker et mise à jour de sa documentation.</li>
+			<li><span style="color: #781808;">[9900-9910] Correction des animations dans les parties sauvegardées</span> (t-savfix.tpa)</li>
+			  <ul style="padding-top: 4px">
+				<li style="margin-left:-4%; margin-right:-6%;">Ce composant ne devrait plus planter l'installation si les répertoires &#x1F4C1; \save ou &#x1F4C1; \mpsave n'existent pas.</li>
+				<li style="margin-left:-4%; margin-right:-6%;">Utilisation des nouvelles variables " <em>%low_0xnnnn%</em> pour définir les noms des anciennes animations _LOW supprimées par Infinity Animations.</li>
+				<li style="margin-left:-4%; margin-right:-6%;">Re-formatage des données du fichiers <em>t-savlog.txt</em> pour les rendre enfin lisibles.</li>
+			  </ul>
+
 		  </ul><br><br>
 
 		<h6>Version Beta 5 &nbsp;(12 mai 2010)</h6>
@@ -2271,7 +2366,7 @@
 
 		  <ul>
 			<li>Ajout du composant « <em>Animations de personnages de <acronym title="Baldur's Gate">BG1</acronym> pour les <acronym title="Personnages Non Joueurs [NdT : traduction de NPC, ou Non-Player Characters]">PNJs</acronym></em> ».</li>
-			<li>Ajout du composant « <em>Animations de personnages de <acronym title="Baldur's Gate">BG1</acronym> pour les <acronym title="Personnages Joueurs [NdT : traduction de PC, ou Player Characters">PJs</acronym></em> ».</li>
+			<li>Ajout du composant « <em>Animations de personnages de <acronym title="Baldur's Gate">BG1</acronym> pour les <acronym title="Personnages Joueurs [NdT : traduction de PC, ou Player Characters">PJs</acronym> exportés</em> ».</li>
 			<li>Modification de la procédure de modification des démons.</li>
 		  </ul><br><br>
 
