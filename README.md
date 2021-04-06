@@ -45,6 +45,7 @@
 
 ><span style="margin-left: 50px;">Le Champion de Bhaal : <a href="https://gwendolynefreddy.github.io/docs/cdb/cdb-readme-french">Français</a></span></br>
 
+><span style="margin-left: 50px;">Shuri Ninja Kit <a href="https://gwendolynefreddy.github.io/docs/lcc/shurininja-readme-english.txt">English</a> | <a href="https://gwendolynefreddy.github.io/docs/lcc/shurininja-readme-french.txt">Français</a></span></br>
 
 <hr>
 
