@@ -187,9 +187,9 @@ If you wish to translate the mod, have a suggestion, or should encounter any bug
 
 Copyright Information
 ---------------------
-Shuri Ninja is not developed, supported, or endorsed by BioWare™ or Interplay/BlackIsle, Overhaul, Beamdog or the Wizards of the Coast. It was developed by Twinblades2, based on material from the game Baldur's Gate II and its expansion.
-All mod content is ©Twinblades2.
-Baldur's Gate II: Shadows of Amn and Baldur's Gate II: Throne of Bhaal © TSR, Inc. The BioWare Infinity Engine is © BioWare Corp. All other trademarks and copyrights are property of their respective owners.
+Shuri Ninja is not developed, supported, or endorsed by BioWareâ„¢ or Interplay/BlackIsle, Overhaul, Beamdog or the Wizards of the Coast. It was developed by Twinblades2, based on material from the game Baldur's Gate II and its expansion.
+All mod content is Â©Twinblades2.
+Baldur's Gate II: Shadows of Amn and Baldur's Gate II: Throne of Bhaal Â© TSR, Inc. The BioWare Infinity Engine is Â© BioWare Corp. All other trademarks and copyrights are property of their respective owners.
 
 This mod was created to be freely enjoyed by all Baldur's Gate II players, and its content is free of rights. However, it should not be sold, published, compiled or redistributed in any form without the consent of the author.
 
