@@ -5,47 +5,47 @@ _______________________________
 Version :    2.0.0
 Auteur :     Twinblades2
 Support :    Gwendolyne
-Langues :    anglais, franÃ§ais
+Langues :    anglais, français
 Plateforme : Windows, Mac, Linux
 
-TÃ©lÃ©chargement : https://github.com/GwendolyneFreddy/Shuri-Ninja/releases/latest
+Téléchargement : https://github.com/GwendolyneFreddy/Shuri-Ninja/releases/latest
 Discussion:      https://www.baldursgateworld.fr/lacouronne/modules-crees-ou-en-cours-de-developpement/33164-kit-le-mod-shuri-ninja-est-disponible-pour-les-jeux-ee.html
 
 
-PrÃ©sentation
+Présentation
 ============
 
 Ce module ajoute un nouveau profil de voleur dans le jeu : le shuri ninja.
-CrÃ©Ã© il y a de nombreuses annÃ©es par Twinblades2, il a Ã©tÃ© rÃ©Ã©crit dans les standards modernes de code WeiDU et rendu compatible pour les jeux Enhanced par Aalkaor et Gwendolyne (aka Freddy_Gwendo).
+Créé il y a de nombreuses années par Twinblades2, il a été réécrit dans les standards modernes de code WeiDU et rendu compatible pour les jeux Enhanced par Aalkaor et Gwendolyne (aka Freddy_Gwendo).
 
 
 
-CompatibilitÃ©
+Compatibilité
 =============
 
-# Jeux concernÃ©s
+# Jeux concernés
 ----------------
-Ce mod est conÃ§u pour fonctionner sur la plupart des jeux Infinity Engine, ce qui inclut :
+Ce mod est conçu pour fonctionner sur la plupart des jeux Infinity Engine, ce qui inclut :
 
-- La sÃ©rie des Ã‰ditions AmÃ©liorÃ©es (Enhanced Editions) publiÃ©es par Beamdog, Baldur's Gate: Enhanced Edition (BGEE), Baldur's Gate II: Enhanced Edition (BG2EE), ainsi que l'extension de BGEE, Siege of Dragonspear (SoD). Toutes les Ã‰ditions AmÃ©liorÃ©es comprennent leurs extensions originales.
-- Le jeu original Baldur's Gate II avec son extension TrÃ´ne de Bhaal (Throne of Bhaal : ToB). Assurez-vous que vous avez bien installÃ© le patch 26498 pour le TrÃ´ne de Bhaal.
-- Les mods de conversion basÃ©s sur ToB : Baldur's Gate Trilogy (BGT), Baldur's Gate Tutu (Tutu) et Enhanced Edition Trilogy (EET).
+- La série des Éditions Améliorées (Enhanced Editions) publiées par Beamdog, Baldur's Gate: Enhanced Edition (BGEE), Baldur's Gate II: Enhanced Edition (BG2EE), ainsi que l'extension de BGEE, Siege of Dragonspear (SoD). Toutes les Éditions Améliorées comprennent leurs extensions originales.
+- Le jeu original Baldur's Gate II avec son extension Trône de Bhaal (Throne of Bhaal : ToB). Assurez-vous que vous avez bien installé le patch 26498 pour le Trône de Bhaal.
+- Les mods de conversion basés sur ToB : Baldur's Gate Trilogy (BGT), Baldur's Gate Tutu (Tutu) et Enhanced Edition Trilogy (EET).
 
-# CompatibilitÃ© avec les autres mods
+# Compatibilité avec les autres mods
 ------------------------------------
-Shuri Ninja est un mod WeiDU et devrait par consÃ©quent Ãªtre compatible avec n'importe quel mod WeiDU. Bien que nous nous efforcions de le rendre compatible avec le plus grand nombre possible de mods, des incompatibilitÃ©s risquent toujours de se produire. Voici la liste de celles recensÃ©es jusqu'Ã  prÃ©sent :
+Shuri Ninja est un mod WeiDU et devrait par conséquent être compatible avec n'importe quel mod WeiDU. Bien que nous nous efforcions de le rendre compatible avec le plus grand nombre possible de mods, des incompatibilités risquent toujours de se produire. Voici la liste de celles recensées jusqu'à présent :
 
 - Kit Revisions
 
-Si vous rencontrez des bugs, veuillez les signaler dans le forum, s'il vous plaÃ®t.
+Si vous rencontrez des bugs, veuillez les signaler dans le forum, s'il vous plaît.
 
 # Ordre d'installation
 ----------------------
-Bien qu'il ne soit pas requis pour faire correctement tourner Shuri Ninja, nous recommandons fortement aux joueurs de ToB original de tÃ©lÃ©charger et d'installer la derniÃ¨re version du BG2 Fixpack ( https://www.gibberlings3.net/mods/fixes/bg2fixpack/ ) avant d'installer ce mod.
+Bien qu'il ne soit pas requis pour faire correctement tourner Shuri Ninja, nous recommandons fortement aux joueurs de ToB original de télécharger et d'installer la dernière version du BG2 Fixpack ( https://www.gibberlings3.net/mods/fixes/bg2fixpack/ ) avant d'installer ce mod.
 
-Voici l'ordre d'installation conseillÃ© :
-- Veuillez installer Shuri Ninja aprÃ¨s ToBEx, BG2 Fixpack et EET.
-- Veuillez installer Shuri Ninja avant EET_end et les procÃ©dures finales de Â« biffing Â» [NdT : archivage avec Generalized biffing].
+Voici l'ordre d'installation conseillé :
+- Veuillez installer Shuri Ninja après ToBEx, BG2 Fixpack et EET.
+- Veuillez installer Shuri Ninja avant EET_end et les procédures finales de « biffing » [NdT : archivage avec Generalized biffing].
 
 
 
@@ -54,122 +54,122 @@ Installation
 
 1. Mise en garde
 ----------------
-Si une ancienne version de ce mod est dÃ©jÃ  installÃ©e, il est nÃ©cessaire de la dÃ©sinstaller d'abord. Pour cela, lancez `setup-shurininja.exe` et dÃ©sinstallez le composant principal prÃ©cÃ©demment installÃ©. Une fois la dÃ©sinstallation achevÃ©e, supprimez le rÃ©pertoire shurininja et le fichier setup-shurininja.exe avant d'extraire la nouvelle version du mod.
+Si une ancienne version de ce mod est déjà installée, il est nécessaire de la désinstaller d'abord. Pour cela, lancez `setup-shurininja.exe` et désinstallez le composant principal précédemment installé. Une fois la désinstallation achevée, supprimez le répertoire shurininja et le fichier setup-shurininja.exe avant d'extraire la nouvelle version du mod.
 
-Lorsque vous installez ou dÃ©sinstallez, ne fermez pas la fenÃªtre DOS en cliquant sur le bouton X ! Au lieu de cela, appuyez sur la touche EntrÃ©e lorsque l'invite de commandes vous le demande.
+Lorsque vous installez ou désinstallez, ne fermez pas la fenêtre DOS en cliquant sur le bouton X ! Au lieu de cela, appuyez sur la touche Entrée lorsque l'invite de commandes vous le demande.
 
-Par prÃ©caution, dÃ©sactivez les antivirus ou tout logiciel rÃ©sidant en mÃ©moire avant d'installer ce mod, ou tout autre mod. Certains (en particulier avast et Norton !) ont une fÃ¢cheuse tendance Ã  dÃ©clarer les exÃ©cutables des mods comme des faux positifs, provoquant ainsi l'Ã©chec de la procÃ©dure d'installation.
+Par précaution, désactivez les antivirus ou tout logiciel résidant en mémoire avant d'installer ce mod, ou tout autre mod. Certains (en particulier avast et Norton !) ont une fâcheuse tendance à déclarer les exécutables des mods comme des faux positifs, provoquant ainsi l'échec de la procédure d'installation.
 
 
-2. Note spÃ©ciale pour Siege of Dragonspear fourni par Steam/GOG
+2. Note spéciale pour Siege of Dragonspear fourni par Steam/GOG
 ---------------------------------------------------------------
-Good Old Games (GOG) et Steam fournissent le contenu de Siege of Dragonspear dans un format que WeiDU, l'outil utilisÃ© pour installer ce mod, ne peut pas reconnaitre. Vous devez donc lancer le programme DLC Merger (https://github.com/Argent77/A7-DlcMerger/releases/latest ) dans votre rÃ©pertoire de SoD avant d'installer ce mod, ou tout autre mod utilisant WeiDU.
+Good Old Games (GOG) et Steam fournissent le contenu de Siege of Dragonspear dans un format que WeiDU, l'outil utilisé pour installer ce mod, ne peut pas reconnaitre. Vous devez donc lancer le programme DLC Merger (https://github.com/Argent77/A7-DlcMerger/releases/latest ) dans votre répertoire de SoD avant d'installer ce mod, ou tout autre mod utilisant WeiDU.
 
 
-3. Note pour les jeux en Ã‰dition AmÃ©liorÃ©e (EE)
+3. Note pour les jeux en Édition Améliorée (EE)
 -----------------------------------------------
-Les Ã‰ditions amÃ©liorÃ©es sont des jeux que le dÃ©veloppeur fait encore Ã©voluer, notamment par l'ajout de capacitÃ©s supplÃ©mentaires destinÃ©es Ã  la crÃ©ation de mods et par l'ajout de contenus. N'oubliez pas que chaque patch de mise Ã  jour effacera les mods que vous avez installÃ©s ! Ce mod ne fera pas exception Ã  la rÃ¨gle.
+Les Éditions améliorées sont des jeux que le développeur fait encore évoluer, notamment par l'ajout de capacités supplémentaires destinées à la création de mods et par l'ajout de contenus. N'oubliez pas que chaque patch de mise à jour effacera les mods que vous avez installés ! Ce mod ne fera pas exception à la règle.
 
-Si vous pouvez retarder la mise Ã  jour du patch en plein milieu d'un partie moddÃ©e (si vous en avez la possibilitÃ©, notamment chez Beamdog et Good Old Games), n'oubliez pas que mÃªme aprÃ¨s avoir rÃ©installÃ© les mods sur un nouveau patch, vous ne pourrez peut-Ãªtre pas continuer le jeu avec vos anciennes sauvegardes, en particulier Ã  cause de noms de personnages, de lieux, etc. qui pourraient Ãªtre incorrects. Pour y remÃ©dier, copiez tout le dossier du jeu dans un nouveau dossier dans lequel vous installerez vos mods, et qui ne sera pas modifiÃ© par les patches de mise Ã  jour. Il est important que vous installiez le mod dans la version linguistique dans laquelle vous jouez. Sinon, les dialogues du mod ne s'afficheront pas et provoqueront des messages d'erreur.
+Si vous pouvez retarder la mise à jour du patch en plein milieu d'un partie moddée (si vous en avez la possibilité, notamment chez Beamdog et Good Old Games), n'oubliez pas que même après avoir réinstallé les mods sur un nouveau patch, vous ne pourrez peut-être pas continuer le jeu avec vos anciennes sauvegardes, en particulier à cause de noms de personnages, de lieux, etc. qui pourraient être incorrects. Pour y remédier, copiez tout le dossier du jeu dans un nouveau dossier dans lequel vous installerez vos mods, et qui ne sera pas modifié par les patches de mise à jour. Il est important que vous installiez le mod dans la version linguistique dans laquelle vous jouez. Sinon, les dialogues du mod ne s'afficheront pas et provoqueront des messages d'erreur.
 
 
 4. Windows
 ----------
-Shuri Ninja pour Windows est livrÃ© et installÃ© avec WeiDU, et est diffusÃ© sous forme d'archive.
+Shuri Ninja pour Windows est livré et installé avec WeiDU, et est diffusé sous forme d'archive.
 
-Vous devez extraire les fichiers de l'archive dans votre rÃ©pertoire de jeu (le dossier qui contient le fichier CHITIN.KEY). Une fois l'archive extraite correctement, vous devriez trouver le rÃ©pertoire shurininja et le fichier setup-shurininja.exe dans votre rÃ©pertoire de jeu. Pour installer le mod, il suffit de double-cliquer sur `setup-shurininja.exe` et de suivre les instructions affichÃ©es Ã  l'Ã©cran.
+Vous devez extraire les fichiers de l'archive dans votre répertoire de jeu (le dossier qui contient le fichier CHITIN.KEY). Une fois l'archive extraite correctement, vous devriez trouver le répertoire shurininja et le fichier setup-shurininja.exe dans votre répertoire de jeu. Pour installer le mod, il suffit de double-cliquer sur `setup-shurininja.exe` et de suivre les instructions affichées à l'écran.
 
-Pour rÃ©installer, dÃ©sinstaller ou changer certains composants, lancez `setup-shurininja.exe` dans votre rÃ©pertoire de jeu.
+Pour réinstaller, désinstaller ou changer certains composants, lancez `setup-shurininja.exe` dans votre répertoire de jeu.
 
 
 5. Mac OS X
 -----------
-Shuri Ninja pour Mac OS X est livrÃ© et installÃ© avec WeiDU, et est diffusÃ© dans la mÃªme archive compressÃ©e.
+Shuri Ninja pour Mac OS X est livré et installé avec WeiDU, et est diffusé dans la même archive compressée.
 
-Extrayez le contenu de l'archive dans votre rÃ©pertoire de jeu. AprÃ¨s une extraction rÃ©ussie, ce dernier contiendra les fichiers setup-shurininja, setup-shurininja.command, et le rÃ©pertoire shurininja. Pour installer le mod, il suffit de double-cliquer sur `setup-shurininja.command` et de suivre les instructions affichÃ©es Ã  l'Ã©cran.
+Extrayez le contenu de l'archive dans votre répertoire de jeu. Après une extraction réussie, ce dernier contiendra les fichiers setup-shurininja, setup-shurininja.command, et le répertoire shurininja. Pour installer le mod, il suffit de double-cliquer sur `setup-shurininja.command` et de suivre les instructions affichées à l'écran.
 
-Pour rÃ©installer, dÃ©sinstaller ou changer certains composants, lancez `setup-shurininja.command` dans votre rÃ©pertoire de jeu.
+Pour réinstaller, désinstaller ou changer certains composants, lancez `setup-shurininja.command` dans votre répertoire de jeu.
 
 
 6. Linux
 --------
-Shuri Ninja pour Linux est diffusÃ© dans la mÃªme archive compressÃ©e, mais sans l'installateur WeiDU.
+Shuri Ninja pour Linux est diffusé dans la même archive compressée, mais sans l'installateur WeiDU.
 
-Extrayez le contenu du mod dans le rÃ©pertoire du jeu que vous voulez modifier.
+Extrayez le contenu du mod dans le répertoire du jeu que vous voulez modifier.
 
-TÃ©lÃ©chargez la version la plus rÃ©cente de WeiDU pour Linux sur WeiDU.org ( https://github.com/WeiDUorg/weidu/releases ), puis copiez weidu et weinstall dans `/usr/local/bin` (crÃ©ez-le s'il n'existe pas). Ouvrez ensuite un terminal et allez (`cd`) dans le rÃ©pertoire d'installation de votre jeu, lancez `/usr/local/bin/tolower` et rÃ©pondez Â« Y Â» aux deux questions. Vous pouvez Ã©viter d'exÃ©cuter la seconde option (linux.ini) si vous l'avez dÃ©jÃ  lancÃ©e une fois dans le mÃªme dossier. Pour gagner du temps, l'archive est dÃ©jÃ  passÃ©e en minuscules, aussi il n'est pas non plus nÃ©cessaire d'exÃ©cuter la premiÃ¨re option (passer les noms de fichiers en minuscules) si vous n'avez extrait que ce mod depuis la derniÃ¨re fois que vous avez passÃ© les noms de fichiers en minuscules. Si vous avez un doute, il vaut mieux exÃ©cuter tolower et accepter les deux options.
+Téléchargez la version la plus récente de WeiDU pour Linux sur WeiDU.org ( https://github.com/WeiDUorg/weidu/releases ), puis copiez weidu et weinstall dans `/usr/local/bin` (créez-le s'il n'existe pas). Ouvrez ensuite un terminal et allez (`cd`) dans le répertoire d'installation de votre jeu, lancez `/usr/local/bin/tolower` et répondez « Y » aux deux questions. Vous pouvez éviter d'exécuter la seconde option (linux.ini) si vous l'avez déjà lancée une fois dans le même dossier. Pour gagner du temps, l'archive est déjà passée en minuscules, aussi il n'est pas non plus nécessaire d'exécuter la première option (passer les noms de fichiers en minuscules) si vous n'avez extrait que ce mod depuis la dernière fois que vous avez passé les noms de fichiers en minuscules. Si vous avez un doute, il vaut mieux exécuter tolower et accepter les deux options.
 
-Tapez la commande `export PATH=$PATH:/usr/local/bin`, puis lancez `weinstall setup-shurininja` depuis le dossier de votre jeu pour installer le mod. ExÃ©cutez ensuite `wine bgmain.exe` (ou `wine baldur.exe` pour les jeux EE) et commencez votre partie.
+Tapez la commande `export PATH=$PATH:/usr/local/bin`, puis lancez `weinstall setup-shurininja` depuis le dossier de votre jeu pour installer le mod. Exécutez ensuite `wine bgmain.exe` (ou `wine baldur.exe` pour les jeux EE) et commencez votre partie.
 
 
-7. Note pour effectuer une dÃ©sinstallation complÃ¨te
+7. Note pour effectuer une désinstallation complète
 ---------------------------------------------------
-En plus des mÃ©thodes dÃ©taillÃ©es plus haut pour supprimer des composants, il est possible de dÃ©sinstaller complÃ¨tement le mod en tapant `setup-shurininja --uninstall` dans une ligne de commandes, ce qui supprimera tous les composants sans devoir ingurgiter tous les messages.
+En plus des méthodes détaillées plus haut pour supprimer des composants, il est possible de désinstaller complètement le mod en tapant `setup-shurininja --uninstall` dans une ligne de commandes, ce qui supprimera tous les composants sans devoir ingurgiter tous les messages.
 
 
 
 Composants
 ==========
 
-Le programme d'installation comprend les composants suivants. Chacun possÃ¨de un numÃ©ro distinct et prÃ©-dÃ©fini qui lui attribue une position dÃ©terminÃ©e (mot-clÃ© `DESIGNATED` en langage WeiDU] ; ce qui permet aux autres composants de le dÃ©tecter et aux utilitaires d'installation automatiques de prÃ©ciser quels composants installer.
+Le programme d'installation comprend les composants suivants. Chacun possède un numéro distinct et pré-défini qui lui attribue une position déterminée (mot-clé `DESIGNATED` en langage WeiDU] ; ce qui permet aux autres composants de le détecter et aux utilitaires d'installation automatiques de préciser quels composants installer.
 
-==> Ã€ cause des limitations du moteur IE, il n'est malheureusement pas possible de restreindre les armes que peut utiliser le shuri ninja au katana, au cimeterre, Ã  la dague, Ã  l'arc court et aux flÃ©chettes, sans impacter d'autres kits et pauser des problÃ¨mes de compatibilitÃ© avec d'autres mods. Cette restriction ne s'applique donc qu'aux jeux EE.
+==> À cause des limitations du moteur IE, il n'est malheureusement pas possible de restreindre les armes que peut utiliser le shuri ninja au katana, au cimeterre, à la dague, à l'arc court et aux fléchettes, sans impacter d'autres kits et pauser des problèmes de compatibilité avec d'autres mods. Cette restriction ne s'applique donc qu'aux jeux EE.
 
 10. Profil de shuri ninja original
 ----------------------------------
 Ce composant installe le profil de voleur original :
 
-"Les shuri ninjas sont formÃ©s par le Shurikai, une organisation d'assassins ninjas qui opÃ¨re dans tout le Kara-Tur. Ils se fondent dans les ombres, sont rapides, d'une redoutable efficacitÃ© au combat, et excellent dans le maniement des lames orientales, des armes de lancer et des arcs. Il est de notoriÃ©tÃ© publique qu'une cible dÃ©signÃ©e par le Shurikai ne passe pas la nuit. Leurs techniques de combat mortelles leur ont fait gagner le respect, mais aussi la haine farouche des samouraÃ¯s et des autres clans rivaux de ninjas. Rares sont en effet les combattants qui ont survÃ©cu aprÃ¨s avoir croisÃ© le fer avec un shuri ninja.
+"Les shuri ninjas sont formés par le Shurikai, une organisation d'assassins ninjas qui opère dans tout le Kara-Tur. Ils se fondent dans les ombres, sont rapides, d'une redoutable efficacité au combat, et excellent dans le maniement des lames orientales, des armes de lancer et des arcs. Il est de notoriété publique qu'une cible désignée par le Shurikai ne passe pas la nuit. Leurs techniques de combat mortelles leur ont fait gagner le respect, mais aussi la haine farouche des samouraïs et des autres clans rivaux de ninjas. Rares sont en effet les combattants qui ont survécu après avoir croisé le fer avec un shuri ninja.
 
-Beaucoup s'affranchissent du Shurikai pour suivre leur propre voie, mÃªme s'il doivent constamment surveiller leurs arriÃ¨res pour ne pas Ãªtre victimes de la lame de leurs anciens compagnons d'armes. S'ils parviennent Ã  rejoindre sans encombre les contrÃ©es occidentales, ils savent que les guildes de voleurs locales apprÃ©cient et recherchent ardemment leurs services. Des guildes entiÃ¨res ayant Ã©tÃ© dÃ©cimÃ©es par un seul shuri ninja, personne n'ose les trahir. Le Kara-Tur comptant trÃ¨s peu de demi-humains, seuls les humains sont autorisÃ©s Ã  bÃ©nÃ©ficier des enseignements secrets du Shurikai Ninjutsu.
+Beaucoup s'affranchissent du Shurikai pour suivre leur propre voie, même s'il doivent constamment surveiller leurs arrières pour ne pas être victimes de la lame de leurs anciens compagnons d'armes. S'ils parviennent à rejoindre sans encombre les contrées occidentales, ils savent que les guildes de voleurs locales apprécient et recherchent ardemment leurs services. Des guildes entières ayant été décimées par un seul shuri ninja, personne n'ose les trahir. Le Kara-Tur comptant très peu de demi-humains, seuls les humains sont autorisés à bénéficier des enseignements secrets du Shurikai Ninjutsu.
 
 Avantages :
-- +20 % en FurtivitÃ©.
-- +2 Ã  la DextÃ©ritÃ©.
-- Obtient les capacitÃ©s spÃ©ciales du guerrier Ã  haut niveau.
-- Bonus de 1 au toucher et aux dÃ©gÃ¢ts tous les 4 niveaux (Ã  partir du niveau 4).
-- Bonus de 1 Ã  la CA tous les 5 niveaux (Ã  partir du niveau 5).
-- Peut se spÃ©cialiser (deux Ã©toiles) dans le maniement du katana, du cimeterre, des dagues, des flÃ©chettes et de l'arc court.
-- Peut se spÃ©cialiser (deux Ã©toiles) dans le style de combat d'arme Ã  une main et allouer trois Ã©toiles dans le style de combat Ã  deux armes.
+- +20 % en Furtivité.
+- +2 à la Dextérité.
+- Obtient les capacités spéciales du guerrier à haut niveau.
+- Bonus de 1 au toucher et aux dégâts tous les 4 niveaux (à partir du niveau 4).
+- Bonus de 1 à la CA tous les 5 niveaux (à partir du niveau 5).
+- Peut se spécialiser (deux étoiles) dans le maniement du katana, du cimeterre, des dagues, des fléchettes et de l'arc court.
+- Peut se spécialiser (deux étoiles) dans le style de combat d'arme à une main et allouer trois étoiles dans le style de combat à deux armes.
 
-Ã€ mesure qu'il augmente de niveau, le shuri ninja acquiert de nouvelles techniques redoutables qui perfectionnent sa science martiale et ses talents d'assassin :
-- Au niveau 5 (ceinture bleue), il gagne la capacitÃ© Vision vÃ©ritable deux fois par jour pour dÃ©tecter les illusions.
-- Au niveau 10 (ceinture violette), il sait frapper les points vitaux de ses adversaires (Coup Ã©tourdissant deux fois par jour). Toutes ses attaques rÃ©ussies au cours du round suivant obligent la victime Ã  rÃ©ussir un jet de sauvegarde contre les sorts sous peine d'Ãªtre assommÃ©e.
-- Au niveau 15 (ceinture rouge), il peut utiliser la capacitÃ© Frappe Ã©clair une fois par jour, tous les 10 niveaux d'expÃ©rience. Pendant 10 secondes, toutes ses attaques infligent le maximum de dÃ©gÃ¢ts.
-- Au niveau 20 (ceinture marron), une fois par jour, il peut utiliser la capacitÃ© Paume vibratoire du moine, dont le secret a Ã©tÃ© volÃ© dans un monastÃ¨re oriental. Sa prochaine attaque rÃ©ussie force sa victime Ã  rÃ©ussir un jet de sauvegarde contre les sorts ou mourir.
-- Au niveau 25 (ceinture noire), il peut enduire son arme de poison une fois par jour (capacitÃ© Arme empoisonnÃ©e).
-- Au niveau 30, il peut protÃ©ger son esprit de toute attaque mentale une fois par jour (capacitÃ© Ordres chaotiques) et il gagne 20 % supplÃ©mentaires en FurtivitÃ©.
-- Au niveau 35 (premier dan), il est encore plus fort au combat (bonus de 1 au TAC0) et gagne une utilisation supplÃ©mentaire de la capacitÃ© Arme empoisonnÃ©e.
+À mesure qu'il augmente de niveau, le shuri ninja acquiert de nouvelles techniques redoutables qui perfectionnent sa science martiale et ses talents d'assassin :
+- Au niveau 5 (ceinture bleue), il gagne la capacité Vision véritable deux fois par jour pour détecter les illusions.
+- Au niveau 10 (ceinture violette), il sait frapper les points vitaux de ses adversaires (Coup étourdissant deux fois par jour). Toutes ses attaques réussies au cours du round suivant obligent la victime à réussir un jet de sauvegarde contre les sorts sous peine d'être assommée.
+- Au niveau 15 (ceinture rouge), il peut utiliser la capacité Frappe éclair une fois par jour, tous les 10 niveaux d'expérience. Pendant 10 secondes, toutes ses attaques infligent le maximum de dégâts.
+- Au niveau 20 (ceinture marron), une fois par jour, il peut utiliser la capacité Paume vibratoire du moine, dont le secret a été volé dans un monastère oriental. Sa prochaine attaque réussie force sa victime à réussir un jet de sauvegarde contre les sorts ou mourir.
+- Au niveau 25 (ceinture noire), il peut enduire son arme de poison une fois par jour (capacité Arme empoisonnée).
+- Au niveau 30, il peut protéger son esprit de toute attaque mentale une fois par jour (capacité Ordres chaotiques) et il gagne 20 % supplémentaires en Furtivité.
+- Au niveau 35 (premier dan), il est encore plus fort au combat (bonus de 1 au TAC0) et gagne une utilisation supplémentaire de la capacité Arme empoisonnée.
 
-ARME EMPOISONNÃ‰E :
-Chaque coup rÃ©ussi au cours du prochain round empoisonnera la cible. Chaque cible ne peut Ãªtre affectÃ©e qu'une fois par round. Le montant des dÃ©gÃ¢ts de poison dÃ©pend du niveau du personnage :
-- 1er : la cible subit 1 point de dÃ©gÃ¢t de poison par seconde pendant 6 secondes (annulÃ© par une sauvegarde contre la mort Ã  +1)
-- 5Ã¨me : la cible subit 1 point de dÃ©gÃ¢t de poison par seconde pendant 12 secondes (annulÃ© par une sauvegarde contre la mort) et subit immÃ©diatement 2 points de dÃ©gÃ¢ts de poison (sans sauvegarde)
-- 9Ã¨me : la cible subit 1 point de dÃ©gÃ¢t de poison par seconde pendant 18 secondes (annulÃ© par une sauvegarde contre la mort Ã  -1) et subit immÃ©diatement 4 points de dÃ©gÃ¢ts de poison (sans sauvegarde)
-- 13Ã¨me : la cible subit 1 point de dÃ©gÃ¢t de poison par seconde pendant 24 secondes (annulÃ© par une sauvegarde contre la mort Ã  -2) et subit immÃ©diatement 6 points de dÃ©gÃ¢ts de poison (sans sauvegarde)
+ARME EMPOISONNÉE :
+Chaque coup réussi au cours du prochain round empoisonnera la cible. Chaque cible ne peut être affectée qu'une fois par round. Le montant des dégâts de poison dépend du niveau du personnage :
+- 1er : la cible subit 1 point de dégât de poison par seconde pendant 6 secondes (annulé par une sauvegarde contre la mort à +1)
+- 5ème : la cible subit 1 point de dégât de poison par seconde pendant 12 secondes (annulé par une sauvegarde contre la mort) et subit immédiatement 2 points de dégâts de poison (sans sauvegarde)
+- 9ème : la cible subit 1 point de dégât de poison par seconde pendant 18 secondes (annulé par une sauvegarde contre la mort à -1) et subit immédiatement 4 points de dégâts de poison (sans sauvegarde)
+- 13ème : la cible subit 1 point de dégât de poison par seconde pendant 24 secondes (annulé par une sauvegarde contre la mort à -2) et subit immédiatement 6 points de dégâts de poison (sans sauvegarde)
 
 
-DÃ©savantages :
-- Ne peut pas poser de piÃ¨ges.
-- PÃ©nalitÃ© de 2 points Ã  la Force, Ã  la Constitution et au Charisme Ã  la crÃ©ation du personnage.
-- Ne peut utiliser que les armes suivantes : katana, cimeterre, dague, arc court et flÃ©chette. (**jeux EE**)
-- Ne peut utiliser que les armes suivantes : Ã©pÃ©e longue, Ã©pÃ©e courte, katana, cimeterre, dague, gourdin, bÃ¢ton arbalÃ¨te, arc court, flÃ©chette et fronde. (**jeux classiques**)
-- Ne peut pas Ãªtre compÃ©tent dans les styles de combat armes Ã  deux mains et Ã©pÃ©e et bouclier.
+Désavantages :
+- Ne peut pas poser de pièges.
+- Pénalité de 2 points à la Force, à la Constitution et au Charisme à la création du personnage.
+- Ne peut utiliser que les armes suivantes : katana, cimeterre, dague, arc court et fléchette. (**jeux EE**)
+- Ne peut utiliser que les armes suivantes : épée longue, épée courte, katana, cimeterre, dague, gourdin, bâton arbalète, arc court, fléchette et fronde. (**jeux classiques**)
+- Ne peut pas être compétent dans les styles de combat armes à deux mains et épée et bouclier.
 - Ne peut pas se jumeler.
-- Doit Ãªtre d'alignement chaotique.
-- Doit Ãªtre un humain."
+- Doit être d'alignement chaotique.
+- Doit être un humain."
 
 
-Je pense que les deux composants suivants ne nÃ©cessitent pas de description...
+Je pense que les deux composants suivants ne nécessitent pas de description...
 
-20. Profil de Shuri Ninja limitÃ© aux armures de cuir (seulement pour EE)
+20. Profil de Shuri Ninja limité aux armures de cuir (seulement pour EE)
 ------------------------------------------------------------------------
 
 30. Profil de Shuri Ninja sans armure (seulement pour EE)
 ---------------------------------------------------------
 
 
-CrÃ©dits et remerciements
+Crédits et remerciements
 ========================
 
 - Auteur : Twinblades2 (at twblds@hotmail.com)
@@ -178,26 +178,26 @@ CrÃ©dits et remerciements
 
 Remerciements
 -------------
-- Aalkaor pour avoir dÃ©terrÃ© ce mod, l'avoir traduit en franÃ§ais, commencÃ© le code WeiDU et initiÃ© l'idÃ©e de le rendre compatible avec les jeux EE.
-- Gwendolyne pour avoir terminÃ© le code WeiDU, l'avoir rendu compatible avec les jeux EE et avoir relu la traduction.
+- Aalkaor pour avoir déterré ce mod, l'avoir traduit en français, commencé le code WeiDU et initié l'idée de le rendre compatible avec les jeux EE.
+- Gwendolyne pour avoir terminé le code WeiDU, l'avoir rendu compatible avec les jeux EE et avoir relu la traduction.
 
 Pour toute question ou demande d'assistance, veuillez consulter le forum du mod. ( https://www.baldursgateworld.fr/lacouronne/modules-crees-ou-en-cours-de-developpement/33166-shuri-ninja-kit-rapport-de-bugs-bug-reports.html )
 
 
 Information sur les droits d'auteur
 -----------------------------------
-Shuri Ninja n'est pas dÃ©veloppÃ©, supportÃ© ni approuvÃ© par BioWareâ„¢ ou Interplay/Black Isle, Overhaul, Beamdog ou Wizards of the Coast. Il a Ã©tÃ© dÃ©veloppÃ© par Twinblades2, et est basÃ© sur le jeu Baldur's Gate II et son extension.
-Tout le contenu du mod appartient Ã  Â©Twinblades2.
-Baldur's Gate II : Les Ombres d'Amn et Baldur's Gate II : TrÃ´ne de Bhaal appartiennent Ã  Â© TSR, Inc. Le moteur Infinity Engine appartient Ã  Â© BioWare Corp. Toutes les autres marques et droits d'auteur appartiennent Ã  leurs propriÃ©taires respectifs.
+Shuri Ninja n'est pas développé, supporté ni approuvé par BioWare™ ou Interplay/Black Isle, Overhaul, Beamdog ou Wizards of the Coast. Il a été développé par Twinblades2, et est basé sur le jeu Baldur's Gate II et son extension.
+Tout le contenu du mod appartient à ©Twinblades2.
+Baldur's Gate II : Les Ombres d'Amn et Baldur's Gate II : Trône de Bhaal appartiennent à © TSR, Inc. Le moteur Infinity Engine appartient à © BioWare Corp. Toutes les autres marques et droits d'auteur appartiennent à leurs propriétaires respectifs.
 
-Ce mod a Ã©tÃ© crÃ©Ã© pour Ãªtre librement apprÃ©ciÃ© par tous les joueurs de Baldur's Gate II. Cependant, il ne doit pas Ãªtre vendu, publiÃ©, compilÃ© ou redistribuÃ© sous une forme quelconque sans le consentement de son auteur.
+Ce mod a été créé pour être librement apprécié par tous les joueurs de Baldur's Gate II. Cependant, il ne doit pas être vendu, publié, compilé ou redistribué sous une forme quelconque sans le consentement de son auteur.
 
 
 
 Historique des versions
 =======================
 
-Note du traducteur : l'historique n'est volontairement pas traduit afin de faciliter la mise Ã  jour continue du mod.
+Note du traducteur : l'historique n'est volontairement pas traduit afin de faciliter la mise à jour continue du mod.
 
 Version 2.0.0 (April 6, 2021)
 
@@ -216,9 +216,9 @@ Version 2.0.0 (April 6, 2021)
 - Added native BG:EE and BG2EE compatibility (probably with EET, but not yet tested):
   - Added armor restrictions (new sub-components).
   - Added weapons restriction: from now on, Shuri Ninja can't equip long sword, short sword, quarterstaff, club, crossbow and sling, as per description. Unfortunately, IE limitations does not allow to code it for classic games, without breaking other mods compatibility.
-  - Shuri Ninha can't wear any shield.
-  - Added specific Stunning Blow and Quivering Palm abilities: apply op#248 to any weapon wielded (EE games: parameter2 is set to 4 - fists only).
-- BGT and tutu: Added katanas, Ninjatos and Wakizashis to the games, so that she Shuri Ninja kit should be friendly playable.
+  - Shuri Ninja can't wear any shield.
+  - Added specific Stunning Blow and Quivering Palm abilities: applied op#248 to any weapon wielded (EE games: parameter2 is set to 4 - fists only).
+- BGT, tutu and IWD:EE: Added katanas, Ninjatos and Wakizashis to the games, so that she Shuri Ninja kit should be friendly playable.
 - Removed one extra Blinding strike at 40th level.
 - Fixed innate Chaotic Commands ability: duration reduced to 1 turn and included a few fixes ( https://www.gibberlings3.net/forums/topic/29670-is-this-possible-to-add-in-bg2-fixpack/?tab=comments#comment-263138 ).
 - Fixed wrong proficiencies pips.

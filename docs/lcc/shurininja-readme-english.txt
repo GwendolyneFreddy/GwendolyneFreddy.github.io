@@ -187,9 +187,9 @@ If you wish to translate the mod, have a suggestion, or should encounter any bug
 
 Copyright Information
 ---------------------
-Shuri Ninja is not developed, supported, or endorsed by BioWareâ„¢ or Interplay/BlackIsle, Overhaul, Beamdog or the Wizards of the Coast. It was developed by Twinblades2, based on material from the game Baldur's Gate II and its expansion.
-All mod content is Â©Twinblades2.
-Baldur's Gate II: Shadows of Amn and Baldur's Gate II: Throne of Bhaal Â© TSR, Inc. The BioWare Infinity Engine is Â© BioWare Corp. All other trademarks and copyrights are property of their respective owners.
+Shuri Ninja is not developed, supported, or endorsed by BioWare™ or Interplay/BlackIsle, Overhaul, Beamdog or the Wizards of the Coast. It was developed by Twinblades2, based on material from the game Baldur's Gate II and its expansion.
+All mod content is ©Twinblades2.
+Baldur's Gate II: Shadows of Amn and Baldur's Gate II: Throne of Bhaal © TSR, Inc. The BioWare Infinity Engine is © BioWare Corp. All other trademarks and copyrights are property of their respective owners.
 
 This mod was created to be freely enjoyed by all Baldur's Gate II players, and its content is free of rights. However, it should not be sold, published, compiled or redistributed in any form without the consent of the author.
 
@@ -215,9 +215,9 @@ Version 2.0.0 (April 6, 2021)
 - Added native BG:EE and BG2EE compatibility (probably with EET, but not yet tested):
   - Added armor restrictions (new sub-components).
   - Added weapons restriction: from now on, Shuri Ninja can't equip long sword, short sword, quarterstaff, club, crossbow and sling, as per description. Unfortunately, IE limitations does not allow to code it for classic games, without breaking other mods compatibility.
-  - Shuri Ninha can't wear any shield.
-  - Added specific Stunning Blow and Quivering Palm abilities: apply op#248 to any weapon wielded (EE games: parameter2 is set to 4 - fists only).
-- BGT and tutu: Added katanas, Ninjatos and Wakizashis to the games, so that she Shuri Ninja kit should be friendly playable.
+  - Shuri Ninja can't wear any shield.
+  - Added specific Stunning Blow and Quivering Palm abilities: applied op#248 to any weapon wielded (EE games: parameter2 is set to 4 - fists only).
+- BGT, tutu and IWD:EE: Added katanas, Ninjatos and Wakizashis to the games, so that she Shuri Ninja kit should be friendly playable.
 - Removed one extra Blinding strike at 40th level.
 - Fixed innate Chaotic Commands ability: duration reduced to 1 turn and included a few fixes ( https://www.gibberlings3.net/forums/topic/29670-is-this-possible-to-add-in-bg2-fixpack/?tab=comments#comment-263138 ).
 - Fixed wrong proficiencies pips.
