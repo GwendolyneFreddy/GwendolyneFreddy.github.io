@@ -480,7 +480,7 @@ fall_frame=0 </pre>
 		<h2><span class="com">[general]</span>General animation settings</h2><br>
 
 		<p>
-			This section lists all global settings needed to display the animation, regardless of its type.
+			This section lists all global settings needed to display the animation, regardless of its type. Most are common to all available animation types. However, a few are restricted to specific animation types.
 		</p><br>
 
 		<table style="margin-left: 80px; width: 90%; padding: 10px;" summary="ini files options list">
@@ -492,7 +492,7 @@ fall_frame=0 </pre>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center;"><a name="anim_type" id="anim_type"></a><strong><span style="color: #781808;">animation_type</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px">As its name suggests, this is the animation type that will be displayed by the engine.<br>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px">As its name suggests, this is the animation type that will be displayed by the engine.<br><br>
 				Below are their matching type names in IA for classic games:
 				  <ul style="margin-left: -1%; margin-right: 40px">
 					<li style="margin-right: -10%">1000 = BGI MONSTER LONG 4 PARTS without extend directions, BGII SPLIT 4 PARTS (0x13nn slots).</li>
@@ -508,7 +508,7 @@ fall_frame=0 </pre>
 					<li style="margin-right: -10%">a000 = BGI MONSTER LONG</li>
 					<li style="margin-right: -10%">e000 = IWD.</li>
 				  </ul></td>
-				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">
+				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">4 digit hex value<br><br>
 				  0000 = effect<br>
 				  1000 = monster_quadrant, multi_new<br>
 				  1100 = monster_quadrant<br>
@@ -530,7 +530,7 @@ fall_frame=0 </pre>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">move_scale</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Animation base movement speed. Default speed for characters is 9.<br>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Animation base movement speed. Default speed for humanoid creatures is 9.<br>
 				Note: PST:EE uses floating point notation.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Integer or Float</td>
 			</tr>
@@ -551,38 +551,48 @@ fall_frame=0 </pre>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">color_chunks</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Whether the animation can chunk or not (used for example in EFFECT_EXPLODINGDEATH).</td>
-				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Boolean:<br><br>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Color gradient index for the associated chunk animation.<br>
+				Whether the animation can chunk or not (used for example in EFFECT_EXPLODINGDEATH).</td>
+				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Any integer from 0 to 255<br><br>
 				  <span style="color: #781808;">0 = Yes [default]</span><br>
 				  255 = No (such as trolls)</td>
 			</tr>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">sound_freq</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Sounds frequency. Most of animations are set in under 10.</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Sounds frequency (specifies the delay between creature sounds). Most of animations are set in under 10.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Any integer from 0 to 255</td>
 			</tr>
 
 			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">sound_death</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Specifies the sound file played when the creature dies.<br>
+				Note: does not seem to be used.</td>
+				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">String</td>
+			</tr>
+
+			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">personal_space</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Controls how creatures interact with the game world and can move through passages and doorways. Most are 3, dragons are 13.</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Controls how creatures interact with the game world and can move through passages and doorways. It is measured in search map units.<br>
+				Most are 3 (humanoid creatures), dragons are 13.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Any integer from 0 to 255</td>
 			</tr>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">cast_frame</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">todo.</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Specifies the sound delay (in animation frames) for casting animations.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Integer</td>
 			</tr>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">brightest</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Blending mode (passed directly to the renderer).
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Blending mode (passed directly to the renderer).<br><br>
+				  1. If <span class="tp2">brightest=1</span> and <span class="tp2">multiply_blend=0</span>, the following blending mode is performed
 				  <ul style="margin-left: -1%; margin-right: 40px">
 					<li style="margin-right: -10%">srcFactor = GL_ONE_MINUS_DST_COLOR</li>
 					<li style="margin-right: -10%">destFactor = GL_ONE</li>
 				  </ul>
-				  Note: if <span class="tp2">brightest=1</span> and <span class="tp2">multiply_blend=1</span>, then
+				  2. If <span class="tp2">brightest=1</span> and <span class="tp2">multiply_blend=1</span>, the following blending mode is performed
 				  <ul style="margin-left: -1%; margin-right: 40px">
 					<li style="margin-right: -10%">srcFactor = GL_SRC_COLOR</li>
 					<li style="margin-right: -10%">destFactor = GL_ONE</li>
@@ -594,9 +604,15 @@ fall_frame=0 </pre>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">multiply_blend</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Blending mode (passed directly to the renderer).
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Blending mode (passed directly to the renderer).<br><br>
+				  1. If <span class="tp2">multiply_blend=1</span> and <span class="tp2">brightest=0</span>, the following blending mode is performed
 				  <ul style="margin-left: -1%; margin-right: 40px">
 					<li style="margin-right: -10%">srcFactor = GL_DST_COLOR</li>
+					<li style="margin-right: -10%">destFactor = GL_ONE</li>
+				  </ul>
+				  2. If <span class="tp2">multiply_blend=1</span> and <span class="tp2">brightest=1</span>, the following blending mode is performed
+				  <ul style="margin-left: -1%; margin-right: 40px">
+					<li style="margin-right: -10%">srcFactor = GL_SRC_COLOR</li>
 					<li style="margin-right: -10%">destFactor = GL_ONE</li>
 				  </ul>
 				Note: often used with a <a href="glow_layer"><span style="font-weight: normal;">glow_layer</span></a> bam files set.</td>
@@ -607,7 +623,7 @@ fall_frame=0 </pre>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">light_source</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Whether certain tinting effects (e.g. environmental lighting) are disabled or not.</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Whether certain tinting effects (e.g. environmental lighting such as day/night, weather or shadows) affect the creature animation.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Boolean:<br><br>
 				  <span style="color: #781808;">0 = No [default]</span><br>
 				  1 = Yes</td>
@@ -628,22 +644,22 @@ fall_frame=0 </pre>
 			</tr>
 
 			<tr>
-				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">combat_round_n</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">A pseudo-image (BMP file) which defines attack pattern.</td>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">combat_round_0<br>combat_round_1<br>combat_round_2<br>combat_round_3<br>combat_round_4</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">A pseudo-image (BMP file) which defines attack pattern (how attack animation sequences are triggered within a combat round).</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">String</td>
 			</tr>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><a name="glow_layer" id="glow_layer"></a><strong><span style="color: #781808;">glow_layer</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Refers to a BAM prefix acting as background layer for glowing sprites (used by solars and planetars animations).<br>
-				Note: This options is currently defined in the wrong INI section. To be effective it should be defined in the [monster] section of type 7000 animations.<br>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Refers to a BAM prefix acting as an additional background layer for glowing sprites (used by deva and planetars animations).<br><br>
+				Note: This option is currently defined in the wrong INI section. To be effective it should be defined in the [monster] section of type 7000 animations.<br>
 				In addition, it looks like it hasn't been fully implemented and doesn't seem to be applied to the weapon overlay. And it doesn't work correctly with unsplit animation schemes (<span class="tp2">split_bams=0</span>).</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">String</td>
 			</tr>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">walk_sound</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">The sound clip series used to play creature walking sound.</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">The sound clip series used to play the default creature walking sound.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">String</td>
 			</tr>
 		</table><br><br>
@@ -666,21 +682,20 @@ fall_frame=0 </pre>
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><a name="armor_max_code" id="armor_max_code"></a><strong><span style="color: #781808;">armor_max_code</span></strong><br><br>
 				(character and character_old animations only)</td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Maximum armor level a character can equip.<br>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Maximum armor level a character can equip.<br><br>
 				It's basically set to 4 for all the characters except for the monk who has it set to 1.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">
 				  1 = No Armor<br>
 				  2 = Leather / Studded leather<br>
-				  3 = Chain Mail<br>
+				  3 = Chain Mail / Robe<br>
 				  4 = Plate</td>
 			</tr>
 
-			<tr>
+	<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">caster</span></strong><br><br>
-				(monster_layered animations only)</td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Whether A2/A3 sequences are (also) used as CA/SP (overridden by weapon overlay definitions) or not.<br>
-				Note below to be confirmed<br>
-				- monster_quadrant: whether A3 sequence is used as CA.</td>
+				(monster_layered and monster_quadrant animations only)</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Whether A2 and A3 sequences are (also) used as CA and SP (overridden if weapon overlays are defined) or not.<br>
+				monster_quadrant type: whether A3 sequence is used as CA.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Boolean:<br><br>
 				  <span style="color: #781808;">0 = No [default]</span><br>
 				  1 = Yes</td>
@@ -690,7 +705,7 @@ fall_frame=0 </pre>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">can_lie_down</span></strong></td>
 				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Whether the creature animation displays frames when it falls down when dead/unconscious (Used by Death and Sleep animations).<br>
 				Note: Doesn't appear to be related to animation display.<br>
-				Quote from Bubb: "<em>When a creature is being created and normally 'gets up', (like in summons), determines whether it immediately assigns to its self-reporting list, or LIST_BACK (when <span class="tp2">can_lie_down=1</span>). I didn't see a direct link to animation sequences, but maybe I missed some connection.</em>"</td> 
+				Quote from Bubb: "<em>When a creature is being created and normally 'gets up' (like in summons), determines whether it immediately assigns to its self-reporting list, or LIST_BACK (when <span class="tp2">can_lie_down=1</span>). I didn't see a direct link to animation sequences, but maybe I missed some connection.</em>"</td> 
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Boolean:<br><br>
 				  <span style="color: #781808;">0 = No [default]</span><br>
 				  1 = Yes</td>
@@ -698,7 +713,7 @@ fall_frame=0 </pre>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">detected_by_infravision</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Whether the creature is detected by infravision or not: a red tint is applied when detected by infravision.<br>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Whether a red tint is applied to the creature animation when detected by infravision.<br>
 				For example, undead creatures are not detected by infravision.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Boolean:<br><br>
 				  <span style="color: #781808;">0 = No [default]</span><br>
@@ -707,8 +722,8 @@ fall_frame=0 </pre>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">double_blit</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Unknown effect: Possibly a performance setting in the original games.<br>
-				Note: Apparently unused (only used by 0x6400 drizzt), but should probably always be set to 0.</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Unknown effect: Possibly a performance setting in the original games.<br><br>
+				Note: Apparently unused (only used by 0x6400 drizzt) and unimplemented, but should probably always be set to 0.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Boolean:<br><br>
 				  <span style="color: #781808;">0 = No [default]</span><br>
 				  1 = Yes</td>
@@ -716,8 +731,8 @@ fall_frame=0 </pre>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">mirror</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Whether eastern directions are calculated or not.<br>
-				Note: Apparently unused (only used by 0x3001 neothelid), but should probably always be set to 0 (eastern directions are taken from xxxE BAMs).</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Whether eastern directions are calculated by the engine or not.<br><br>
+				Note: Apparently unused (only used by 0x3001 neothelid), but should probably always be set to 0 (eastern directions are available in xxxxE BAM files).</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Boolean:<br><br>
 				  <span style="color: #781808;">0 = No [default]</span><br>
 				  1 = Yes</td>
@@ -727,8 +742,8 @@ fall_frame=0 </pre>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">extend_direction</span></strong><br><br>
 				(monster_quadrant and monster_ankheg animations only)</td>
 				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Whether the bam files need mirrored directions.<br>
-				By default ('No'), the engine automatically mirrors directions. Otherwise eastern directions are available as xxxE-BAMs.<br>
-				monster_ankheg type: Number of available directions per sequence (e.g. 5 for ankhegs).</td>
+				By default ('No'), the engine automatically mirrors directions (draws eastern directions). Otherwise eastern directions are available as xxxxE BAM files.<br>
+				monster_ankheg type: Number of available directions per animation sequence (e.g. 5 for ankhegs).</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Boolean:<br><br>
 				  <span style="color: #781808;">0 = No [default]</span><br>
 				  1 = Yes</td>
@@ -737,7 +752,7 @@ fall_frame=0 </pre>
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">extend_direction_test</span></strong><br><br>
 				(monster_quadrant animations only)</td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">The number of directions needed in each set of bam files.<br>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">The number of western directions needed in each set of BAM files if eastern directions are to be calculated by the engine.<br>
 				Quote from Bubb: "<em>When sprite mirroring is enabled / direction is being extended, determines how many valid directions the base vidcell holds.</em>"</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">9 (when set) or 8 (neothelid)</td>
 			</tr>
@@ -752,7 +767,7 @@ fall_frame=0 </pre>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">invulnerable</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Indicates whether creature is invulnerable by default (e.g. child animations).</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Indicates whether creature is un-killable by default (e.g. child animations).</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Boolean:<br><br>
 				  <span style="color: #781808;">0 = No [default]</span><br>
 				  1 = Yes</td>
@@ -761,23 +776,23 @@ fall_frame=0 </pre>
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">list_type</span></strong><br><br>
 				(ambient animations only)</td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Used internally by the engine.<br>
-				2 means "flying": not detected by infravision, WK transforms to SC, many hardcoded exceptions (including polymorph, pathfinding, etc.).</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Used internally by the engine to apply special behavior to the creature.<br>
+				2 means "flying" (such as bats): not detected by infravision, WK transformed to SC, many hardcoded exceptions (including polymorph, pathfinding, etc.).</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Integer [0,1,2]</td>
 			</tr>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">path_smooth</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Pathfinding settings.<br>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Defines how pathfinding is calculated.<br><br>
 				Note that <span class="tp2">path_smooth=1</span> is not well documented (probably uses as many angles as directions available).</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Boolean:<br><br>
-				  <span style="color: #781808;">0 = uses only 45 degrees angles</span><br>
+				  <span style="color: #781808;">0 = uses only 45 degrees angles (S, SW, W, NW, N,...)</span><br>
 				  1 = uses arbitrary angles</td>
 			</tr>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">quadrants</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">The number of segments the animation has been split into.</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">The number of segments the animation frames have been split into.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Integer</td>
 			</tr>
 
@@ -793,29 +808,30 @@ fall_frame=0 </pre>
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><a name="height_code" id="height_code"></a><strong><span style="color: #781808;">height_code</span></strong><br><br>
 				(character and character_old animations only)</td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Weapons animations bam prefix ("WQL", "WQM", "WQN", "WQS", "WPL", "WPM" or "WPS").<br>
-				Fallback option if height_code_helmet or height_code_shield are not defined</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Weapons animation overlays BAM prefix ("WQL", "WQM", "WQN", "WQS", "WPL", "WPM" or "WPS").<br>
+				Fallback option if <a href="#height_code_helmet"><span style="font-weight: normal;">height_code_helmet</span></a> or <a href="#height_code_shield"><span style="font-weight: normal;">height_code_shield</span></a> are not defined</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">String</td>
 			</tr>
 
 			<tr>
-				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">height_code_helmet</span></strong><br><br>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><a name="height_code_helmet" id="height_code_helmet"></a><strong><span style="color: #781808;">height_code_helmet</span></strong><br><br>
 				(character and character_old animations only)</td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Same as above, but for the helmets animations.</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Same as above, but for the helmets animation overlays.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">String</td>
 			</tr>
 
 			<tr>
-				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">height_code_shield</span></strong><br><br>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><a name="height_code_shield" id="height_code_shield"></a><strong><span style="color: #781808;">height_code_shield</span></strong><br><br>
 				(character animation animations only)</td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Same as above, but for the shields animations.<br>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Same as above, but for the shields animation overlays.<br>
 				Note: WQH does not seem to exist...</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">String</td>
 			</tr>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><a name="resref" id="resref"></a><strong><span style="color: #781808;">resref</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Animation base name, i.e BAM files prefix (MDEM, MTRO...).</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Animation base name, i.e BAM files prefix (MDEM, MTRO...).<br>
+				Note for character animation type: It can be overridden by animations with class-specific suffix if available (<a href="#resref_armor_base"><span style="font-weight: normal;">resref_armor_base</span></a> and <a href="#resref_armor_specific"><span style="font-weight: normal;">resref_armor_specific</span></a>).</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">String</td>
 			</tr>
 
@@ -824,16 +840,16 @@ fall_frame=0 </pre>
 				(effect and character_old animations only)</td>
 				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">
 				  <ul style="margin-left: -1%; margin-right: 40px">
-					<li style="margin-right: -10%">effect: a separate shadow BAM resref.</li>
-					<li style="margin-right: -10%">character_old: changes default shadow from "CSHD" to what is provided. The Sarevok animation uses hardcoded resref "SSHD".</li>
+					<li style="margin-right: -10%">effect: specifies a separate shadow BAM resref.</li>
+					<li style="margin-right: -10%">character_old: changes default shadow from "CSHD" to what is provided. The Drizzt and Sarevok animations use hardcoded resref ("CSHD" and "SSHD" respectively).</li>
 				  </ul></td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">String</td>
 			</tr>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">split_bams</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Whether the bam files are split or not.<br>
-				Note: if <span class="tp2">split_bams=0</span>, animations are packed in G1-G2 bam files.</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Whether the BAM files are split or not.<br><br>
+				Note: if <span class="tp2">split_bams=0</span>, animations are packed in G1-G2 BAM files.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Boolean:<br><br>
 				  <span style="color: #781808;">0 = No [default]</span><br>
 				  1 = Yes (animations are spread over various subfiles)</td>
@@ -849,32 +865,31 @@ fall_frame=0 </pre>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">resref_weapon1</span></strong><br><br>
-				(monster_layered animations only)</td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Which weapon animation bam suffix to use (main hand).</td>
+				(monster_layered and monster_layered_spell animations only)</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Which one-handed weapon animation overlay (BAM suffix) to use.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">String (MS, S1, SS)</td>
 			</tr>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">resref_weapon2</span></strong><br><br>
-				(monster_layered animations only)</td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Which weapon animation bam suffix to use (offhand).</td>
+				(monster_layered and monster_layered_spell animations only)</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Which two-handed weapon animation overlay (BAM suffix) to use.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">String (BW, HB)</td>
 			</tr>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">dual_attack</span></strong><br><br>
-				(monster_layered animations only)</td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">To be confirmed<br>
-				When set: SEQ_SHOOT transforms into SEQ_READY, A3 has a chance to use A1 instead (according to Bubb).</td>
+				(monster_layered_spell animations only)</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">When set: SEQ_SHOOT transforms into SEQ_READY, and A3 has a chance to use A1 instead.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Boolean:<br><br>
 				  <span style="color: #781808;">0 = No [default]</span><br>
 				  1 = Yes</td>
 			</tr>
 
 			<tr>
-				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">weapon_left_handk</span></strong><br><br>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">weapon_left_hand</span></strong><br><br>
 				(monster_icewind animations only)</td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Propagated, but apparently unused in EE games.</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Propagated, but apparently unused (or unimplemented?) in EE games.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Boolean:<br><br>
 				  <span style="color: #781808;">0 = No [default]</span><br>
 				  1 = Yes</td>
@@ -888,20 +903,21 @@ fall_frame=0 </pre>
 			</tr>
 
 			<tr>
-				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">resref_armor_base</span></strong><br><br>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><a name="resref_armor_base" id="resref_armor_base"></a><strong><span style="color: #781808;">resref_armor_base</span></strong><br><br>
 				(character and character_old animations only)</td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">This is the 4th character in <a href="#resref"><span style="font-weight: normal;">resref animation filename prefix</span></a>.<br>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">This is the 4th character that replaces the last character of the <a href="#resref"><span style="font-weight: normal;">resref animation filename prefix</span></a> for shared character animations.<br><br>
 				'B' for cleric and fighter, 'M' for monk, 'T' for thief, 'W' for wizard.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">single character</td>
 			</tr>
 
 			<tr>
-				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">resref_armor_specific</span></strong><br><br>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><a name="resref_armor_specific" id="resref_armor_specific"></a><strong><span style="color: #781808;">resref_armor_specific</span></strong><br><br>
 				(character and character_old animations only)</td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Used when the armor code is equal to <a href="#armor_max_code"><span style="font-weight: normal;">armor_max_code</span></a>.<br>
-				Usually it is the same character as resref_armor_base, except for clerics and fighters that share the same <a href="#resref"><span style="font-weight: normal;">resref</span></a> value.<br>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">This is the 4th character that replaces the last character of the <a href="#resref"><span style="font-weight: normal;">resref animation filename prefix</span></a> for class-specific character animations.<br>
+				Used when the armor code is equal to <a href="#armor_max_code"><span style="font-weight: normal;">armor_max_code</span></a>.<br>
+				Usually it is the same character as <a href="#resref_armor_base"><span style="font-weight: normal;">resref_armor_base</span></a>, except for clerics and fighters that share the same <a href="#resref"><span style="font-weight: normal;">resref</span></a> value.<br>
 				While equipped with armors lighter than plate, they use the same animation files; but when they equip a plate, their animation are different.<br>
-				In this case, a human cleric male and a human fighter male will use the same CHMB prefix bam files series when equipped with the three first armor levels (no armor, leather and chain), but when equipped with a plate, the cleric will use the CHMC bam series and the fighter the CHMF series.<br>
+				In this case, a human cleric male and a human fighter male will use the same CHMB prefix BAM files series when equipped with the three first armor levels (no armor, leather and chain), but when equipped with a plate, the cleric will use the CHMC bam series and the fighter the CHMF series.<br>
 				'C' for cleric, 'F' for fighter, 'M' for monk, 'T' for thief, 'W' for wizard.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">single character</td>
 			</tr>
@@ -909,7 +925,7 @@ fall_frame=0 </pre>
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">hide_weapons</span></strong><br><br>
 				(character_old animations only)</td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Used by animations without <a href="#height_code"><span style="font-weight: normal;">height_code</span></a> variable; i.e. their weapons animations are part of their main animation (resref BAM. files). [0x6400 UDRZ drizzt, 0x6401 UELM elminster and 0x6404 USAR sarevok]<br>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Used by animations without <a href="#height_code"><span style="font-weight: normal;">height_code</span></a> variable; i.e. their weapons animations are part of their main animation (resref BAM files). [0x6400 UDRZ drizzt, 0x6401 UELM elminster and 0x6404 USAR sarevok]<br><br>
 				0: draw separate weapon overlay - 1: do not draw weapon overlays</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Boolean:<br><br>
 				  <span style="color: #781808;">0 = No [default]</span><br>
@@ -917,18 +933,58 @@ fall_frame=0 </pre>
 			</tr>
 
 			<tr>
-				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">palette1</span></strong><br><br>
-				(monster animations only)</td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Refers to a BMP file, a palette replacement for xxxG1 (unsplit) or xxxG1x (split) BAMs.<br>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><a name="palette1" id="palette1"></a><strong><span style="color: #781808;">palette1</span></strong><br><br>
+				(monster and monster_multi animations only)</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Refers to a BMP file, a palette replacement for xxxxG1 (unsplit) or xxxxG1x (split) BAM files.<br>
 				Note: usually the same as <a href="#new_palette"><span style="font-weight: normal;">new_palette</span></a> resref.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">String</td>
 			</tr>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">palette2</span></strong><br><br>
-				(monster animations only)</td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Refers to a BMP file, a replacement for xxxG2 (unsplit) or xxxG2x (split) BAMs.<br>
-				Note: usually named with same pattern as the same as <span style="font-weight: normal;">palette1</span>; i.e. if palette1 is MPAL_CL1, then palette2 is MPAL_CL2.</td>
+				(monster and monster_multi animations only)</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Refers to a BMP file, a replacement for xxxxG2 (unsplit) or xxxxG2x (split) BAM files.<br>
+				Note: usually named with same pattern as the same as <a href="#palette1"><span style="font-weight: normal;">palette1</span></a>; i.e. if palette1 is MPAL_CL1, then palette2 is MPAL_CL2.</td>
+				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">String</td>
+			</tr>
+
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">palette3</span></strong><br><br>
+				(monster_multi animations only)</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Refers to a BMP file, a replacement for xxxxG3 (unsplit) or xxxxG3x (split) BAM files.<br><br>
+				However, due to a buggy implementation they are basically defunct. Falls back to the [general] section <a href="#new_palette"><span style="font-weight: normal;">new_palette</span></a> value + number of animation group (e.g. the Green Dragon palette resref "MDR1_GR" implies that palette resrefs MDR1_GR1, MDR1_GR2, MDR1_GR3, MDR1_GR4 and MDR1_GR5 are used).</td>
+				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">String</td>
+			</tr>
+
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">palette4</span></strong><br><br>
+				(monster_multi animations only)</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Refers to a BMP file, a replacement for xxxxG4 (unsplit) or xxxxG4x (split) BAM files.<br><br>
+				However, due to a buggy implementation they are basically defunct. Falls back to the [general] section <a href="#new_palette"><span style="font-weight: normal;">new_palette</span></a> value + number of animation group (e.g. the Green Dragon palette resref "MDR1_GR" implies that palette resrefs MDR1_GR1, MDR1_GR2, MDR1_GR3, MDR1_GR4 and MDR1_GR5 are used).</td>
+				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">String</td>
+			</tr>
+
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">palette5</span></strong><br><br>
+				(monster_multi animations only)</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Refers to a BMP file, a replacement for xxxxG5 (unsplit) or xxxxG5x (split) BAM files.<br><br>
+				However, due to a buggy implementation they are basically defunct. Falls back to the [general] section <a href="#new_palette"><span style="font-weight: normal;">new_palette</span></a> value + number of animation group (e.g. the Green Dragon palette resref "MDR1_GR" implies that palette resrefs MDR1_GR1, MDR1_GR2, MDR1_GR3, MDR1_GR4 and MDR1_GR5 are used).</td>
+				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">String</td>
+			</tr>
+
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">palletized</span></strong><br><br>
+				(effect animations only)</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Appears not to be implemented.</td>
+				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Boolean:<br><br>
+				  <span style="color: #781808;">0 = No [default]</span><br>
+				  1 = Yes</td>
+			</tr>
+
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">alt_palette</span></strong><br><br>
+				(effect animations only)</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Seems to specify a replacement palette for the effect animation.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">String</td>
 			</tr>
 

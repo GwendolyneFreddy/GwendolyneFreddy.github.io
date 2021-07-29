@@ -480,7 +480,7 @@ fall_frame=0 </pre>
 		<h2><span class="com">[general]</span>Paramètres généraux de l'animation</h2><br>
 
 		<p>
-			Cette section énumère tous les paramètres globaux nécessaires pour afficher l'animation, indépendamment de son type.
+			Cette section énumère tous les paramètres globaux nécessaires pour afficher l'animation, indépendamment de son type. Cependant, si la plupart sont disponibles pour tous les types d'animation, certains ne fonctionnent avec quelques types.
 		</p><br>
 
 		<table style="margin-left: 80px; width: 90%; padding: 10px;" summary="ini files options list">
@@ -492,7 +492,7 @@ fall_frame=0 </pre>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center;"><a name="anim_type" id="anim_type"></a><strong><span style="color: #781808;">animation_type</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px">Comme son intitulé l'indique, il s'agit du type d'animation qui sera affiché par le moteur du jeu.<br>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px">Comme son intitulé l'indique, il s'agit du type d'animation qui sera affiché par le moteur du jeu.<br><br>
 				Vous trouverez ci-dessous leur correspondance avec les termes utilisés par Infinity Animations dans les jeux classiques :
 				  <ul style="margin-left: -1%; margin-right: 40px">
 					<li style="margin-right: -10%">1000 = BGI MONSTER LONG 4 PARTS sans directions miroir, BGII SPLIT 4 PARTS (slots de la série 0x13nn).</li>
@@ -508,7 +508,7 @@ fall_frame=0 </pre>
 					<li style="margin-right: -10%">a000 = BGI MONSTER LONG</li>
 					<li style="margin-right: -10%">e000 = IWD.</li>
 				  </ul></td>
-				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">
+				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">hex (4 chiffres)<br><br>
 				  0000 = effect<br>
 				  1000 = monster_quadrant, multi_new<br>
 				  1100 = monster_quadrant<br>
@@ -530,7 +530,7 @@ fall_frame=0 </pre>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">move_scale</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Vitesse de déplacement de base de l'animation. La vitesse par défaut des personnages est 9.<br>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Vitesse de déplacement de base de l'animation. La vitesse par défaut des créatures humanoïdes est 9.<br>
 				Note : PST:EE utilise un nombre avec une virgule flottante.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Nombre ou Virgule flottante</td>
 			</tr>
@@ -550,43 +550,53 @@ fall_frame=0 </pre>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">color_chunks</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Si l'animation peut ou pas " <em>exploser</em> " (utilisé par exemple par l'effet EFFECT_EXPLODINGDEATH).</td>
-				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Booléen :<br><br>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Index du gradient de couleur lorsque l'animation explose.<br>
+				Il détermine aussi si l'animation peut ou pas " <em>exploser</em> " (utilisé par exemple par l'effet EFFECT_EXPLODINGDEATH).</td>
+				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Nombre compris entre 0 et 255<br><br>
 				  <span style="color: #781808;">0 = Oui [par défaut]</span><br>
 				  255 = Non (comme les trolls)</td>
 			</tr>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">sound_freq</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Fréquence de lecture du jeu de sons. Le réglage de la plupart des animations est inférieur à 10.</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Fréquence de lecture du jeu de sons (détermine le délai entre chaque son). Le réglage de la plupart des animations est inférieur à 10.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Nombre compris entre 0 et 255</td>
 			</tr>
 
 			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">sound_death</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Fichier sonore joué quand la créature meurt.<br>
+				Note : ne semble pas utilisé.</td>
+				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Chaîne alphanumérique</td>
+			</tr>
+
+			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">personal_space</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Contrôle la manière sont les créatures interagissent avec les contraintes de leur environnement et peuvent franchir des portes ou des passages étroits. La plupart des créatures ont une valeur de 3, les dragons (créatures de type colossal) de 13.</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Contrôle la manière sont les créatures interagissent avec les contraintes de leur environnement et peuvent franchir des portes ou des passages étroits. Il est mesuré en unités utilisées par les search maps.<br>
+				La plupart des créatures ont une valeur de 3 (humanoïdes), les dragons (créatures de type colossal) de 13.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Nombre compris entre 0 et 255</td>
 			</tr>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">cast_frame</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">todo.</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Détermine le délai (compté en images du fichier bam de l'animation) avant de jouer l'animation de lancement de sort.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Nombre</td>
 			</tr>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">brightest</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Mode de fusion (transmis directement au moteur de rendu).
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Mode de fusion (transmis directement au moteur de rendu).<br><br>
+				  1. Si <span class="tp2">brightest=1</span> et <span class="tp2">multiply_blend=0</span>, le mode de fusion suivant est activé
 				  <ul style="margin-left: -1%; margin-right: 40px">
 					<li style="margin-right: -10%">srcFactor = GL_ONE_MINUS_DST_COLOR</li>
 					<li style="margin-right: -10%">destFactor = GL_ONE</li>
 				  </ul>
-				  Note : si <span class="tp2">brightest=1</span> et <span class="tp2">multiply_blend=1</span>, alors
+				  2. Si <span class="tp2">brightest=1</span> et <span class="tp2">multiply_blend=1</span>, le mode de fusion suivant est activé
 				  <ul style="margin-left: -1%; margin-right: 40px">
 					<li style="margin-right: -10%">srcFactor = GL_SRC_COLOR</li>
 					<li style="margin-right: -10%">destFactor = GL_ONE</li>
 				  </ul></td>
-				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Booléen :<br><br>
+				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Boolean:<br><br>
 				  <span style="color: #781808;">0 = Non [par défaut]</span><br>
 				  1 = Oui</td>
 			</tr>
@@ -594,8 +604,14 @@ fall_frame=0 </pre>
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">multiply_blend</span></strong></td>
 				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Mode de fusion produit (transmis directement au moteur de rendu).
+				  1. Si <span class="tp2">multiply_blend=1</span> et <span class="tp2">brightest=0</span>, le mode de fusion suivant est activé
 				  <ul style="margin-left: -1%; margin-right: 40px">
 					<li style="margin-right: -10%">srcFactor = GL_DST_COLOR</li>
+					<li style="margin-right: -10%">destFactor = GL_ONE</li>
+				  </ul>
+				  2. Si <span class="tp2">multiply_blend=1</span> et <span class="tp2">brightest=1</span>, le mode de fusion suivant est activé
+				  <ul style="margin-left: -1%; margin-right: 40px">
+					<li style="margin-right: -10%">srcFactor = GL_SRC_COLOR</li>
 					<li style="margin-right: -10%">destFactor = GL_ONE</li>
 				  </ul>
 				Note : souvent utilisé en conjonction avec des fichiers bam permettant d'ajouter un effet <a href="glow_layer"><span style="font-weight: normal;">glow_layer</span></a>.</td>
@@ -606,7 +622,7 @@ fall_frame=0 </pre>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">light_source</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Détermine si certains effets de teinte (par exemple, l'éclairage environnemental) sont désactivés ou non.</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Détermine si certains effets de teinte (par exemple, l'éclairage environnemental comme nuit/jour, climat ou ombres) affectent ou pas l'animation de la créature.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Booléen :<br><br>
 				  <span style="color: #781808;">0 = Non [par défaut]</span><br>
 				  1 = Oui</td>
@@ -627,14 +643,14 @@ fall_frame=0 </pre>
 			</tr>
 
 			<tr>
-				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">combat_round_n</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Une pseudo-image (fichier BMP) qui définit un schéma d'attaque.</td>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">combat_round_0<br>combat_round_1<br>combat_round_2<br>combat_round_3<br>combat_round_4</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Une pseudo-image (fichier BMP) qui définit un schéma d'attaque (comment les séquences d'animations d'attaques sont activées pendant un round de combat).</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Chaîne alphanumérique</td>
 			</tr>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><a name="glow_layer" id="glow_layer"></a><strong><span style="color: #781808;">glow_layer</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Il s'agit du préfixe de fichiers BAM utilisés comme calque d'arrière-plan pour les animations  qui scintillent (comme les solaires et les planétaires).<br>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Il s'agit du préfixe des fichiers BAM utilisés comme calque supplémentaire d'arrière-plan pour les animations qui scintillent (comme les solaires, les devas et les planétaires).<br><br>
 				Note : Cette option est actuellement définie dans la mauvaise section INI. Pour être efficace, elle devrait être déplacée dans la section [monster] des animations de type 7000.<br>
 				De plus, il semble qu'elle n'a pas été entièrement implémentée et ne semble pas être appliquée aux animations d'armes. Et elle ne fonctionne pas correctement avec les animation de type unsplit (<span class="tp2">split_bams=0</span>).</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Chaîne alphanumérique</td>
@@ -649,7 +665,7 @@ fall_frame=0 </pre>
 
 		<hr style="width: 90%; " /><br>
 
-		<h2><span class="com">[Specific animation]</span>Specific animation type settings</h2><br>
+		<h2><span class="com">[Specific animation]</span>Paramètres spécifiques à chaque type d'animation</h2><br>
 
 		<p>
 			This section lists all settings related to the animation type. Replace <em>Specific animation</em> in square brackets with the animation type name matching the <a href="#anim_type"><span style="font-weight: normal;">animation_type variable</span></a>.
@@ -665,21 +681,20 @@ fall_frame=0 </pre>
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><a name="armor_max_code" id="armor_max_code"></a><strong><span style="color: #781808;">armor_max_code</span></strong><br><br>
 				(uniquement pour les animations character et character_old)</td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Niveau d'armure maximum dont un personnage peut s'équiper.<br>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Niveau d'armure maximum dont un personnage peut s'équiper.<br><br>
 				Il est fondamentalement fixé à 4 pour tous les personnages, sauf pour le moine (1).</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">
 				  1 = Aucune armure<br>
 				  2 = Cuir / Besantine<br>
-				  3 = Cote de mailles<br>
+				  3 = Cote de mailles / Robe<br>
 				  4 = Armure de plate</td>
 			</tr>
 				.
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">caster</span></strong><br><br>
-				(uniquement pour les animations  monster_layered)</td>
+				(uniquement pour les animations monster_layered et monster_quadrant)</td>
 				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Détermine si les séquences A2/A3 sont (aussi) utilisées comme séquences CA/SP (remplacées par les overlays d'armes) ou pas.<br>
-				La définition suivante est à confirmer<br>
-				- monster_quadrant : détermine si la séquence A3 est utilisée comme CA.</td>
+				monster_quadrant : détermine si la séquence A3 est utilisée comme CA.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Booléen :<br><br>
 				  <span style="color: #781808;">0 = Non [par défaut]</span><br>
 				  1 = Oui</td>
@@ -689,7 +704,7 @@ fall_frame=0 </pre>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">can_lie_down</span></strong></td>
 				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Détermine si l'animation dispose ou pas de séquences d'images montrant la créature tombant au sol quand elle meurt ou est inconsciente (Réglage utilisé par les animations Death et Sleep).<br>
 				Note : En fait, ne semble pas relié à l'affichage de l'animations.<br>
-				Note de Bubb : "<em>When a creature is being created and normally 'gets up', (like in summons), determines whether it immediately assigns to its self-reporting list, or LIST_BACK (when <span class="tp2">can_lie_down=1</span>). I didn't see a direct link to animation sequences, but maybe I missed some connection.</em>"</td> 
+				Note de Bubb : "<em>When a creature is being created and normally 'gets up' (like in summons), determines whether it immediately assigns to its self-reporting list, or LIST_BACK (when <span class="tp2">can_lie_down=1</span>). I didn't see a direct link to animation sequences, but maybe I missed some connection.</em>"</td> 
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Booléen :<br><br>
 				  <span style="color: #781808;">0 = Non [par défaut]</span><br>
 				  1 = Oui</td>
@@ -697,7 +712,7 @@ fall_frame=0 </pre>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">detected_by_infravision</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Détermine si la créature peut être ou pas détectée par l'infravision : Dans ce cas, elle se teinte de rouge quand elle est détectée.<br>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Détermine si la créature se teinte de rouge quand elle est détectée.<br>
 				Par exemple, les créatures mort-vivantes ne sont pas détectées par l'infravision.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Booléen :<br><br>
 				  <span style="color: #781808;">0 = Non [par défaut]</span><br>
@@ -706,7 +721,7 @@ fall_frame=0 </pre>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">double_blit</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Effect inconnu : probablement un paramètre de performance utilisé dans  les jeux classiques.<br>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Effect inconnu : probablement un paramètre de performance utilisé dans les jeux classiques.<br><br>
 				Note : Ce paramètre n'est apparemment pas utilisé par les jeux EE (il n'apparaît que pour l'animation 0x6400 drizzt), et devrait probablement être toujours réglé à 0.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Booléen :<br><br>
 				  <span style="color: #781808;">0 = Non [par défaut]</span><br>
@@ -715,7 +730,7 @@ fall_frame=0 </pre>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">mirror</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Détermine si les directions « Est » doivent être générées ou pas.<br>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Détermine si les directions « Est » doivent être générées ou pas.<br><br>
 				Note : Ce paramètre n'est apparemment pas utilisé par les jeux EE (il n'apparaît que pour l'animation 0x3001 neothelid), et devrait probablement être toujours réglé à 0 (les directions « Est » sont inclues dans les fichiers xxxE BAM).</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Booléen :<br><br>
 				  <span style="color: #781808;">0 = Non [par défaut]</span><br>
@@ -725,9 +740,9 @@ fall_frame=0 </pre>
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">extend_direction</span></strong><br><br>
 				(uniquement pour les animations monster_quadrant et monster_ankheg)</td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Détermine si les fichiers bam de l'animation nécessitent ou pas des directions « Est ».<br>
-				Par défaut ("Non"), le moteur du jeu les génère automatiquement. Sinon, les directions « Est » sont disponibles dans les fichiers xxxE BAM.<br>
-				Animation de type monster_ankheg : Nombre directions disponibles par séquence (par exemple 5 pour les ankhegs).</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Détermine si les fichiers BAM de l'animation nécessitent ou pas des directions « Est ».<br>
+				Par défaut ("Non"), le moteur du jeu les génère automatiquement. Sinon, les directions « Est » sont disponibles dans les fichiers xxxxE BAM.<br><br>
+				Animation de type monster_ankheg : Nombre de directions disponibles par séquence (par exemple 5 pour les ankhegs).</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Booléen :<br><br>
 				  <span style="color: #781808;">0 = Non [par défaut]</span><br>
 				  1 = Oui</td>
@@ -736,7 +751,7 @@ fall_frame=0 </pre>
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">extend_direction_test</span></strong><br><br>
 				(uniquement pour les animations monster_quadrant)</td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Nombre de directions nécessaires par chaque série de fichier bam.<br>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Nombre de directions nécessaires pour chaque série de fichiers BAM si les directions « Est » doivent être générées par le moteur.<br>
 				Note de Bubb : "<em>When sprite mirroring is enabled / direction is being extended, determines how many valid directions the base vidcell holds.</em>"</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">9 (quand spécifié) ou 8 (neothelid)</td>
 			</tr>
@@ -751,7 +766,7 @@ fall_frame=0 </pre>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">invulnerable</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Détermine si une créature est invulnerable par défaut (par exemple les animations d'enfant).</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Détermine si une créature est in-tuable par défaut (par exemple les animations d'enfant).</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Booléen :<br><br>
 				  <span style="color: #781808;">0 = Non [par défaut]</span><br>
 				  1 = Oui</td>
@@ -760,23 +775,23 @@ fall_frame=0 </pre>
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">list_type</span></strong><br><br>
 				(uniquement pour les animations ambient)</td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Variable utilisée en interne par le moteur.<br>
-				2 signifie "flying": non détecté par infravision, WK transformé en SC, de nombreuses immunités ou propriétés sont codées en dur (comme polymorph, pathfinding, etc.).</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Variable utilisée en interne par le moteur pour appliquer certains effets à la créature.<br>
+				2 signifie "flying" (comme les chauve-souris): non détecté par infravision, WK transformé en SC, de nombreuses immunités ou propriétés sont codées en dur (comme polymorph, pathfinding, etc.).</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Nombre [0,1,2]</td>
 			</tr>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">path_smooth</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Paramétrage de la Recherche d'itinéraire ("pathfinding").<br>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Détermine comment la Recherche d'itinéraire (" <em>pathfinding</em> ") est calculée.<br><br>
 				Notez que le réglage <span class="tp2">path_smooth=1</span> manque de documentation (nous supposons qu'il utilise probablement autant d'angles que de directions disponibles).</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Booléen :<br><br>
-				  <span style="color: #781808;">0 = utilise des angles de 45°</span><br>
+				  <span style="color: #781808;">0 = utilise seulement des angles de 45° (S, SW, W, NW, N,...)</span><br>
 				  1 = utilise des angles arbitraires</td>
 			</tr>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">quadrants</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Nombre de segments dans lesquels les fichiers bam ont été découpés.</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Nombre de segments dans lesquels les fichiers BAM ont été découpés.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Nombre</td>
 			</tr>
 
@@ -792,20 +807,20 @@ fall_frame=0 </pre>
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><a name="height_code" id="height_code"></a><strong><span style="color: #781808;">height_code</span></strong><br><br>
 				(uniquement pour les animations character et character_old)</td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Préfixe des fichiers bam d'animation d'armes utilisées pour équiper le personnage ("WQL", "WQM", "WQN", "WQS", "WPL", "WPM" ou "WPS").
-				Option de repli si les variables height_code_helmet ou height_code_shield ne sont pas définies.</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Préfixe des fichiers BAM d'animation d'armes utilisées pour équiper le personnage ("WQL", "WQM", "WQN", "WQS", "WPL", "WPM" ou "WPS").<br>
+				Option de repli si les variables <a href="#height_code_helmet"><span style="font-weight: normal;">height_code_helmet</span></a> ou <a href="#height_code_shield"><span style="font-weight: normal;">height_code_shield</span></a> ne sont pas définies.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Chaîne alphanumérique</td>
 			</tr>
 
 			<tr>
-				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">height_code_helmet</span></strong><br><br>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><a name="height_code_helmet" id="height_code_helmet"></a><strong><span style="color: #781808;">height_code_helmet</span></strong><br><br>
 				(uniquement pour les animations character et character_old)</td>
 				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Même principe que la variable précédente, mais pour les animations de casques.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Chaîne alphanumérique</td>
 			</tr>
 
 			<tr>
-				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">height_code_shield</span></strong><br><br>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><a name="height_code_shield" id="height_code_shield"></a><strong><span style="color: #781808;">height_code_shield</span></strong><br><br>
 				(uniquement pour les animations character)</td>
 				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Même principe que la variable précédente, mais pour les animations de boucliers.<br>
 				Note : il semble que la série WQH n'existe pas...</td>
@@ -814,7 +829,8 @@ fall_frame=0 </pre>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><a name="resref" id="resref"></a><strong><span style="color: #781808;">resref</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Préfixe des fichiers bam de l'animation de base (MDEM, MTRO...).</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Préfixe des fichiers BAM de l'animation de base (MDEM, MTRO...).<br>
+				Note pour les animations de type character : ce réglage peut être remplacé pour les animations disposant de sprites spécifiques à chaque classe (<a href="#resref_armor_base"><span style="font-weight: normal;">resref_armor_base</span></a> et <a href="#resref_armor_specific"><span style="font-weight: normal;">resref_armor_specific</span></a>).</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Chaîne alphanumérique</td>
 			</tr>
 
@@ -824,15 +840,15 @@ fall_frame=0 </pre>
 				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">
 				  <ul style="margin-left: -1%; margin-right: 40px">
 					<li style="margin-right: -10%">effect : le nom d'un fichier BAM d'ombres.</li>
-					<li style="margin-right: -10%">character_old : modifie le fichier d'ombre par défaut "CSHD" par un autre. L'animation Sarevok utilise la série " SSHD " (codé en dur).</li>
+					<li style="margin-right: -10%">character_old : modifie le fichier d'ombre par défaut "CSHD" par un autre. Les animations Drizzt et Sarevok utilisent des animations d'ombre codées en dur (respectivement " CSHD " et " SSHD ").</li>
 				  </ul></td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Chaîne alphanumérique</td>
 			</tr>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">split_bams</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Détermine si les fichiers bam sont scindés ou pas.<br>
-				Note : le réglage <span class="tp2">split_bams=0</span> implique que les animations sont regroupées dans des fichiers bam avec les suffixes G1-G2.</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Détermine si les fichiers BAM sont scindés ou pas.<br><br>
+				Note : le réglage <span class="tp2">split_bams=0</span> implique que les animations sont regroupées dans des fichiers BAM avec les suffixes G1-G2.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Booléen :<br><br>
 				  <span style="color: #781808;">0 = Non [par défaut]</span><br>
 				  1 = Oui (les animations sont réparties dans plusieurs fichiers)</td>
@@ -848,23 +864,22 @@ fall_frame=0 </pre>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">resref_weapon1</span></strong><br><br>
-				(uniquement pour les animations monster_layered)</td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Détermine quel suffixe des fichiers bam utiliser pour afficher les animations d'armes dans la main principale.</td>
+				(uniquement pour les animations monster_layered et monster_layered_spell)</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Détermine quel suffixe des fichiers BAM utiliser pour afficher les animations d'armes à une main.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Deux caractères (MS, S1, SS)</td>
 			</tr>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">resref_weapon2</span></strong><br><br>
-				(uniquement pour les animations monster_layered)</td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Détermine quel suffixe des fichiers bam utiliser pour afficher les animations d'armes dans la main secondaire.</td>
+				(uniquement pour les animationsmonster_layered et monster_layered_spell)</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Détermine quel suffixe des fichiers BAM utiliser pour afficher les animations d'armes à deux mains.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Deux caractères (BW, HB)</td>
 			</tr>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">dual_attack</span></strong><br><br>
-				(uniquement pour les animations monster_layered)</td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Effet à confirmer<br>
-				When set: SEQ_SHOOT transforms into SEQ_READY, A3 has a chance to use A1 instead (according to Bubb).</td>
+				(uniquement pour les animations monster_layered_spell)</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">La séquence d'animation SEQ_SHOOT se transforme en SEQ_READY, et A3 a une chance d'utiliser A1.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Booléen :<br><br>
 				  <span style="color: #781808;">0 = Non [par défaut]</span><br>
 				  1 = Oui</td>
@@ -873,7 +888,7 @@ fall_frame=0 </pre>
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">weapon_left_handk</span></strong><br><br>
 				(uniquement pour les animations monster_icewind animations)</td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Bien que relativement répandue, cette variable ne semple pas utilisée dans les jeux EE.</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Bien que relativement répandue, cette variable ne semple pas utilisée (ou implémentée ?) dans les jeux EE.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Boolean:<br><br>
 				  <span style="color: #781808;">0 = No [default]</span><br>
 				  1 = Yes</td>
@@ -881,24 +896,25 @@ fall_frame=0 </pre>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">resref_paperdoll</span></strong></td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Préfixe du ficher bam qui affiche le paperdoll de la créature dans l'écran d'inventaire (CHMC, CHMF...).<br>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Préfixe du ficher BAM qui affiche le paperdoll de la créature dans l'écran d'inventaire (CHMC, CHMF...).<br>
 				Nomenclature : [resref_paperdoll][armor_level]INV.BAM</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Chaîne alphanumérique</td>
 			</tr>
 
 			<tr>
-				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">resref_armor_base</span></strong><br><br>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><a name="resref_armor_base" id="resref_armor_base"></a><strong><span style="color: #781808;">resref_armor_base</span></strong><br><br>
 				(uniquement pour les animations character et character_old)</td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Il s'agit du 4ème caractère du <a href="#resref"><span style="font-weight: normal;">préfixe des fichiers bam de l'animation de base</span></a>.<br>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Il s'agit du 4ème caractère qui remplace le dernier caractère du <a href="#resref"><span style="font-weight: normal;">préfixe des fichiers BAM de l'animation de base</span></a> pour les animations de personnages communes.<br><br>
 				En général, il s'agit de "B" pour les clercs et les guerriers, "M" pour les moines, "T" pour les voleurs et "W" pour les mages.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Un seul caractère</td>
 			</tr>
 
 			<tr>
-				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">resref_armor_specific</span></strong><br><br>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><a name="resref_armor_specific" id="resref_armor_specific"></a><strong><span style="color: #781808;">resref_armor_specific</span></strong><br><br>
 				(uniquement pour les animations character et character_old)</td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Utilisé quand le niveau de l'armure équipée est égal au <a href="#armor_max_code"><span style="font-weight: normal;">niveau d'armure maximum</span></a> dont un personnage peut s'équiper.<br>
-				En règle général, c'est le même caractère utilisé par la variable resref_armor_base, saufs pour les clercs et les guerriers qui partagent la même valeur de variable <a href="#resref"><span style="font-weight: normal;">resref</span></a>.<br>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Il s'agit du 4ème caractère qui remplace le dernier caractère du <a href="#resref"><span style="font-weight: normal;">préfixe des fichiers BAM de l'animation de base</span></a> pour les animations de personnages disposant de classes spécifiques.<br>
+				Utilisé quand le niveau de l'armure équipée est égal au <a href="#armor_max_code"><span style="font-weight: normal;">niveau d'armure maximum</span></a> dont un personnage peut s'équiper.<br>
+				En règle général, c'est le même caractère utilisé par la variable <a href="#resref_armor_base"><span style="font-weight: normal;">resref_armor_base</span></a>, saufs pour les clercs et les guerriers qui partagent la même valeur de variable <a href="#resref"><span style="font-weight: normal;">resref</span></a>.<br>
 				Ils utilisent les mêmes fichiers d'animation lorsqu'ils sont équipés d'armures plus légères que l'armure de plate, et des animations différentes quand ils portent une plate.<br>
 				Ainsi, un prêtre et un guerrier humains utiliseront le même préfixe d'animation CHMB pour les trois premiers niveaux d'armure (sans armure, cuir et cotte de mailles), mais lorsqu'ils s'équiperont d'une plate, le clerc utilisera les fichiers CHMC et le guerrier les fichiers CHMF.<br>
 				En général, il s'agit de "C" pour les clercs, "F" pour les guerriers, "M" pour les moines, "T" pour les voleurs et "W" pour les mages.</td>
@@ -908,7 +924,7 @@ fall_frame=0 </pre>
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">hide_weapons</span></strong><br><br>
 				(uniquement pour les animations character_old)</td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Utilisé par les animations ne disposant pas de variable <a href="#height_code"><span style="font-weight: normal;">height_code</span></a> ; c'est-à-dire dont les animations d'armes sont déjà intégrées dans leurs fichiers bam basiques. [0x6400 UDRZ drizzt, 0x6401 UELM elminster et 0x6404 USAR sarevok]<br>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Utilisé par les animations ne disposant pas de variable <a href="#height_code"><span style="font-weight: normal;">height_code</span></a> ; c'est-à-dire dont les animations d'armes sont déjà intégrées dans leurs fichiers BAM basiques. [0x6400 UDRZ drizzt, 0x6401 UELM elminster et 0x6404 USAR sarevok]<br><br>
 				0 : affiche les animations d'armes séparées - 1 : n'affiche pas les animations d'armes</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Booléen :<br><br>
 				  <span style="color: #781808;">0 = Non [par défaut]</span><br>
@@ -916,18 +932,58 @@ fall_frame=0 </pre>
 			</tr>
 
 			<tr>
-				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">palette1</span></strong><br><br>
-				(uniquement pour les animations monster)</td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Il s'agit d'un fichier BMP contenant une palette de couleurs qui remplace celles des séries de fichiers BAM xxxG1 (unsplit) ou xxxG1x (split).<br>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><a name="palette1" id="palette1"></a><strong><span style="color: #781808;">palette1</span></strong><br><br>
+				(uniquement pour les animations monster et monster_multi)</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Il s'agit d'un fichier BMP contenant une palette de couleurs qui remplace celles des séries de fichiers BAM xxxxG1 (unsplit) ou xxxxG1x (split).<br>
 				Note : généralement identique à la variable <a href="#new_palette"><span style="font-weight: normal;">new_palette</span></a>.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Chaîne alphanumérique</td>
 			</tr>
 
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">palette2</span></strong><br><br>
-				(uniquement pour les animations monster)</td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Il s'agit d'un fichier BMP contenant une palette de couleurs qui remplace celles des séries de fichiers BAM xxxG2 (unsplit) ou xxxG2x (split).<br>
-				Note : son intitulé suit généralement la même structure que celle de <span style="font-weight: normal;">palette1</span>. Par exemple; si MPAL_CL1 est le fichier palette1, alors palette2 est MPAL_CL2.</td>
+				(uniquement pour les animations monster et monster_multi)</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Il s'agit d'un fichier BMP contenant une palette de couleurs qui remplace celles des séries de fichiers BAM xxxxG2 (unsplit) ou xxxxG2x (split).<br>
+				Note : son intitulé suit généralement la même structure que celle de <a href="#palette1"><span style="font-weight: normal;">palette1</span></a>. Par exemple; si MPAL_CL1 est le fichier palette1, alors palette2 est MPAL_CL2.</td>
+				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Chaîne alphanumérique</td>
+			</tr>
+
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">palette3</span></strong><br><br>
+				(uniquement pour les animations monster_multi animations)</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Il s'agit d'un fichier BMP contenant une palette de couleurs qui remplace celles des séries de fichiers BAM xxxxG3 (unsplit) ou xxxxG3x (split).<br><br>
+				Cependant, un bug dans son implémentation dans le moteur a rendu cette variable caduque. En conséquence, le moteur du jeu utilise comme palette la valeur de la variable <a href="#new_palette"><span style="font-weight: normal;">new_palette</span></a> (section [general]) + le nombre du groupe d'animation (par exemple, la valeur resref "MDR1_GR" du dragon vert implique que son animation utilisera les fichiers MDR1_GR1, MDR1_GR2, MDR1_GR3, MDR1_GR4 et MDR1_GR5).</td>
+				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Chaîne alphanumérique</td>
+			</tr>
+
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">palette4</span></strong><br><br>
+				(uniquement pour les animations monster_multi animations)</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Il s'agit d'un fichier BMP contenant une palette de couleurs qui remplace celles des séries de fichiers BAM xxxxG4 (unsplit) ou xxxxG4x (split).<br><br>
+				Cependant, un bug dans son implémentation dans le moteur a rendu cette variable caduque. En conséquence, le moteur du jeu utilise comme palette la valeur de la variable <a href="#new_palette"><span style="font-weight: normal;">new_palette</span></a> (section [general]) + le nombre du groupe d'animation (par exemple, la valeur resref "MDR1_GR" du dragon vert implique que son animation utilisera les fichiers MDR1_GR1, MDR1_GR2, MDR1_GR3, MDR1_GR4 et MDR1_GR5).</td>
+				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Chaîne alphanumérique</td>
+			</tr>
+
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">palette5</span></strong><br><br>
+				(uniquement pour les animations monster_multi animations)</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Il s'agit d'un fichier BMP contenant une palette de couleurs qui remplace celles des séries de fichiers BAM xxxxG5 (unsplit) ou xxxxG5x (split).<br><br>
+				Cependant, un bug dans son implémentation dans le moteur a rendu cette variable caduque. En conséquence, le moteur du jeu utilise comme palette la valeur de la variable <a href="#new_palette"><span style="font-weight: normal;">new_palette</span></a> (section [general]) + le nombre du groupe d'animation (par exemple, la valeur resref "MDR1_GR" du dragon vert implique que son animation utilisera les fichiers MDR1_GR1, MDR1_GR2, MDR1_GR3, MDR1_GR4 et MDR1_GR5).</td>
+				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Chaîne alphanumérique</td>
+			</tr>
+
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">palletized</span></strong><br><br>
+				(uniquement pour les animations effect)</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Semble de pas avoir été implémenté.</td>
+				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Booléen :<br><br>
+				  <span style="color: #781808;">0 = Non [par défaut]</span><br>
+				  1 = Oui</td>
+			</tr>
+
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">alt_palette</span></strong><br><br>
+				(uniquement pour les animations effect)</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Semble spécifier une palette de substitution pour l'animation d'effet.</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Chaîne alphanumérique</td>
 			</tr>
 
@@ -943,7 +999,7 @@ fall_frame=0 </pre>
 			<tr>
 				<td style="border: 1px solid #781808; text-align: center; padding-top:20px; padding-bottom:20px;"><strong><span style="color: #781808;">delta_z</span></strong><br><br>
 				(uniquement pour les animations effect)</td>
-				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Détermine à quelle vitesse certains effets codés en dur se déplace sur l'axe z (virtuel).</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:20px; padding-bottom:20px;">Détermine à quelle vitesse certains effets codés en dur se déplacent sur l'axe z (virtuel).</td>
 				<td style="border: 1px solid #781808; padding-left:20px; padding-top:20px; padding-bottom:20px;">Integer</td>
 			</tr>
 		</table><br><br>
