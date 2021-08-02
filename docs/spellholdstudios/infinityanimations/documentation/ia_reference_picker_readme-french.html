@@ -573,35 +573,410 @@
 						<li><em class="rule">mirrored</em><em> : ne nécessitent pas de directions « Est » qui sont générées automatiquement par le jeu.</em><br></li>
 						<li><em class="rule">unmirrored</em><em> : nécessitent des directions « Est » qui ne sont pas générées automatiquement par le jeu.</em><br></li>
 						<li><em class="rule"><acronym title = "NdT : « découpées »">split</acronym></em><em> : chaque action disponible est répartie dans un fichier BAM distinct.</em><br></li>
-						<li><em class="rule">unsplit</em><em> : chaque fichier bam regroupe l'ensemble des actions disponibles.]</em><br></li>
+						<li><em class="rule">unsplit</em><em> : chaque fichier bam regroupe l'ensemble des actions disponibles.</em><br></li>
 					</ul>
 				</p>
 				</div>
 			</div>
 		</div><br>
 
-		<span class="t3">Types de formats d'animations Baldur's Gate I</span><br />
+
+		<span class="t3">Quelques notions générales</span><br>
 
 		<hr class="floatfix" /><br>
 
 		<p>
-			<strong>&#8258 <span style="color:#781808;">BGI MONSTER LONG 4 PART (classic) - monster_quadrant (EE)</strong></span>
+			<strong>1. Actions générées par les fichiers d'animation.</strong>
+		</p>
+		<p style="margin-top:1%;">
+			En théorie, chaque créature devrait pouvoir accomplir les actions suivantes :
 		</p>
 		<p>
-			16 Directions unmirrored (10 + 6E)<br>
-			G11 G11E G12 G12E G13 G13E G14 G14E // 16 séquences.<br>
-			G21 G21E G22 G22E G23 G23E G24 G24E // 80 séquences.<br>
-			G31 G31E G32 G32E G33 G33E G34 G34E // 48 séquences.<br>
-			<br>
-			Ce format est identique à celui des animations BGI MONSTER LONG, mais chaque fichier G1, G2 et G3 est découpé en quatre parties <em>[NdT : chaque partie correspondant à un quart de l'image]</em>.<br><br>
+			J'ai bien dit « en théorie », puisqu'en pratique très peu de créatures disposent de toutes ces actions, soit parce qu'elles ne lancent pas de sorts, soit parce qu'elles ne disposent que d'une, voire deux attaques différentes, soit parce que certaines actions servent deux fois (comme Mourir et S'endormir), soit parce qu'elles sont générées automatiquement par le moteur (comme Se relever qui est souvent l'inverse de S'endormir)...
+		</p><br>
+
+		<table style="margin-left: 80px; width: 90%; padding: 10px;" summary="animation actions list">
+			<tr style="font-size: 125%; line-height: 300%;">
+				<th style="border: 1px solid #781808; text-align: center; background-color: #781808; color: #e5e5e5;">Suffixe de l'animation</th>
+				<th style="border: 1px solid #781808; text-align: center; background-color: #781808; color: #e5e5e5;">Description</th>
+				<th style="border: 1px solid #781808; text-align: center; background-color: #781808; color: #e5e5e5;">Code du moteur</th>
+			</tr>
+
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">A1</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">Attaquer (taille).</td>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;">SEQ_SLASH</td>
+			</tr>
+
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">A2</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">Attaquer (tranchant).</td>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;">SEQ_BACKSLASH</td>
+			</tr>
+
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">A3</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">Attaquer (coup direct ou estoc).</td>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;">SEQ_JAB / SEQ_SHOOT</td>
+			</tr>
+
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">A4 (ou S1)</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">Lancer de projectile.</td>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;">SEQ_SHOOT</td>
+			</tr>
+
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">CA</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">Lancer un sort (à la fin de l'invocation).</td>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;">SEQ_CAST</td>
+			</tr>
+
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">DE</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">Mourir (la créature tombe).</td>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;">SEQ_DIE</td>
+			</tr>
+
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">GH</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">Blessure (la créature est touchée par une arme ou un sort).</td>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;">SEQ_DAMAGE</td>
+			</tr>
+
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">GU</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">Se relever.</td>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;">SEQ_AWAKE</td>
+			</tr>
+
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">SC</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">Rester sur ses gardes, en alerte.</td>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;">SEQ_READY / SEQ_HEAD_TURN</td>
+			</tr>
+
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">SD</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">Rester debout, passif.</td>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;">SEQ_HEAD_TURN</td>
+			</tr>
+
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">SL</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">S'endormir / Tomber inconscient.</td>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;">SEQ_SLEEP</td>
+			</tr>
+
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">SP</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">Invoquer un sort.</td>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;">SEQ_CONJURE</td>
+			</tr>
+
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">TW</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">Mort (la créature est étendue morte sur le sol).</td>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;">SEQ_TWITCH</td>
+			</tr>
+
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">WK</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">Marcher.</td>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;">SEQ_WALK</td>
+			</tr>
+
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">EMERGE</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">Disponible seulement pour les animations de créatures qui s'enterrent dans le sol, comme les ankhegs.</td>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;">SEQ_EMERGE</td>
+			</tr>
+
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">HIDE</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">Disponible seulement pour les animations de créatures qui s'enterrent dans le sol, comme les ankhegs.</td>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;">SEQ_HIDE</td>
+			</tr>
+		</table><br><br>
+
+		<hr style="width: 90%; height: 1px; border: 0;" /><br>
+
+		<p>
+			<strong>2. Angles de prises de vue ou « Directions ».</strong>
+		</p>
+
+		<p style="margin-top:1%;">
+			En jouant, vous avez remarqué que les créatures se déplacent dans toutes les directions : à chaque direction correspond une séquence d'un fichier d'animation.
+		</p>
+		<p>
+			En théorie, ces directions sont au nombre de 16 : Sud (0), Sud-Sud-Ouest (1), Sud-Ouest (2), Ouest-Sud-Ouest (3), Ouest (4), Ouest-Nord-Ouest (5), Nord-Ouest (6), Nord-Nord-Ouest (7), Nord (8), Nord-Nord-Est (9), Nord-Est (10), Est-Nord-Est (11), Est (12), Est-Sud-Est (13), Sud-Est (14) et Sud-Sud-Est (15).
+		</p>
+		<p style="margin-top:1%;">
+			En pratique, cela varie selon les formats. Mais en gros, on peut définir deux catégories d'animations, elles-mêmes réparties en deux sous-catégories :
+			<ul style="margin-top: 4px;margin-left: 4%;width: 88%;">
+				<li><em class="rule">unsplit</em>Les animations à 16 directions</em>.</li>
+				<li style="margin-top: 2px"><em class="rule">unsplit</em>Les animations à 8 directions</em> : Sud (0), Sud-Ouest (1), Ouest (2), Nord-Ouest (3), Nord (4), Nord-Est (5), Est (6) et Sud-Est (7).</li>
+			</ul>	
+		</p>
+
+		<p style="margin-top:2%;">
+			À ce schéma relativement simple se superpose un autre, dû au mode de fonctionnement du moteur Infinity Engine : ce dernier gère à sa façon les « symétries ». C'est-à-dire que dans certains cas, il génère automatiquement des « miroirs » des directions Ouest. Ce qui implique qu'on n'a alors pas besoin des directions Nord-Nord-Est, Nord-Est, Est-Nord-Est, Est, Est-Sud-Est, Sud-Est et Sud-Sud-Est, qui sont créées par le moteur.
+		</p>
+		<p style="margin-top:1%;">
+			D'où la sous-catégorie suivante :
+			<ul style="margin-top: 4px;margin-left: 4%;width: 88%;">
+				<li>Les animations « <em class="rule">mirrored</em> » qui ne nécessitent pas de directions « Est », générées automatiquement par le jeu.</li>
+				<li>Les animations « <em class="rule">unmirrored</em> » pour lesquelles les directions Est sont obligatoires et sont gérées par un fichier BAM qui porte le même nom que celui des directions Ouest auquel on rajoute la lettre « E » à la fin (ex : MSH1A1.BAM et MSH1A1E.BAM).</li>
+			</ul>	
+		</p>
+
+		<p style="margin-top:2%;">
+			Et on retrouve cette double subdivision dans les différents formats : Certaines animations nécessitent 16 directions, d'autres seulement 9, d'autres 8.
+		</p><br>
+
+		<hr style="width: 90%; height: 1px; border: 0;" /><br>
+
+		<p>
+			<strong>3. Organisation des fichiers d'animation.</strong>
+		</p>
+
+		<p style="margin-top:1%;">
+			Vous avez sans doute pu constater combien les structures des fichiers .bam différaient selon les formats d'animation. Ici encore, pourquoi faire simple quand on peut faire compliqué ? Les développeurs ne s'en sont pas privé ! &#128521;
+		</p>
+
+		<p style="margin-top:1%;">
+			Cependant, il est possible de les classer en deux catégories distinctes :
+			<ul style="margin-top: 4px;margin-left: 4%;width: 88%;">
+				<li>Les animations « <em class="rule">unsplit</em> » : classées par nature (mouvements, attaques), les actions disponibles sont regroupées dans des fichiers .BAM  avec les suffixes G1 et G2 (quelquefois G3).</li>
+				<li style="margin-top: 2px">Les animations « <em class="rule"><acronym title = "NdT : « découpées »">split</acronym></em> » : chaque action disponible est répartie dans un fichier .BAM distinct.</li>
+			</ul>	
+		</p>
+
+		<p style="margin-top:1%;">
+			Ce découpage explique la variété du nombre de séquences des fichiers .BAM selon les formats : de 5 à 80 !
+		</p>
+
+		<p style="margin-top:2%;">
+			De plus, dans certains cas, la taille des images de certaines créatures (Dragons, Démogorgon, Wyverne majeure...) dépassant 255 x 255 pixels, leurs fichiers .BAM sont découpés en 4 parties (voire 9 pour les créatures immenses comme les dragons).
+		</p><br>
+
+
+		<hr style="width: 90%" /><br><br>
+
+
+		<span class="t3">Emplacements d'animations disponibles</span><br>
+
+		<hr class="floatfix" /><br>
+
+		<p>
+			Le tableau qui suit recense les plages de slots disponibles pour chaque format d'animation. Comme seuls les jeux EE permettent d'ajouter de nouvelles animations correspondant à des formats particuliers (comme les effets, les animation statiques...), Infinity Animations ne les prend pas en charge. Cependant, vous trouverez, chaque fois que possible, un lien vous renvoyant vers une définition détaillée de ce type d'animation (cliquez sur le bouton <span style="color: #781808;">&#9755;</span>).
+		</p><br>
+
+		<table style="margin-left: 80px; width: 90%; padding: 10px;" summary="animation slots range">
+			<tr style="font-size: 125%; line-height: 300%;">
+				<th style="border: 1px solid #781808; text-align: center; background-color: #781808; color: #e5e5e5;">Format (BG2)</th>
+				<th style="border: 1px solid #781808; text-align: center; background-color: #781808; color: #e5e5e5;">Format (jeux EE)</th>
+				<th style="border: 1px solid #781808; text-align: center; background-color: #781808; color: #e5e5e5;">Description</th>
+				<th style="border: 1px solid #781808; text-align: center; background-color: #781808; color: #e5e5e5;">Slots disponibles (IA)</th>
+				<th style="border: 1px solid #781808; text-align: center; background-color: #781808; color: #e5e5e5;">Jeux EE</th>
+			</tr>
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;">Pas supporté par IA</td>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">effect (type 0000)</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">Utilisé par des effets visuels du jeu, comme les effets de sorts ou pour afficher des parties du corps des créatures qui explosent.<br>
+				<strong><span style="color: #781808;">&#9755;</span></strong> <a href="https://gibberlings3.github.io/iesdp/file_formats/ie_formats/ini_anim.htm#formINI_type_0000"><span style="font-weight: normal;">Description détaillée (jeux EE)</span></a>.</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;"></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">0x0000&nbsp;-&nbsp;0x0fff</td>
+			</tr>
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><a href="#bg1_monster_long_4">&#9755;</a> <strong><span style="color: #781808;">BGI monster long 4 part</span></strong></td>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">
+				monster_quadrant (type 1000)</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">Utilise une méthode relativement simple de découpage d'animations pour afficher les créatures de grande taille.</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">0x1000&nbsp;-&nbsp;0x11ff</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">0x1000&nbsp;-&nbsp;0x11ff</td>
+			</tr>
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><a href="#bg2_dragons">&#9755;</a> <strong><span style="color: #781808;">dragons (XDR)</span></strong></td>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">monster_multi (type 1000)</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">Utilise une méthode complexe de découpage d'animations pour afficher les créatures colossales comme les dragons.</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">0x1200&nbsp;-&nbsp;0x1234</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">0x1200&nbsp;-&nbsp;0x12ff<br>
+				0x1400&nbsp;-&nbsp;0x1fff</td>
+			</tr>
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><a href="#bg2_split_4">&#9755;</a> <strong><span style="color: #781808;">BGII split 4 part</span></strong></td>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">multi_new (type 1000)</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">Utilise une méthode relativement simple de découpage d'animations pour afficher les créatures de grande taille, comme Démogorgon.</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">0x1300&nbsp;-&nbsp;0x13ed&nbsp;(large)<br>
+				0x13ee&nbsp;-&nbsp;0x13ff&nbsp;(huge)</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">0x1300&nbsp;-&nbsp;0x13ff</td>
+			</tr>
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><a href="#bg1_caster_bow">&#9755;</a>&nbsp;<strong><span style="color: #781808;">BGI&nbsp;simple&nbsp;caster&nbsp;bow<br>
+				<a href="#bg1_caster_s1">&#9755;</a> BGI&nbsp;simple&nbsp;caster&nbsp;S1</span></strong></td>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">monster_layered_spell (type&nbsp;2000)</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">Utilisé par un petit nombre d'animations de BG1 pouvant lancer des sorts.</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">0x2000&nbsp;-&nbsp;0x21ff&nbsp;(bow)<br>
+				0x2200&nbsp;-&nbsp;0x22ff&nbsp;(S1)</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">02000&nbsp;-&nbsp;02fff</td>
+			</tr>
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><a href="#bg1_ankheg">&#9755;</a>&nbsp;<strong><span style="color: #781808;">BGI ankheg</span></strong></td>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">monster_ankheg (type 3000)</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">Utilisé seulement pour les animations de créatures qui s'enterrent dans le sol, comme les ankhegs.</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">0x3000&nbsp;-&nbsp;0x31ff</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">0x3000&nbsp;-&nbsp;0x3fff</td>
+			</tr>
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;">Pas supporté par IA</td>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">town_static (type 4000)</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">Utilisé par les créatures immobiles, comme les personnages assis ou endormis.<br>
+				<strong><span style="color: #781808;">&#9755;</span></strong> <a href="https://gibberlings3.github.io/iesdp/file_formats/ie_formats/ini_anim.htm#formINI_type_4000"><span style="font-weight: normal;">Description détaillée (jeux EE)</span></a>.</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;"></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">0x4000&nbsp;-&nbsp;0x4fff</td>
+			</tr>
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><a href="#bg1_character">&#9755;</a>&nbsp;<strong><span style="color: #781808;">BGI Character</span></strong></td>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">character_old (type&nbsp;5000&nbsp;-&nbsp;6000)</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">Utilisé à l'origine par BG1, ce format contient un nombre limité de fonctionnalités pour afficher différents types d'armure et d'équipements.
+				<br><strong><span style="color: #781808;">&#9755;</span></strong> <a href="https://gibberlings3.github.io/iesdp/file_formats/ie_formats/ini_anim.htm#formINI_type_5000_2"><span style="font-weight: normal;">Description détaillée (jeux EE)</span></a>.</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">0x6b00&nbsp;-&nbsp;0x6fff</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">0x5400&nbsp;-&nbsp;0x54ff<br>
+				0x5600&nbsp;-&nbsp;0x5fff<br>
+				0x6400&nbsp;-&nbsp;0x64ff<br>
+				0x6600&nbsp;-&nbsp;0x6fff</td>
+			</tr>
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><a href="#bg2_character">&#9755;</a>&nbsp;<strong><span style="color: #781808;">BG2 character</span></strong></td>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">character (type 5000 - 6000)</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">Introduit par BG2, ce format propose beaucoup plus de fonctionnalités pour afficher différents types d'armure et d'équipements.<br>
+				<strong><span style="color: #781808;">&#9755;</span></strong> <a href="https://gibberlings3.github.io/iesdp/file_formats/ie_formats/ini_anim.htm#formINI_type_5000_1"><span style="font-weight: normal;">Description détaillée (jeux EE)</span></a>.</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">0x6600&nbsp;-&nbsp;0x6aff</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">0x5000&nbsp;-&nbsp;0x53ff<br>
+				0x5500&nbsp;-&nbsp;0x55ff<br>
+				0x6000&nbsp;-&nbsp;0x63ff<br>
+				0x6500&nbsp;-&nbsp;0x65ff</td>
+			</tr>
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><a href="#bg1_simple_monster">&#9755;</a>&nbsp;<strong><span style="color: #781808;">BGI simple monster</span></strong></td>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">monster_old (type 7000)</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">Utilisé à l'origine dans BG1 pour divers monstres comme les chiens, les ours ou les basilics.</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">0x547a&nbsp;-&nbsp;0x557a&nbsp;(normal,&nbsp;unpaletted)<br>
+				0x557b&nbsp;-&nbsp;0x56b6&nbsp;(large,&nbsp;unpaletted)<br>
+				0x56b7&nbsp;-&nbsp;0x57b7&nbsp;(normal,&nbsp;paletted)<br>
+				0x57b8&nbsp;-&nbsp;0x58f3&nbsp;(large,&nbsp;paletted)</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">&#9755;</span></strong> <a href="dev\CGameAnimationTypeMonsterOld.txt"><span style="font-weight: normal;">special</span></a></td>
+			</tr>
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><a href="#bg2_split">&#9755;</a>&nbsp;<strong><span style="color: #781808;">BG2 split</span></strong></td>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">monster (type 7000)</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">Introduit par BG2 et utilisé par plusieurs monstres, ce format attribue à chaque séquence d'actions un fichier BAM distinct.</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">0x5f7a&nbsp;-&nbsp;0x5f9a&nbsp;(normal,&nbsp;paletted)<br>
+				0x5f7b&nbsp;-&nbsp;0x5fbb&nbsp;(large,&nbsp;paletted)<br>
+				0x5fbc&nbsp;-&nbsp;0x5fdc&nbsp;(normal,&nbsp;unpaletted)<br>
+				0x5fdd&nbsp;-&nbsp;0x5fff&nbsp;(large,&nbsp;unpaletted)</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">&#9755;</span></strong> <a href="dev\CGameAnimationTypeMonster.txt"><span style="font-weight: normal;">special</span></a></td>
+			</tr>
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><a href="#bg2_unsplit">&#9755;</a>&nbsp;<strong><span style="color: #781808;">BG2 unsplit ext.</span></strong></td>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">monster (type 7000)</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">Introduit par BG2 et utilisé par plusieurs monstres, ce format est une variante étendue du format précédent, mais toutes ses séquences sont regroupées dans un seul fichier BAM, plutôt que réparties dans plusieurs.</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">0x5b00&nbsp;-&nbsp;0x5bff&nbsp;(normal,&nbsp;unpaletted)<br>
+				0x5c00&nbsp;-&nbsp;0x5d3b&nbsp;(large,&nbsp;unpaletted)<br>
+				0x5d3d&nbsp;-&nbsp;0x5e3c&nbsp;(normal,&nbsp;paletted)<br>
+				0x5e3d&nbsp;-&nbsp;0x5f78&nbsp;(large,&nbsp;paletted)</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">&#9755;</span></strong> <a href="dev\CGameAnimationTypeMonster.txt"><span style="font-weight: normal;">special</span></a></td>
+			</tr>
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">special</span></strong></td>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">monster_layered (type 8000)</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">Ce format est identique au format monster_layered_spell (type 2000) et est utilisé par très peu d'animations de BG1. Il permet d'afficher différents types d'armes et dispose de moins de directions (8). <strong><span style="color: #781808;">&#9755;</span></strong> <a href="https://gibberlings3.github.io/iesdp/file_formats/ie_formats/ini_anim.htm#formINI_type_8000"><span style="font-weight: normal;">Description détaillée (jeux EE)</span></a>.<br>
+				Dans le jeu original, IA le classe dans la catégorie BGI SIMPLE MONSTER.</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;"></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">0x8000&nbsp;-&nbsp;0x8fff</td>
+			</tr>
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;">Pas supporté par IA</td>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">monster_large (type 9000)</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">Utilisé dans BG1, ce format très simple dispose de peu de directions (8).<br>
+				<strong><span style="color: #781808;">&#9755;</span></strong> <a href="https://gibberlings3.github.io/iesdp/file_formats/ie_formats/ini_anim.htm#formINI_type_9000"><span style="font-weight: normal;">Description détaillée (jeux EE)</span></a>.</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;"></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">0x9000&nbsp;-&nbsp;0x9fff</td>
+			</tr>
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">BGI monster long</span></strong></td>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">monster_large16 (type A000)</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">Permettant d'afficher les animations de grandes créatures dans BG1, ce format ressemble beaucoup au format monster_large (type 9000), mais permet d'utiliser plus de directions (16) ; ce qui fluidifie les mouvements des créatures.</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">0xa000&nbsp;-&nbsp;0xa0ff&nbsp;(normal)<br>
+				0xa101&nbsp;-&nbsp;0xa1ff&nbsp;(large)</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">0xa000&nbsp;-&nbsp;0xafff</td>
+			</tr>
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;">Pas supporté par IA</td>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">ambient_static (type B000)</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">Utilisé par les créatures immobiles, employées comme "éléments de décor" (mendiants, nobles, chevaux, vaches..). <strong><span style="color: #781808;">&#9755;</span></strong> <a href="https://gibberlings3.github.io/iesdp/file_formats/ie_formats/ini_anim.htm#formINI_type_B000"><span style="font-weight: normal;">Description détailléev</span></a>.</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;"></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">0xb000&nbsp;-&nbsp;0xbfff</td>
+			</tr>
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;">Pas supporté par IA</td>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">ambient (type C000)</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">Très semblable au format précédent (B000), mais peut aussi contenir des animations de marche. <strong><span style="color: #781808;">&#9755;</span></strong> <a href="https://gibberlings3.github.io/iesdp/file_formats/ie_formats/ini_anim.htm#formINI_type_C000"><span style="font-weight: normal;">Description détaillée (jeux EE)</span></a>.</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;"></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">0xc000&nbsp;-&nbsp;0xcfff</td>
+			</tr>
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;">Pas supporté par IA</td>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">flying (type D000)</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">Exclusivement utilisé par les créatures volantes dont le déplacement est spécifiquement traité par le moteur du jeu. <strong><span style="color: #781808;">&#9755;</span></strong> <a href="https://gibberlings3.github.io/iesdp/file_formats/ie_formats/ini_anim.htm#formINI_type_D000"><span style="font-weight: normal;">Description détaillée (jeux EE)</span></a>.</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;"></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">0xd000&nbsp;-&nbsp;0xdfff</td>
+			</tr>
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><a href="#iwd">&#9755;</a>&nbsp;<strong><span style="color: #781808;">IWD</span></strong></td>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">monster_icewind (type E000)</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">Utilisé à l'origine par les animations introduites par Icewind Dale et IWD2.</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">0x5500&nbsp;-&nbsp;0x523b&nbsp;(large)
+				0x523d&nbsp;-&nbsp;0x5478&nbsp;(small)</td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">0xe000&nbsp;-&nbsp;0xefff</td>
+			</tr>
+			<tr>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;">Pas supporté par IA</td>
+				<td style="border: 1px solid #781808; text-align: center; padding-top:10px; padding-bottom:10px;"><strong><span style="color: #781808;">monster_planescape (type F000)</span></strong></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">Utilisé uniquement dans les jeux Planescape Torment et PSTEE. <strong><span style="color: #781808;">&#9755;</span></strong> <a href="https://gibberlings3.github.io/iesdp/file_formats/ie_formats/ini_anim.htm#formINI_type_F000"><span style="font-weight: normal;">Description détaillée</span></a>.</td>
+				<td style="border: 1px solid #781808;padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;"></td>
+				<td style="border: 1px solid #781808; padding-left:5px; padding-right:5px; padding-top:10px; padding-bottom:10px;">0xf000&nbsp;-&nbsp;0xffff</td>
+			</tr>
+		</table><br><br>
+
+
+		<span class="t3">Types de formats d'animations Baldur's Gate I</span><br>
+
+		<hr class="floatfix" /><a name="bg1_monster_long_4" id="bg1_monster_long_4"></a><br>
+
+		<p>
+			<span style="color:#781808;">&#10173; <strong>BGI MONSTER LONG 4 PART (classic) - monster_quadrant (EE : type 1000)</strong></span>
+		</p>
+ 		<p style="margin-top:1%;">
+			Utilisé pour afficher des créatures de grande taille, ce format est identique à celui des animations BGI MONSTER LONG ; mais chaque fichier G1, G2 et G3 est découpé en quatre parties, et nommé selon le schéma suivant:<br><br>
+			<span style="margin-left:1%; color:#781808;">[resref]G[1-3][quadrant].BAM</span>, avec quadrant correspondant aux parties de l'image (1 = haut à gauche - 2 = haut à droite - 3 = bas à gauche - 4 = bas à droite).
+			<ul>
+				<li style="margin-left:1%"><span style="color:green;">16 Directions <acronym title = "NdT : nécessitent des directions « Est » qui ne sont pas générées automatiquement par le jeu">unmirrored</acronym> (10 + 6E) : S (0), S-S-O (1), S-O (2), O-S-O (3), O (4), O-N-O (5), N-O (6), N-N-O (7), N (8), N-N-E (9) / N-E (10), E-N-E (11), E (12), E-S-E (13), S-E (14), S-S-E (15).</span></li>
+				<li style="margin-left:1%">G11 G11E G12 G12E G13 G13E G14 G14E // 16 séquences.</li>
+				<li style="margin-left:1%">G21 G21E G22 G22E G23 G23E G24 G24E // 80 séquences.</li>
+				<li style="margin-left:1%">G31 G31E G32 G32E G33 G33E G34 G34E // 48 séquences.</li>
+			</ul>
+		</p>
+		<p>
 			Exemples : wiverne majeure (MWYV), tanar'ri de BGI (MTAN).
 		</p>
 
 		<div style="margin: 10px auto;width: 80%; border-style: solid; border-width: 1px; border-color: #781808; margin-top: 32px; padding: 6px;">
 			<div class="quotetitle">
 				&nbsp;&nbsp;<strong><span style="color: #781808;">&#9755;</span></strong>&nbsp;&nbsp;<span style="text-decoration: underline">description des séquences</span>&nbsp;&nbsp;
-				<input value="Show" style="color: #e3e3db; margin: 0px; padding: 0px; width: 60px; background:#781808;"
-				onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Hide'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Show'; }" type="button" >
+				<input value="Afficher" style="color: #e3e3db; margin: 0px; padding: 0px; width: 60px; background:#781808;"
+				onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Cacher'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Afficher'; }" type="button" >
 			</div>
 			<div class="quotecontent">
 				<div style="display: none;">
@@ -610,25 +985,33 @@
 			</div>
 		</div><br>
 
-		<hr style="width: 90%; height: 1px; border: 0;" /><br>
+		<hr style="width: 90%; height: 1px; border: 0;" /><a name="bg1_monster_long" id="bg1_monster_long"></a><br>
 
 		<p>
-			<strong>&#8258 <span style="color:#781808;">BGI MONSTER LONG (classic) - monster_large16 (EE)</strong></span>
+			<span style="color:#781808;">&#10173; <strong>BGI MONSTER LONG (classic) - monster_large16 (EE : type A000)</strong></span>
+		</p>
+		<p style="margin-top:1%;">
+			Ce format permet d'afficher les animations de grandes créatures dans BG1.
+			<ul>
+				<li style="margin-left:1%"><span style="color:green;">16 Directions <acronym title = "NdT : nécessitent des directions « Est » qui ne sont pas générées automatiquement par le jeu">unmirrored</acronym> (10 + 6E) : S (0), S-S-O (1), S-O (2), O-S-O (3), O (4), O-N-O (5), N-O (6), N-N-O (7), N (8), N-N-E (9) / N-E (10), E-N-E (11), E (12), E-S-E (13), S-E (14), S-S-E (15).</span></li>
+				<li style="margin-left:1%">G1 G1E // 16 séquences.</li>
+				<li style="margin-left:1%">G2 G2E // 80 séquences.</li>
+				<li style="margin-left:1%">G3 G3E // 48 séquences.</li>
+			</ul>
 		</p>
 		<p>
-			16 Directions unmirrored (10 + 6E)<br>
-			G1 G1E // 16 séquences.<br>
-			G2 G2E // 80 séquences.<br>
-			G3 G3E // 48 séquences.<br>
-			<br>
 			Exemples : ver charognard (MCAR), wyverne (MWYV).
+		</p>
+
+		<p style="margin-top:1%;">
+			&#x26A0;&#xFE0F; <strong>Note pour les jeux EE :</strong> ce format est similaire au format monster_large (type 9000), mais permet d'utiliser plus de directions, ce qui fluidifie les mouvements des créatures.
 		</p>
 
 		<div style="margin: 10px auto;width: 80%; border-style: solid; border-width: 1px; border-color: #781808; margin-top: 32px; padding: 6px;">
 			<div class="quotetitle">
 				&nbsp;&nbsp;<strong><span style="color: #781808;">&#9755;</span></strong>&nbsp;&nbsp;<span style="text-decoration: underline">description des séquences</span>&nbsp;&nbsp;
-				<input value="Show" style="color: #e3e3db; margin: 0px; padding: 0px; width: 60px; background:#781808;"
-				onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Hide'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Show'; }" type="button" >
+				<input value="Afficher" style="color: #e3e3db; margin: 0px; padding: 0px; width: 60px; background:#781808;"
+				onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Cacher'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Afficher'; }" type="button" >
 			</div>
 			<div class="quotecontent">
 				<div style="display: none;">
@@ -637,26 +1020,35 @@
 			</div>
 		</div><br>
 
-		<hr style="width: 90%; height: 1px; border: 0;" /><br>
+		<hr style="width: 90%; height: 1px; border: 0;" /><a name="bg1_caster_bow" id="bg1_caster_bow"></a><br>
 
 		<p>
-			<strong>&#8258 <span style="color:#781808;">BGI SIMPLE CASTER BOW (classique) - monster_layered (EE)</strong></span>
+			<span style="color:#781808;">&#10173; <strong>BGI SIMPLE CASTER BOW (classique) - monster_layered_spell (EE : type 2000)</strong></span>
+		</p>
+		<p style="margin-top:1%;">
+			Ce format est utilisé par un petit nombre d'animations de BG1 pouvant lancer des sorts.
+			<ul>
+				<li style="margin-left:1%"><span style="color:green;">8 Directions <acronym title = "NdT : nécessitent des directions « Est » qui ne sont pas générées automatiquement par le jeu">unmirrored</acronym> (5 + 3E) : S (0), S-O (1), O (2), N-O (3), N (4) / N-E (5), E (6), S-E (7).</span></li>
+				<li style="margin-left:1%">G1 G1E // 48 séquences.</li>
+				<li style="margin-left:1%">G2 G2E // 24 séquences.</li>
+			</ul>
 		</p>
 		<p>
-			8 Directions unmirrored (5 + 3E)<br>
-			G1 G1E // 48 séquences.<br>
-			G2 G2E // 24 séquences.<br>
- 			<br>
-			Prend en charge éventuellement les animations d'arc (BG1, BG1E, BG2, BG2E). Dispose d'animations de lancement de sorts.<br>
-			<br>
+			Prend en charge éventuellement les animations d'arc (xxxBG1, xxxBG1E, xxxBG2, xxxBG2E). Dispose d'animations de lancement de sorts.<br>
+		</p>
+		<p>
 			Exemple : sirène (MSIR).
+		  </p>
+
+		<p style="margin-top:1%;">
+			&#x26A0;&#xFE0F; <strong>Note pour les jeux EE :</strong> Ce format d'animation est mal défini dans les fichiers ini des animations originales (comme [monster_layered]). Cependant, ce mauvais paramétrage est ignoré, car il est remplacé par les définitions codées en dur dans le moteur du jeu. N'oubliez pas aussi que les séquences A1 et A2 sont réservées aux armes à une main, et la séquence A3 aux armes à deux mains.
 		</p>
 
 		<div style="margin: 10px auto;width: 80%; border-style: solid; border-width: 1px; border-color: #781808; margin-top: 32px; padding: 6px;">
 			<div class="quotetitle">
 				&nbsp;&nbsp;<strong><span style="color: #781808;">&#9755;</span></strong>&nbsp;&nbsp;<span style="text-decoration: underline">description des séquences</span>&nbsp;&nbsp;
-				<input value="Show" style="color: #e3e3db; margin: 0px; padding: 0px; width: 60px; background:#781808;"
-				onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Hide'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Show'; }" type="button" >
+				<input value="Afficher" style="color: #e3e3db; margin: 0px; padding: 0px; width: 60px; background:#781808;"
+				onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Cacher'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Afficher'; }" type="button" >
 			</div>
 			<div class="quotecontent">
 				<div style="display: none;">
@@ -665,61 +1057,119 @@
 			</div>
 		</div><br>
 
-		<hr style="width: 90%; height: 1px; border: 0;" /><br>
+		<hr style="width: 90%; height: 1px; border: 0;" /><a name="bg1_caster_s1" id="bg1_caster_s1"></a><br>
 
 		<p>
-			<strong>&#8258 <span style="color:#781808;">BGI SIMPLE CASTER S1 (classique) - monster_layered (EE)</strong></span>
+			<span style="color:#781808;">&#10173; <strong>BGI SIMPLE CASTER S1 (classique) - monster_layered_spell (EE : type 2000)</strong></span>
+		</p>
+		<p style="margin-top:1%;">
+			Ce format est identique au précédent, mais il prend en charge éventuellement les animations d'épée (xxxSG1, xxxSG1E, xxxSG2, xxxSG2E).
+			<ul>
+				<li style="margin-left:1%"><span style="color:green;">8 Directions <acronym title = "NdT : nécessitent des directions « Est » qui ne sont pas générées automatiquement par le jeu">unmirrored</acronym> (5 + 3E) : S (0), S-O (1), O (2), N-O (3), N (4) / N-E (5), E (6), S-E (7).</span></li>
+				<li style="margin-left:1%">G1 G1E // 48 séquences.</li>
+				<li style="margin-left:1%">G2 G2E // 24 séquences.</li>
+			</ul>
 		</p>
 		<p>
-			8 Directions unmirrored (5 + 3E)<br>
-			G1 G1E // 48 séquences.<br>
-			G2 G2E // 24 séquences.<br>
-			<br>
-			Prend en charge éventuellement les animations d'épée (SG1, SG1E, SG2, SG2E). Dispose d'animations de lancement de sorts.<br>
-			<br>
 			Exemple : ogre mage (MOGM).
+		</p>
+
+		<p style="margin-top:1%;">
+			&#x26A0;&#xFE0F; <strong>Note pour les jeux EE :</strong> Ce format d'animation est mal défini dans les fichiers ini des animations originales (comme [monster_layered]). Cependant, ce mauvais paramétrage est ignoré, car il est remplacé par les définitions codées en dur dans le moteur du jeu.
 		</p><br>
 
-		<hr style="width: 90%; height: 1px; border: 0;" /><br>
+		<hr style="width: 90%; height: 1px; border: 0;" /><a name="bg1_ankheg" id="bg1_ankheg"></a><br>
 
 		<p>
-			<strong>&#8258 <span style="color:#781808;">BGI ANKHEG (classique : actuellement non fonctionnel) - monster_ankheg (EE)</strong></span>
+			<span style="color:#781808;">&#10173; <strong>BGI ANKHEG (classique : actuellement non fonctionnel) - monster_ankheg (EE : type 3000)</strong></span>
 		</p>
- 		<p>
-			8 Directions unmirrored (5 + 3E)<br>
-			G1 G1E // 32 séquences.<br>
-			G2 G2E // 24 séquences.<br>
-			G3 G3E // 16 séquences.<br>
-			+D (animations d'émergence du sol - voir ci-dessous ; DG1, DG1E...)<br>
-			<br>
-			Actuellement non fonctionnel, ce slot affichera en boucle l'animation passive (idle) pour toutes les séquences. (J'ai pensé que ce ne serait sans doute pas le type d'animation le plus populaire, donc cela pourrait changer bientôt, ou pas).<br>
-			<br>
+ 		<p style="margin-top:1%;">
+			Ce format d'animation est utilisé par les créatures qui s'enterrent dans le sol, comme les ankhegs. Pour cette raison, il utilise les séquences d'animations SEQ_EMERGE et SEQ_HIDE.
+			<ul>
+				<li style="margin-left:1%"><span style="color:green;">8 Directions <acronym title = "NdT : nécessitent des directions « Est » qui ne sont pas générées automatiquement par le jeu">unmirrored</acronym> (5 + 3E) : S (0), S-O (1), O (2), N-O (3), N (4) / N-E (5), E (6), S-E (7).</span></li>
+				<li style="margin-left:1%">G1 G1E // 32 séquences.</li>
+				<li style="margin-left:1%">G2 G2E // 24 séquences.</li>
+				<li style="margin-left:1%">G3 G3E // 16 séquences.</li>
+				<li style="margin-left:1%">+D (animations d'émergence du sol - voir ci-dessous ; DG1, DG1E...)</li>
+			</ul>
+		</p>
+		<p>
 			Exemple : ankheg (MAKH).
-		</p><br>
+		</p>
 
-		<hr style="width: 90%; height: 1px; border: 0;" /><br>
+		<p style="margin-top:1%;">
+			&#x26A0;&#xFE0F; <strong>Note pour les jeux classiques :</strong> Actuellement non fonctionnel, ce slot affichera en boucle l'animation passive (idle) pour toutes les séquences. (J'ai pensé que ce ne serait sans doute pas le type d'animation le plus populaire, donc cela pourrait changer bientôt, ou pas).<br>
+		</p>
+
+		<div style="margin: 10px auto;width: 80%; border-style: solid; border-width: 1px; border-color: #781808; margin-top: 32px; padding: 6px;">
+			<div class="quotetitle">
+				&nbsp;&nbsp;<strong><span style="color: #781808;">&#9755;</span></strong>&nbsp;&nbsp;<span style="text-decoration: underline">Description des séquences de l'animation pour les jeux EE (Documentation IESDP)</span>&nbsp;&nbsp;
+				<input value="Afficher" style="color: #e3e3db; margin: 0px; padding: 0px; width: 60px; background:#781808;"
+				onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Cacher'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Afficher'; }" type="button" >
+			</div>
+			<div class="quotecontent">
+				<div style="display: none;">
+				<p>[resref][D]?[seq].BAM, with
+				  <ul style="margin-top: 4px; margin-left: 6%;width: 88%;">
+					<li>seq:</li>
+					  <ul>
+						<li style="margin-left:-6%;"><em class="rule">If mirror = 1 and extend_direction != 0:</em></li>
+						  <ul style="margin-left:-6%;">
+							<li>G1: DE=9-17, TW=18-26, SD=27-35 (S,SSW,SW,WSW,W,WNW,NW,NNW,N)</li>
+							<li>G2: SC=0-8, EMERGE=9-17, HIDE=18-26 (S,SSW,SW,WSW,W,WNW,NW,NNW,N)</li>
+							<li> G3: A1=0-8, CA=9-17(S,SSW,SW,WSW,W,WNW,NW,NNW,N)</li>
+							<li>eastern directions are calculated by the engine</li>
+						  </ul>
+						<li style="margin-left:-6%;"><em class="rule">If mirror = 1 and extend_direction = 0:</em></li>
+						  <ul style="margin-left:-6%;">
+							<li>G1: DE=8-12, TW=16-20, SD=24-28 (S, SW, W, NW, N)</li>
+							<li>G1E: DE=13-15, TW=21-23, SD=29-31 (NE, E, SE)</li>
+							<li>G2: SC=0-4, EMERGE=8-12, HIDE=16-20 (S, SW, W, NW, N)</li>
+							<li>G2E: SC=5-7, EMERGE=13-15, HIDE=21-23 (NE, E, SE)</li>
+							<li>G3: A1=0-4, CA=8-12 (S, SW, W, NW, N)</li>
+							<li>G3E: A1=5-7, CA=13-15 (NE, E, SE)</li>
+						  </ul>
+					  </ul>
+					<li>D:</li>
+					  <ul>
+						<li style="margin-left:-6%;">indicates the overlay animation that is drawn where the creature is connected with the ground.</li>
+						<li style="margin-left:-6%;">rendered synchroneously with Gx sequences.</li>
+					  </ul>
+				  </ul>
+				</p>
+				</div>
+			</div>
+		</div><br>
+
+		<hr style="width: 90%; height: 1px; border: 0;" /><a name="bg1_simple_monster" id="bg1_simple_monster"></a><br>
 
 		<p>
-			<strong>&#8258 <span style="color:#781808;">BGI SIMPLE MONSTER (classique) - monster_old (EE)</strong></span>
+			<span style="color:#781808;">&#10173; <strong>BGI SIMPLE MONSTER (classique) - monster_old (EE : type 7000)</strong></span>
 		</p>
- 		<p>
-			8 Directions unmirrored (5 + 3E)<br>
-			G1 G1E // 48 séquences [<em>NdT : décomposées ainsi = Marche - Sur ses gardes - Immobile - Touché - Tombe - Mort</em>].<br>
-			G2 G2E // 24 séquences [<em>NdT : décomposées ainsi = Attaque 1 - Attaque 2 - Attaque 3</em>].<br>
- 			<br>
+		<p style="margin-top:1%;">
+			Utilisé à l'origine dans BG1 pour divers monstres comme les chiens, les ours ou les basilics, ce format est identique à celui des animations de lanceurs de sort (BGI SIMPLE CASTER), mais possède des animations d'attaque supplémentaires à la place des animations de lancement de sorts.
+			<ul>
+				<li style="margin-left:1%"><span style="color:green;">8 Directions <acronym title = "NdT : nécessitent des directions « Est » qui ne sont pas générées automatiquement par le jeu">unmirrored</acronym> (5 + 3E) : S (0), S-O (1), O (2), N-O (3), N (4) / N-E (5), E (6), S-E (7).</span></li>
+				<li style="margin-left:1%">G1 G1E // 48 séquences [<em>NdT : décomposées ainsi = Marche - Sur ses gardes - Immobile - Touché - Tombe - Mort</em>].</li>
+				<li style="margin-left:1%">G2 G2E // 24 séquences [<em>NdT : décomposées ainsi = Attaque 1 - Attaque 2 - Attaque 3</em>].</li>
+ 			</ul>
+		</p>
+		<p>
 			<strong>Note sur les paperdolls :</strong> Ces slots prennent en charge les paperdolls, mais leur système de nomenclature pourrait s'avérer incohérent à ce stade. Essayez [ID]INV, [ID]0INV, [ID]1INV... L'un d'entre eux devrait fonctionner.
 		</p>
- 		<p>
-			Ce format est identique à celui des animations de lanceurs de sort (BGI SIMPLE CASTER), mais possède des animations d'attaque supplémentaires à la place des animations de lancement de sorts.<br>
-			<br>
+		<p>
 			Exemple : loup-garou (MWER).
+		</p>
+
+		<p style="margin-top:1%;">
+			&#x26A0;&#xFE0F; <strong>Note pour les jeux EE :</strong> Pour conserver la compatibilité avec les jeux classiques, les slots disponibles sont éparpillés dans toute la <a href="dev\CGameAnimationTypeMonsterOld.txt">gamme 0x7000</a>.
 		</p>
 
 		<div style="margin: 10px auto;width: 80%; border-style: solid; border-width: 1px; border-color: #781808; margin-top: 32px; padding: 6px;">
 			<div class="quotetitle">
 				&nbsp;&nbsp;<strong><span style="color: #781808;">&#9755;</span></strong>&nbsp;&nbsp;<span style="text-decoration: underline">description des séquences</span>&nbsp;&nbsp;
-				<input value="Show" style="color: #e3e3db; margin: 0px; padding: 0px; width: 60px; background:#781808;"
-				onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Hide'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Show'; }" type="button" >
+				<input value="Afficher" style="color: #e3e3db; margin: 0px; padding: 0px; width: 60px; background:#781808;"
+				onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Cacher'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Afficher'; }" type="button" >
 			</div>
 			<div class="quotecontent">
 				<div style="display: none;">
@@ -728,79 +1178,162 @@
 			</div>
 		</div><br>
 
-		<hr style="width: 90%; height: 1px; border: 0;" /><br>
+		<hr style="width: 90%; height: 1px; border: 0;" /><a name="bg1_character" id="bg1_character"></a><br>
 
 		<p>
-			<strong>&#8258 <span style="color:#781808;">CHARACTER BGI (classique) - character_old (EE)</strong></span>
+			<span style="color:#781808;">&#10173; <strong>CHARACTER BGI (classique) - character_old (EE : type 5000 et 6000)</strong></span>
 		</p>
-  		<p>
-			8 Directions unmirrored (5 + 3E)<br>
-			A1 A1E A2 A2E A3 A3E A4 A4E A5 A5E A6 A6E SA SAE SX SXE <span style="padding-left:3px">// 8 séquences (A1 en a 16).</span><br>
-			CA CAE <span style="padding-left:337px">// 62/64 séquences.</span><br>
-			G1 G1E <span style="padding-left:338px">// 72 séquences.</span><br>
-			W2 W2E <span style="padding-left:330px">// 8 séquences.</span><br>
-			+ Niveaux d'armure (4) <em>[NdT : ils correspondent à la représentation graphique du type d'armure portée (plate, cotte de mailles, cuir et robe)]</em><br>
-			+ Animations d'objets arbitraires (à l'origine WP).<br>
-			+ CSHD.<br>
- 			<br>
-			Avec, CBGI étant l'identifiant (ID) de l'animation...<br>
-			[CBGI][1]A1 (ID + niveau d'armure 1-4)<br>
-			[CBGI][1]INV<br>
-			<br>
-			La nomenclature pour les objets est...<br>
-			[BGI][S1]A1 (3 dernières lettres de l'ID + identifiant de l'objet)<br>
-			[BGI][S1]INV
+		<p style="margin-top:1%;">
+			Utilisé à l'origine par BG1, ce format contient un nombre limité de fonctionnalités pour afficher différents types d'armure et d'équipements.
+			<ul>
+				<li style="margin-left:1%"><span style="color:green;">8 Directions <acronym title = "NdT : nécessitent des directions « Est » qui ne sont pas générées automatiquement par le jeu">unmirrored</acronym> (5 + 3E) : S (0), S-O (1), O (2), N-O (3), N (4) / N-E (5), E (6), S-E (7).</span></li>
+				<li style="margin-left:1%">A1 A1E A2 A2E A3 A3E A4 A4E A5 A5E A6 A6E SA SAE SX SXE <span style="padding-left:9px">// 8 séquences (A1 en a 16).</span><br>
+				avec A1 = 1 handed overhead, A2 = 2 handed overhead, A3 = 1h backslash, A4 = 2h backslash, A5 = 1h thrust, A6 = 2h thrust, SA = arc, SX = arbalète</li>
+				<li style="margin-left:1%">CA CAE <span style="padding-left:343px">// 64 séquences.</span></li>
+				<li style="margin-left:1%">G1 G1E <span style="padding-left:344px">// 72 séquences (WK, SC, SD, DE, TW, SL).</span></li>
+				<li style="margin-left:1%">W2 W2E <span style="padding-left:336px">// 8 séquences. (directions supplémentaires pour les animations de marche : SSW, WSW, WNW, NNW, NNE - ENE, ESE, SSE).</span></li>
+			</ul>
 		</p>
-  		<p>
-			Contrairement aux autres formats d'animation, équiper un personnage avec un objet dont l'animation n'existe pas FAIT CRASHER le jeu.
+		<p>
+			Accepte des animations d'objets (à l'origine WP).<br>
 		</p>
- 		<p>
-			Gardez à l'esprit que toutes les animations de personnages de BGI affichent l'animation des ombres (CSHD).
+		<p>
+			Les fichiers BAM sont nommés selon le schéma suivant :<br><br>
+			<span style="margin-left:1%; color:#781808;">[resref][armor][sequence].BAM</span>, armor correspondant à la représentation graphique du type d'armure portée (1 sans armure, 2 cuir, 3 cotte de mailles/robe, et 4 plate).<br><br>
+			Avec, CBGI étant l'identifiant (ID) de l'animation, 
+			<ul>
+				<li style="margin-left:1%">[CBGI][1]A1 (ID + niveau d'armure 1-4)</li>
+				<li style="margin-left:1%">[CBGI][1]INV</li>
+				<li style="margin-left:1%">...</li>
+			</ul>
 		</p>
- 		<p>
-			Si vous voulez créer une animation qui utilise des animations d'objets existants (par exemple, modifier une animation existante), sélectionnez l'une des options du slot d'animation CHARACTER BGI WPM/L/S avec la taille souhaitée.
+		<p>
+			La nomenclature pour les objets est
+			<ul>
+				<li style="margin-left:1%">[BGI][S1]A1 (3 dernières lettres de l'ID + identifiant de l'objet)</li>
+				<li style="margin-left:1%">[BGI][S1]INV</li>
+				<li style="margin-left:1%">...</li>
+			</ul>
+		</p>
+
+		<p style="margin-top:1%;">
+			&#x26A0;&#xFE0F; <strong>Notes pour les jeux classiques :</strong>
+			<ul>
+				<li style="margin-left:1%">Contrairement aux autres formats d'animation, équiper un personnage avec un objet dont l'animation n'existe pas FAIT CRASHER le jeu.</li>
+				<li style="margin-left:1%">Gardez à l'esprit que toutes les animations de personnages de BGI affichent l'animation des ombres (CSHD).</li>
+				<li style="margin-left:1%">Si vous voulez créer une animation qui utilise des animations d'objets existants (par exemple, modifier une animation existante), sélectionnez l'une des options du slot d'animation CHARACTER BGI WPM/L/S avec la taille souhaitée.</li>
+			</ul>
+		</p>
+
+ 		<p style="margin-top:1%;">
+			&#x26A0;&#xFE0F; <strong>Note pour les jeux EE :</strong> <a href="https://gibberlings3.github.io/iesdp/file_formats/ie_formats/ini_anim.htm#formINI_type_5000_2"><span style="font-weight: normal;">Description détaillée du format</span></a>.
 		</p><br><br>
 
 
-		<span class="t3">Types de formats d'animations Baldur's Gate II</span><br />
+		<span class="t3">Types de formats d'animations Baldur's Gate II</span><br>
 
-		<hr class="floatfix" /><br>
+		<hr class="floatfix" /><a name="bg2_dragons" id="bg2_dragons"></a><br>
 
  		<p>
-			<strong>&#8258 <span style="color:#781808;">DRAGONS (XDR) (classic) - monster_quadrant (EE)</strong></span>
+			<span style="color:#781808;">&#10173; <strong>DRAGONS (XDR) (classique) -  monster_multi (EE : type 1000)</strong></span>
+		</p>
+		<p style="margin-top:1%;">
+			Utilisé pour afficher les créatures colossales comme les dragons, ce format nécessite une méthode complexe de découpage des animations. 
+			<ul>
+				<li style="margin-left:1%"><span style="color:green;">9 Directions mirrored : S (0), S-S-O (1), S-O (2), O-S-O (3), O (4), O-N-O (5), N-O (6), N-N-O (7), N (8).</span></li>
+				<li style="margin-left:1%">Les images sont découpées en neuf parties. Les parties de l'image sont classées du coin supérieur gauche au coin inférieur droit.</li>
+				<li style="margin-left:1%">5 Animations (5: 1 split no base; 4: 2 split).</li>
+			</ul>
 		</p>
  		<p>
-			9 Directions mirrored<br>
-			Les images sont découpées en neuf parties.<br>
-			5 Animations (5 : 1 split no base ; 4 : 2 split).<br>
-			Animation + Partie de l'image + Découpage + Direction.<br>
-			<br>
-			Avec, XDR1 étant l'identifiant (ID) de l'animation...<br>
-			<br>
-			[XDR1][1][9][0][2] correspond à la première animation (marche), la 9ème partie de l'image (coin inférieur droit), premier découpage et la direction sud-ouest (troisième direction).<br><br>
-			Les parties de l'image sont classées du coin supérieur gauche au coin inférieur droit.
-		</p><br>
+			Les fichiers BAM sont nommés selon le schéma suivant : Animation + Partie de l'image + Découpage + Direction<br>
+			XDR1 étant l'identifiant (ID) de l'animation, ça donne ceci<br><br>
+			<span style="margin-left:1%; color:#781808;">[XDR1][1][9][0][2]</span>: ce fichier correspond à la première animation (marche), la 9ème partie de l'image (coin inférieur droit), premier découpage et la direction sud-ouest (troisième direction).
+		</p>
+ 
+ 		<p style="margin-top:1%;">
+			&#x26A0;&#xFE0F; <strong>Attention :</strong> L'implantation de ce format d'animation dans les jeux EE étant boguée, il ne fonctionne qu'en mode split_bams=0. Les animations originales de dragon ne sont pas affectées car elles sont codées en dur dans le moteur.
+		</p>
 
-		<hr style="width: 90%; height: 1px; border: 0;" /><br>
+		<div style="margin: 10px auto;width: 80%; border-style: solid; border-width: 1px; border-color: #781808; margin-top: 32px; padding: 6px;">
+			<div class="quotetitle">
+				&nbsp;&nbsp;<strong><span style="color: #781808;">&#9755;</span></strong>&nbsp;&nbsp;<span style="text-decoration: underline">Détail des animations pour les jeux EE (documentation IESDP)</span>&nbsp;&nbsp;
+				<input value="Afficher" style="color: #e3e3db; margin: 0px; padding: 0px; width: 60px; background:#781808;"
+				onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Cacher'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Afficher'; }" type="button" >
+			</div>
+			<div class="quotecontent">
+				<div style="display: none;">
+				<p>[resref][seq].BAM, with
+				  <ul style="margin-top: 4px; margin-left: 6%;width: 88%;">
+					<li>seq:</li>
+					  <ul>
+						<li style="margin-left:-6%;"><em class="rule">If split_bams=0:</em></li>
+						  <ul style="margin-left:-6%;">
+							<li>G1[quadrant]: WK=0-8 (S,SSW,SW,WSW,W,WNW,NW,NNW,N)</li>
+							<li>G2[quadrant]: SD/SC/SP=0-8, SD=9-17 (unused), SC=18-26 (unused)</li>
+							<li>G3[quadrant]: A1=0-8, A2=9-17 (unused), A3=18-26 (unused)</li>
+							<li>G4[quadrant]: GH=0-8, DE/SL/GU<sup>*</sup>=9-17, TW=18-26, SL=27-35 (unused), DE=36-44 (unused)</li>
+							<li>G5[quadrant]: SP=0-8 (unused), CA=9-17</li>
+						  </ul>
+						<li style="margin-left:-6%;"><em class="rule">If split_bams=1:</em></li>
+						  <ul style="margin-left:-6%;">
+							<li>1[quadrant]0[dir]: WK=[dir]</li>
+							<li>2[quadrant]0[dir]: SD/SC/SP=[dir], SD=9+[dir] (unused), SC=18+[dir] (unused)</li>
+							<li>3[quadrant]0[dir]: A1=[dir], A2=9+[dir] (unused), A3=18+[dir] (unused)</li>
+							<li>4[quadrant]0[dir]: GH=[dir], DE=9+[dir] (unused), TW=18+[dir] (unused), SL=27+[dir] (unused), DE=36+[dir] (unused)</li>
+							<li>4[quadrant]1[dir]: GH=[dir] (unused), DE/SL/GU<sup>*</sup>=9+[dir], TW=18+[dir] (unused), SL=27+[dir] (unused), DE=36+[dir] (unused)</li>
+							<li>4[quadrant]2[dir]: GH=[dir] (unused), DE=9+[dir] (unused), TW=18+[dir], SL=27+[dir] (unused), DE=36+[dir] (unused)</li>
+							<li>5[quadrant]0[dir]: SP=[dir], CA=9+[dir]</li>
+						  </ul>
+					  </ul>
+					<li>quadrant:</li>
+					  <ul>
+						<li style="margin-left:-6%;">index in range 1 - quadrants, one digit</li>
+						<li style="margin-left:-6%;">ordered left → right, top → bottom</li>
+					  </ul>
+					<li>dir:</li>
+					  <ul>
+						<li style="margin-left:-6%;">a single-digit number indicating a direction (0=S, 1=SSW, 2=SW, 3=WSW, 4=W, 5=WNW, 6=NW, 7=NNW, 8=N)</li>
+						<li style="margin-left:-6%;">eastern directions are calculated by the engine</li>
+					  </ul>
+				  </ul>
+				</p>
+				<p>
+					<sup>*</sup>: GU (get up) sequence: frames are played back in reversed order
+				</p>
+				</div>
+			</div>
+		</div><br>
+
+		<hr style="width: 90%; height: 1px; border: 0;" /><a name="bg2_split" id="bg2_split"></a><br>
 
 		<p>
-			<strong>&#8258 <span style="color:#781808;">BGII <acronym title = "NdT : « découpées » - chaque action disponible est répartie dans un fichier BAM distinct">SPLIT</acronym> (classic) - monster split (EE)</strong></span>
+			<span style="color:#781808;">&#10173; <strong>BGII <acronym title = "NdT : « découpées » - chaque action disponible est répartie dans un fichier BAM distinct">SPLIT</acronym> (classique) - monster (EE : type 7000)</strong></span>
 		</p>
- 		<p>
-			9 Directions mirrored<br>
-			G1 G11 G12 G13 G14 G15 <span style="padding-left:30px">// 54 séquences.</span><br>
-			G2 G21 G22 G23 G24 G25 G26 <span style="padding-left:2px">// 63 séquences.</span><br>
-			<br>
-			Vous pouvez affecter à ces animations des animations d'objets, comme aux personnages. Ces animations d'objets sont <acronym title = "NdT : unsplit">regroupées dans deux fichiers</acronym>, G1[ID] et G2[ID]. Ainsi, les animations d'un arc seraient définies dans les fichiers G1BW et G2BW, celles d'une épée dans les fichiers G1S et G2S... Contrairement aux formats d'animation de personnage, équiper une créature avec un objet dont l'animation n'existe pas ne fait pas crasher le jeu.<br>
- 			<br>
+		<p style="margin-top:1%;">
+			Introduit par BG2 et utilisé par plusieurs monstres, ce format attribue à chaque séquence d'actions un fichier BAM distinct.
+			<ul>
+				<li style="margin-left:1%"><span style="color:green;">9 Directions mirrored : S (0), S-S-O (1), S-O (2), O-S-O (3), O (4), O-N-O (5), N-O (6), N-N-O (7), N (8).</span></li>
+				<li style="margin-left:1%">G1 G11 G12 G13 G14 G15 <span style="padding-left:36px">// 54 séquences.</span></li>
+				<li style="margin-left:1%">G2 G21 G22 G23 G24 G25 G26 <span style="padding-left:8px">// 63 séquences.</span></li>
+			</ul>
+		</p>
+		<p>
+			Vous pouvez affecter à ces animations des animations d'objets, comme aux personnages. Ces animations d'objets sont <acronym title = "NdT : unsplit">regroupées dans deux fichiers</acronym>, G1[ID] et G2[ID]. Ainsi, les animations d'un arc seraient définies dans les fichiers G1BW et G2BW, celles d'une épée dans les fichiers G1S et G2S... Contrairement aux formats d'animation de personnage, équiper une créature avec un objet dont l'animation n'existe pas ne fait pas crasher le jeu.
+		</p>
+		<p>
 			Exemples : solaire (MSOL), troll (MTRO).
+		</p>
+
+		<p style="margin-top:1%;">
+			&#x26A0;&#xFE0F; <strong>Note pour les jeux EE :</strong> Pour conserver la compatibilité avec les jeux classiques, les slots disponibles sont éparpillés dans toute la <a href="dev\CGameAnimationTypeMonster.txt">gamme 0x7000</a>.
 		</p>
 
 		<div style="margin: 10px auto;width: 80%; border-style: solid; border-width: 1px; border-color: #781808; margin-top: 32px; padding: 6px;">
 			<div class="quotetitle">
 				&nbsp;&nbsp;<strong><span style="color: #781808;">&#9755;</span></strong>&nbsp;&nbsp;<span style="text-decoration: underline">description des séquences</span>&nbsp;&nbsp;
-				<input value="Show" style="color: #e3e3db; margin: 0px; padding: 0px; width: 60px; background:#781808;"
-				onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Hide'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Show'; }" type="button" >
+				<input value="Afficher" style="color: #e3e3db; margin: 0px; padding: 0px; width: 60px; background:#781808;"
+				onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = ''Cacher'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Afficher'; }" type="button" >
 			</div>
 			<div class="quotecontent">
 				<div style="display: none;">
@@ -809,37 +1342,42 @@
 			</div>
 		</div><br>
 
-		<hr style="width: 90%; height: 1px; border: 0; color: #781808; background-color: #781808;" /><br>
+		<hr style="width: 90%; height: 1px; border: 0;" /><a name="bg2_split_4" id="bg2_split_4"></a><br>
 
 		<p>
-			<strong>&#8258 <span style="color:#781808;">BGII SPLIT 4 PART (classic) - multi_new (EE)</strong></span>
+			<span style="color:#781808;">&#10173; <strong>BGII SPLIT 4 PART (classique) - multi_new (EE : type 1000)</strong></span>
 		</p>
- 		<p>
-			9 Directions mirrored<br>
-			G11 G12 G13 G14 <span style="padding-left:34px">// 54 séquences.</span><br>
-			G111 G121 G131 G141 <span style="padding-left:2px">// 54 séquences.</span><br>
-			G113 G123 G133 G143 <span style="padding-left:2px">// 54 séquences.</span><br>
-			G114 G124 G134 G144 <span style="padding-left:2px">// 54 séquences.</span><br>
-			G115 G125 G135 G145 <span style="padding-left:2px">// 54 séquences.</span><br>
- 			<br>
-			G21 G22 G23 G24 <span style="padding-left:34px">// 63 séquences.</span><br>
-			G211 G221 G231 G241 <span style="padding-left:2px">// 63 séquences.</span><br>
-			G212 G222 G232 G242 <span style="padding-left:2px">// 63 séquences.</span><br>
-			G213 G223 G233 G243 <span style="padding-left:2px">// 63 séquences.</span><br>
-			G214 G224 G234 G244 <span style="padding-left:2px">// 63 séquences.</span><br>
-			G215 G225 G235 G245 <span style="padding-left:2px">// 63 séquences.</span><br>
-			G216 G226 G236 G246 <span style="padding-left:2px">// 63 séquences.</span><br>
-			<br>
-			Ce format est identique à celui des animations BGII SPLIT, mais chaque fichier est découpé en quatre parties comme indiqué plus haut.<br>
-			<br>
-			Exemple : Démogorgon (MDEM).
+		<p style="margin-top:1%;">
+			Introduit par BG2:ToB, ce format utilise une méthode relativement simple de découpage d'animations pour afficher les créatures de grande taille, comme Démogorgon. Il est identique à celui des animations BGII SPLIT, mais chaque fichier est découpé en quatre parties comme indiqué ci-dessous.
+			<ul>
+				<li style="margin-left:1%"><span style="color:green;">9 Directions mirrored : S (0), S-S-O (1), S-O (2), O-S-O (3), O (4), O-N-O (5), N-O (6), N-N-O (7), N (8).</span></li>
+				<li style="margin-left:1%">G11 G12 G13 G14 <span style="padding-left:40px">// 54 séquences.</span></li>
+				<li style="margin-left:1%">G111 G121 G131 G141 <span style="padding-left:6px">// 54 séquences.</span></li>
+				<li style="margin-left:1%">G113 G123 G133 G143 <span style="padding-left:6px">// 54 séquences.</span></li>
+				<li style="margin-left:1%">G114 G124 G134 G144 <span style="padding-left:6px">// 54 séquences.</span></li>
+				<li style="margin-left:1%">G115 G125 G135 G145 <span style="padding-left:6px">// 54 séquences.</span></li>
+				<li style="margin-left:1%">G21 G22 G23 G24 <span style="padding-left:40px">// 63 séquences.</span></li>
+				<li style="margin-left:1%">G211 G221 G231 G241 <span style="padding-left:6px">// 63 séquences.</span></li>
+				<li style="margin-left:1%">G212 G222 G232 G242 <span style="padding-left:6px">// 63 séquences.</span></li>
+				<li style="margin-left:1%">G213 G223 G233 G243 <span style="padding-left:6px">// 63 séquences.</span></li>
+				<li style="margin-left:1%">G214 G224 G234 G244 <span style="padding-left:6px">// 63 séquences.</span></li>
+				<li style="margin-left:1%">G215 G225 G235 G245 <span style="padding-left:6px">// 63 séquences.</span></li>
+				<li style="margin-left:1%">G216 G226 G236 G246 <span style="padding-left:6px">// 63 séquences.</span></li>
+			</ul>
+		</p>
+		<p>
+			Exemple : Démogorgon (MDEM)
+		</p>
+
+		<p style="margin-top:1%;">
+			&#x26A0;&#xFE0F; <strong>Note pour les jeux EE :</strong> Certaines animations originales utilisant ce format ont été incorrectement affectées dans une mauvaise gamme de slots (0x1200). Cependant, ces mauvaises affectations sont ignorées car écrasées par celles qui sont codées en dur dans le moteur.
 		</p>
 
 		<div style="margin: 10px auto;width: 80%; border-style: solid; border-width: 1px; border-color: #781808; margin-top: 32px; padding: 6px;">
 			<div class="quotetitle">
 				&nbsp;&nbsp;<strong><span style="color: #781808;">&#9755;</span></strong>&nbsp;&nbsp;<span style="text-decoration: underline">description des séquences</span>&nbsp;&nbsp;
-				<input value="Show" style="color: #e3e3db; margin: 0px; padding: 0px; width: 60px; background:#781808;"
-				onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Hide'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Show'; }" type="button" >
+				<input value="Afficher" style="color: #e3e3db; margin: 0px; padding: 0px; width: 60px; background:#781808;"
+				onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Cacher'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Afficher'; }" type="button" >
 			</div>
 			<div class="quotecontent">
 				<div style="display: none;">
@@ -848,26 +1386,32 @@
 			</div>
 		</div><br>
 
-		<hr style="width: 90%; height: 1px; border: 0;" /><br>
+		<hr style="width: 90%; height: 1px; border: 0;" /><a name="bg2_unsplit" id="bg2_unsplit"></a><br>
 
 		<p>
-			<strong>&#8258 <span style="color:#781808;">BGII UNSPLIT EXT. (classic) - monster unsplit (EE)</strong></span>
+			<span style="color:#781808;">&#10173; <strong>BGII UNSPLIT EXT. (classique) - monster unsplit (EE : type 7000)</strong></span>
 		</p>
-  		<p>
-			9 Directions mirrored<br>
-			G1 // 72 séquences [<em>NdT : décomposé ainsi = Marche - Sur ses gardes - Immobile - Touché - Tombe - Mort - S'endort - Se relève</em>].<br>
-			G2 // 63 séquences [<em>NdT : décomposé ainsi = Attaque 1 - Attaque 2 - Attaque 3 - Lancer 1 - Lancer 2 - Incante un sort - Lance un sort</em>].<br>
-			<br>
-			C'est une variante étendue du format BGII SPLIT, mais toutes ses séquences sont regroupées dans un seul fichier, plutôt que réparties dans plusieurs. Prend également en charge les animations d'objet (voir plus haut).<br>
-			<br>
+  		<p style="margin-top:1%;">
+			Introduit par BG2 et utilisé par plusieurs monstres, ce format est une variante étendue du format BGII SPLIT, mais toutes ses séquences sont regroupées dans un seul fichier BAM, plutôt que réparties dans plusieurs. Il prend également en charge les animations d'objet (voir plus haut).
+			<ul>
+				<li style="margin-left:1%"><span style="color:green;">9 Directions mirrored : S (0), S-S-O (1), S-O (2), O-S-O (3), O (4), O-N-O (5), N-O (6), N-N-O (7), N (8).</span></li>
+				<li style="margin-left:1%">G1 // 72 séquences [<em>NdT : décomposé ainsi = Marche - Sur ses gardes - Immobile - Touché - Tombe - Mort - S'endort - Se relève</em>].</li>
+				<li style="margin-left:1%">G2 // 63 séquences [<em>NdT : décomposé ainsi = Attaque 1 - Attaque 2 - Attaque 3 - Lancer 1 - Lancer 2 - Incante un sort - Lance un sort</em>].</li>
+			</ul>
+		</p>
+		<p>
 			Exemples : Mélissanne (MMEL), tyramort (MBEG).
+		</p>
+
+		<p style="margin-top:1%;">
+			&#x26A0;&#xFE0F; <strong>Note pour les jeux EE :</strong> Pour conserver la compatibilité avec les jeux classiques, les slots disponibles sont éparpillés dans toute la <a href="dev\CGameAnimationTypeMonster.txt">gamme 0x7000</a>.
 		</p>
 
 		<div style="margin: 10px auto;width: 80%; border-style: solid; border-width: 1px; border-color: #781808; margin-top: 32px; padding: 6px;">
 			<div class="quotetitle">
 				&nbsp;&nbsp;<strong><span style="color: #781808;">&#9755;</span></strong>&nbsp;&nbsp;<span style="text-decoration: underline">description des séquences</span>&nbsp;&nbsp;
-				<input value="Show" style="color: #e3e3db; margin: 0px; padding: 0px; width: 60px; background:#781808;"
-				onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Hide'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Show'; }" type="button" >
+				<input value="Afficher" style="color: #e3e3db; margin: 0px; padding: 0px; width: 60px; background:#781808;"
+				onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Cacher'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Afficher'; }" type="button" >
 			</div>
 			<div class="quotecontent">
 				<div style="display: none;">
@@ -879,74 +1423,97 @@
 		<hr style="width: 90%; height: 1px; border: 0;" /><br>
 
 		<p>
-			<strong>&#8258 <span style="color:#781808;">CHARACTER BGII (classic) - character (EE)</strong></span>
+			<span style="color:#781808;">&#10173; <strong>CHARACTER BGII (classic) - character (EE : type 5000 et 6000)</strong></span>
 		</p>
- 		<p>
-			8 Directions mirrored<br>
-			A1 A2 A3 A4 A5 A6 A7 A8 A9 SA SS SX <span style="padding-left:2px">// 9 séquences.</span><br>
-			CA <span style="padding-left:222px">// 72 séquences.</span><br>
-			G1 (<strong>not split</strong>) <span style="padding-left:154px">// 99 séquences.</span><br>
-			+ Niveaux d'armure (4) <em>[NdT : ils correspondent à la représentation graphique du type d'armure portée (plate, cotte de mailles, cuir et robe)]</em><br>
-			+ Animations d'objets arbitraires (à l'origine WQ).<br>
-			<br>
-			CBGT étant l'identifiant (ID) de l'animation...<br>
-			[CBGT][1]A1 (ID + niveau d'armure 1-4)<br>
-			[CBGT][1]INV<br>
-			<br>
-			La nomenclature pour les objets est...<br>
-			[BGT][S1]A1 (les 3 dernières lettres de l'ID + l'identifiant de l'objet)<br>
-			[B<strong>P</strong>T][S1]INV <strong>(la deuxième lettre est obligatoirement un P !!)</strong>
+		<p style="margin-top:1%;">
+			Introduit par BG2, ce format propose beaucoup plus de fonctionnalités pour afficher différents types d'armure et d'équipements.
+			<ul>
+				<li style="margin-left:1%"><span style="color:green;">9 Directions mirrored : S (0), S-S-O (1), S-O (2), O-S-O (3), O (4), O-N-O (5), N-O (6), N-N-O (7), N (8).</span></li>
+				<li style="margin-left:1%; margin-right:-2%;">A1 A2 A3 A4 A5 A6 A7 A8 A9 <span style="padding-left:8px">// 9 séquences. (avec A1 = 1 handed overhead, A2 = 2 handed overhead, A3 = 1h backslash, A4 = 2h backslash, A5 = 1h thrust, A6 = 2h thrust, A7 = 2 weapons, A8 = throwing?,<br>
+				A9 = 2 weapons)</span></li>
+				<li style="margin-left:1%">SA SS SX <span style="padding-left:128px">// 9 séquences. (avec SA = bow, SS = sling, SX = crossbow)</span></li>
+				<li style="margin-left:1%">CA <span style="padding-left:167px">// 72 séquences.</span></li>
+				<li style="margin-left:1%">G1 (<strong>not split</strong>) <span style="padding-left:100px">// 99 séquences.</span></li>
+			</ul>
 		</p>
- 		<p>
-			^ Cette nomenclature est due aux animations de BGII qui utilisent des objets WQ avec des paperdolls WP. Elle ne s'applique qu'aux fichiers INV. Ce P sera toujours positionné sur l'emplacement de la deuxième lettre (3 ou 0, les deux lettres d'identification restant intactes.)
+		<p>
+			Accepte des animations d'objets (à l'origine WQ).<br>
 		</p>
-  		<p>
-			Contrairement aux autres formats d'animation, équiper un personnage avec un objet dont l'animation n'existe pas FAIT CRASHER le jeu.
+		<p>
+			Les fichiers BAM sont nommés selon le schéma suivant :<br><br>
+			<span style="margin-left:1%; color:#781808;">[resref][armor][sequence].BAM</span>, armor correspondant à la représentation graphique du type d'armure portée (1 sans armure, 2 cuir, 3 cotte de mailles/robe, et 4 plate).<br><br>
+			Avec, CBGT étant l'identifiant (ID) de l'animation,
+			<ul>
+				<li style="margin-left:1%">[CBGT][1]A1 (ID + niveau d'armure 1-4)</li>
+				<li style="margin-left:1%">[CBGT][1]INV</li>
+				<li style="margin-left:1%">...</li>
+			</ul>
 		</p>
- 		<p>
-			Ce format d'animation est différent de celui utilisé par le jeu original, dans la mesure où j'ai décidé de ne pas découper les séries d'animation G. Mais leur contenu est identique, et est simplement regroupé dans un seul fichier (voir les formats BGII SPLIT/BGII UNSPLIT). Ainsi, si vous souhaitez dupliquer ou modifier une animation de personnage existante, vous devrez fusionner les fichiers G1, G11, G12... dans un fichier unique G1. Je l'ai fait principalement pour ne pas surcharger le répertoire override (et faciliter la création et le chargement de nouveau contenu).
+		<p>
+			La nomenclature pour les objets est
+			<ul>
+				<li style="margin-left:1%">[BGT][S1]A1 (les 3 dernières lettres de l'ID + l'identifiant de l'objet)</li>
+				<li style="margin-left:1%">[B<strong>P</strong>T][S1]INV <strong>(la deuxième lettre est obligatoirement un P !)<sup>*</sup></strong></li>
+			</ul>
 		</p>
- 		<p>
-			Si vous voulez créer une animation qui utilise des animations d'objets existants (par exemple, modifier une animation existante), sélectionnez l'une des options du slot d'animation CHARACTER BGII WQM/L/N/S avec la taille souhaitée.
+		<p>
+			<sup>*</sup> Cette nomenclature est due aux animations de BGII qui utilisent des objets WQ avec des paperdolls WP. Elle ne s'applique qu'aux fichiers INV. Ce P sera toujours positionné sur l'emplacement de la deuxième lettre (3 ou 0, les deux lettres d'identification restant intactes).
+		</p>
+
+		<p style="margin-top:1%;">
+			&#x26A0;&#xFE0F; <strong>Notes pour les jeux classiques :</strong>
+			<ul>
+				<li style="margin-left:1%">Contrairement aux autres formats d'animation, équiper un personnage avec un objet dont l'animation n'existe pas FAIT CRASHER le jeu.</li>
+				<li style="margin-left:1%">Ce format d'animation est différent de celui utilisé par le jeu original, dans la mesure où j'ai décidé de ne pas découper les séries d'animation G. Mais leur contenu est identique, et est simplement regroupé dans un seul fichier (voir les formats BGII SPLIT/BGII UNSPLIT). Ainsi, si vous souhaitez dupliquer ou modifier une animation de personnage existante, vous devrez fusionner les fichiers G1, G11, G12... dans un fichier unique G1. Je l'ai fait principalement pour ne pas surcharger le répertoire override (et faciliter la création et le chargement de nouveau contenu).</li>
+				<li style="margin-left:1%">Si vous voulez créer une animation qui utilise des animations d'objets existants (par exemple, modifier une animation existante), sélectionnez l'une des options du slot d'animation CHARACTER BGII WQM/L/N/S avec la taille souhaitée.</li>
+			</ul>
+		</p>
+
+ 		<p style="margin-top:1%;">
+			&#x26A0;&#xFE0F; <strong>Note pour les jeux EE :</strong> Comme ce format d'animation utilisé par IA est différent de celui du jeu original, ne l'utilisez pas dans les jeux EE. À la place, veuillez consulter cette <a href="https://gibberlings3.github.io/iesdp/file_formats/ie_formats/ini_anim.htm#formINI_type_5000_1"><span style="font-weight: normal;">description détaillée du format pour les jeux EE</span></a>.
 		</p><br><br>
 
 
 		<span class="t3">Format d'animation IWD</span><br />
 
-		<hr class="floatfix" /><br>
+		<hr class="floatfix" /><a name="iwd" id="iwd"></a><br>
 
- 		<p>
-			<strong>&#8258 <span style="color:#781808;">IWD (classic) - monster_icewind (EE)</strong></span>
+		<p>
+			<span style="color:#781808;">&#10173; <strong>IWD (classique) - monster_icewind (EE : type E000)</strong></span>
 		</p>
- 		<p>
-			8 Directions <acronym title = "NdT : nécessitent des directions « Est » qui ne sont pas générées automatiquement par le jeu">unmirrored</acronym> (5 + 3E)<br>
-			A1 A1E A2 A2E A3 A3E A4 A4E	<span style="padding-left:2px">// Respectivement 5 et 8 séquences [<em>NdT : Attaques. A4 = lancer d'arme à projectiles</em>].</span><br>
-			CA CAE <span style="padding-left:144px">// Respectivement 5 et 8 séquences [<em>NdT : <acronym title="NdT : Cast (Spell release)">Lancer un sort</acronym></em>].</span><br>
-			DE DEE <span style="padding-left:144px">// Respectivement 5 et 8 séquences [<em>NdT : <acronym title="NdT : Dead">Mourir</acronym> (la créature tombe)</em>].</span><br>
-			GH GHE <span style="padding-left:142px">// Respectivement 5 et 8 séquences [<em>NdT : <acronym title="NdT : Get Hurt ou Hit">Blessé</acronym> (la créature est touchée par une arme ou un sort)</em>].</span><br>
-			GU GUE <span style="padding-left:142px">// Respectivement 5 et 8 séquences [<em>NdT : <acronym title="NdT : Get Up">Se relever</acronym></em>].</span><br>
-			SC SCE <span style="padding-left:144px">// Respectivement 5 et 8 séquences [<em>NdT : <acronym title="NdT : Stand before combat">Rester immobile, sur ses gardes</acronym></em>].</span><br>
-			SD SDE <span style="padding-left:144px">// Respectivement 5 et 8 séquences [<em>NdT : <acronym title="NdT : Stand idle">Rester immobile, passif</acronym></em>].</span><br>
-			SL SLE <span style="padding-left:148px">// Respectivement 5 et 8 séquences [<em>NdT : <acronym title="NdT : Sleep">S'endormir</acronym> (la créature tombe inconsciente)</em>].</span><br>
-			SP SPE <span style="padding-left:146px">// Respectivement 5 et 8 séquences [<em>NdT : <acronym title="NdT : Spell casting">Incanter un sort</acronym></em>].</span><br>
-			TW TWE <span style="padding-left:138px">// Respectivement 5 et 8 séquences [<em>NdT : <acronym title="NdT : Twitch">La créature est étendue morte sur le sol</acronym></em>].</span><br>
-			WK WKE <span style="padding-left:136px">// Respectivement 5 et 8 séquences [<em>NdT : <acronym title="NdT : Walk">Marcher</acronym></em>].</span><br><br>
-			+ Objet (SA1, MA1...).<br>
-			<br>
-			Les animations IWD peuvent coexister avec les animations BGII SPLIT/UNSPLIT (qui, elles-mêmes, peuvent coexister avec certaines animations au format 4 PART, etc.) en partageant le même identifiant, tant que l'une d'elle ne nécessite pas de paperdoll. En fait, c'est souvent le cas dans le jeu original.
+		<p style="margin-top:1%;">
+			Utilisé à l'origine par les animations introduites par Icewind Dale et IWD2, ce format est le plus simple à créer.
+			<ul>
+				<li style="margin-left:1%"><span style="color:green;">8 Directions <acronym title = "NdT : nécessitent des directions « Est » qui ne sont pas générées automatiquement par le jeu">unmirrored</acronym> (5 + 3E) : S (0), S-O (1), O (2), N-O (3), N (4) / N-E (5), E (6), S-E (7).</span></li>
+				<li style="margin-left:1%">A1 A1E A2 A2E A3 A3E A4 A4E <span style="padding-left:8px">// Respectivement 5 et 8 séquences [<em>NdT : Attaques. A4 = lancer d'arme à projectiles</em>].</span></li>
+				<li style="margin-left:1%">CA CAE <span style="padding-left:150px">// Respectivement 5 et 8 séquences [<em>NdT : <acronym title="NdT : Cast (Spell release)">Lancer un sort</acronym></em>].</span></li>
+				<li style="margin-left:1%">DE DEE <span style="padding-left:150px">// Respectivement 5 et 8 séquences [<em>NdT : <acronym title="NdT : Dead">Mourir</acronym> (la créature tombe)</em>].</span></li>
+				<li style="margin-left:1%">GH GHE <span style="padding-left:148px">// Respectivement 5 et 8 séquences [<em>NdT : <acronym title="NdT : Get Hurt ou Hit">Blessé</acronym> (la créature est touchée par une arme ou un sort)</em>].</span></li>
+				<li style="margin-left:1%">GU GUE <span style="padding-left:148px">// Respectivement 5 et 8 séquences [<em>NdT : <acronym title="NdT : Get Up">Se relever</acronym></em>].</span></li>
+				<li style="margin-left:1%">SC SCE <span style="padding-left:150px">// Respectivement 5 et 8 séquences [<em>NdT : <acronym title="NdT : Stand before combat">Rester immobile, sur ses gardes</acronym></em>].</span></li>
+				<li style="margin-left:1%">SD SDE <span style="padding-left:150px">// Respectivement 5 et 8 séquences [<em>NdT : <acronym title="NdT : Stand idle">Rester immobile, passif</acronym></em>].</span></li>
+				<li style="margin-left:1%">SL SLE <span style="padding-left:154px">// Respectivement 5 et 8 séquences [<em>NdT : <acronym title="NdT : Sleep">S'endormir</acronym> (la créature tombe inconsciente)</em>].</span></li>
+				<li style="margin-left:1%">SP SPE <span style="padding-left:152px">// Respectivement 5 et 8 séquences [<em>NdT : <acronym title="NdT : Spell casting">Incanter un sort</acronym></em>].</span></li>
+				<li style="margin-left:1%">TW TWE <span style="padding-left:144px">// Respectivement 5 et 8 séquences [<em>NdT : <acronym title="NdT : Twitch">La créature est étendue morte sur le sol</acronym></em>].</span></li>
+				<li style="margin-left:1%">WK WKE <span style="padding-left:142px">// Respectivement 5 et 8 séquences [<em>NdT : <acronym title="NdT : Walk">Marcher</acronym></em>].</span></li>
+			</ul>
 		</p>
-  		<p>
-			On peut affecter n'importe quel type d'objet à un slot IWD. Cependant, la dernière lettre de l'identifiant de l'objet est supprimée (par exemple, WH devient W).
+		<p>
+			On peut affecter n'importe quel type d'objet à un slot IWD. Cependant, la dernière lettre de l'identifiant de l'objet est supprimée (par exemple, WH devient W, comme dans WA1, WCA...).
 		</p>
-  		<p>
+		<p>
 			Contrairement aux formats d'animation de personnage, équiper une créature avec un objet dont l'animation n'existe pas ne fait pas crasher le jeu.
+		</p>
+
+		<p style="margin-top:1%;">
+			&#x26A0;&#xFE0F; <strong>Note pour les jeux classiques :</strong> Les animations IWD peuvent coexister avec les animations BGII SPLIT/UNSPLIT (qui, elles-mêmes, peuvent coexister avec certaines animations au format 4 PART, etc.) en partageant le même identifiant, tant que l'une d'elle ne nécessite pas de paperdoll. En fait, c'est souvent le cas dans le jeu original.
 		</p>
 
 		<div style="margin: 10px auto;width: 80%; border-style: solid; border-width: 1px; border-color: #781808; margin-top: 32px; padding: 6px;">
 			<div class="quotetitle">
 				&nbsp;&nbsp;<strong><span style="color: #781808;">&#9755;</span></strong>&nbsp;&nbsp;<span style="text-decoration: underline">description des séquences</span>&nbsp;&nbsp;
-				<input value="Show" style="color: #e3e3db; margin: 0px; padding: 0px; width: 60px; background:#781808;"
-				onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Hide'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Show'; }" type="button" >
+				<input value="Afficher" style="color: #e3e3db; margin: 0px; padding: 0px; width: 60px; background:#781808;"
+				onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Cacher'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Afficher'; }" type="button" >
 			</div>
 			<div class="quotecontent">
 				<div style="display: none;">
@@ -956,42 +1523,51 @@
 		</div><br><br>
 
 
-		<span class="t3">Suggestions de conversions</span><br />
+		<span class="t3">Suggestions de conversions</span><br>
 
-		<hr class="floatfix" /><br>
+		<hr class="floatfix" /><a name="pst" id="pst"></a><br>
 
  		<p>
-			<strong>&#8258 <span style="color:#781808;">Planescape Torment</strong></span>
+			<span style="color:#781808;">&#10173; <strong>Planescape Torment</strong></span>
 		</p>
- 		<p>
-			Les animations PST possèdent généralement la structure suivante :
+		<p style="margin-top:1%;">
+			Seulement utilisé par les moteurs de Planescape Torment et de PSTEE, les animations PST possèdent généralement la structure suivante :
+			<ul>
+				<li style="margin-left:1%"><span style="color:green;">5 Directions mirrored : S (0), SW (1), W (2), NW (3), N (4).</span></li>
+					<ul style="margin-top:1%;">
+						<li style="margin-left:-4%">AT1 AT2 <span style="padding-left:14px">// 5 séquences (Attaques).</span></li>
+						<li style="margin-left:-4%">C2S <span style="padding-left:37px">// 5 séquences (<acronym title="NdT : stance2stand">Stopper le combat, baisser sa garde</acronym>: mouvement de transition pour passer de la position en garde à la position passive).</span></li>
+						<li style="margin-left:-4%">CF1 CF2 <span style="padding-left:10px">// 5 séquences (<acronym title="NdT : taunt or stancefidget">Rester immobile, sur ses gardes</acronym>: mouvements divers effectués à intervalles aléatoires pendant que la créature est en mode "en garde").</span></li>
+						<li style="margin-left:-4%">DFB <span style="padding-left:38px">// 5 séquences (<acronym title="NdT : fall">Tomber</acronym> - ou mourir).</span></li>
+						<li style="margin-left:-4%">GUP <span style="padding-left:36px">// 5 séquences (<acronym title="NdT : get up">Se relever</acronym>).</span></li>
+						<li style="margin-left:-4%">HIT <span style="padding-left:40px">// 5 séquences (<acronym title="NdT : hit">Blessé</acronym> - la créature est touchée par une arme ou un sort).</span></li>
+						<li style="margin-left:-4%">S2C <span style="padding-left:36px">// 5 séquences (<acronym title="NdT : stand2stance">Se mettre en garde</acronym> : mouvement de transition pour passer de la position Immobile à ma position en garde).</span></li>
+						<li style="margin-left:-4%">SF1 <span style="padding-left:38px">// 5 séquences (<acronym title="NdT : standfidget">Rester passif, tourner la tête...</acronym> : mouvements divers effectués à intervalles aléatoires pendant que la créature est en mode passif).</span></li>
+						<li style="margin-left:-4%">SP1 <span style="padding-left:38px">// 5 séquences (<acronym title="NdT : Spell">Incanter un sort</acronym>).</span></li>
+						<li style="margin-left:-4%">SP2 <span style="padding-left:38px">// 5 séquences (<acronym title="NdT : Spell">Lancer un sort</acronym>).</span></li>
+						<li style="margin-left:-4%">SP3 <span style="padding-left:38px">// 5 séquences (<acronym title="NdT : Spell">Lancer un sort</acronym>).</span></br>
+						(SP4)</li>
+						<li style="margin-left:-4%">STC <span style="padding-left:40px">// 5 séquences (<acronym title="NdT : combat idle or idle stance">Rester immobile, sur ses gardes, pendant un combat</acronym>).)</span></li>
+						<li style="margin-left:-4%">STD <span style="padding-left:40px">// 5 séquences (<acronym title="NdT : idle stand">Rester immobile, passif</acronym>).</span></li>
+						<li style="margin-left:-4%">TK1 <span style="padding-left:41px">// 5 séquences (<acronym title="NdT : Talk">Parler</acronym> : mouvements divers effectués pendant les dialogues).</span></li>
+						<li style="margin-left:-4%">TK2 <span style="padding-left:41px">// 5 séquences (<acronym title="NdT : Talk">Parler</acronym>).</span></li>
+						<li style="margin-left:-4%">TK3 <span style="padding-left:41px">// 5 séquences (<acronym title="NdT : Talk">Parler</acronym>).</span></br>
+						(TK4, TK5, TK6).</li>
+					</ul>
+				<li style="margin-top:1%;margin-left:1%"><span style="color:green;">9 Directions mirrored : S (0), S-S-O (1), S-O (2), O-S-O (3), O (4), O-N-O (5), N-O (6), N-N-O (7), N (8).</span></li>
+					<ul style="margin-top:1%;">
+						<li style="margin-left:-4%">RUN <span style="padding-left:38px">// 9 séquences (<acronym title="NdT : Run">Courir</acronym>).</span></li>
+						<li style="margin-left:-4%">WLK <span style="padding-left:36px">// 9 séquences (<acronym title="NdT : Walk">Marcher</acronym>).</span></li>
+					</ul>
+			</ul>
+		</p><br>
+
+		<p style="margin-top:1%;">
+			&#x26A0;&#xFE0F; <strong>Note pour les jeux classiques :</strong> Cela signifie qu'elles devraient être converties autant que possible aux formats BGII UNSPLIT EXT. ou personnage de BGII, afin de conserver la plupart de leurs diverses animations hors combat, et leurs nombreuses directions dans les actions de marche et de course. Ces deux dernières seraient perdues si elles étaient converties aux formats IWD et BGI. Puisque la plupart de leurs animations disposent de cinq directions de type mirrored, vous devrez les assembler correctement, et les fusionner dans le bon ordre dans des fichiers G1 et G2.
 		</p>
- 		<p>
-			5 Directions mirrored<br>
-			AT1 AT2 <span style="padding-left:2px">// 5 séquences (Attaques).</span><br>
-			C2S <span style="padding-left:24px">// 5 séquences (<acronym title="NdT : combat->idle">Stopper le combat, baisser sa garde</acronym>).</span><br>
-			CF1 <span style="padding-left:26px">// 5 séquences (<acronym title="NdT : Taunt">Rester immobile, sur ses gardes</acronym>).</span><br>
-			(CF2)<br>
-			DFB <span style="padding-left:26px">// 5 séquences (<acronym title="NdT : Fall">Tomber</acronym> - ou mourir).</span><br>
-			GUP <span style="padding-left:24px">// 5 séquences (<acronym title="NdT : Get Up">Se relever</acronym>).</span><br>
-			HIT <span style="padding-left:30px">// 5 séquences (<acronym title="NdT : Hit">Blessé</acronym> - la créature est touchée par une arme ou un sort).</span><br>
-			S2C <span style="padding-left:26px">// 5 séquences (<acronym title="NdT : idle->combat">Se mettre en garde</acronym>).</span><br>
-			SF1 <span style="padding-left:28px">// 5 séquences (<acronym title="NdT : Stretch">Rester passif (tourner la tête...</acronym>).</span><br>
-			SP1 <span style="padding-left:28px">// 5 séquences (<acronym title="NdT : Spell">Incanter un sort</acronym>).</span><br>
-			SP2 <span style="padding-left:28px">// 5 séquences (<acronym title="NdT : Spell">Lancer un sort</acronym>).</span><br>
-			SP3 <span style="padding-left:28px">// 5 séquences.</span><br>
-			(SP4)<br>
-			STC <span style="padding-left:28px">// 5 séquences (<acronym title="NdT : Combat idle">Rester immobile, sur ses gardes</acronym>).</span><br>
-			STD <span style="padding-left:28px">// 5 séquences (<acronym title="NdT : Idle normal">Rester immobile, passif</acronym>).</span><br>
-			TK1 <span style="padding-left:29px">// 5 séquences (<acronym title="NdT : Talk">Parler</acronym>).</span><br>
-			TK2 <span style="padding-left:29px">// 5 séquences (<acronym title="NdT : Talk">Parler</acronym>).</span><br>
-			TK3 <span style="padding-left:29px">// 5 séquences (<acronym title="NdT : Talk">Parler</acronym>).</span><br>
-			(TK4, TK5, TK6).<br><br>
-			9 Directions mirrored<br>
-			RUN <span style="padding-left:26px">// 9 séquences (<acronym title="NdT : Run">Courir</acronym>).</span><br>
-			WLK <span style="padding-left:24px">// 9 séquences (<acronym title="NdT : Walk">Marcher</acronym>).</span><br>
-			<br>
-			Cela signifie qu'elles devraient être converties autant que possible aux formats BGII UNSPLIT EXT. ou personnage de BGII, afin de conserver la plupart de leurs diverses animations hors combat, et leurs nombreuses directions dans les actions de marche et de course. Ces deux dernières seraient perdues si elles étaient converties aux formats IWD et BGI. Puisque la plupart de leurs animations disposent de cinq directions de type mirrored, vous devrez les assembler correctement, et les fusionner dans le bon ordre dans des fichiers G1 et G2.
+
+ 		<p style="margin-top:1%;">
+			&#x26A0;&#xFE0F; <strong>Note pour les jeux EE :</strong> Si vous souhaitez ajouter de nouvelles animations dans PSTEE, veuillez lire la <a href="https://gibberlings3.github.io/iesdp/file_formats/ie_formats/ini_anim.htm#formINI_type_F000"><span style="font-weight: normal;">description détaillée du format pour les jeux EE</span></a>.
 		</p><br>
 
 		<address>
@@ -1006,13 +1582,13 @@
 		<h2>Installation manuelle</h2><br>
 
 		<p>
-			<strong>&#8258 Installation sans le programme d'installation <acronym title="Weimer Dialogue Utility">WeiDU</acronym> fourni :</strong>
+			<strong>&#10173; Installation sans le programme d'installation <acronym title="Weimer Dialogue Utility">WeiDU</acronym> fourni :</strong>
  		</p>
 		<div style="margin: 0px auto;width: 85%; border-style: solid; border-width: 1px; border-color: #781808; margin-top: 20px; margin-bottom: 2px; padding: 4px;">
 			<div class="quotetitle">
 				<em>&nbsp;&nbsp;&#x25BA; Obsolète depuis la version 6.0.0 :</em>
-				<input value="Show" style="color: #e3e3db; margin: 0px; padding: 0px; width: 60px; background:#781808;"
-				onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Hide'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Show'; }" type="button" >
+				<input value="Afficher" style="color: #e3e3db; margin: 0px; padding: 0px; width: 60px; background:#781808;"
+				onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = ''Cacher'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Afficher'; }" type="button" >
 			</div>
 			<div class="quotecontent">
 				<div style="display: none; ">
@@ -1032,10 +1608,10 @@
 		<hr style="width: 90%" /><br>
 
 		<p>
-			<strong>&#8258 Reference Picker</strong>
+			<strong>&#10173; Reference Picker</strong>
 		</p>
-		<p>
-			Extrayez le répertoire &#x1F4C1; <em class="rule">Reference Picker/</em> et son contenu dans l'emplacement de votre choix.
+		<p style="margin-top:1%;">
+			Extrayez le répertoire &#x1F4C1; <em class="rule">Reference Picker</em> et son contenu dans l'emplacement de votre choix.
 		</p>
 		<p>
 			Vous pouvez exécuter <acronym title="NdT : Sélecteur de référence">Reference Picker</acronym> dans une autre langue (s'il a été traduit) en modifiant le fichier <em class="rule">Config.txt</em>. Sous la section [Program], attribuez à la variable «<span class="tp2"> UseLang </span>» la langue que vous souhaitez utiliser. Par exemple, <span class="tp2">UseLang=French</span> chargera les textes de la traduction situés dans le fichier <span class="weidu"> \lang\French.txt </span>. Ces textes étant chargés au lancement du programme, si vous modifiez la langue pendant son utilisation, vous devrez le relancer pour que la modification prenne effet.
