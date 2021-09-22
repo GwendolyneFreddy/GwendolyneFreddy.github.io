@@ -1,9 +1,9 @@
 <div align="center"><h1>Readme files</h1>
 </div><br>
 
-**All are WIP.**
 
 <hr>
+
 
 ## Spellhold Studios (WIP)
 
@@ -28,7 +28,7 @@
 
 ## Menace sur le Royaume de Diamant Éternel (WIP)
 
-|  Mod    | English | French |
+| Description | English | French |
 | :------ |  :---:  | :----: |
 | Readme (WIP) | <a href="https://gwendolynefreddy.github.io/docs/diamant_eternel/menace-readme-english.html">English</a> | <a href="https://gwendolynefreddy.github.io/docs/diamant_eternel/menace-readme-french.html">Français</a> |
 | Kit (WIP) | <a href="https://gwendolynefreddy.github.io/docs/diamant_eternel/menace-kit1-readme-english.html">Diamond Knight kit</a> | <a href="https://gwendolynefreddy.github.io/docs/diamant_eternel/menace-kit1-readme-french.html">Profil de Chevalier de Diamant</a> |
