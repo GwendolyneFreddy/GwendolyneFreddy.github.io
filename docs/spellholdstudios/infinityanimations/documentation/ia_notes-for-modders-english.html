@@ -42,7 +42,7 @@
 			<a href="#about">About</a> &#x2B25; <a href="#animate">ANIMATE.ids file</a> &#x2B25; <a href="#adding_classic">Claiming and Adding new Animation slots (classic game)</a> &#x2B25; <a href="#adding_ee">Adding new Animation slots in EE Games</a> &#x2B25; <a href="#ini_files">Ini files Description</a>
 		</p>
 		<p class="menu" style="margin-top:7px;">
-			<a href="#install">Installing new animations in games</a> &#x2B25; <a href="#ref">Using a new animation slot</a> &#x2B25; <a href="#ref">Updating old mods</a> &#x2B25; <a href="#version">Version History</a>
+			<a href="#install">Installing new animations in games</a> &#x2B25; <a href="#use_slots">Using new animation slots</a> &#x2B25; <a href="#update_mods">Updating old mods</a> &#x2B25; <a href="#version">Version History</a>
 		</p>
 	  </div>
 
@@ -154,7 +154,7 @@
 			Once your bam files are built, go to next step.
 		</p><br>
 
-		<hr style="width: 90%;" /></br>
+		<hr style="width: 90%;" /><br>
 
 		<p style="font-size: 130%;"><strong>2. Implement your slot in the game</strong></p>
 
@@ -284,7 +284,7 @@
 			When a slot is found, it is converted into hex value (function <span class="tp2" style="color: #C00040;">TO_HEX_NUMBER</span>) to append ANIMATE.ids file. This value is stored into <span class="tp2"><span style="color: purple;">$</span>GWNewIni<span style="color: purple;">(</span><span style="color: #C00040">~%GWNewAnim%~</span><span style="color: purple;">)</span></span> array used to rename its relative .ini files.
 		</p><br>
 
-		<hr style="width: 90%; height: 1px; border: 0;" /></br>
+		<hr style="width: 90%; height: 1px; border: 0;" /><br>
 
 		<p>
 			What better than an example to transcribe this code in the tp2 installer? &#128521;
@@ -372,7 +372,7 @@
 			</p>
 		</div><br>
 
-		<hr style="width: 90%;" /></br>
+		<hr style="width: 90%;" /><br>
 
 		<p>
 			If you don't know how to set up the .INI file defining the parameters with which the engine will display your animation, please see the next chapter. Otherwise, next step is installing all files related to your animation(s), as explained in this <a href="#install">chapter</a>.
@@ -1106,7 +1106,7 @@ fall_frame=0 </pre>
 			</p>
 		</div><br>
 
-		<hr style="width: 90%;" /></br>
+		<hr style="width: 90%;" /><br>
 
 		<p style="font-size: 130%;"><strong>2. Installing 2da files (classic games) or ini files defining general sprite values and soundsets (EE games)</strong></p>
 
@@ -1118,7 +1118,7 @@ fall_frame=0 </pre>
 			&#9888;&#65039; <strong><span style="color: #781808;">&#9755;</span> Note for EE games: </strong>Since the animation slot ID is unknown before its installation, and may depend on other animations installed by other mods before yours, here is a little trick that makes it easy to install .ini files. <strong>Assign to your animation.ini file the name of the animation registered in the ANIMATE.IDS file.</strong> For example dao.ini, dao_legs.ini, animation1.ini, animation2.ini... &#128521;
 		</p><br>
 
-		<hr style="width: 90%; height: 1px; border: 0;" /></br>
+		<hr style="width: 90%; height: 1px; border: 0;" /><br>
 
 		<p>
 			Then copy the .2da files into the override (classic game):
@@ -1130,7 +1130,7 @@ fall_frame=0 </pre>
 			</p>
 		</div><br>
 
-		<hr style="width: 90%; height: 1px; border: 0;" /></br>
+		<hr style="width: 90%; height: 1px; border: 0;" /><br>
 
 		<p>
 			As for .ini files (EE games), borrow the code written for Infinity Animations that uses the hex value defined with the ANIMATE.IDS appending process to automatically copy the corresponding .ini file with the right animation ID [<span class="tp2"><span style="color: purple;">$</span>GWNewIni<span style="color: purple;">(</span><span style="color: #C00040">~%GWNewAnim%~</span><span style="color: purple;">)</span></span>].
@@ -1234,7 +1234,7 @@ fall_frame=0 </pre>
 			So, how to provide perfect compatibility? It is very simple! &#128539;
 		</p><br>
 
-		<hr style="width: 90%;" /></br>
+		<hr style="width: 90%;" /><br>
 
 		<p style="font-size: 130%;"><strong>&#128077; New way: 100% safe and compatible with both original and EE games</strong></p>
 
@@ -1343,7 +1343,7 @@ with
 			Take advantage of the update of your mod to simplify its installation process.
 		</p><br>
 
-		<hr style="width: 90%; height: 1px; border: 0;" /></br>
+		<hr style="width: 90%; height: 1px; border: 0;" /><br>
 
 		<p style="font-size: 130%;"><strong>2.a. Remove all "biffing" routines.</strong></p>
 
@@ -1351,7 +1351,7 @@ with
 			This concerns almost exclusively mega-mods. The procedure is underway for most of the mods published at SHS to make them compatible with the new version of Infinity Animations.
 		</p><br>
 
-		<hr style="width: 90%; height: 1px; border: 0;" /></br>
+		<hr style="width: 90%; height: 1px; border: 0;" /><br>
 
 		<p style="font-size: 130%;"><strong>2.b.Remove any duplicated animation slot entry.</strong></p>
 
@@ -1612,7 +1612,7 @@ TDD mod
 			So, please be nice and don't corrupt this file with unnecessary slots additions and duplications.
 		</p><br>
  
-		<hr style="width: 90%; height: 1px; border: 0;" /></br>
+		<hr style="width: 90%; height: 1px; border: 0;" /><br>
 
 		<p style="font-size: 130%;"><strong>2.c. Install only necessary .bam and sound files.</strong></p>
 
