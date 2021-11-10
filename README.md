@@ -52,6 +52,7 @@
 | Le Champion de Bhaal | none | <a href="https://gwendolynefreddy.github.io/docs/cdb/cdb-readme-french">Français</a> |
 | Shuri Ninja Kit | <a href="https://gwendolynefreddy.github.io/docs/lcc/shurininja-readme-english.txt">English</a> | <a href="https://gwendolynefreddy.github.io/docs/lcc/shurininja-readme-french.txt">Français</a> |
 | BuTcHeRy | <a href="https://gwendolynefreddy.github.io/docs/lcc/butchery-readme-english.html">English</a> | <a href="https://gwendolynefreddy.github.io/docs/lcc/butchery-readme-french.html">Français</a> |
+| État des traductions | aucun | <a href="https://gwendolynefreddy.github.io/docs/lcc/essai-liste-trads.html">Français</a> |
 
 
 <hr>
