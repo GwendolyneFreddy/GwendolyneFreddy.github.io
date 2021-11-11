@@ -16,7 +16,7 @@ body {
 	text-align: left;
 	margin: 0 auto;
 	margin-top: 20px;
-	width: 88%;
+	width: 92%;
 	font-family: Verdana, Tahoma, Arial, sans-serif;
 	font-size: 12px;
 	color: #D1D1D1;
@@ -533,6 +533,12 @@ th {
 	padding-left:10px;
 	color:DeepSkyBlue;
 }
+
+.tableau2 td.mod1 {
+	text-align:left;
+	padding-left:10px;
+	color:DeepSkyBlue;
+}
 /*
 [color=Cyan]Cyan[/color]
 [color=DarkTurquoise]DarkTurquoise[/color]
@@ -542,11 +548,11 @@ th {
 [color=CornflowerBlue]CornflowerBlue[/color]
 [color=RoyalBlue]RoyalBlue[/color]
 */
-/* Alignement par colonnes sans classe */
+/* Alignement par colonnes sans classe
 .tableau td:nth-child(2) {
 	text-align:left;
 	padding-left:10px;
-}/*
+}
 .tableau td:nth-child(15) {
 	text-align:left;
 }
