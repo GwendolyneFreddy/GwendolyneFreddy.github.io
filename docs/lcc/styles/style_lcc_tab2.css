@@ -506,3 +506,88 @@ th {
 .tableau td:nth-child(17) {
 	text-align:left;
 }*/
+
+
+/* ------------------------- *
+ *  Descriptions masquables  *
+ * ------------------------- *
+div {
+	position: relative;
+}
+input[type="checkbox"] {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+}
+.titre_description {
+	font-size: 13px;
+	font-weight: 400;
+	color: #deded9;
+	margin: 20px 0 0;
+}
+label {
+	cursor: pointer;
+}
+label {
+	position: relative;
+	display: block;
+	padding-left: 30px;
+}
+label::before {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	top: 50%;
+	left: 10px;
+	border-left: 8px solid black;
+	border-top: 8px solid transparent;
+	border-bottom: 8px solid transparent;
+	margin-top: -8px;
+}
+input[type="checkbox"]:checked ~ h5 label::before {
+	border-left: 8px solid transparent;
+	border-top: 8px solid black;
+	border-right: 8px solid transparent;
+	margin-left: -4px;
+	margin-top: -4px;
+}
+
+.texte_description {
+	max-height: 0;
+	overflow: hidden;
+	padding-left: 30px;
+	transition: max-height 0.4s ease;
+}
+input[type="checkbox"]:checked ~ h5 ~ p {
+  max-height: 300px;
+}
+	<div><input type="checkbox" id="desc-1">
+		<h5 class="titre_description"><label for="desc-1">Description</label></h5>
+			<p class="texte_description" style="width:96%;">
+				Le BG2 FixPack est le fixpack le plus complet à ce jour, totalement WeiDU et en français. Il corrige tous les bugs corrigés par Baldurdash plus un million de bugs supplémentaires, vous assurant d'avoir un jeu parfaitement propre. C'est le fixpack non officiel que vous devriez toujours installer sauf si vous avez une excellente raison d'en installer un autre à la place. Notez que certains mods très récents exigent son installation.
+			</p>
+	</div>
+
+  <form id="form1">
+    <label for="montrer"><strong>&nbsp;&nbsp;<span style="color: #FFCC33;">&#x25BA;</span></strong> Description</label>
+    <input type="checkbox" name="montrer" id="montrer"/>
+
+    <div class="contenu">
+      <p>Le BG2 FixPack est le fixpack le plus complet à ce jour, totalement WeiDU et en français. Il corrige tous les bugs corrigés par Baldurdash plus un million de bugs supplémentaires, vous assurant d'avoir un jeu parfaitement propre. C'est le fixpack non officiel que vous devriez toujours installer sauf si vous avez une excellente raison d'en installer un autre à la place. Notez que certains mods très récents exigent son installation.</p>
+    </div>
+  </form></td>
+*/
+
+/* Style des contenus */
+label {display:block; padding:.5em; color:#deded9; cursor:pointer; margin-left: -6px;}
+input[type="checkbox"] {display:none;}
+.contenu {height:auto; max-height:0; overflow:hidden; transition:max-height ease-in 0.7s;} /* margin-left: -5%; margin-right: -5%;*/
+/*.contenu p {margin-bottom:.8em;}*/
+/*.contenu p:last-child {margin-bottom:0; padding:0 1em 1em;}*/
+
+/* Montrer/Cacher */
+#formulaire input[type="checkbox"]:checked + .contenu {max-height:15em;}
