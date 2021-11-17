@@ -437,6 +437,18 @@ th {
 }
 
 
+
+.tri {
+	margin-left: 20px;
+	width: 80px;
+	border: 1px solid #999;
+	background-color: #eee;
+	border-radius:5px;
+	box-shadow: 4px 4px #ccc;
+}
+
+
+
 /* ----------------- *
  *  Tableau de mods  *
  * ----------------- */
@@ -471,12 +483,27 @@ th {
 	border-right: 3px double #aaa;
 }
 
-.tableau td.modbleu {
+.tableau td.modblue {
 	border-right: 3px double #aaa;
 	text-align:left;
 	padding-left:10px;
 	color:DeepSkyBlue;
 }
+
+.tableau td.modred {
+	border-right: 3px double #aaa;
+	text-align:left;
+	padding-left:10px;
+	color:red;
+}
+
+.tableau td.modlime {
+	border-right: 3px double #aaa;
+	text-align:left;
+	padding-left:10px;
+	color:lime;
+}
+
 
 .tableau2 td.mod1 {
 	text-align:left;
@@ -590,4 +617,4 @@ input[type="checkbox"] {display:none;}
 /*.contenu p:last-child {margin-bottom:0; padding:0 1em 1em;}*/
 
 /* Montrer/Cacher */
-#formulaire input[type="checkbox"]:checked + .contenu {max-height:15em;}
+#formulaire input[type="checkbox"]:checked + .contenu {max-height:20em;}
