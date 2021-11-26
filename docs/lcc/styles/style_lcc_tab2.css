@@ -611,9 +611,9 @@ input[type="checkbox"]:checked ~ h5 ~ p {
 /* Style des contenus */
 label {display:block; padding:.5em; color:#deded9; cursor:pointer; margin-left: -6px;}
 input[type="checkbox"] {display:none;}
-.contenu {height:auto; max-height:0; overflow:hidden; transition:max-height ease-in 0.7s;} /* margin-left: -5%; margin-right: -5%;*/
+.contenu {height:auto; max-height:0; overflow:hidden; transition:max-height ease-in 0.6s;} /* margin-left: -5%; margin-right: -5%;*/
 /*.contenu p {margin-bottom:.8em;}*/
 /*.contenu p:last-child {margin-bottom:0; padding:0 1em 1em;}*/
 
 /* Montrer/Cacher */
-#formulaire input[type="checkbox"]:checked + .contenu {max-height:20em;}
+#formulaire input[type="checkbox"]:checked + .contenu {max-height:32em;}
